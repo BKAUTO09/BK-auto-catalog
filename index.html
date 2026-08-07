@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BK AUTO | قطع غيار السيارات</title>
+
+<style>
+*{box-sizing:border-box}
+body{
+    margin:0;
+    font-family:Arial,Tahoma,sans-serif;
+    background:#f4f5f7;
+    color:#222
+}
+header{
+    background:#111;
+    color:white;
+    padding:18px 6%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+.logo{
+    font-size:28px;
+    font-weight:bold;
+}
+.logo span{color:#e31b23}
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 10px;
+}
+.hero{
+    background:linear-gradient(135deg,#111,#333);
+    color:white;
+    text-align:center;
+    padding:70px 20px;
+}
+.hero h1{font-size:42px;margin:10px}
+.hero p{font-size:19px}
+.search{
+    max-width:750px;
+    margin:30px auto 0;
+    display:flex;
+}
+.search input{
+    flex:1;
+    padding:17px;
+    border:0;
+    font-size:17px;
+    border-radius:8px 0 0 8px;
+}
+.search button{
+    padding:17px 25px;
+    border:0;
+    background:#e31b23;
+    color:white;
+    font-weight:bold;
+    border-radius:0 8px 8px 0;
+    cursor:pointer;
+}
+section{
+    padding:45px 6%;
+}
+h2{text-align:center;margin-bottom:30px}
+.cars{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:18px;
+}
+.car{
+    background:white;
+    padding:25px;
+    text-align:center;
+    border-radius:12px;
+    box-shadow:0 3px 12px #0001;
+    cursor:pointer;
+    transition:.2s;
+}
+.car:hover{
+    transform:translateY(-4px);
+    box-shadow:0 6px 18px #0002;
+}
+.car strong{font-size:20px}
+.products{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:20px;
+}
+.product{
+    background:white;
+    padding:22px;
+    border-radius:12px;
+    box-shadow:0 3px 12px #0001;
+}
+.product h3{margin-top:0}
+.ref{
+    color:#e31b23;
+    font-weight:bold;
+}
+.btn{
+    background:#111;
+    color:white;
+    border:0;
+    padding:11px 18px;
+    border-radius:7px;
+    cursor:pointer;
+}
+footer{
+    background:#111;
+    color:white;
+    text-align:center;
+    padding:30px;
+}
+#result{
+    max-width:750px;
+    margin:15px auto;
+    background:white;
+    color:#222;
+    padding:15px;
+    border-radius:8px;
+    display:none;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">BK <span>AUTO</span></div>
+    <nav>
+        <a href="#">الرئيسية</a>
+        <a href="#cars">السيارات</a>
+        <a href="#products">قطع الغيار</a>
+        <a href="#contact">اتصل بنا</a>
+    </nav>
+</header>
+
+<div class="hero">
+
+    <h1>BK AUTO</h1>
+
+    <p>قطع غيار Renault & Peugeot</p>
+
+    <div class="search">
+        <input id="searchInput"
+               placeholder="ابحث برقم المرجع أو اسم القطعة...">
+        <button onclick="searchPart()">بحث</button>
+    </div>
+
+    <div id="result"></div>
+
+</div>
+
+<section id="cars">
+
+<h2>اختر سيارتك</h2>
+
+<div class="cars">
+
+<div class="car" onclick="selectCar('Renault Symbol')">
+<strong>Renault Symbol</strong>
+<p>قطع غيار كاملة</p>
+</div>
+
+<div class="car" onclick="selectCar('Renault Logan')">
+<strong>Renault Logan</strong>
+<p>قطع غيار كاملة</p>
+</div>
+
+<div class="car" onclick="selectCar('Renault Clio')">
+<strong>Renault Clio</strong>
+<p>Clio 2 / 3 / 4</p>
+</div>
+
+<div class="car" onclick="selectCar('Stepway')">
+<strong>Sandero Stepway</strong>
+<p>قطع غيار كاملة</p>
+</div>
+
+<div class="car" onclick="selectCar('Peugeot 206')">
+<strong>Peugeot 206</strong>
+<p>قطع غيار كاملة</p>
+</div>
+
+<div class="car" onclick="selectCar('Peugeot 207')">
+<strong>Peugeot 207</strong>
+<p>قطع غيار كاملة</p>
+</div>
+
+<div class="car" onclick="selectCar('Peugeot 208')">
+<strong>Peugeot 208</strong>
+<p>قطع غيار كاملة</p>
+</div>
+
+<div class="car" onclick="selectCar('Peugeot 301')">
+<strong>Peugeot 301</strong>
+<p>قطع غيار كاملة</p>
+</div>
+
+</div>
+</section>
+
+<section id="products">
+
+<h2>قطع الغيار</h2>
+
+<div class="products">
+
+<div class="product">
+<h3>طقم توزيع</h3>
+<p>Kit Distribution</p>
+<p class="ref">OEM: سيتم إضافة المرجع</p>
+<button class="btn">التفاصيل</button>
+</div>
+
+<div class="product">
+<h3>طقم قابض</h3>
+<p>Kit Embrayage</p>
+<p class="ref">OEM: سيتم إضافة المرجع</p>
+<button class="btn">التفاصيل</button>
+</div>
+
+<div class="product">
+<h3>فحمات فرامل</h3>
+<p>Plaquettes de frein</p>
+<p class="ref">OEM: سيتم إضافة المرجع</p>
+<button class="btn">التفاصيل</button>
+</div>
+
+<div class="product">
+<h3>فلتر زيت</h3>
+<p>Filtre à huile</p>
+<p class="ref">OEM: سيتم إضافة المرجع</p>
+<button class="btn">التفاصيل</button>
+</div>
+
+</div>
+</section>
+
+<section id="contact">
+
+<h2>تواصل معنا</h2>
+
+<center>
+<p>📞 الهاتف: <strong>0556419934</strong></p>
+<p>📍 BK AUTO - الجزائر</p>
+</center>
+
+</section>
+
+<footer>
+BK AUTO © 2026
+<br>
+Renault & Peugeot Spare Parts
+</footer>
+
+<script>
+
+function searchPart(){
+
+    let value=document.getElementById("searchInput").value;
+
+    let result=document.getElementById("result");
+
+    if(value.trim()===""){
+        result.style.display="block";
+        result.innerHTML="⚠️ اكتب رقم المرجع أو اسم القطعة";
+        return;
+    }
+
+    result.style.display="block";
+
+    result.innerHTML=
+    "🔎 نتيجة البحث عن: <strong>"+value+
+    "</strong><br><br>"+
+    "سيتم ربط قاعدة بيانات قطع الغيار بهذا البحث في المرحلة القادمة.";
+
+}
+
+function selectCar(car){
+
+    document.getElementById("searchInput").value=car;
+
+    document.getElementById("result").style.display="block";
+
+    document.getElementById("result").innerHTML=
+    "🚗 اخترت: <strong>"+car+"</strong><br><br>"+
+    "سيتم عرض جميع قطع الغيار والمحركات المتوافقة في المرحلة القادمة.";
+
+}
+
+</script>
+
+</body>
+</html>
