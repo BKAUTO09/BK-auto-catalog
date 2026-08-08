@@ -1,248 +1,170 @@
-from pathlib import Path
-
 html = r'''<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="BK AUTO - كتالوج قطع غيار Renault و Peugeot">
 <title>BK AUTO | كتالوج قطع الغيار</title>
 <style>
 *{box-sizing:border-box}
-:root{
-  --bg:#0f1115;--card:#171a21;--card2:#20242d;--text:#f5f5f5;
-  --muted:#a9b0bc;--red:#e3262e;--red2:#ff4b52;--line:#303641;
-  --green:#25d366;--white:#fff;
+body{margin:0;font-family:Arial,Tahoma,sans-serif;background:#0f1115;color:#fff}
+header{padding:22px 6%;display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:28px;font-weight:900}.logo span{color:#e3262e}
+nav a{color:#fff;text-decoration:none;margin:0 12px}
+.hero{text-align:center;padding:45px 20px 30px;background:linear-gradient(135deg,#171a21,#292d35)}
+.hero h1{font-size:42px;margin:10px}.hero p{color:#ccc}
+.search{max-width:1100px;margin:25px auto;padding:22px;background:#fff;color:#222;border-radius:18px;display:grid;grid-template-columns:repeat(4,1fr) auto;gap:10px}
+select,input,button{padding:14px;border-radius:10px;border:1px solid #ddd;font-size:15px}
+button{background:#e3262e;color:white;border:0;cursor:pointer;font-weight:bold}
+button.reset{background:#333}
+main{max-width:1150px;margin:30px auto;padding:0 15px}
+h2{margin-bottom:20px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:#191d24;border:1px solid #303641;border-radius:15px;padding:20px}
+.card h3{margin-top:0;color:#fff}
+.meta{color:#bbb;line-height:1.8}
+.ref{font-weight:bold;color:#ff4b52}
+.whatsapp{display:block;text-align:center;background:#25D366;color:#fff;text-decoration:none;padding:12px;border-radius:10px;margin-top:15px;font-weight:bold}
+.count{color:#aaa;margin-bottom:15px}
+footer{text-align:center;padding:35px;color:#aaa}
+@media(max-width:800px){
+.search{grid-template-columns:1fr 1fr}
+.grid{grid-template-columns:1fr}
+.hero h1{font-size:32px}
 }
-html{scroll-behavior:smooth}
-body{margin:0;font-family:Arial,Tahoma,sans-serif;background:linear-gradient(180deg,#0b0d11,#141820);color:var(--text)}
-a{text-decoration:none;color:inherit}
-header{position:sticky;top:0;z-index:20;background:rgba(12,14,18,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-.nav{max-width:1200px;margin:auto;padding:15px 20px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.logo{font-size:27px;font-weight:900;letter-spacing:-1px}.logo span{color:var(--red)}
-nav{display:flex;gap:22px;color:#ddd;font-weight:700}nav a:hover{color:var(--red2)}
-.hero{max-width:1200px;margin:0 auto;padding:55px 20px 35px;text-align:center}
-.hero h1{font-size:46px;margin:5px 0 10px}.hero h1 span{color:var(--red)}
-.hero p{color:var(--muted);font-size:17px;margin:0 0 28px}
-.searchbox{background:rgba(255,255,255,.97);color:#111;border-radius:18px;padding:18px;box-shadow:0 15px 45px rgba(0,0,0,.3)}
-.filters{display:grid;grid-template-columns:1fr 1fr 1fr 1.3fr;gap:10px}
-input,select{width:100%;padding:14px 13px;border:1px solid #ddd;border-radius:10px;font-size:15px;outline:none;background:#fff}
-input:focus,select:focus{border-color:var(--red)}
-.buttons{display:flex;justify-content:flex-start;gap:10px;margin-top:12px}
-button{border:0;border-radius:10px;padding:13px 22px;font-size:15px;font-weight:800;cursor:pointer}
-.search{background:var(--red);color:#fff}.reset{background:#343943;color:#fff}
-main{max-width:1200px;margin:auto;padding:20px}
-.section-title{display:flex;align-items:center;justify-content:space-between;margin:15px 0}
-.section-title h2{font-size:25px}.count{color:var(--muted)}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.card{background:linear-gradient(145deg,var(--card),#11141a);border:1px solid var(--line);border-radius:16px;padding:18px;transition:.2s}
-.card:hover{transform:translateY(-3px);border-color:#4b5361}
-.badge{display:inline-block;background:rgba(227,38,46,.13);color:#ff6670;border:1px solid rgba(227,38,46,.35);padding:5px 9px;border-radius:20px;font-size:12px;font-weight:800}
-.card h3{margin:13px 0 7px;font-size:19px}
-.meta{color:var(--muted);line-height:1.8;font-size:14px}
-.ref{font-family:monospace;direction:ltr;text-align:left;background:#0b0d11;border:1px solid #2c313a;padding:10px;border-radius:9px;margin:12px 0;color:#fff}
-.card-actions{display:flex;gap:8px}.wa{background:var(--green);color:#06220e;flex:1}.details{background:#303640;color:#fff}
-.empty{display:none;text-align:center;padding:45px;color:var(--muted);border:1px dashed var(--line);border-radius:15px}
-.about{margin-top:45px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:25px;line-height:1.9}
-footer{text-align:center;padding:35px 20px;color:var(--muted)}
-.floating-wa{position:fixed;left:20px;bottom:20px;background:var(--green);color:#06220e;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;font-size:27px;font-weight:900;z-index:30;box-shadow:0 8px 25px #0008}
-@media(max-width:850px){.filters{grid-template-columns:1fr 1fr}.grid{grid-template-columns:1fr 1fr}.hero h1{font-size:36px}}
-@media(max-width:560px){nav{display:none}.filters,.grid{grid-template-columns:1fr}.hero{padding-top:35px}.hero h1{font-size:30px}.buttons button{flex:1}}
+@media(max-width:500px){
+.search{grid-template-columns:1fr}
+header{flex-direction:column;gap:15px}
+}
 </style>
 </head>
 <body>
 
 <header>
-  <div class="nav">
-    <div class="logo">BK <span>AUTO</span></div>
-    <nav>
-      <a href="#home">الرئيسية</a>
-      <a href="#catalog">الكتالوج</a>
-      <a href="#about">عن BK AUTO</a>
-      <a href="#contact">اتصل بنا</a>
-    </nav>
-  </div>
+<div class="logo">BK <span>AUTO</span></div>
+<nav>
+<a href="#home">الرئيسية</a>
+<a href="#catalog">الكتالوج</a>
+<a href="#contact">اتصل بنا</a>
+</nav>
 </header>
 
 <section class="hero" id="home">
-  <h1>BK <span>AUTO</span></h1>
-  <p>كتالوج قطع غيار <b>Renault & Peugeot</b> — ابحث بالسيارة أو المحرك أو القطعة أو المرجع</p>
+<h1>BK AUTO</h1>
+<p>كتالوج قطع غيار Renault & Peugeot</p>
+</section>
 
-  <div class="searchbox">
-    <div class="filters">
-      <select id="brand">
-        <option value="">كل الماركات</option>
-        <option>Renault</option>
-        <option>Peugeot</option>
-      </select>
+<section class="search">
+<select id="brand">
+<option value="">كل الماركات</option>
+<option value="Renault">Renault</option>
+<option value="Peugeot">Peugeot</option>
+</select>
 
-      <select id="model"><option value="">كل السيارات</option></select>
+<select id="car">
+<option value="">كل السيارات</option>
+</select>
 
-      <select id="engine"><option value="">كل المحركات</option></select>
+<select id="engine">
+<option value="">كل المحركات</option>
+</select>
 
-      <input id="query" type="search" placeholder="اسم القطعة أو رقم المرجع...">
-    </div>
-    <div class="buttons">
-      <button class="search" onclick="searchParts()">بحث</button>
-      <button class="reset" onclick="resetSearch()">إعادة ضبط</button>
-    </div>
-  </div>
+<input id="query" placeholder="اسم القطعة أو رقم المرجع">
+
+<button onclick="searchParts()">بحث</button>
+<button class="reset" onclick="resetSearch()">إعادة ضبط</button>
 </section>
 
 <main id="catalog">
-  <div class="section-title">
-    <h2>كتالوج قطع الغيار</h2>
-    <div class="count" id="count"></div>
-  </div>
-  <div id="results" class="grid"></div>
-  <div id="empty" class="empty">لم يتم العثور على نتائج. جرّب تغيير السيارة أو المحرك أو كلمة البحث.</div>
-
-  <section class="about" id="about">
-    <h2>BK AUTO</h2>
-    <p>متجر متخصص في قطع غيار سيارات Renault و Peugeot. يمكنك البحث حسب السيارة، المحرك، اسم القطعة أو المرجع، ثم إرسال طلب مباشر عبر WhatsApp.</p>
-    <p><b>ملاحظة:</b> المراجع الموجودة هنا هي بيانات أولية للكتالوج. قبل البيع يجب مطابقة المرجع مع رقم الشاسيه/VIN ومواصفات السيارة عند الحاجة.</p>
-  </section>
+<h2>كتالوج قطع الغيار</h2>
+<div class="count" id="count"></div>
+<div class="grid" id="results"></div>
 </main>
 
 <footer id="contact">
-  <b>BK AUTO</b> — Renault & Peugeot Spare Parts<br>
-  الجزائر — للطلب والاستفسار: <b>0556419934</b>
+BK AUTO — Renault & Peugeot Spare Parts<br>
+WhatsApp: 0556419934
 </footer>
 
-<a class="floating-wa" href="https://wa.me/213556419934" target="_blank" aria-label="WhatsApp">◉</a>
-
 <script>
-const WHATSAPP = "213556419934";
-
-/*
-  أضف قطعاً جديدة بنفس الشكل:
-  {brand:"Renault", model:"Clio 4", engine:"1.5 dCi",
-   part:"Filtre à huile", ref:"..." }
-*/
-const parts = [
-  // Renault
-  {brand:"Renault",model:"Clio 2",engine:"1.2 16V",part:"Courroie distribution",ref:"130C17529R"},
-  {brand:"Renault",model:"Clio 2",engine:"1.4 16V",part:"Kit embrayage",ref:"7701478017"},
-  {brand:"Renault",model:"Clio 2",engine:"1.9 D",part:"Courroie alternateur",ref:"7700104095"},
-  {brand:"Renault",model:"Clio 3",engine:"1.2 16V",part:"Pompe à eau",ref:"7701478010"},
-  {brand:"Renault",model:"Clio 3",engine:"1.5 dCi",part:"Filtre à huile",ref:"152085758R"},
-  {brand:"Renault",model:"Clio 4",engine:"1.2 16V",part:"Filtre à huile",ref:"152085758R"},
-  {brand:"Renault",model:"Clio 4",engine:"1.5 dCi",part:"Kit distribution",ref:"130C17529R"},
-  {brand:"Renault",model:"Clio 4",engine:"0.9 TCe",part:"Filtre à air",ref:"165467674R"},
-  {brand:"Renault",model:"Symbol",engine:"1.2 16V",part:"Kit embrayage",ref:"302050901R"},
-  {brand:"Renault",model:"Symbol",engine:"1.6 16V",part:"Filtre à huile",ref:"152085758R"},
-  {brand:"Renault",model:"Logan",engine:"1.4 MPI",part:"Kit embrayage",ref:"7701478066"},
-  {brand:"Renault",model:"Logan",engine:"1.6 MPI",part:"Pompe à eau",ref:"7701478010"},
-  {brand:"Renault",model:"Logan",engine:"1.5 dCi",part:"Filtre à gasoil",ref:"164000884R"},
-  {brand:"Renault",model:"Sandero",engine:"1.6 MPI",part:"Kit embrayage",ref:"7701478066"},
-  {brand:"Renault",model:"Sandero",engine:"1.5 dCi",part:"Filtre à huile",ref:"152085758R"},
-  {brand:"Renault",model:"Stepway",engine:"1.6 MPI",part:"Filtre à air",ref:"165469466R"},
-  {brand:"Renault",model:"Megane 2",engine:"1.5 dCi",part:"Kit embrayage",ref:"7701477698"},
-  {brand:"Renault",model:"Megane 2",engine:"1.9 dCi",part:"Kit distribution",ref:"7701477014"},
-  {brand:"Renault",model:"Megane 3",engine:"1.5 dCi",part:"Filtre à huile",ref:"152085758R"},
-  {brand:"Renault",model:"Kangoo",engine:"1.5 dCi",part:"Kit embrayage",ref:"302050901R"},
-  {brand:"Renault",model:"Kangoo",engine:"1.9 D",part:"Joint spi vilebrequin",ref:"80.105.8"},
-  {brand:"Renault",model:"Duster",engine:"1.5 dCi",part:"Filtre à gasoil",ref:"164000884R"},
-
-  // Peugeot
-  {brand:"Peugeot",model:"206",engine:"1.1",part:"Kit embrayage",ref:"2050P3"},
-  {brand:"Peugeot",model:"206",engine:"1.4",part:"Kit embrayage",ref:"2050P4"},
-  {brand:"Peugeot",model:"206",engine:"1.4 HDi",part:"Filtre à gasoil",ref:"1906C5"},
-  {brand:"Peugeot",model:"206",engine:"1.6 16V",part:"Kit distribution",ref:"0831V5"},
-  {brand:"Peugeot",model:"207",engine:"1.4",part:"Kit embrayage",ref:"2052N4"},
-  {brand:"Peugeot",model:"207",engine:"1.4 HDi",part:"Filtre à huile",ref:"1109AY"},
-  {brand:"Peugeot",model:"207",engine:"1.6 HDi",part:"Kit embrayage",ref:"302052617R"},
-  {brand:"Peugeot",model:"208",engine:"1.2 VTi",part:"Filtre à huile",ref:"1109AY"},
-  {brand:"Peugeot",model:"208",engine:"1.6 HDi",part:"Kit embrayage",ref:"2052N4"},
-  {brand:"Peugeot",model:"301",engine:"1.2 VTi",part:"Filtre à huile",ref:"1109AY"},
-  {brand:"Peugeot",model:"301",engine:"1.6 VTi",part:"Filtre à huile",ref:"1109AY"},
-  {brand:"Peugeot",model:"301",engine:"1.6 HDi",part:"Kit embrayage",ref:"2052N4"},
-  {brand:"Peugeot",model:"Partner",engine:"1.6 HDi",part:"Filtre à gasoil",ref:"1906C3"},
-  {brand:"Peugeot",model:"Partner",engine:"1.9 D",part:"Kit embrayage",ref:"2050K6"},
-  {brand:"Peugeot",model:"Bipper",engine:"1.4 HDi",part:"Chaîne distribution",ref:"0816H5"},
-  {brand:"Peugeot",model:"Bipper",engine:"1.4 HDi",part:"Filtre à huile",ref:"1109AY"},
-  {brand:"Peugeot",model:"307",engine:"1.6 HDi",part:"Kit embrayage",ref:"2052N4"},
-  {brand:"Peugeot",model:"308",engine:"1.6 HDi",part:"Filtre à huile",ref:"1109AY"},
-  {brand:"Peugeot",model:"508",engine:"1.6 HDi",part:"Filtre à gasoil",ref:"1906C3"}
+const parts=[
+{brand:"Renault",car:"Clio 2",engine:"1.9 D",part:"Kit embrayage",ref:"7701472032"},
+{brand:"Renault",car:"Clio 2",engine:"1.5 dCi",part:"Kit embrayage",ref:"7701477510"},
+{brand:"Renault",car:"Clio 3",engine:"1.5 dCi",part:"Plaquettes frein avant",ref:"7701208427"},
+{brand:"Renault",car:"Clio 4",engine:"1.5 dCi",part:"Kit distribution",ref:"130C17529R"},
+{brand:"Renault",car:"Clio 4",engine:"1.2 16V",part:"Pompe à eau",ref:"2101000Q0A"},
+{brand:"Renault",car:"Symbol",engine:"1.2 16V",part:"Courroie distribution",ref:"130C17529R"},
+{brand:"Renault",car:"Symbol",engine:"1.6 Essence",part:"Kit embrayage",ref:"302052617R"},
+{brand:"Renault",car:"Logan",engine:"1.6 Essence",part:"Kit embrayage",ref:"302052617R"},
+{brand:"Renault",car:"Logan",engine:"1.5 dCi",part:"Filtre huile",ref:"152085758R"},
+{brand:"Renault",car:"Stepway",engine:"1.6 Essence",part:"Filtre air",ref:"165469466R"},
+{brand:"Renault",car:"Kangoo",engine:"1.9 D",part:"Joint spi vilebrequin",ref:"80.105.8"},
+{brand:"Renault",car:"Kangoo",engine:"1.5 dCi",part:"Kit embrayage",ref:"302050901R"},
+{brand:"Renault",car:"Megane 2",engine:"1.5 dCi",part:"Roulement arrière",ref:"7701208226"},
+{brand:"Renault",car:"Master",engine:"2.5 dCi",part:"Plaquettes frein",ref:"7701209836"},
+{brand:"Peugeot",car:"206",engine:"1.4 Essence",part:"Kit embrayage",ref:"2050.C7"},
+{brand:"Peugeot",car:"206",engine:"1.4 HDi",part:"Kit embrayage",ref:"2050.P8"},
+{brand:"Peugeot",car:"207",engine:"1.6 HDi",part:"Kit embrayage",ref:"302052617R"},
+{brand:"Peugeot",car:"208",engine:"1.6 HDi",part:"Kit embrayage",ref:"2052.N6"},
+{brand:"Peugeot",car:"301",engine:"1.6 VTi",part:"Jauge huile",ref:"9803894380"},
+{brand:"Peugeot",car:"301",engine:"1.6 HDi",part:"Jauge huile",ref:"9678018380"},
+{brand:"Peugeot",car:"Partner",engine:"1.6 HDi",part:"Kit distribution",ref:"0831.V6"},
+{brand:"Peugeot",car:"Partner",engine:"1.6 HDi",part:"Kit embrayage",ref:"2052.N6"},
+{brand:"Peugeot",car:"Bipper",engine:"1.4 HDi",part:"Chaîne distribution",ref:"0816.F4"},
+{brand:"Peugeot",car:"308",engine:"1.6 HDi",part:"Plaquettes frein avant",ref:"4254.87"},
+{brand:"Peugeot",car:"308",engine:"1.6 VTi",part:"Pompe à eau",ref:"1201.H8"},
+{brand:"Peugeot",car:"3008",engine:"1.6 HDi",part:"Filtre huile",ref:"1109.AY"},
+{brand:"Peugeot",car:"508",engine:"1.6 HDi",part:"Kit embrayage",ref:"2052.N7"}
 ];
 
-let current = [...parts];
+const brand=document.getElementById("brand");
+const car=document.getElementById("car");
+const engine=document.getElementById("engine");
+const query=document.getElementById("query");
+const results=document.getElementById("results");
+const count=document.getElementById("count");
 
-const brandEl = document.getElementById("brand");
-const modelEl = document.getElementById("model");
-const engineEl = document.getElementById("engine");
-const queryEl = document.getElementById("query");
-
-function unique(arr){return [...new Set(arr)].sort((a,b)=>a.localeCompare(b));}
-
-function updateModels(){
-  const brand=brandEl.value;
-  const models=unique(parts.filter(x=>!brand||x.brand===brand).map(x=>x.model));
-  modelEl.innerHTML='<option value="">كل السيارات</option>'+models.map(x=>`<option>${x}</option>`).join("");
-  updateEngines();
+function fillSelects(){
+ const cars=[...new Set(parts.filter(x=>!brand.value||x.brand===brand.value).map(x=>x.car))].sort();
+ car.innerHTML='<option value="">كل السيارات</option>'+cars.map(x=>`<option>${x}</option>`).join('');
+ updateEngines();
 }
 function updateEngines(){
-  const brand=brandEl.value, model=modelEl.value;
-  const engines=unique(parts.filter(x=>(!brand||x.brand===brand)&&(!model||x.model===model)).map(x=>x.engine));
-  engineEl.innerHTML='<option value="">كل المحركات</option>'+engines.map(x=>`<option>${x}</option>`).join("");
+ const engines=[...new Set(parts.filter(x=>(!brand.value||x.brand===brand.value)&&(!car.value||x.car===car.value)).map(x=>x.engine))].sort();
+ engine.innerHTML='<option value="">كل المحركات</option>'+engines.map(x=>`<option>${x}</option>`).join('');
 }
-brandEl.addEventListener("change",updateModels);
-modelEl.addEventListener("change",updateEngines);
-queryEl.addEventListener("keydown",e=>{if(e.key==="Enter")searchParts()});
-
 function searchParts(){
-  const brand=brandEl.value, model=modelEl.value, engine=engineEl.value;
-  const q=queryEl.value.trim().toLowerCase();
-  current=parts.filter(x=>{
-    const text=`${x.brand} ${x.model} ${x.engine} ${x.part} ${x.ref}`.toLowerCase();
-    return (!brand||x.brand===brand)&&(!model||x.model===model)&&(!engine||x.engine===engine)&&(!q||text.includes(q));
-  });
-  render();
-  document.getElementById("catalog").scrollIntoView({behavior:"smooth"});
+ const q=query.value.trim().toLowerCase();
+ const filtered=parts.filter(x=>
+ (!brand.value||x.brand===brand.value)&&
+ (!car.value||x.car===car.value)&&
+ (!engine.value||x.engine===engine.value)&&
+ (!q||[x.part,x.ref,x.car,x.engine,x.brand].some(v=>v.toLowerCase().includes(q)))
+ );
+ render(filtered);
 }
-
+function render(data){
+ count.textContent=`عدد النتائج: ${data.length}`;
+ results.innerHTML=data.length?data.map(x=>`
+ <article class="card">
+ <h3>${x.part}</h3>
+ <div class="meta">
+ <b>الماركة:</b> ${x.brand}<br>
+ <b>السيارة:</b> ${x.car}<br>
+ <b>المحرك:</b> ${x.engine}<br>
+ <b>المرجع:</b> <span class="ref">${x.ref}</span>
+ </div>
+ <a class="whatsapp" target="_blank" href="https://wa.me/213556419934?text=${encodeURIComponent("السلام عليكم BK AUTO، أريد الاستفسار عن قطعة: "+x.part+" | "+x.brand+" "+x.car+" "+x.engine+" | المرجع: "+x.ref)}">طلب عبر WhatsApp</a>
+ </article>`).join(''):'<p>لم يتم العثور على نتائج.</p>';
+}
 function resetSearch(){
-  brandEl.value="";updateModels();queryEl.value="";current=[...parts];render();
+ brand.value="";car.value="";engine.value="";query.value="";
+ fillSelects();render(parts);
 }
-
-function orderText(x){
-  return `السلام عليكم، أريد طلب قطعة غيار من BK AUTO:
-السيارة: ${x.brand} ${x.model}
-المحرك: ${x.engine}
-القطعة: ${x.part}
-المرجع: ${x.ref}`;
-}
-
-function render(){
-  const box=document.getElementById("results");
-  const empty=document.getElementById("empty");
-  document.getElementById("count").textContent=`${current.length} نتيجة`;
-  box.innerHTML=current.map((x,i)=>`
-    <article class="card">
-      <span class="badge">${x.brand}</span>
-      <h3>${x.part}</h3>
-      <div class="meta">
-        🚗 السيارة: <b>${x.model}</b><br>
-        ⚙️ المحرك: <b>${x.engine}</b>
-      </div>
-      <div class="ref">${x.ref}</div>
-      <div class="card-actions">
-        <a class="wa" target="_blank" href="https://wa.me/${WHATSAPP}?text=${encodeURIComponent(orderText(x))}">
-          طلب عبر WhatsApp
-        </a>
-        <button class="details" onclick="copyRef('${x.ref.replace(/'/g,"\\'")}')">نسخ المرجع</button>
-      </div>
-    </article>
-  `).join("");
-  empty.style.display=current.length?"none":"block";
-}
-
-function copyRef(ref){
-  navigator.clipboard?.writeText(ref).then(()=>alert("تم نسخ المرجع: "+ref));
-}
-
-updateModels();
-render();
+brand.addEventListener("change",()=>{fillSelects();searchParts()});
+car.addEventListener("change",()=>{updateEngines();searchParts()});
+engine.addEventListener("change",searchParts);
+query.addEventListener("input",searchParts);
+fillSelects();render(parts);
 </script>
 </body>
-</html>
+</html>'''
