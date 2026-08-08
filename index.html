@@ -794,7 +794,7 @@ function renderParts(data){
     resultCount.textContent = data.length;
 
 
-    if(data.length === 0){
+    if(parts.length === 0){
 
         empty.style.display = "block";
 
@@ -806,7 +806,7 @@ function renderParts(data){
     empty.style.display = "none";
 
 
-    data.forEach(part => {
+    parts.forEach(part => {
 
         const card = document.createElement("article");
 
