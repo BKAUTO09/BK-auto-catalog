@@ -10,7 +10,6 @@
 content="BK AUTO - كتالوج قطع غيار السيارات Renault Peugeot Dacia في الجزائر">
 
 <style>
-
 *{
     box-sizing:border-box;
     margin:0;
@@ -24,28 +23,23 @@ body{
     min-height:100vh;
 }
 
-/* HEADER */
-
 header{
-    background:#111114;
-    border-bottom:1px solid #29292e;
-    padding:18px 6%;
+    width:100%;
+    padding:22px 6%;
     display:flex;
-    align-items:center;
     justify-content:space-between;
-    position:sticky;
-    top:0;
-    z-index:1000;
+    align-items:center;
+    border-bottom:1px solid #252529;
+    background:#0d0d0f;
 }
 
 .logo{
-    font-size:30px;
+    font-size:28px;
     font-weight:900;
-    letter-spacing:-1px;
 }
 
 .logo span{
-    color:#e50032;
+    color:#e51b3e;
 }
 
 nav{
@@ -56,733 +50,583 @@ nav{
 nav a{
     color:#fff;
     text-decoration:none;
-    font-weight:bold;
-    transition:.2s;
+    font-size:16px;
 }
 
 nav a:hover{
-    color:#e50032;
+    color:#e51b3e;
 }
-
-/* HERO */
 
 .hero{
     text-align:center;
-    padding:70px 20px 55px;
-    background:
-    radial-gradient(circle at center,#25252b 0,#111114 45%,#08080a 100%);
+    padding:70px 20px 45px;
 }
 
 .hero h1{
-    font-size:58px;
+    font-size:52px;
     font-weight:900;
-    margin-bottom:15px;
 }
 
 .hero h1 span{
-    color:#e50032;
+    color:#e51b3e;
 }
 
 .hero h2{
-    font-size:23px;
-    margin-bottom:18px;
-}
-
-.hero p{
-    color:#aaa;
-    font-size:16px;
-    line-height:1.8;
-}
-
-.brands{
     margin-top:15px;
-    color:#ddd;
-    font-size:18px;
-    font-weight:bold;
-}
-
-/* SEARCH BOX */
-
-.search-area{
-    width:94%;
-    max-width:1250px;
-    margin:-15px auto 30px;
-    background:#f7f7f7;
-    border-radius:18px;
-    padding:18px;
-    box-shadow:0 10px 40px rgba(0,0,0,.45);
-    position:relative;
-    z-index:5;
-}
-
-.search-grid{
-    display:grid;
-    grid-template-columns:1.2fr 1fr 1fr 1fr auto auto;
-    gap:10px;
-    align-items:center;
-}
-
-input,
-select{
-    width:100%;
-    height:52px;
-    border:1px solid #ddd;
-    border-radius:10px;
-    padding:0 15px;
-    font-size:15px;
-    background:#fff;
-    color:#222;
-    outline:none;
-}
-
-input:focus,
-select:focus{
-    border-color:#e50032;
-    box-shadow:0 0 0 2px rgba(229,0,50,.12);
-}
-
-button{
-    height:52px;
-    border:none;
-    border-radius:10px;
-    padding:0 20px;
-    font-size:15px;
-    font-weight:bold;
-    cursor:pointer;
-    transition:.2s;
-}
-
-.search-btn{
-    background:#e50032;
-    color:white;
-}
-
-.search-btn:hover{
-    background:#bd002a;
-    transform:translateY(-1px);
-}
-
-.reset-btn{
-    background:#222229;
-    color:#fff;
-}
-
-.reset-btn:hover{
-    background:#33333b;
-}
-
-/* CONTENT */
-
-.container{
-    width:94%;
-    max-width:1250px;
-    margin:auto;
-    padding-bottom:60px;
-}
-
-.catalog-header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    margin:25px 0;
-}
-
-.catalog-header h2{
     font-size:25px;
 }
 
-.count{
-    background:#e50032;
-    padding:9px 17px;
-    border-radius:30px;
-    font-weight:bold;
+.hero p{
+    margin-top:12px;
+    color:#bdbdbd;
+    line-height:1.8;
 }
 
-/* CARDS */
+.search-box{
+    width:94%;
+    max-width:1200px;
+    margin:20px auto 35px;
+    background:#f2f2f2;
+    padding:12px;
+    border-radius:18px;
+    display:grid;
+    grid-template-columns:1fr 1fr 1.5fr auto auto;
+    gap:10px;
+}
 
-.parts-grid{
+.search-box select,
+.search-box input{
+    width:100%;
+    border:none;
+    outline:none;
+    padding:15px;
+    border-radius:12px;
+    background:#fff;
+    font-size:15px;
+    color:#222;
+}
+
+button{
+    border:none;
+    cursor:pointer;
+    border-radius:12px;
+    padding:14px 22px;
+    font-weight:bold;
+    font-size:15px;
+}
+
+.search-btn{
+    background:#e51b3e;
+    color:#fff;
+}
+
+.reset-btn{
+    background:#19191c;
+    color:#fff;
+}
+
+.count{
+    width:94%;
+    max-width:1200px;
+    margin:auto;
+    color:#fff;
+    font-size:16px;
+}
+
+.count span{
+    display:inline-block;
+    background:#e51b3e;
+    padding:8px 15px;
+    border-radius:20px;
+}
+
+.catalog-title{
+    width:94%;
+    max-width:1200px;
+    margin:45px auto 20px;
+    font-size:27px;
+    border-right:5px solid #e51b3e;
+    padding-right:12px;
+}
+
+.parts{
+    width:94%;
+    max-width:1200px;
+    margin:auto;
     display:grid;
     grid-template-columns:repeat(3,1fr);
     gap:20px;
+    padding-bottom:60px;
 }
 
 .card{
     background:#151519;
-    border:1px solid #29292f;
+    border:1px solid #29292e;
     border-radius:18px;
     padding:22px;
     transition:.25s;
-    position:relative;
-    overflow:hidden;
 }
 
 .card:hover{
     transform:translateY(-5px);
-    border-color:#e50032;
-    box-shadow:0 12px 35px rgba(0,0,0,.4);
+    border-color:#e51b3e;
+    box-shadow:0 10px 30px rgba(229,27,62,.12);
 }
 
-.card-top{
-    display:flex;
-    justify-content:space-between;
-    gap:10px;
-    align-items:flex-start;
-    margin-bottom:18px;
-}
-
-.part-name{
-    font-size:21px;
-    font-weight:900;
-}
-
-.ref{
-    background:#25252b;
-    color:#ff3358;
-    padding:7px 10px;
-    border-radius:8px;
+.badge{
+    display:inline-block;
+    background:#e51b3e;
+    padding:6px 11px;
+    border-radius:20px;
     font-size:12px;
-    white-space:nowrap;
+    margin-bottom:15px;
+}
+
+.card h3{
+    font-size:21px;
+    margin-bottom:15px;
 }
 
 .info{
-    border-top:1px solid #29292f;
-    padding-top:15px;
-}
-
-.info-row{
     display:flex;
-    justify-content:space-between;
-    gap:15px;
-    padding:7px 0;
+    flex-direction:column;
+    gap:9px;
+    color:#c9c9c9;
+    font-size:14px;
 }
 
-.label{
-    color:#888;
-}
-
-.value{
-    font-weight:bold;
-    text-align:left;
-}
-
-.brand{
+.info strong{
     color:#fff;
 }
 
-.model{
-    color:#ddd;
+.ref{
+    margin-top:17px;
+    background:#0d0d0f;
+    border-radius:10px;
+    padding:12px;
+    color:#e51b3e;
+    font-weight:bold;
 }
 
-.engine{
-    color:#ff3358;
-}
-
-.actions{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:10px;
+.card-buttons{
+    display:flex;
+    gap:8px;
     margin-top:18px;
 }
 
-.call-btn{
-    background:#222229;
+.card-buttons a{
+    flex:1;
+    text-align:center;
+    text-decoration:none;
+    padding:12px 5px;
+    border-radius:10px;
+    font-weight:bold;
+    font-size:13px;
+}
+
+.call{
+    background:#222;
     color:#fff;
 }
 
-.whatsapp-btn{
-    background:#20c66b;
+.whatsapp{
+    background:#168c4b;
     color:#fff;
-}
-
-.call-btn:hover{
-    background:#33333a;
-}
-
-.whatsapp-btn:hover{
-    background:#16a957;
 }
 
 .no-results{
-    display:none;
     text-align:center;
-    padding:70px 20px;
+    padding:60px 20px;
     color:#aaa;
+    font-size:20px;
+    grid-column:1/-1;
 }
 
-.no-results strong{
-    display:block;
-    font-size:24px;
-    color:#fff;
-    margin-bottom:10px;
-}
-
-/* FOOTER */
-
-footer{
+.contact{
     background:#111114;
     border-top:1px solid #29292e;
+    padding:45px 20px;
     text-align:center;
-    padding:35px 20px;
 }
 
-.footer-logo{
+.contact h2{
+    margin-bottom:12px;
+}
+
+.phone{
+    color:#e51b3e;
     font-size:28px;
-    font-weight:900;
-    margin-bottom:10px;
-}
-
-.footer-logo span{
-    color:#e50032;
-}
-
-footer p{
-    color:#888;
-    margin:7px 0;
-}
-
-.phone-footer{
-    display:inline-block;
-    margin-top:12px;
-    color:#fff;
-    font-size:20px;
     font-weight:bold;
+    direction:ltr;
+    display:block;
+    margin:15px;
+}
+
+.contact-buttons{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+.contact-buttons a{
     text-decoration:none;
+    padding:14px 25px;
+    border-radius:12px;
+    font-weight:bold;
 }
 
-.phone-footer:hover{
-    color:#e50032;
+.contact-call{
+    background:#e51b3e;
+    color:#fff;
 }
 
-/* MOBILE */
-
-@media(max-width:1000px){
-
-    .search-grid{
-        grid-template-columns:1fr 1fr;
-    }
-
-    .parts-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-
+.contact-whatsapp{
+    background:#168c4b;
+    color:#fff;
 }
 
-@media(max-width:650px){
+footer{
+    text-align:center;
+    padding:22px;
+    background:#080809;
+    color:#777;
+    font-size:13px;
+}
 
-    header{
-        padding:15px 20px;
-    }
-
-    .logo{
-        font-size:23px;
-    }
-
-    nav{
-        gap:12px;
-        font-size:13px;
-    }
-
-    .hero{
-        padding:50px 15px 45px;
-    }
+/* الهاتف */
+@media(max-width:900px){
 
     .hero h1{
         font-size:40px;
     }
 
-    .hero h2{
-        font-size:19px;
+    .search-box{
+        grid-template-columns:1fr 1fr;
     }
 
-    .search-area{
-        width:92%;
-        padding:12px;
+    .parts{
+        grid-template-columns:repeat(2,1fr);
     }
-
-    .search-grid{
-        grid-template-columns:1fr;
-    }
-
-    .parts-grid{
-        grid-template-columns:1fr;
-    }
-
-    .catalog-header{
-        flex-direction:column;
-        gap:15px;
-        align-items:flex-start;
-    }
-
 }
 
-/* SMALL PHONE */
+@media(max-width:600px){
 
-@media(max-width:400px){
+    header{
+        padding:18px;
+    }
 
-    nav a:nth-child(2){
-        display:none;
+    nav{
+        gap:12px;
+    }
+
+    nav a{
+        font-size:13px;
+    }
+
+    .hero{
+        padding-top:45px;
     }
 
     .hero h1{
         font-size:34px;
     }
 
-    .actions{
+    .hero h2{
+        font-size:20px;
+    }
+
+    .search-box{
+        grid-template-columns:1fr;
+        padding:10px;
+    }
+
+    .parts{
         grid-template-columns:1fr;
     }
 
+    .catalog-title{
+        font-size:22px;
+    }
 }
-
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
-
 <header>
 
-    <div class="logo">
-        BK <span>AUTO</span>
-    </div>
+<div class="logo">
+    BK <span>AUTO</span>
+</div>
 
-    <nav>
-        <a href="#home">الرئيسية</a>
-        <a href="#catalog">الكتالوج</a>
-        <a href="#contact">اتصل بنا</a>
-    </nav>
+<nav>
+    <a href="#">الرئيسية</a>
+    <a href="#catalog">الكتالوج</a>
+    <a href="#contact">اتصل بنا</a>
+</nav>
 
 </header>
 
 
-<!-- HERO -->
+<section class="hero">
 
-<section class="hero" id="home">
+<h1>BK <span>AUTO</span></h1>
 
-    <h1>
-        BK <span>AUTO</span>
-    </h1>
+<h2>كتالوج قطع غيار السيارات</h2>
 
-    <h2>كتالوج قطع غيار السيارات</h2>
+<p>
+Renault • Peugeot • Dacia
+</p>
 
-    <div class="brands">
-        Renault • Peugeot • Dacia
-    </div>
-
-    <p>
-        ابحث باسم القطعة أو السيارة أو المحرك أو رقم المرجع
-    </p>
+<p>
+ابحث باسم القطعة أو السيارة أو المحرك أو رقم المرجع
+</p>
 
 </section>
 
 
-<!-- SEARCH -->
+<!-- البحث -->
 
-<section class="search-area">
+<div class="search-box">
 
-    <div class="search-grid">
+<select id="brand">
+    <option value="">كل الماركات</option>
+</select>
 
-        <input
-            type="text"
-            id="searchInput"
-            placeholder="اسم القطعة أو رقم المرجع..."
-        >
+<select id="model">
+    <option value="">كل السيارات</option>
+</select>
 
-        <select id="brandSelect">
-            <option value="">كل الماركات</option>
-        </select>
+<select id="engine">
+    <option value="">كل المحركات</option>
+</select>
 
-        <select id="modelSelect">
-            <option value="">كل السيارات</option>
-        </select>
+<input
+    id="search"
+    type="text"
+    placeholder="اسم القطعة أو رقم المرجع..."
 
-        <select id="engineSelect">
-            <option value="">كل المحركات</option>
-        </select>
 
-        <button
-            class="search-btn"
-            onclick="filterParts()">
-            🔍 بحث
-        </button>
+<button class="search-btn" onclick="searchParts()">
+    🔍 بحث
+</button>
 
-        <button
-            class="reset-btn"
-            onclick="resetSearch()">
-            إعادة ضبط
-        </button>
+<button class="reset-btn" onclick="resetSearch()">
+    إعادة ضبط
+</button>
 
-    </div>
+</div>
+
+
+<div class="count">
+    <span id="count">0 قطعة</span>
+</div>
+
+
+<h2 id="catalog" class="catalog-title">
+    كتالوج قطع الغيار
+</h2>
+
+
+<div id="parts" class="parts"></div>
+
+
+<section id="contact" class="contact">
+
+<h2>📞 تواصل مع BK AUTO</h2>
+
+<p>للاستفسار عن توفر القطعة والمرجع</p>
+
+<span class="phone">0556419934</span>
+
+<div class="contact-buttons">
+
+<a
+class="contact-call"
+href="tel:0556419934">
+📞 اتصال
+</a>
+
+<a
+class="contact-whatsapp"
+href="https://wa.me/213556419934"
+target="_blank">
+💬 WhatsApp
+</a>
+
+</div>
 
 </section>
 
 
-<!-- CATALOG -->
+<footer>
 
-<main class="container" id="catalog">
-
-    <div class="catalog-header">
-
-        <h2>كتالوج قطع الغيار</h2>
-
-        <div class="count">
-            <span id="count">0</span> قطعة
-        </div>
-
-    </div>
-
-
-    <div id="partsGrid" class="parts-grid"></div>
-
-
-    <div id="noResults" class="no-results">
-
-        <strong>لم يتم العثور على القطعة</strong>
-
-        <span>
-            جرّب البحث باسم آخر أو رقم مرجع مختلف.
-        </span>
-
-    </div>
-
-</main>
-
-
-<!-- FOOTER -->
-
-<footer id="contact">
-
-    <div class="footer-logo">
-        BK <span>AUTO</span>
-    </div>
-
-    <p>قطع غيار السيارات</p>
-
-    <p>Renault • Peugeot • Dacia</p>
-
-    <a
-        class="phone-footer"
-        href="tel:0556419934">
-        📞 0556419934
-    </a>
-
-    <p style="margin-top:20px;">
-        © 2026 BK AUTO - جميع الحقوق محفوظة
-    </p>
+© 2026 BK AUTO - جميع الحقوق محفوظة
 
 </footer>
 
 
 <script>
 
-/* =========================================================
+/* =========================================
    بيانات قطع الغيار
-   يمكنك إضافة أي قطعة جديدة هنا
-========================================================= */
+   أضف أي قطعة جديدة هنا
+========================================= */
 
 const parts = [
 
-    {
-        brand:"Peugeot",
-        model:"206",
-        engine:"Essence 1.4",
-        name:"Pompe à eau",
-        ref:"1201.A1"
-    },
+{
+    brand:"Peugeot",
+    model:"206",
+    engine:"Essence 1.4",
+    name:"Pompe à eau",
+    ref:"1201.A1"
+},
 
-    {
-        brand:"Peugeot",
-        model:"Bipper",
-        engine:"HDI 1.4",
-        name:"Joint guide soupape",
-        ref:"1654507180"
-    },
+{
+    brand:"Peugeot",
+    model:"Bipper",
+    engine:"HDI 1.4",
+    name:"Joint guide soupape",
+    ref:"1654507180"
+},
 
-    {
-        brand:"Dacia",
-        model:"Stepway",
-        engine:"1.6 Essence",
-        name:"Kit embrayage",
-        ref:"-"
-    },
+{
+    brand:"Dacia",
+    model:"Stepway",
+    engine:"1.6 Essence",
+    name:"Kit embrayage",
+    ref:"-"
+},
 
-    {
-        brand:"Renault",
-        model:"Clio",
-        engine:"1.2 16V",
-        name:"Pompe à eau",
-        ref:"-"
-    },
+{
+    brand:"Renault",
+    model:"Symbol",
+    engine:"1.2 16V",
+    name:"Joint spi vilebrequin",
+    ref:"-"
+},
 
-    {
-        brand:"Renault",
-        model:"Symbol",
-        engine:"1.2 16V",
-        name:"Joint spi vilebrequin",
-        ref:"-"
-    },
+{
+    brand:"Renault",
+    model:"Logan",
+    engine:"1.6 Essence",
+    name:"Kit embrayage",
+    ref:"302052617R"
+},
 
-    {
-        brand:"Renault",
-        model:"Symbol",
-        engine:"1.6 Essence",
-        name:"Kit embrayage",
-        ref:"-"
-    },
+{
+    brand:"Renault",
+    model:"Clio",
+    engine:"1.2 16V",
+    name:"Pompe à eau",
+    ref:"-"
+},
 
-    {
-        brand:"Dacia",
-        model:"Logan",
-        engine:"1.6 Essence",
-        name:"Kit embrayage",
-        ref:"-"
-    },
+{
+    brand:"Renault",
+    model:"Kangoo",
+    engine:"1.9 D",
+    name:"Joint spi vilebrequin",
+    ref:"80.105.8"
+},
 
-    {
-        brand:"Dacia",
-        model:"Logan",
-        engine:"1.4 Essence",
-        name:"Roulement arrière",
-        ref:"-"
-    },
+{
+    brand:"Renault",
+    model:"Kangoo",
+    engine:"1.5 dCi",
+    name:"Kit embrayage",
+    ref:"-"
+},
 
-    {
-        brand:"Peugeot",
-        model:"207",
-        engine:"1.6 HDI",
-        name:"Kit embrayage",
-        ref:"302052617R"
-    },
+{
+    brand:"Peugeot",
+    model:"208",
+    engine:"1.6 HDI",
+    name:"Kit embrayage",
+    ref:"-"
+},
 
-    {
-        brand:"Renault",
-        model:"Kangoo",
-        engine:"1.9 D",
-        name:"Joint spi vilebrequin",
-        ref:"80.105.8"
-    },
+{
+    brand:"Peugeot",
+    model:"301",
+    engine:"1.6 HDI",
+    name:"Jauge huile",
+    ref:"-"
+},
 
-    {
-        brand:"Renault",
-        model:"Kangoo",
-        engine:"1.5 DCI",
-        name:"Kit embrayage",
-        ref:"-"
-    },
+{
+    brand:"Peugeot",
+    model:"301",
+    engine:"1.6 VTi",
+    name:"Jauge huile",
+    ref:"-"
+},
 
-    {
-        brand:"Renault",
-        model:"Clio",
-        engine:"1.9 D",
-        name:"Kit embrayage",
-        ref:"-"
-    },
+{
+    brand:"Renault",
+    model:"Clio 4",
+    engine:"1.5 dCi",
+    name:"Plaquettes de frein",
+    ref:"-"
+},
 
-    {
-        brand:"Peugeot",
-        model:"208",
-        engine:"1.6 HDI",
-        name:"Kit embrayage",
-        ref:"-"
-    },
+{
+    brand:"Renault",
+    model:"Megane 2",
+    engine:"1.5 dCi",
+    name:"Roulement arrière",
+    ref:"-"
+},
 
-    {
-        brand:"Peugeot",
-        model:"301",
-        engine:"1.6 VTI",
-        name:"Jauge huile",
-        ref:"-"
-    },
-
-    {
-        brand:"Peugeot",
-        model:"301",
-        engine:"1.6 HDI",
-        name:"Jauge huile",
-        ref:"-"
-    },
-
-    {
-        brand:"Renault",
-        model:"Mégane 2",
-        engine:"1.5 DCI",
-        name:"Roulement arrière",
-        ref:"20060 SIF"
-    },
-
-    {
-        brand:"Renault",
-        model:"Mégane 2",
-        engine:"1.9 D",
-        name:"Triangle",
-        ref:"-"
-    },
-
-    {
-        brand:"Volkswagen",
-        model:"Golf 7",
-        engine:"2.0 TDI",
-        name:"Courroie alternateur",
-        ref:"-"
-    },
-
-    {
-        brand:"Skoda",
-        model:"Octavia",
-        engine:"1.9 TDI",
-        name:"Pièce moteur",
-        ref:"-"
-    },
-
-    {
-        brand:"Dacia",
-        model:"Stepway",
-        engine:"1.6 Essence",
-        name:"Pièce moteur",
-        ref:"-"
-    }
+{
+    brand:"Volkswagen",
+    model:"Golf 7",
+    engine:"2.0 TDI",
+    name:"Courroie alternateur",
+    ref:"-"
+}
 
 ];
 
 
-/* =========================================================
-   رقم الهاتف
-========================================================= */
+/* =========================================
+   العناصر
+========================================= */
 
-const phoneNumber = "0556419934";
+const partsContainer =
+document.getElementById("parts");
 
-/* رقم واتساب بالصيغة الدولية بدون + */
+const brandSelect =
+document.getElementById("brand");
 
-const whatsappNumber = "213556419934";
+const modelSelect =
+document.getElementById("model");
 
+const engineSelect =
+document.getElementById("engine");
 
-/* =========================================================
-   عناصر الصفحة
-========================================================= */
+const searchInput =
+document.getElementById("search");
 
-const searchInput = document.getElementById("searchInput");
-const brandSelect = document.getElementById("brandSelect");
-const modelSelect = document.getElementById("modelSelect");
-const engineSelect = document.getElementById("engineSelect");
-const partsGrid = document.getElementById("partsGrid");
-const count = document.getElementById("count");
-const noResults = document.getElementById("noResults");
+const count =
+document.getElementById("count");
 
 
-/* =========================================================
-   إنشاء القوائم
-========================================================= */
+/* =========================================
+   تعبئة القوائم
+========================================= */
 
 function fillSelect(select, values, defaultText){
 
-    const oldValue = select.value;
-
     select.innerHTML =
-        <option value="">${defaultText}</option>;
+    <option value="">${defaultText}</option>;
 
     values.forEach(value => {
 
-        const option = document.createElement("option");
+        const option =
+        document.createElement("option");
 
         option.value = value;
         option.textContent = value;
@@ -791,36 +635,53 @@ function fillSelect(select, values, defaultText){
 
     });
 
-    if(values.includes(oldValue)){
-        select.value = oldValue;
-    }
-
 }
 
 
-/* =========================================================
-   تعبئة الماركات والسيارات والمحركات
-========================================================= */
+/* =========================================
+   تحديث الفلاتر
+========================================= */
 
 function updateFilters(){
 
-    const brands = [
-        ...new Set(parts.map(p => p.brand))
-    ].sort();
+    const selectedBrand =
+    brandSelect.value;
 
-    const models = [
-        ...new Set(parts.map(p => p.model))
-    ].sort();
+    const selectedModel =
+    modelSelect.value;
 
-    const engines = [
-        ...new Set(parts.map(p => p.engine))
-    ].sort();
+    let filtered = parts;
 
-    fillSelect(
-        brandSelect,
-        brands,
-        "كل الماركات"
-    );
+    if(selectedBrand){
+
+        filtered =
+        filtered.filter(
+            p => p.brand === selectedBrand
+        );
+
+    }
+
+    if(selectedModel){
+
+        filtered =
+        filtered.filter(
+            p => p.model === selectedModel
+        );
+
+    }
+
+    const models =
+    [...new Set(
+        filtered.map(p => p.model)
+    )].sort();
+
+    const engines =
+    [...new Set(
+        filtered.map(p => p.engine)
+    )].sort();
+
+    const currentModel =
+    modelSelect.value;
 
     fillSelect(
         modelSelect,
@@ -828,306 +689,265 @@ function updateFilters(){
         "كل السيارات"
     );
 
+    if(models.includes(currentModel)){
+        modelSelect.value = currentModel;
+    }
+
+    const currentEngine =
+    engineSelect.value;
+
     fillSelect(
         engineSelect,
         engines,
         "كل المحركات"
     );
 
+    if(engines.includes(currentEngine)){
+        engineSelect.value = currentEngine;
+    }
+
 }
 
 
-/* =========================================================
+/* =========================================
    عرض القطع
-========================================================= */
+========================================= */
 
 function renderParts(data){
 
-    partsGrid.innerHTML = "";
+    partsContainer.innerHTML = "";
 
-    count.textContent = data.length;
+    count.textContent =
+    ${data.length} قطعة;
 
     if(data.length === 0){
 
-        noResults.style.display = "block";
+        partsContainer.innerHTML = `
+        <div class="no-results">
+            ❌ لم يتم العثور على القطعة
+            <br>
+            جرّب اسمًا آخر أو رقم مرجع مختلف
+        </div>
+        `;
 
         return;
-
     }
-
-    noResults.style.display = "none";
 
 
     data.forEach(part => {
 
-        const card = document.createElement("article");
+        const card =
+        document.createElement("div");
 
         card.className = "card";
 
-
-        const message =
-            "السلام عليكم، أريد الاستفسار عن: " +
-            part.name +
-            " - " +
-            part.brand +
-            " " +
-            part.model +
-            " - " +
-            part.engine +
-            " - المرجع: " +
-            (part.ref || "-");
-
-
-        const whatsapp =
-            "https://wa.me/" +
-            whatsappNumber +
-            "?text=" +
-            encodeURIComponent(message);
-
-
         card.innerHTML = `
 
-            <div class="card-top">
+            <span class="badge">
+                ${part.brand}
+            </span>
 
-                <div class="part-name">
-                    ${escapeHTML(part.name)}
-                </div>
-
-                <div class="ref">
-                    REF: ${escapeHTML(part.ref || "-")}
-                </div>
-
-            </div>
-
+            <h3>
+                ${part.name}
+            </h3>
 
             <div class="info">
 
-                <div class="info-row">
-
-                    <span class="label">
-                        الماركة
-                    </span>
-
-                    <span class="value brand">
-                        ${escapeHTML(part.brand)}
-                    </span>
-
+                <div>
+                    🚗 السيارة:
+                    <strong>${part.model}</strong>
                 </div>
 
-
-                <div class="info-row">
-
-                    <span class="label">
-                        السيارة
-                    </span>
-
-                    <span class="value model">
-                        ${escapeHTML(part.model)}
-                    </span>
-
-                </div>
-
-
-                <div class="info-row">
-
-                    <span class="label">
-                        المحرك
-                    </span>
-
-                    <span class="value engine">
-                        ${escapeHTML(part.engine)}
-                    </span>
-
+                <div>
+                    ⚙️ المحرك:
+                    <strong>${part.engine}</strong>
                 </div>
 
             </div>
 
+            <div class="ref">
+                REF:
+                ${part.ref}
+            </div>
 
-            <div class="actions">
+            <div class="card-buttons">
 
                 <a
-                    href="tel:${phoneNumber}"
-                    style="text-decoration:none">
-
-                    <button
-                        class="call-btn"
-                        style="width:100%">
-
-                        📞 اتصال
-
-                    </button>
-
+                class="call"
+                href="tel:0556419934">
+                📞 اتصال
                 </a>
 
-
                 <a
-                    href="${whatsapp}"
-                    target="_blank"
-                    style="text-decoration:none">
-
-                    <button
-                        class="whatsapp-btn"
-                        style="width:100%">
-
-                        💬 WhatsApp
-
-                    </button>
-
+                class="whatsapp"
+                href="https://wa.me/213556419934?text=${encodeURIComponent(
+                "السلام عليكم، أريد الاستفسار عن قطعة: "
+                + part.name
+                + " - "
+                + part.model
+                + " - "
+                + part.engine
+                + " - REF: "
+                + part.ref
+                )}"
+                target="_blank">
+                WhatsApp
                 </a>
 
             </div>
-
         `;
 
-
-        partsGrid.appendChild(card);
+        partsContainer.appendChild(card);
 
     });
 
 }
 
 
-/* =========================================================
-   حماية النصوص
-========================================================= */
-
-function escapeHTML(text){
-
-    return String(text ?? "")
-        .replace(/&/g,"&amp;")
-        .replace(/</g,"&lt;")
-        .replace(/>/g,"&gt;")
-        .replace(/"/g,"&quot;")
-        .replace(/'/g,"&#039;");
-
-}
-
-
-/* =========================================================
+/* =========================================
    البحث
-========================================================= */
+========================================= */
 
-function filterParts(){
+function searchParts(){
 
-    const search =
-        searchInput.value
-        .trim()
-        .toLowerCase();
-
+    const text =
+    searchInput.value
+    .trim()
+    .toLowerCase();
 
     const brand =
-        brandSelect.value;
-
+    brandSelect.value;
 
     const model =
-        modelSelect.value;
-
+    modelSelect.value;
 
     const engine =
-        engineSelect.value;
+    engineSelect.value;
 
 
-    const filtered =
-        parts.filter(part => {
+    const result =
+    parts.filter(part => {
 
-            const searchable = (
+        const matchesText =
 
-                part.name + " " +
-                part.ref + " " +
-                part.brand + " " +
-                part.model + " " +
-                part.engine
+        !text ||
 
-            ).toLowerCase();
+        part.name.toLowerCase().includes(text) ||
 
+        part.ref.toLowerCase().includes(text) ||
 
-            const searchMatch =
-                !search ||
-                searchable.includes(search);
+        part.model.toLowerCase().includes(text) ||
 
+        part.engine.toLowerCase().includes(text) ||
 
-            const brandMatch =
-                !brand ||
-                part.brand === brand;
+        part.brand.toLowerCase().includes(text);
 
 
-            const modelMatch =
-                !model ||
-                part.model === model;
+        const matchesBrand =
+        !brand ||
+        part.brand === brand;
+
+        const matchesModel =
+        !model ||
+        part.model === model;
+
+        const matchesEngine =
+        !engine ||
+        part.engine === engine;
 
 
-            const engineMatch =
-                !engine ||
-                part.engine === engine;
+        return (
+            matchesText &&
+            matchesBrand &&
+            matchesModel &&
+            matchesEngine
+        );
+
+    });
 
 
-            return (
-                searchMatch &&
-                brandMatch &&
-                modelMatch &&
-                engineMatch
-            );
-
-        });
-
-
-    renderParts(filtered);
+    renderParts(result);
 
 }
 
 
-/* =========================================================
-   إعادة ضبط
-========================================================= */
+/* =========================================
+   إعادة الضبط
+========================================= */
 
 function resetSearch(){
 
+    brandSelect.value = "";
+    modelSelect.value = "";
+    engineSelect.value = "";
     searchInput.value = "";
 
-    brandSelect.value = "";
-
-    modelSelect.value = "";
-
-    engineSelect.value = "";
+    updateFilters();
 
     renderParts(parts);
 
 }
 
 
-/* =========================================================
-   البحث مباشرة أثناء الكتابة
-========================================================= */
-
-searchInput.addEventListener(
-    "input",
-    filterParts
-);
-
-
-/* =========================================================
-   تغيير الفلاتر
-========================================================= */
+/* =========================================
+   أحداث القوائم
+========================================= */
 
 brandSelect.addEventListener(
     "change",
-    filterParts
+    function(){
+
+        modelSelect.value = "";
+        engineSelect.value = "";
+
+        updateFilters();
+
+        searchParts();
+
+    }
 );
+
 
 modelSelect.addEventListener(
     "change",
-    filterParts
+    function(){
+
+        engineSelect.value = "";
+
+        updateFilters();
+
+        searchParts();
+
+    }
 );
+
 
 engineSelect.addEventListener(
     "change",
-    filterParts
+    searchParts
 );
 
 
-/* =========================================================
+searchInput.addEventListener(
+    "keyup",
+    searchParts
+);
+
+
+/* =========================================
    تشغيل الموقع
-========================================================= */
+========================================= */
+
+const brands =
+[...new Set(
+    parts.map(p => p.brand)
+)].sort();
+
+fillSelect(
+    brandSelect,
+    brands,
+    "كل الماركات"
+);
 
 updateFilters();
 
