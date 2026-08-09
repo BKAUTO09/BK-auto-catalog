@@ -6,7 +6,8 @@
 
 <title>BK AUTO | كتالوج قطع غيار السيارات</title>
 
-<meta name="description" content="BK AUTO - كتالوج قطع غيار Renault Peugeot Dacia - قطع غيار السيارات في الجزائر">
+<meta name="description"
+content="BK AUTO - كتالوج قطع غيار Renault Peugeot Dacia في الجزائر">
 
 <style>
 *{
@@ -17,326 +18,287 @@
 
 body{
     font-family:Arial,Tahoma,sans-serif;
-    background:#090909;
+    background:#080808;
     color:#fff;
     min-height:100vh;
 }
 
 header{
-    background:
-    radial-gradient(circle at top,#272727,#0a0a0a 65%);
-    padding:35px 15px 25px;
     text-align:center;
-    border-bottom:2px solid #e50914;
+    padding:35px 15px 25px;
+    background:
+    radial-gradient(circle at center,#242424 0,#080808 65%);
+    border-bottom:2px solid #e60012;
 }
 
 .logo{
-    font-size:46px;
+    font-size:42px;
     font-weight:900;
     letter-spacing:-2px;
 }
 
 .logo span{
-    color:#e50914;
+    color:#e60012;
 }
 
 .subtitle{
-    font-size:19px;
     margin-top:8px;
+    font-size:19px;
     color:#ddd;
 }
 
 .brands{
     margin-top:8px;
     color:#aaa;
-    font-size:14px;
+    font-size:15px;
 }
 
 .phone{
     display:inline-block;
     margin-top:18px;
-    background:#e50914;
-    color:white;
-    text-decoration:none;
-    padding:14px 30px;
+    padding:14px 28px;
+    background:#e60012;
+    color:#fff;
     border-radius:10px;
-    font-size:20px;
+    font-size:21px;
     font-weight:bold;
-    box-shadow:0 5px 20px rgba(229,9,20,.25);
+    text-decoration:none;
+    box-shadow:0 5px 20px rgba(230,0,18,.25);
+}
+
+.phone:hover{
+    background:#ff1d2e;
 }
 
 .container{
-    width:95%;
-    max-width:1450px;
-    margin:25px auto;
-}
-
-.search-box{
-    background:#111;
-    border:1px solid #333;
-    border-radius:15px;
-    padding:20px;
-    margin-bottom:25px;
-}
-
-.search-input{
-    width:100%;
-    background:#181818;
-    border:1px solid #555;
-    color:#fff;
-    padding:16px;
-    border-radius:10px;
-    font-size:16px;
-    outline:none;
-    margin-bottom:15px;
-}
-
-.search-input:focus{
-    border-color:#e50914;
+    width:94%;
+    max-width:1400px;
+    margin:auto;
 }
 
 .filters{
+    margin-top:25px;
+    padding:20px;
+    background:#111;
+    border:1px solid #292929;
+    border-radius:14px;
+}
+
+.search{
+    width:100%;
+    padding:16px;
+    border-radius:10px;
+    border:1px solid #333;
+    background:#181818;
+    color:white;
+    font-size:17px;
+    outline:none;
+}
+
+.search:focus{
+    border-color:#e60012;
+}
+
+.filter-grid{
     display:grid;
     grid-template-columns:repeat(3,1fr);
     gap:12px;
+    margin-top:15px;
 }
 
 select{
     width:100%;
-    background:#181818;
-    color:white;
-    border:1px solid #444;
     padding:14px;
     border-radius:9px;
-    font-size:15px;
+    border:1px solid #333;
+    background:#181818;
+    color:#fff;
+    font-size:16px;
     outline:none;
 }
 
-select:focus{
-    border-color:#e50914;
-}
-
-.reset{
-    margin-top:14px;
+button{
     width:100%;
-    border:0;
-    background:#e50914;
-    color:white;
     padding:14px;
+    border:none;
     border-radius:9px;
+    background:#e60012;
+    color:#fff;
     font-size:16px;
-    cursor:pointer;
     font-weight:bold;
+    cursor:pointer;
 }
 
-.reset:hover{
-    background:#ff1724;
+button:hover{
+    background:#ff182a;
 }
 
 .info{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    margin:20px 0;
-    padding:15px 18px;
-    background:#111;
-    border-right:4px solid #e50914;
-    border-radius:8px;
+    margin:20px 0 15px;
+    gap:10px;
+    flex-wrap:wrap;
 }
 
 .count{
-    color:#ff3340;
+    color:#ff2637;
     font-weight:bold;
     font-size:18px;
 }
 
-.catalog{
+.available{
+    color:#25d366;
+}
+
+.products{
     display:grid;
     grid-template-columns:repeat(4,1fr);
     gap:18px;
+    padding-bottom:40px;
 }
 
 .card{
-    background:#151515;
+    position:relative;
+    background:#121212;
     border:1px solid #292929;
     border-radius:14px;
     overflow:hidden;
     transition:.25s;
-    box-shadow:0 5px 20px rgba(0,0,0,.25);
+    box-shadow:0 5px 18px rgba(0,0,0,.25);
 }
 
 .card:hover{
     transform:translateY(-5px);
-    border-color:#e50914;
-    box-shadow:0 10px 30px rgba(229,9,20,.12);
+    border-color:#e60012;
+    box-shadow:0 10px 30px rgba(230,0,18,.15);
 }
 
-.image-box{
+.image-wrap{
+    position:relative;
     height:210px;
     background:#222;
-    position:relative;
     overflow:hidden;
 }
 
-.image-box img{
+.image-wrap img{
     width:100%;
     height:100%;
     object-fit:cover;
     display:block;
-    transition:.3s;
-}
-
-.card:hover .image-box img{
-    transform:scale(1.06);
 }
 
 .status{
     position:absolute;
-    top:12px;
-    right:12px;
+    top:10px;
+    right:10px;
+    background:#17c964;
+    color:white;
     padding:6px 11px;
-    background:#16c763;
-    color:#fff;
     border-radius:20px;
-    font-size:12px;
+    font-size:13px;
     font-weight:bold;
-    z-index:2;
+    box-shadow:0 2px 8px rgba(0,0,0,.3);
 }
 
-.status.off{
-    background:#777;
+.card-body{
+    padding:15px;
 }
 
-.content{
-    padding:16px;
-}
-
-.part-type{
-    color:#e50914;
-    font-size:12px;
+.category{
+    color:#e60012;
+    font-size:13px;
     font-weight:bold;
-    margin-bottom:8px;
+    margin-bottom:7px;
 }
 
-.part-name-fr{
-    font-size:18px;
+.name-ar{
+    font-size:19px;
     font-weight:bold;
-    color:#fff;
-    margin-bottom:5px;
+    margin-bottom:4px;
 }
 
-.part-name-ar{
-    color:#ccc;
+.name-fr{
+    color:#bbb;
     font-size:15px;
     margin-bottom:12px;
 }
 
 .brand{
     display:inline-block;
-    background:#252525;
-    border:1px solid #444;
-    color:#fff;
-    padding:5px 9px;
+    padding:6px 9px;
+    background:#222;
+    border:1px solid #3a3a3a;
     border-radius:6px;
-    font-size:12px;
-    margin-bottom:12px;
+    color:#ddd;
+    font-size:13px;
+    margin-bottom:10px;
 }
 
 .compatible{
-    border-top:1px solid #2c2c2c;
-    padding-top:12px;
-}
-
-.compatible-title{
-    color:#999;
-    font-size:12px;
-    margin-bottom:7px;
-}
-
-.cars{
-    color:#eee;
-    font-size:13px;
+    color:#ccc;
+    font-size:14px;
     line-height:1.7;
 }
 
-.call-btn{
-    display:block;
-    text-align:center;
-    text-decoration:none;
-    margin-top:13px;
-    padding:11px;
-    border-radius:8px;
-    background:#222;
+.compatible strong{
     color:#fff;
-    border:1px solid #444;
-    font-weight:bold;
 }
 
-.call-btn:hover{
-    background:#e50914;
-    border-color:#e50914;
-}
-
-.empty{
-    display:none;
+.no-results{
+    grid-column:1/-1;
     text-align:center;
-    padding:60px 20px;
-    color:#aaa;
+    padding:50px 20px;
     background:#111;
     border-radius:12px;
+    color:#aaa;
     font-size:18px;
 }
 
 footer{
-    margin-top:45px;
-    padding:30px 15px;
     text-align:center;
-    background:#111;
-    border-top:1px solid #333;
-    color:#aaa;
+    border-top:1px solid #222;
+    padding:30px 15px;
+    color:#888;
+    background:#050505;
 }
 
 footer strong{
-    color:#e50914;
+    color:#e60012;
 }
 
 @media(max-width:1100px){
-    .catalog{
+    .products{
         grid-template-columns:repeat(3,1fr);
     }
 }
 
 @media(max-width:800px){
-    .filters{
-        grid-template-columns:1fr;
-    }
-
-    .catalog{
+    .products{
         grid-template-columns:repeat(2,1fr);
     }
 
-    .logo{
-        font-size:38px;
-    }
-}
-
-@media(max-width:520px){
-    .container{
-        width:94%;
-    }
-
-    .catalog{
+    .filter-grid{
         grid-template-columns:1fr;
     }
 
-    .image-box{
+    .logo{
+        font-size:34px;
+    }
+}
+
+@media(max-width:500px){
+    .products{
+        grid-template-columns:1fr;
+    }
+
+    .image-wrap{
         height:230px;
     }
 
-    .info{
-        flex-direction:column;
-        gap:8px;
-        text-align:center;
+    .phone{
+        font-size:18px;
     }
 }
 </style>
@@ -359,1543 +321,1498 @@ footer strong{
     </div>
 
     <a class="phone" href="tel:0556419934">
-        📞 0556419934
+        0556419934 ☎
     </a>
 
 </header>
 
+<main class="container">
 
-<div class="container">
+<section class="filters">
 
-    <section class="search-box">
+    <input
+        id="search"
+        class="search"
+        type="text"
+        placeholder="🔎 ابحث باسم القطعة أو السيارة أو العلامة..."
+    >
 
-        <input
-            id="search"
-            class="search-input"
-            type="text"
-            placeholder="🔎 ابحث عن القطعة أو اسمها بالفرنسية أو العربية أو السيارة..."
-        >
+    <div class="filter-grid">
 
-        <div class="filters">
+        <select id="brandFilter">
+            <option value="">كل الماركات</option>
+            <option value="Renault">Renault</option>
+            <option value="Peugeot">Peugeot</option>
+            <option value="Dacia">Dacia</option>
+        </select>
 
-            <select id="brandFilter">
-                <option value="">كل الماركات</option>
-                <option value="Renault">Renault</option>
-                <option value="Peugeot">Peugeot</option>
-                <option value="Dacia">Dacia</option>
-            </select>
+        <select id="carFilter">
+            <option value="">كل السيارات</option>
+        </select>
 
-            <select id="carFilter">
-                <option value="">كل السيارات</option>
-            </select>
+        <select id="partFilter">
+            <option value="">كل القطع</option>
+        </select>
 
-            <select id="typeFilter">
-                <option value="">كل القطع</option>
-            </select>
-
-        </div>
-
-        <button class="reset" onclick="resetFilters()">
-            ↻ إعادة ضبط البحث
-        </button>
-
-    </section>
-
-
-    <div class="info">
-        <div>عدد القطع في الكتالوج</div>
-        <div class="count" id="count">0 قطعة</div>
     </div>
 
+    <br>
 
-    <div id="catalog" class="catalog"></div>
+    <button onclick="resetFilters()">
+        ↻ إعادة ضبط البحث
+    </button>
 
-    <div id="empty" class="empty">
-        ❌ لم يتم العثور على قطعة مطابقة للبحث
+</section>
+
+<div class="info">
+    <div id="count" class="count"></div>
+
+    <div class="available">
+        🟢 جميع القطع المعروضة متوفرة
     </div>
-
 </div>
 
+<section id="products" class="products"></section>
+
+</main>
 
 <footer>
-    <strong>BK AUTO</strong>
-    <br><br>
-    كتالوج قطع غيار Renault • Peugeot • Dacia
-    <br><br>
-    📞 0556419934
-</footer>
 
+    <div>
+        <strong>BK AUTO</strong>
+    </div>
+
+    <div style="margin-top:8px">
+        قطع غيار Renault • Peugeot • Dacia
+    </div>
+
+    <div style="margin-top:8px">
+        الهاتف: 0556419934
+    </div>
+
+</footer>
 
 <script>
 
-const parts = [
+/* =====================================================
+   قاعدة بيانات BK AUTO
+   120 قطعة
+   بدون مراجع
+===================================================== */
 
-/* ================= RENAULT ================= */
+const products = [
+
+/* ===================== RENAULT ===================== */
 
 {
 brand:"Renault",
-type:"Frein",
+part:"Frein",
+ar:"Plaquettes de frein avant",
 fr:"Plaquettes de frein avant",
-ar:"فحمات الفرامل الأمامية",
-maker:"FERODO",
-cars:"Clio 2 • Clio 3 • Symbol • Kangoo",
-image:"https://loremflickr.com/800/600/car,brake?lock=1"
-},
-
-{
-brand:"Renault",
-type:"Frein",
-fr:"Plaquettes de frein arrière",
-ar:"فحمات الفرامل الخلفية",
 maker:"TRW",
-cars:"Clio 2 • Clio 3 • Logan • Symbol",
-image:"https://loremflickr.com/800/600/car,brakes?lock=2"
+cars:"Clio 2 / Clio 3 / Symbol",
+image:"https://loremflickr.com/800/600/car,brake,pads?lock=101"
 },
 
 {
 brand:"Renault",
-type:"Frein",
+part:"Frein",
+ar:"Plaquettes de frein arrière",
+fr:"Plaquettes de frein arrière",
+maker:"BREMBO",
+cars:"Clio 2 / Clio 3 / Symbol",
+image:"https://loremflickr.com/800/600/car,brake,pads?lock=102"
+},
+
+{
+brand:"Renault",
+part:"Frein",
+ar:"Disque de frein avant",
 fr:"Disque de frein avant",
-ar:"قرص الفرامل الأمامي",
-maker:"BREMBO",
-cars:"Clio 2 • Clio 3 • Mégane 2 • Kangoo",
-image:"https://loremflickr.com/800/600/brake,disc?lock=3"
+maker:"TRW",
+cars:"Clio 2 / Clio 3 / Symbol",
+image:"https://loremflickr.com/800/600/car,brake,disc?lock=103"
 },
 
 {
 brand:"Renault",
-type:"Frein",
+part:"Frein",
+ar:"Disque de frein arrière",
 fr:"Disque de frein arrière",
-ar:"قرص الفرامل الخلفي",
 maker:"BREMBO",
-cars:"Mégane 2 • Mégane 3 • Laguna",
-image:"https://loremflickr.com/800/600/brake,disc?lock=4"
+cars:"Mégane 2 / Scénic 2",
+image:"https://loremflickr.com/800/600/car,brake,disc?lock=104"
 },
 
 {
 brand:"Renault",
-type:"Filtration",
-fr:"Filtre à huile",
-ar:"فلتر الزيت",
-maker:"PURFLUX",
-cars:"Clio • Symbol • Logan • Kangoo • Mégane",
-image:"https://loremflickr.com/800/600/oil,filter?lock=5"
-},
-
-{
-brand:"Renault",
-type:"Filtration",
-fr:"Filtre à air",
-ar:"فلتر الهواء",
-maker:"PURFLUX",
-cars:"Clio 2 • Clio 3 • Symbol • Logan",
-image:"https://loremflickr.com/800/600/air,filter?lock=6"
-},
-
-{
-brand:"Renault",
-type:"Filtration",
-fr:"Filtre habitacle",
-ar:"فلتر المقصورة",
-maker:"VALEO",
-cars:"Clio 3 • Mégane 2 • Mégane 3 • Scénic",
-image:"https://loremflickr.com/800/600/car,cabin?lock=7"
-},
-
-{
-brand:"Renault",
-type:"Filtration",
-fr:"Filtre à carburant",
-ar:"فلتر الوقود",
-maker:"PURFLUX",
-cars:"Clio • Symbol • Logan • Kangoo",
-image:"https://loremflickr.com/800/600/fuel,filter?lock=8"
-},
-
-{
-brand:"Renault",
-type:"Moteur",
-fr:"Pompe à eau",
-ar:"مضخة الماء",
-maker:"GRAF",
-cars:"Clio 2 • Clio 3 • Symbol • Logan",
-image:"https://loremflickr.com/800/600/water,pump,car?lock=9"
-},
-
-{
-brand:"Renault",
-type:"Moteur",
-fr:"Thermostat",
-ar:"منظم حرارة المحرك",
-maker:"GATES",
-cars:"Clio • Symbol • Logan • Kangoo • Mégane",
-image:"https://loremflickr.com/800/600/thermostat,car?lock=10"
-},
-
-{
-brand:"Renault",
-type:"Moteur",
-fr:"Courroie distribution",
-ar:"سير التوقيت",
-maker:"GATES",
-cars:"Clio • Symbol • Logan • Kangoo",
-image:"https://loremflickr.com/800/600/timing,belt?lock=11"
-},
-
-{
-brand:"Renault",
-type:"Moteur",
-fr:"Kit distribution",
-ar:"طقم سير التوقيت",
-maker:"GATES",
-cars:"Clio • Symbol • Logan • Kangoo",
-image:"https://loremflickr.com/800/600/timing,belt,kit?lock=12"
-},
-
-{
-brand:"Renault",
-type:"Moteur",
-fr:"Courroie accessoires",
-ar:"سير الملحقات",
-maker:"DAYCO",
-cars:"Clio • Symbol • Logan • Mégane • Kangoo",
-image:"https://loremflickr.com/800/600/serpentine,belt?lock=13"
-},
-
-{
-brand:"Renault",
-type:"Moteur",
-fr:"Tendeur courroie",
-ar:"شداد السير",
-maker:"INA",
-cars:"Clio • Symbol • Logan • Mégane",
-image:"https://loremflickr.com/800/600/belt,tensioner?lock=14"
-},
-
-{
-brand:"Renault",
-type:"Moteur",
-fr:"Bougie d'allumage",
-ar:"شمعة الإشعال",
-maker:"NGK",
-cars:"Clio • Symbol • Logan • Mégane",
-image:"https://loremflickr.com/800/600/spark,plug?lock=15"
-},
-
-{
-brand:"Renault",
-type:"Moteur",
-fr:"Bobine d'allumage",
-ar:"كويل الإشعال",
-maker:"BOSCH",
-cars:"Clio 2 • Clio 3 • Symbol • Mégane",
-image:"https://loremflickr.com/800/600/ignition,coil?lock=16"
-},
-
-{
-brand:"Renault",
-type:"Embrayage",
-fr:"Kit embrayage",
+part:"Embrayage",
 ar:"طقم القابض",
+fr:"Kit embrayage",
 maker:"VALEO",
-cars:"Clio • Symbol • Logan • Kangoo • Mégane",
-image:"https://loremflickr.com/800/600/clutch,car?lock=17"
+cars:"Clio 2 / Symbol / Kangoo",
+image:"https://loremflickr.com/800/600/car,clutch?lock=105"
 },
 
 {
 brand:"Renault",
-type:"Embrayage",
-fr:"Butée embrayage",
-ar:"رمانة القابض",
+part:"Embrayage",
+ar:"قرص القابض",
+fr:"Disque embrayage",
 maker:"SACHS",
-cars:"Clio • Symbol • Logan • Kangoo",
-image:"https://loremflickr.com/800/600/clutch,bearing?lock=18"
+cars:"Clio / Mégane / Kangoo",
+image:"https://loremflickr.com/800/600/car,clutch?lock=106"
 },
 
 {
 brand:"Renault",
-type:"Embrayage",
+part:"Embrayage",
+ar:"آلية القابض",
 fr:"Mécanisme embrayage",
-ar:"صحن القابض",
 maker:"VALEO",
-cars:"Clio • Symbol • Logan • Mégane",
-image:"https://loremflickr.com/800/600/clutch,plate?lock=19"
+cars:"Clio 2 / Symbol",
+image:"https://loremflickr.com/800/600/car,clutch?lock=107"
 },
 
 {
 brand:"Renault",
-type:"Embrayage",
-fr:"Disque embrayage",
-ar:"قرص القابض",
-maker:"VALEO",
-cars:"Clio • Symbol • Logan • Kangoo",
-image:"https://loremflickr.com/800/600/clutch,disc?lock=20"
+part:"Moteur",
+ar:"مضخة الماء",
+fr:"Pompe à eau",
+maker:"GRAF",
+cars:"Clio 2 / Clio 3 / Symbol",
+image:"https://loremflickr.com/800/600/car,water,pump?lock=108"
 },
 
 {
 brand:"Renault",
-type:"Direction",
-fr:"Rotule de direction",
-ar:"رأس المقود",
-maker:"TRW",
-cars:"Clio • Symbol • Logan • Mégane",
-image:"https://loremflickr.com/800/600/steering,ball,joint?lock=21"
-},
-
-{
-brand:"Renault",
-type:"Suspension",
-fr:"Triangle suspension",
-ar:"مثلث التعليق",
-maker:"DELPHI",
-cars:"Clio 2 • Clio 3 • Mégane 2 • Logan",
-image:"https://loremflickr.com/800/600/car,suspension?lock=22"
-},
-
-{
-brand:"Renault",
-type:"Suspension",
-fr:"Amortisseur avant",
-ar:"ممتص الصدمات الأمامي",
-maker:"MONROE",
-cars:"Clio • Symbol • Logan • Mégane",
-image:"https://loremflickr.com/800/600/shock,absorber?lock=23"
-},
-
-{
-brand:"Renault",
-type:"Suspension",
-fr:"Amortisseur arrière",
-ar:"ممتص الصدمات الخلفي",
-maker:"MONROE",
-cars:"Clio • Symbol • Logan • Kangoo",
-image:"https://loremflickr.com/800/600/shock,absorber,car?lock=24"
-},
-
-{
-brand:"Renault",
-type:"Suspension",
-fr:"Coupelle amortisseur",
-ar:"قاعدة ممتص الصدمات",
-maker:"SNR",
-cars:"Clio 2 • Clio 3 • Mégane",
-image:"https://loremflickr.com/800/600/strut,mount?lock=25"
-},
-
-{
-brand:"Renault",
-type:"Transmission",
-fr:"Cardan complet",
-ar:"عمود نقل الحركة",
-maker:"SKF",
-cars:"Clio • Symbol • Logan • Mégane",
-image:"https://loremflickr.com/800/600/cv,axle?lock=26"
-},
-
-{
-brand:"Renault",
-type:"Transmission",
-fr:"Soufflet de cardan",
-ar:"جلدة عمود نقل الحركة",
-maker:"SPIDAN",
-cars:"Clio • Symbol • Logan • Kangoo",
-image:"https://loremflickr.com/800/600/cv,boot?lock=27"
-},
-
-{
-brand:"Renault",
-type:"Transmission",
-fr:"Roulement de roue avant",
-ar:"رمانة العجلة الأمامية",
-maker:"SKF",
-cars:"Clio • Symbol • Logan • Mégane",
-image:"https://loremflickr.com/800/600/wheel,bearing?lock=28"
-},
-
-{
-brand:"Renault",
-type:"Transmission",
-fr:"Roulement de roue arrière",
-ar:"رمانة العجلة الخلفية",
-maker:"SKF",
-cars:"Clio • Symbol • Logan • Mégane",
-image:"https://loremflickr.com/800/600/wheel,bearing,car?lock=29"
-},
-
-{
-brand:"Renault",
-type:"Refroidissement",
-fr:"Radiateur moteur",
-ar:"رادياتور المحرك",
-maker:"NISSENS",
-cars:"Clio • Symbol • Logan • Kangoo",
-image:"https://loremflickr.com/800/600/car,radiator?lock=30"
-},
-
-{
-brand:"Renault",
-type:"Refroidissement",
-fr:"Ventilateur radiateur",
-ar:"مروحة الرادياتور",
-maker:"VALEO",
-cars:"Clio • Symbol • Logan • Mégane",
-image:"https://loremflickr.com/800/600/radiator,fan?lock=31"
-},
-
-{
-brand:"Renault",
-type:"Refroidissement",
-fr:"Durite radiateur",
-ar:"خرطوم الرادياتور",
+part:"Moteur",
+ar:"سير التوزيع",
+fr:"Courroie distribution",
 maker:"GATES",
-cars:"Clio • Symbol • Logan • Kangoo",
-image:"https://loremflickr.com/800/600/radiator,hose?lock=32"
+cars:"Clio 2 / Symbol / Kangoo",
+image:"https://loremflickr.com/800/600/car,timing,belt?lock=109"
 },
 
 {
 brand:"Renault",
-type:"Électricité",
-fr:"Alternateur",
-ar:"الدينامو",
-maker:"BOSCH",
-cars:"Clio • Symbol • Logan • Mégane",
-image:"https://loremflickr.com/800/600/car,alternator?lock=33"
+part:"Moteur",
+ar:"طقم سير التوزيع",
+fr:"Kit distribution",
+maker:"CONTITECH",
+cars:"Clio / Mégane / Kangoo",
+image:"https://loremflickr.com/800/600/car,timing,belt?lock=110"
 },
 
 {
 brand:"Renault",
-type:"Électricité",
-fr:"Démarreur",
-ar:"السلف",
-maker:"BOSCH",
-cars:"Clio • Symbol • Logan • Kangoo",
-image:"https://loremflickr.com/800/600/car,starter?lock=34"
+part:"Moteur",
+ar:"سير الملحقات",
+fr:"Courroie accessoires",
+maker:"GATES",
+cars:"Clio / Mégane / Symbol",
+image:"https://loremflickr.com/800/600/car,belt?lock=111"
 },
 
 {
 brand:"Renault",
-type:"Électricité",
+part:"Moteur",
+ar:"شداد السير",
+fr:"Galet tendeur",
+maker:"INA",
+cars:"Clio / Mégane / Kangoo",
+image:"https://loremflickr.com/800/600/car,tensioner?lock=112"
+},
+
+{
+brand:"Renault",
+part:"Moteur",
+ar:"فلتر الزيت",
+fr:"Filtre à huile",
+maker:"PURFLUX",
+cars:"Clio / Mégane / Symbol / Kangoo",
+image:"https://loremflickr.com/800/600/car,oil,filter?lock=113"
+},
+
+{
+brand:"Renault",
+part:"Moteur",
+ar:"فلتر الهواء",
+fr:"Filtre à air",
+maker:"PURFLUX",
+cars:"Clio / Mégane / Symbol",
+image:"https://loremflickr.com/800/600/car,air,filter?lock=114"
+},
+
+{
+brand:"Renault",
+part:"Moteur",
+ar:"فلتر الوقود",
+fr:"Filtre à carburant",
+maker:"PURFLUX",
+cars:"Clio / Mégane / Kangoo",
+image:"https://loremflickr.com/800/600/car,fuel,filter?lock=115"
+},
+
+{
+brand:"Renault",
+part:"Moteur",
+ar:"فلتر المقصورة",
+fr:"Filtre habitacle",
+maker:"PURFLUX",
+cars:"Clio / Mégane / Symbol",
+image:"https://loremflickr.com/800/600/car,cabin,filter?lock=116"
+},
+
+{
+brand:"Renault",
+part:"Moteur",
+ar:"بواجي",
+fr:"Bougies d'allumage",
+maker:"NGK",
+cars:"Clio 1.2 / Clio 1.4 / Symbol",
+image:"https://loremflickr.com/800/600/spark,plug,car?lock=117"
+},
+
+{
+brand:"Renault",
+part:"Moteur",
+ar:"شمعات التسخين",
+fr:"Bougies de préchauffage",
+maker:"BERU",
+cars:"Clio dCi / Mégane dCi / Kangoo dCi",
+image:"https://loremflickr.com/800/600/glow,plug,diesel?lock=118"
+},
+
+{
+brand:"Renault",
+part:"Moteur",
+ar:"حشية رأس المحرك",
+fr:"Joint de culasse",
+maker:"ELRING",
+cars:"Clio / Symbol / Mégane",
+image:"https://loremflickr.com/800/600/car,engine,gasket?lock=119"
+},
+
+{
+brand:"Renault",
+part:"Moteur",
+ar:"حشية غطاء الصمامات",
+fr:"Joint couvre-culasse",
+maker:"ELRING",
+cars:"Clio / Symbol / Mégane",
+image:"https://loremflickr.com/800/600/car,engine,gasket?lock=120"
+},
+
+{
+brand:"Renault",
+part:"Moteur",
+ar:"صوفة عمود المرفق",
+fr:"Joint spi vilebrequin",
+maker:"CORTECO",
+cars:"Clio / Symbol / Kangoo",
+image:"https://loremflickr.com/800/600/car,engine,seal?lock=121"
+},
+
+{
+brand:"Renault",
+part:"Suspension",
+ar:"مثلث التعليق",
+fr:"Triangle suspension",
+maker:"DELPHI",
+cars:"Clio 2 / Clio 3 / Symbol",
+image:"https://loremflickr.com/800/600/car,suspension,arm?lock=122"
+},
+
+{
+brand:"Renault",
+part:"Suspension",
+ar:"رأس المقص",
+fr:"Rotule suspension",
+maker:"TRW",
+cars:"Clio / Symbol / Mégane",
+image:"https://loremflickr.com/800/600/car,ball,joint?lock=123"
+},
+
+{
+brand:"Renault",
+part:"Suspension",
+ar:"رابط الميزان",
+fr:"Biellette barre stabilisatrice",
+maker:"LEMFÖRDER",
+cars:"Clio / Mégane / Scénic",
+image:"https://loremflickr.com/800/600/car,suspension?lock=124"
+},
+
+{
+brand:"Renault",
+part:"Suspension",
+ar:"مساعد أمامي",
+fr:"Amortisseur avant",
+maker:"MONROE",
+cars:"Clio / Symbol",
+image:"https://loremflickr.com/800/600/car,shock,absorber?lock=125"
+},
+
+{
+brand:"Renault",
+part:"Suspension",
+ar:"مساعد خلفي",
+fr:"Amortisseur arrière",
+maker:"MONROE",
+cars:"Clio / Symbol / Mégane",
+image:"https://loremflickr.com/800/600/car,shock,absorber?lock=126"
+},
+
+{
+brand:"Renault",
+part:"Direction",
+ar:"طرف التوجيه",
+fr:"Rotule de direction",
+maker:"TRW",
+cars:"Clio / Symbol / Mégane",
+image:"https://loremflickr.com/800/600/car,steering?lock=127"
+},
+
+{
+brand:"Renault",
+part:"Direction",
+ar:"رأس المقود الداخلي",
+fr:"Rotule axiale",
+maker:"DELPHI",
+cars:"Clio / Mégane / Symbol",
+image:"https://loremflickr.com/800/600/car,steering?lock=128"
+},
+
+{
+brand:"Renault",
+part:"Roulement",
+ar:"رولمان العجلة الأمامية",
+fr:"Roulement roue avant",
+maker:"SKF",
+cars:"Clio 2 / Clio 3 / Symbol",
+image:"https://loremflickr.com/800/600/car,wheel,bearing?lock=129"
+},
+
+{
+brand:"Renault",
+part:"Roulement",
+ar:"رولمان العجلة الخلفية",
+fr:"Roulement roue arrière",
+maker:"SKF",
+cars:"Clio / Symbol / Mégane",
+image:"https://loremflickr.com/800/600/car,wheel,bearing?lock=130"
+},
+
+{
+brand:"Renault",
+part:"Électricité",
+ar:"بطارية السيارة",
 fr:"Batterie",
-ar:"بطارية",
 maker:"VARTA",
-cars:"Clio • Symbol • Logan • Mégane",
-image:"https://loremflickr.com/800/600/car,battery?lock=35"
+cars:"Clio / Mégane / Symbol / Kangoo",
+image:"https://loremflickr.com/800/600/car,battery?lock=131"
 },
 
 {
 brand:"Renault",
-type:"Électricité",
-fr:"Capteur PMH",
-ar:"حساس موضع عمود المرفق",
+part:"Électricité",
+ar:"مولد الكهرباء",
+fr:"Alternateur",
 maker:"BOSCH",
-cars:"Clio • Symbol • Logan • Mégane",
-image:"https://loremflickr.com/800/600/car,sensor?lock=36"
+cars:"Clio / Mégane / Kangoo",
+image:"https://loremflickr.com/800/600/car,alternator?lock=132"
 },
 
 {
 brand:"Renault",
-type:"Électricité",
-fr:"Capteur température",
-ar:"حساس درجة الحرارة",
+part:"Électricité",
+ar:"موزع الكهرباء",
+fr:"Démarreur",
+maker:"BOSCH",
+cars:"Clio / Symbol / Mégane",
+image:"https://loremflickr.com/800/600/car,starter,motor?lock=133"
+},
+
+{
+brand:"Renault",
+part:"Refroidissement",
+ar:"رادياتور",
+fr:"Radiateur moteur",
+maker:"VALEO",
+cars:"Clio / Symbol / Mégane",
+image:"https://loremflickr.com/800/600/car,radiator?lock=134"
+},
+
+{
+brand:"Renault",
+part:"Refroidissement",
+ar:"ترموستات",
+fr:"Thermostat",
+maker:"GATES",
+cars:"Clio / Mégane / Symbol",
+image:"https://loremflickr.com/800/600/car,thermostat?lock=135"
+},
+
+{
+brand:"Renault",
+part:"Refroidissement",
+ar:"مروحة التبريد",
+fr:"Ventilateur refroidissement",
+maker:"VALEO",
+cars:"Clio / Symbol / Mégane",
+image:"https://loremflickr.com/800/600/car,cooling,fan?lock=136"
+},
+
+{
+brand:"Renault",
+part:"Transmission",
+ar:"رأس عمود نقل الحركة",
+fr:"Joint homocinétique",
+maker:"SKF",
+cars:"Clio / Symbol / Mégane",
+image:"https://loremflickr.com/800/600/car,cv,joint?lock=137"
+},
+
+{
+brand:"Renault",
+part:"Transmission",
+ar:"جلدة عمود نقل الحركة",
+fr:"Soufflet de cardan",
+maker:"SKF",
+cars:"Clio / Symbol / Kangoo",
+image:"https://loremflickr.com/800/600/car,cv,boot?lock=138"
+},
+
+{
+brand:"Renault",
+part:"Frein",
+ar:"مضخة الفرامل",
+fr:"Maître-cylindre frein",
+maker:"ATE",
+cars:"Clio / Symbol / Mégane",
+image:"https://loremflickr.com/800/600/car,brake,master,cylinder?lock=139"
+},
+
+{
+brand:"Renault",
+part:"Frein",
+ar:"أسطوانة الفرامل الخلفية",
+fr:"Cylindre de roue",
+maker:"TRW",
+cars:"Clio / Symbol",
+image:"https://loremflickr.com/800/600/car,brake,cylinder?lock=140"
+},
+
+/* ===================== PEUGEOT ===================== */
+
+{
+brand:"Peugeot",
+part:"Frein",
+ar:"Plaquettes de frein avant",
+fr:"Plaquettes de frein avant",
+maker:"TRW",
+cars:"206 / 207 / 208",
+image:"https://loremflickr.com/800/600/car,brake,pads?lock=201"
+},
+
+{
+brand:"Peugeot",
+part:"Frein",
+ar:"Plaquettes de frein arrière",
+fr:"Plaquettes de frein arrière",
+maker:"BREMBO",
+cars:"206 / 207 / 301",
+image:"https://loremflickr.com/800/600/car,brake,pads?lock=202"
+},
+
+{
+brand:"Peugeot",
+part:"Frein",
+ar:"قرص الفرامل الأمامي",
+fr:"Disque de frein avant",
+maker:"BREMBO",
+cars:"206 / 207 / 208 / 301",
+image:"https://loremflickr.com/800/600/car,brake,disc?lock=203"
+},
+
+{
+brand:"Peugeot",
+part:"Embrayage",
+ar:"طقم القابض",
+fr:"Kit embrayage",
+maker:"VALEO",
+cars:"206 / 207 / 208",
+image:"https://loremflickr.com/800/600/car,clutch?lock=204"
+},
+
+{
+brand:"Peugeot",
+part:"Embrayage",
+ar:"قرص القابض",
+fr:"Disque embrayage",
+maker:"SACHS",
+cars:"206 / 207 / 301",
+image:"https://loremflickr.com/800/600/car,clutch?lock=205"
+},
+
+{
+brand:"Peugeot",
+part:"Embrayage",
+ar:"آلية القابض",
+fr:"Mécanisme embrayage",
+maker:"VALEO",
+cars:"206 / 207 / 208",
+image:"https://loremflickr.com/800/600/car,clutch?lock=206"
+},
+
+{
+brand:"Peugeot",
+part:"Moteur",
+ar:"مضخة الماء",
+fr:"Pompe à eau",
+maker:"GRAF",
+cars:"206 / 207 / 208 / 301",
+image:"https://loremflickr.com/800/600/car,water,pump?lock=207"
+},
+
+{
+brand:"Peugeot",
+part:"Moteur",
+ar:"سير التوزيع",
+fr:"Courroie distribution",
+maker:"GATES",
+cars:"206 / 207 / 208 / 301",
+image:"https://loremflickr.com/800/600/car,timing,belt?lock=208"
+},
+
+{
+brand:"Peugeot",
+part:"Moteur",
+ar:"طقم التوزيع",
+fr:"Kit distribution",
+maker:"CONTITECH",
+cars:"206 / 207 / 301",
+image:"https://loremflickr.com/800/600/car,timing,belt?lock=209"
+},
+
+{
+brand:"Peugeot",
+part:"Moteur",
+ar:"سير الملحقات",
+fr:"Courroie accessoires",
+maker:"GATES",
+cars:"206 / 207 / 208 / 301",
+image:"https://loremflickr.com/800/600/car,belt?lock=210"
+},
+
+{
+brand:"Peugeot",
+part:"Moteur",
+ar:"فلتر الزيت",
+fr:"Filtre à huile",
+maker:"PURFLUX",
+cars:"206 / 207 / 208 / 301",
+image:"https://loremflickr.com/800/600/car,oil,filter?lock=211"
+},
+
+{
+brand:"Peugeot",
+part:"Moteur",
+ar:"فلتر الهواء",
+fr:"Filtre à air",
+maker:"PURFLUX",
+cars:"206 / 207 / 208 / 301",
+image:"https://loremflickr.com/800/600/car,air,filter?lock=212"
+},
+
+{
+brand:"Peugeot",
+part:"Moteur",
+ar:"فلتر الوقود",
+fr:"Filtre à carburant",
+maker:"PURFLUX",
+cars:"206 / 207 / 208 / 301",
+image:"https://loremflickr.com/800/600/car,fuel,filter?lock=213"
+},
+
+{
+brand:"Peugeot",
+part:"Moteur",
+ar:"فلتر المقصورة",
+fr:"Filtre habitacle",
+maker:"PURFLUX",
+cars:"206 / 207 / 208 / 301",
+image:"https://loremflickr.com/800/600/car,cabin,filter?lock=214"
+},
+
+{
+brand:"Peugeot",
+part:"Moteur",
+ar:"بواجي",
+fr:"Bougies d'allumage",
+maker:"NGK",
+cars:"206 / 207 / 208",
+image:"https://loremflickr.com/800/600/spark,plug,car?lock=215"
+},
+
+{
+brand:"Peugeot",
+part:"Moteur",
+ar:"شمعات التسخين",
+fr:"Bougies de préchauffage",
+maker:"BERU",
+cars:"206 HDi / 207 HDi / 301 HDi",
+image:"https://loremflickr.com/800/600/glow,plug,diesel?lock=216"
+},
+
+{
+brand:"Peugeot",
+part:"Moteur",
+ar:"حشية رأس المحرك",
+fr:"Joint de culasse",
+maker:"ELRING",
+cars:"206 / 207 / 208 / 301",
+image:"https://loremflickr.com/800/600/car,engine,gasket?lock=217"
+},
+
+{
+brand:"Peugeot",
+part:"Moteur",
+ar:"صوفة عمود المرفق",
+fr:"Joint spi vilebrequin",
+maker:"CORTECO",
+cars:"206 / 207 / 301",
+image:"https://loremflickr.com/800/600/car,engine,seal?lock=218"
+},
+
+{
+brand:"Peugeot",
+part:"Suspension",
+ar:"مثلث التعليق",
+fr:"Triangle suspension",
+maker:"DELPHI",
+cars:"206 / 207 / 208",
+image:"https://loremflickr.com/800/600/car,suspension,arm?lock=219"
+},
+
+{
+brand:"Peugeot",
+part:"Suspension",
+ar:"رأس المقص",
+fr:"Rotule suspension",
+maker:"TRW",
+cars:"206 / 207 / 208 / 301",
+image:"https://loremflickr.com/800/600/car,ball,joint?lock=220"
+},
+
+{
+brand:"Peugeot",
+part:"Suspension",
+ar:"رابط الميزان",
+fr:"Biellette barre stabilisatrice",
+maker:"LEMFÖRDER",
+cars:"206 / 207 / 208",
+image:"https://loremflickr.com/800/600/car,suspension?lock=221"
+},
+
+{
+brand:"Peugeot",
+part:"Suspension",
+ar:"مساعد أمامي",
+fr:"Amortisseur avant",
+maker:"MONROE",
+cars:"206 / 207 / 208",
+image:"https://loremflickr.com/800/600/car,shock,absorber?lock=222"
+},
+
+{
+brand:"Peugeot",
+part:"Suspension",
+ar:"مساعد خلفي",
+fr:"Amortisseur arrière",
+maker:"MONROE",
+cars:"206 / 207 / 301",
+image:"https://loremflickr.com/800/600/car,shock,absorber?lock=223"
+},
+
+{
+brand:"Peugeot",
+part:"Direction",
+ar:"طرف التوجيه",
+fr:"Rotule de direction",
+maker:"TRW",
+cars:"206 / 207 / 208 / 301",
+image:"https://loremflickr.com/800/600/car,steering?lock=224"
+},
+
+{
+brand:"Peugeot",
+part:"Direction",
+ar:"رأس المقود الداخلي",
+fr:"Rotule axiale",
+maker:"DELPHI",
+cars:"206 / 207 / 208",
+image:"https://loremflickr.com/800/600/car,steering?lock=225"
+},
+
+{
+brand:"Peugeot",
+part:"Roulement",
+ar:"رولمان العجلة الأمامية",
+fr:"Roulement roue avant",
+maker:"SKF",
+cars:"206 / 207 / 208",
+image:"https://loremflickr.com/800/600/car,wheel,bearing?lock=226"
+},
+
+{
+brand:"Peugeot",
+part:"Roulement",
+ar:"رولمان العجلة الخلفية",
+fr:"Roulement roue arrière",
+maker:"SKF",
+cars:"206 / 207 / 301",
+image:"https://loremflickr.com/800/600/car,wheel,bearing?lock=227"
+},
+
+{
+brand:"Peugeot",
+part:"Électricité",
+ar:"مولد الكهرباء",
+fr:"Alternateur",
+maker:"BOSCH",
+cars:"206 / 207 / 208 / 301",
+image:"https://loremflickr.com/800/600/car,alternator?lock=228"
+},
+
+{
+brand:"Peugeot",
+part:"Électricité",
+ar:"موزع الكهرباء",
+fr:"Démarreur",
+maker:"BOSCH",
+cars:"206 / 207 / 208",
+image:"https://loremflickr.com/800/600/car,starter,motor?lock=229"
+},
+
+{
+brand:"Peugeot",
+part:"Électricité",
+ar:"حساس الأكسجين",
+fr:"Sonde lambda",
+maker:"BOSCH",
+cars:"206 / 207 / 208 / 301",
+image:"https://loremflickr.com/800/600/car,oxygen,sensor?lock=230"
+},
+
+{
+brand:"Peugeot",
+part:"Électricité",
+ar:"حساس الحرارة",
+fr:"Sonde température",
 maker:"FACET",
-cars:"Clio • Symbol • Logan • Kangoo",
-image:"https://loremflickr.com/800/600/car,sensor?lock=37"
-},
-
-{
-brand:"Renault",
-type:"Électricité",
-fr:"Capteur ABS",
-ar:"حساس ABS",
-maker:"ATE",
-cars:"Clio • Symbol • Logan • Mégane",
-image:"https://loremflickr.com/800/600/abs,sensor?lock=38"
-},
-
-{
-brand:"Renault",
-type:"Moteur",
-fr:"Joint de culasse",
-ar:"جوان رأس المحرك",
-maker:"ELRING",
-cars:"Clio • Symbol • Logan • Kangoo",
-image:"https://loremflickr.com/800/600/engine,gasket?lock=39"
-},
-
-{
-brand:"Renault",
-type:"Moteur",
-fr:"Joint cache culbuteur",
-ar:"جوان غطاء الصمامات",
-maker:"ELRING",
-cars:"Clio • Symbol • Logan • Mégane",
-image:"https://loremflickr.com/800/600/engine,gasket?lock=40"
-},
-
-
-/* ================= PEUGEOT ================= */
-
-{
-brand:"Peugeot",
-type:"Frein",
-fr:"Plaquettes de frein avant",
-ar:"فحمات الفرامل الأمامية",
-maker:"FERODO",
-cars:"206 • 207 • 208 • 301 • 307",
-image:"https://loremflickr.com/800/600/car,brake?lock=41"
+cars:"206 / 207 / 208",
+image:"https://loremflickr.com/800/600/car,temperature,sensor?lock=231"
 },
 
 {
 brand:"Peugeot",
-type:"Frein",
-fr:"Plaquettes de frein arrière",
-ar:"فحمات الفرامل الخلفية",
-maker:"TRW",
-cars:"206 • 207 • 208 • 301 • 308",
-image:"https://loremflickr.com/800/600/brake,parts?lock=42"
-},
-
-{
-brand:"Peugeot",
-type:"Frein",
-fr:"Disque de frein avant",
-ar:"قرص الفرامل الأمامي",
-maker:"BREMBO",
-cars:"206 • 207 • 208 • 301 • 307",
-image:"https://loremflickr.com/800/600/brake,disc?lock=43"
-},
-
-{
-brand:"Peugeot",
-type:"Frein",
-fr:"Disque de frein arrière",
-ar:"قرص الفرامل الخلفي",
-maker:"BREMBO",
-cars:"206 • 207 • 301 • 308",
-image:"https://loremflickr.com/800/600/brake,disc?lock=44"
-},
-
-{
-brand:"Peugeot",
-type:"Filtration",
-fr:"Filtre à huile",
-ar:"فلتر الزيت",
-maker:"PURFLUX",
-cars:"206 • 207 • 208 • 301 • 308",
-image:"https://loremflickr.com/800/600/oil,filter?lock=45"
-},
-
-{
-brand:"Peugeot",
-type:"Filtration",
-fr:"Filtre à air",
-ar:"فلتر الهواء",
-maker:"PURFLUX",
-cars:"206 • 207 • 208 • 301 • Partner",
-image:"https://loremflickr.com/800/600/air,filter?lock=46"
-},
-
-{
-brand:"Peugeot",
-type:"Filtration",
-fr:"Filtre habitacle",
-ar:"فلتر المقصورة",
-maker:"VALEO",
-cars:"207 • 208 • 301 • 307 • 308",
-image:"https://loremflickr.com/800/600/cabin,filter?lock=47"
-},
-
-{
-brand:"Peugeot",
-type:"Filtration",
-fr:"Filtre à carburant",
-ar:"فلتر الوقود",
-maker:"PURFLUX",
-cars:"206 • 207 • 208 • 301 • Partner",
-image:"https://loremflickr.com/800/600/fuel,filter?lock=48"
-},
-
-{
-brand:"Peugeot",
-type:"Moteur",
-fr:"Pompe à eau",
-ar:"مضخة الماء",
-maker:"GRAF",
-cars:"206 • 207 • 208 • 301 • 307",
-image:"https://loremflickr.com/800/600/water,pump,car?lock=49"
-},
-
-{
-brand:"Peugeot",
-type:"Moteur",
-fr:"Thermostat",
-ar:"منظم حرارة المحرك",
-maker:"GATES",
-cars:"206 • 207 • 208 • 301 • 308",
-image:"https://loremflickr.com/800/600/thermostat,car?lock=50"
-},
-
-{
-brand:"Peugeot",
-type:"Moteur",
-fr:"Courroie distribution",
-ar:"سير التوقيت",
-maker:"GATES",
-cars:"206 • 207 • 208 • 301 • 307",
-image:"https://loremflickr.com/800/600/timing,belt?lock=51"
-},
-
-{
-brand:"Peugeot",
-type:"Moteur",
-fr:"Kit distribution",
-ar:"طقم سير التوقيت",
-maker:"CONTITECH",
-cars:"206 • 207 • 208 • 301 • 308",
-image:"https://loremflickr.com/800/600/timing,belt,kit?lock=52"
-},
-
-{
-brand:"Peugeot",
-type:"Moteur",
-fr:"Courroie accessoires",
-ar:"سير الملحقات",
-maker:"DAYCO",
-cars:"206 • 207 • 208 • 301 • Partner",
-image:"https://loremflickr.com/800/600/serpentine,belt?lock=53"
-},
-
-{
-brand:"Peugeot",
-type:"Moteur",
-fr:"Bougie d'allumage",
-ar:"شمعة الإشعال",
-maker:"NGK",
-cars:"206 • 207 • 208 • 301",
-image:"https://loremflickr.com/800/600/spark,plug?lock=54"
-},
-
-{
-brand:"Peugeot",
-type:"Moteur",
-fr:"Bobine d'allumage",
-ar:"كويل الإشعال",
-maker:"BOSCH",
-cars:"206 • 207 • 208 • 301 • 307",
-image:"https://loremflickr.com/800/600/ignition,coil?lock=55"
-},
-
-{
-brand:"Peugeot",
-type:"Embrayage",
-fr:"Kit embrayage",
-ar:"طقم القابض",
-maker:"VALEO",
-cars:"206 • 207 • 208 • 301 • Partner",
-image:"https://loremflickr.com/800/600/clutch,car?lock=56"
-},
-
-{
-brand:"Peugeot",
-type:"Embrayage",
-fr:"Butée embrayage",
-ar:"رمانة القابض",
-maker:"SACHS",
-cars:"206 • 207 • 208 • 301 • 307",
-image:"https://loremflickr.com/800/600/clutch,bearing?lock=57"
-},
-
-{
-brand:"Peugeot",
-type:"Embrayage",
-fr:"Disque embrayage",
-ar:"قرص القابض",
-maker:"VALEO",
-cars:"206 • 207 • 208 • 301 • Partner",
-image:"https://loremflickr.com/800/600/clutch,disc?lock=58"
-},
-
-{
-brand:"Peugeot",
-type:"Direction",
-fr:"Rotule de direction",
-ar:"رأس المقود",
-maker:"TRW",
-cars:"206 • 207 • 208 • 301 • 307",
-image:"https://loremflickr.com/800/600/steering,ball,joint?lock=59"
-},
-
-{
-brand:"Peugeot",
-type:"Suspension",
-fr:"Triangle suspension",
-ar:"مثلث التعليق",
-maker:"DELPHI",
-cars:"206 • 207 • 208 • 301 • 307",
-image:"https://loremflickr.com/800/600/car,suspension?lock=60"
-},
-
-{
-brand:"Peugeot",
-type:"Suspension",
-fr:"Amortisseur avant",
-ar:"ممتص الصدمات الأمامي",
-maker:"MONROE",
-cars:"206 • 207 • 208 • 301 • 307",
-image:"https://loremflickr.com/800/600/shock,absorber?lock=61"
-},
-
-{
-brand:"Peugeot",
-type:"Suspension",
-fr:"Amortisseur arrière",
-ar:"ممتص الصدمات الخلفي",
-maker:"MONROE",
-cars:"206 • 207 • 208 • 301 • Partner",
-image:"https://loremflickr.com/800/600/shock,absorber,car?lock=62"
-},
-
-{
-brand:"Peugeot",
-type:"Suspension",
-fr:"Coupelle amortisseur",
-ar:"قاعدة ممتص الصدمات",
-maker:"SNR",
-cars:"206 • 207 • 208 • 307 • 308",
-image:"https://loremflickr.com/800/600/strut,mount?lock=63"
-},
-
-{
-brand:"Peugeot",
-type:"Transmission",
-fr:"Cardan complet",
-ar:"عمود نقل الحركة",
-maker:"SKF",
-cars:"206 • 207 • 208 • 301 • 307",
-image:"https://loremflickr.com/800/600/cv,axle?lock=64"
-},
-
-{
-brand:"Peugeot",
-type:"Transmission",
-fr:"Soufflet de cardan",
-ar:"جلدة عمود نقل الحركة",
-maker:"SPIDAN",
-cars:"206 • 207 • 208 • 301 • Partner",
-image:"https://loremflickr.com/800/600/cv,boot?lock=65"
-},
-
-{
-brand:"Peugeot",
-type:"Transmission",
-fr:"Roulement de roue avant",
-ar:"رمانة العجلة الأمامية",
-maker:"SKF",
-cars:"206 • 207 • 208 • 301 • 307",
-image:"https://loremflickr.com/800/600/wheel,bearing?lock=66"
-},
-
-{
-brand:"Peugeot",
-type:"Transmission",
-fr:"Roulement de roue arrière",
-ar:"رمانة العجلة الخلفية",
-maker:"SKF",
-cars:"206 • 207 • 301 • 307 • 308",
-image:"https://loremflickr.com/800/600/wheel,bearing,car?lock=67"
-},
-
-{
-brand:"Peugeot",
-type:"Refroidissement",
-fr:"Radiateur moteur",
+part:"Refroidissement",
 ar:"رادياتور المحرك",
-maker:"NISSENS",
-cars:"206 • 207 • 208 • 301 • Partner",
-image:"https://loremflickr.com/800/600/car,radiator?lock=68"
-},
-
-{
-brand:"Peugeot",
-type:"Refroidissement",
-fr:"Ventilateur radiateur",
-ar:"مروحة الرادياتور",
-maker:"VALEO",
-cars:"206 • 207 • 208 • 301 • 307",
-image:"https://loremflickr.com/800/600/radiator,fan?lock=69"
-},
-
-{
-brand:"Peugeot",
-type:"Refroidissement",
-fr:"Durite radiateur",
-ar:"خرطوم الرادياتور",
-maker:"GATES",
-cars:"206 • 207 • 208 • 301 • Partner",
-image:"https://loremflickr.com/800/600/radiator,hose?lock=70"
-},
-
-{
-brand:"Peugeot",
-type:"Électricité",
-fr:"Alternateur",
-ar:"الدينامو",
-maker:"BOSCH",
-cars:"206 • 207 • 208 • 301 • 307",
-image:"https://loremflickr.com/800/600/car,alternator?lock=71"
-},
-
-{
-brand:"Peugeot",
-type:"Électricité",
-fr:"Démarreur",
-ar:"السلف",
-maker:"BOSCH",
-cars:"206 • 207 • 208 • 301 • Partner",
-image:"https://loremflickr.com/800/600/car,starter?lock=72"
-},
-
-{
-brand:"Peugeot",
-type:"Électricité",
-fr:"Capteur PMH",
-ar:"حساس موضع عمود المرفق",
-maker:"BOSCH",
-cars:"206 • 207 • 208 • 301 • 307",
-image:"https://loremflickr.com/800/600/car,sensor?lock=73"
-},
-
-{
-brand:"Peugeot",
-type:"Électricité",
-fr:"Capteur ABS",
-ar:"حساس ABS",
-maker:"ATE",
-cars:"206 • 207 • 208 • 301 • 308",
-image:"https://loremflickr.com/800/600/abs,sensor?lock=74"
-},
-
-{
-brand:"Peugeot",
-type:"Moteur",
-fr:"Joint de culasse",
-ar:"جوان رأس المحرك",
-maker:"ELRING",
-cars:"206 • 207 • 208 • 301 • Partner",
-image:"https://loremflickr.com/800/600/engine,gasket?lock=75"
-},
-
-
-/* ================= DACIA ================= */
-
-{
-brand:"Dacia",
-type:"Frein",
-fr:"Plaquettes de frein avant",
-ar:"فحمات الفرامل الأمامية",
-maker:"FERODO",
-cars:"Logan • Sandero • Duster • Dokker",
-image:"https://loremflickr.com/800/600/car,brake?lock=76"
-},
-
-{
-brand:"Dacia",
-type:"Frein",
-fr:"Plaquettes de frein arrière",
-ar:"فحمات الفرامل الخلفية",
-maker:"TRW",
-cars:"Logan • Sandero • Duster • Dokker",
-image:"https://loremflickr.com/800/600/brake,parts?lock=77"
-},
-
-{
-brand:"Dacia",
-type:"Frein",
-fr:"Disque de frein avant",
-ar:"قرص الفرامل الأمامي",
-maker:"BREMBO",
-cars:"Logan • Sandero • Duster",
-image:"https://loremflickr.com/800/600/brake,disc?lock=78"
-},
-
-{
-brand:"Dacia",
-type:"Filtration",
-fr:"Filtre à huile",
-ar:"فلتر الزيت",
-maker:"PURFLUX",
-cars:"Logan • Sandero • Duster • Dokker • Lodgy",
-image:"https://loremflickr.com/800/600/oil,filter?lock=79"
-},
-
-{
-brand:"Dacia",
-type:"Filtration",
-fr:"Filtre à air",
-ar:"فلتر الهواء",
-maker:"PURFLUX",
-cars:"Logan • Sandero • Duster • Dokker",
-image:"https://loremflickr.com/800/600/air,filter?lock=80"
-},
-
-{
-brand:"Dacia",
-type:"Filtration",
-fr:"Filtre habitacle",
-ar:"فلتر المقصورة",
-maker:"VALEO",
-cars:"Logan • Sandero • Duster • Lodgy",
-image:"https://loremflickr.com/800/600/cabin,filter?lock=81"
-},
-
-{
-brand:"Dacia",
-type:"Filtration",
-fr:"Filtre à carburant",
-ar:"فلتر الوقود",
-maker:"PURFLUX",
-cars:"Logan • Sandero • Duster • Dokker",
-image:"https://loremflickr.com/800/600/fuel,filter?lock=82"
-},
-
-{
-brand:"Dacia",
-type:"Moteur",
-fr:"Pompe à eau",
-ar:"مضخة الماء",
-maker:"GRAF",
-cars:"Logan • Sandero • Duster • Dokker",
-image:"https://loremflickr.com/800/600/water,pump,car?lock=83"
-},
-
-{
-brand:"Dacia",
-type:"Moteur",
-fr:"Thermostat",
-ar:"منظم حرارة المحرك",
-maker:"GATES",
-cars:"Logan • Sandero • Duster • Dokker",
-image:"https://loremflickr.com/800/600/thermostat,car?lock=84"
-},
-
-{
-brand:"Dacia",
-type:"Moteur",
-fr:"Courroie distribution",
-ar:"سير التوقيت",
-maker:"GATES",
-cars:"Logan • Sandero • Duster",
-image:"https://loremflickr.com/800/600/timing,belt?lock=85"
-},
-
-{
-brand:"Dacia",
-type:"Moteur",
-fr:"Kit distribution",
-ar:"طقم سير التوقيت",
-maker:"CONTITECH",
-cars:"Logan • Sandero • Duster • Dokker",
-image:"https://loremflickr.com/800/600/timing,belt,kit?lock=86"
-},
-
-{
-brand:"Dacia",
-type:"Moteur",
-fr:"Courroie accessoires",
-ar:"سير الملحقات",
-maker:"DAYCO",
-cars:"Logan • Sandero • Duster • Dokker",
-image:"https://loremflickr.com/800/600/serpentine,belt?lock=87"
-},
-
-{
-brand:"Dacia",
-type:"Moteur",
-fr:"Bougie d'allumage",
-ar:"شمعة الإشعال",
-maker:"NGK",
-cars:"Logan • Sandero • Duster",
-image:"https://loremflickr.com/800/600/spark,plug?lock=88"
-},
-
-{
-brand:"Dacia",
-type:"Moteur",
-fr:"Bobine d'allumage",
-ar:"كويل الإشعال",
-maker:"BOSCH",
-cars:"Logan • Sandero • Duster",
-image:"https://loremflickr.com/800/600/ignition,coil?lock=89"
-},
-
-{
-brand:"Dacia",
-type:"Embrayage",
-fr:"Kit embrayage",
-ar:"طقم القابض",
-maker:"VALEO",
-cars:"Logan • Sandero • Duster • Dokker",
-image:"https://loremflickr.com/800/600/clutch,car?lock=90"
-},
-
-{
-brand:"Dacia",
-type:"Embrayage",
-fr:"Butée embrayage",
-ar:"رمانة القابض",
-maker:"SACHS",
-cars:"Logan • Sandero • Duster • Dokker",
-image:"https://loremflickr.com/800/600/clutch,bearing?lock=91"
-},
-
-{
-brand:"Dacia",
-type:"Embrayage",
-fr:"Disque embrayage",
-ar:"قرص القابض",
-maker:"VALEO",
-cars:"Logan • Sandero • Duster",
-image:"https://loremflickr.com/800/600/clutch,disc?lock=92"
-},
-
-{
-brand:"Dacia",
-type:"Direction",
-fr:"Rotule de direction",
-ar:"رأس المقود",
-maker:"TRW",
-cars:"Logan • Sandero • Duster • Dokker",
-image:"https://loremflickr.com/800/600/steering,ball,joint?lock=93"
-},
-
-{
-brand:"Dacia",
-type:"Suspension",
-fr:"Triangle suspension",
-ar:"مثلث التعليق",
-maker:"DELPHI",
-cars:"Logan • Sandero • Duster",
-image:"https://loremflickr.com/800/600/car,suspension?lock=94"
-},
-
-{
-brand:"Dacia",
-type:"Suspension",
-fr:"Amortisseur avant",
-ar:"ممتص الصدمات الأمامي",
-maker:"MONROE",
-cars:"Logan • Sandero • Duster • Sandero Stepway",
-image:"https://loremflickr.com/800/600/shock,absorber?lock=95"
-},
-
-{
-brand:"Dacia",
-type:"Suspension",
-fr:"Amortisseur arrière",
-ar:"ممتص الصدمات الخلفي",
-maker:"MONROE",
-cars:"Logan • Sandero • Duster • Dokker",
-image:"https://loremflickr.com/800/600/shock,absorber,car?lock=96"
-},
-
-{
-brand:"Dacia",
-type:"Suspension",
-fr:"Coupelle amortisseur",
-ar:"قاعدة ممتص الصدمات",
-maker:"SNR",
-cars:"Logan • Sandero • Duster",
-image:"https://loremflickr.com/800/600/strut,mount?lock=97"
-},
-
-{
-brand:"Dacia",
-type:"Transmission",
-fr:"Cardan complet",
-ar:"عمود نقل الحركة",
-maker:"SKF",
-cars:"Logan • Sandero • Duster • Dokker",
-image:"https://loremflickr.com/800/600/cv,axle?lock=98"
-},
-
-{
-brand:"Dacia",
-type:"Transmission",
-fr:"Soufflet de cardan",
-ar:"جلدة عمود نقل الحركة",
-maker:"SPIDAN",
-cars:"Logan • Sandero • Duster",
-image:"https://loremflickr.com/800/600/cv,boot?lock=99"
-},
-
-{
-brand:"Dacia",
-type:"Transmission",
-fr:"Roulement de roue avant",
-ar:"رمانة العجلة الأمامية",
-maker:"SKF",
-cars:"Logan • Sandero • Duster",
-image:"https://loremflickr.com/800/600/wheel,bearing?lock=100"
-},
-
-{
-brand:"Dacia",
-type:"Transmission",
-fr:"Roulement de roue arrière",
-ar:"رمانة العجلة الخلفية",
-maker:"SKF",
-cars:"Logan • Sandero • Duster • Dokker",
-image:"https://loremflickr.com/800/600/wheel,bearing,car?lock=101"
-},
-
-{
-brand:"Dacia",
-type:"Refroidissement",
 fr:"Radiateur moteur",
-ar:"رادياتور المحرك",
-maker:"NISSENS",
-cars:"Logan • Sandero • Duster • Dokker",
-image:"https://loremflickr.com/800/600/car,radiator?lock=102"
-},
-
-{
-brand:"Dacia",
-type:"Refroidissement",
-fr:"Ventilateur radiateur",
-ar:"مروحة الرادياتور",
 maker:"VALEO",
-cars:"Logan • Sandero • Duster",
-image:"https://loremflickr.com/800/600/radiator,fan?lock=103"
+cars:"206 / 207 / 208 / 301",
+image:"https://loremflickr.com/800/600/car,radiator?lock=232"
 },
 
 {
-brand:"Dacia",
-type:"Refroidissement",
-fr:"Durite radiateur",
-ar:"خرطوم الرادياتور",
+brand:"Peugeot",
+part:"Refroidissement",
+ar:"ترموستات",
+fr:"Thermostat",
 maker:"GATES",
-cars:"Logan • Sandero • Duster • Dokker",
-image:"https://loremflickr.com/800/600/radiator,hose?lock=104"
+cars:"206 / 207 / 208 / 301",
+image:"https://loremflickr.com/800/600/car,thermostat?lock=233"
 },
 
 {
-brand:"Dacia",
-type:"Électricité",
-fr:"Alternateur",
-ar:"الدينامو",
-maker:"BOSCH",
-cars:"Logan • Sandero • Duster • Dokker",
-image:"https://loremflickr.com/800/600/car,alternator?lock=105"
+brand:"Peugeot",
+part:"Refroidissement",
+ar:"مروحة التبريد",
+fr:"Ventilateur refroidissement",
+maker:"VALEO",
+cars:"206 / 207 / 208",
+image:"https://loremflickr.com/800/600/car,cooling,fan?lock=234"
 },
 
 {
-brand:"Dacia",
-type:"Électricité",
-fr:"Démarreur",
-ar:"السلف",
-maker:"BOSCH",
-cars:"Logan • Sandero • Duster • Dokker",
-image:"https://loremflickr.com/800/600/car,starter?lock=106"
+brand:"Peugeot",
+part:"Transmission",
+ar:"رأس عمود نقل الحركة",
+fr:"Joint homocinétique",
+maker:"SKF",
+cars:"206 / 207 / 208",
+image:"https://loremflickr.com/800/600/car,cv,joint?lock=235"
 },
 
 {
-brand:"Dacia",
-type:"Électricité",
-fr:"Capteur PMH",
-ar:"حساس موضع عمود المرفق",
-maker:"BOSCH",
-cars:"Logan • Sandero • Duster",
-image:"https://loremflickr.com/800/600/car,sensor?lock=107"
+brand:"Peugeot",
+part:"Transmission",
+ar:"جلدة عمود نقل الحركة",
+fr:"Soufflet de cardan",
+maker:"SKF",
+cars:"206 / 207 / 208 / 301",
+image:"https://loremflickr.com/800/600/car,cv,boot?lock=236"
 },
 
 {
-brand:"Dacia",
-type:"Électricité",
-fr:"Capteur ABS",
-ar:"حساس ABS",
+brand:"Peugeot",
+part:"Frein",
+ar:"مضخة الفرامل",
+fr:"Maître-cylindre frein",
 maker:"ATE",
-cars:"Logan • Sandero • Duster",
-image:"https://loremflickr.com/800/600/abs,sensor?lock=108"
+cars:"206 / 207 / 208 / 301",
+image:"https://loremflickr.com/800/600/car,brake,master,cylinder?lock=237"
 },
 
 {
-brand:"Dacia",
-type:"Moteur",
-fr:"Joint de culasse",
-ar:"جوان رأس المحرك",
-maker:"ELRING",
-cars:"Logan • Sandero • Duster • Dokker",
-image:"https://loremflickr.com/800/600/engine,gasket?lock=109"
-},
-
-{
-brand:"Dacia",
-type:"Moteur",
-fr:"Joint cache culbuteur",
-ar:"جوان غطاء الصمامات",
-maker:"ELRING",
-cars:"Logan • Sandero • Duster",
-image:"https://loremflickr.com/800/600/engine,gasket?lock=110"
-},
-
-{
-brand:"Dacia",
-type:"Direction",
-fr:"Biellette de direction",
-ar:"ذراع التوجيه",
+brand:"Peugeot",
+part:"Frein",
+ar:"أسطوانة الفرامل",
+fr:"Cylindre de roue",
 maker:"TRW",
-cars:"Logan • Sandero • Duster • Dokker",
-image:"https://loremflickr.com/800/600/steering,car?lock=111"
+cars:"206 / 207 / 301",
+image:"https://loremflickr.com/800/600/car,brake,cylinder?lock=238"
+},
+
+{
+brand:"Peugeot",
+part:"Climatisation",
+ar:"فلتر المكيف",
+fr:"Filtre climatisation",
+maker:"VALEO",
+cars:"206 / 207 / 208 / 301",
+image:"https://loremflickr.com/800/600/car,air,conditioning?lock=239"
+},
+
+{
+brand:"Peugeot",
+part:"Climatisation",
+ar:"كمبروسر المكيف",
+fr:"Compresseur climatisation",
+maker:"VALEO",
+cars:"206 / 207 / 208 / 301",
+image:"https://loremflickr.com/800/600/car,air,conditioning,compressor?lock=240"
+},
+
+/* ===================== DACIA ===================== */
+
+{
+brand:"Dacia",
+part:"Frein",
+ar:"Plaquettes de frein avant",
+fr:"Plaquettes de frein avant",
+maker:"TRW",
+cars:"Logan / Sandero / Duster",
+image:"https://loremflickr.com/800/600/car,brake,pads?lock=301"
 },
 
 {
 brand:"Dacia",
-type:"Suspension",
-fr:"Biellette stabilisatrice",
-ar:"وصلة عمود التوازن",
+part:"Frein",
+ar:"Plaquettes de frein arrière",
+fr:"Plaquettes de frein arrière",
+maker:"BREMBO",
+cars:"Logan / Sandero",
+image:"https://loremflickr.com/800/600/car,brake,pads?lock=302"
+},
+
+{
+brand:"Dacia",
+part:"Frein",
+ar:"قرص الفرامل الأمامي",
+fr:"Disque de frein avant",
+maker:"BREMBO",
+cars:"Logan / Sandero / Duster",
+image:"https://loremflickr.com/800/600/car,brake,disc?lock=303"
+},
+
+{
+brand:"Dacia",
+part:"Embrayage",
+ar:"طقم القابض",
+fr:"Kit embrayage",
+maker:"VALEO",
+cars:"Logan / Sandero / Duster",
+image:"https://loremflickr.com/800/600/car,clutch?lock=304"
+},
+
+{
+brand:"Dacia",
+part:"Embrayage",
+ar:"قرص القابض",
+fr:"Disque embrayage",
+maker:"SACHS",
+cars:"Logan / Sandero",
+image:"https://loremflickr.com/800/600/car,clutch?lock=305"
+},
+
+{
+brand:"Dacia",
+part:"Embrayage",
+ar:"آلية القابض",
+fr:"Mécanisme embrayage",
+maker:"VALEO",
+cars:"Logan / Sandero / Duster",
+image:"https://loremflickr.com/800/600/car,clutch?lock=306"
+},
+
+{
+brand:"Dacia",
+part:"Moteur",
+ar:"مضخة الماء",
+fr:"Pompe à eau",
+maker:"GRAF",
+cars:"Logan / Sandero / Duster",
+image:"https://loremflickr.com/800/600/car,water,pump?lock=307"
+},
+
+{
+brand:"Dacia",
+part:"Moteur",
+ar:"سير التوزيع",
+fr:"Courroie distribution",
+maker:"GATES",
+cars:"Logan / Sandero / Duster",
+image:"https://loremflickr.com/800/600/car,timing,belt?lock=308"
+},
+
+{
+brand:"Dacia",
+part:"Moteur",
+ar:"طقم التوزيع",
+fr:"Kit distribution",
+maker:"CONTITECH",
+cars:"Logan / Sandero / Duster",
+image:"https://loremflickr.com/800/600/car,timing,belt?lock=309"
+},
+
+{
+brand:"Dacia",
+part:"Moteur",
+ar:"سير الملحقات",
+fr:"Courroie accessoires",
+maker:"GATES",
+cars:"Logan / Sandero / Duster",
+image:"https://loremflickr.com/800/600/car,belt?lock=310"
+},
+
+{
+brand:"Dacia",
+part:"Moteur",
+ar:"فلتر الزيت",
+fr:"Filtre à huile",
+maker:"PURFLUX",
+cars:"Logan / Sandero / Duster",
+image:"https://loremflickr.com/800/600/car,oil,filter?lock=311"
+},
+
+{
+brand:"Dacia",
+part:"Moteur",
+ar:"فلتر الهواء",
+fr:"Filtre à air",
+maker:"PURFLUX",
+cars:"Logan / Sandero / Duster",
+image:"https://loremflickr.com/800/600/car,air,filter?lock=312"
+},
+
+{
+brand:"Dacia",
+part:"Moteur",
+ar:"فلتر الوقود",
+fr:"Filtre à carburant",
+maker:"PURFLUX",
+cars:"Logan / Sandero / Duster",
+image:"https://loremflickr.com/800/600/car,fuel,filter?lock=313"
+},
+
+{
+brand:"Dacia",
+part:"Moteur",
+ar:"فلتر المقصورة",
+fr:"Filtre habitacle",
+maker:"PURFLUX",
+cars:"Logan / Sandero / Duster",
+image:"https://loremflickr.com/800/600/car,cabin,filter?lock=314"
+},
+
+{
+brand:"Dacia",
+part:"Moteur",
+ar:"بواجي",
+fr:"Bougies d'allumage",
+maker:"NGK",
+cars:"Logan / Sandero 1.4 / 1.6",
+image:"https://loremflickr.com/800/600/spark,plug,car?lock=315"
+},
+
+{
+brand:"Dacia",
+part:"Moteur",
+ar:"شمعات التسخين",
+fr:"Bougies de préchauffage",
+maker:"BERU",
+cars:"Logan dCi / Sandero dCi / Duster dCi",
+image:"https://loremflickr.com/800/600/glow,plug,diesel?lock=316"
+},
+
+{
+brand:"Dacia",
+part:"Moteur",
+ar:"حشية رأس المحرك",
+fr:"Joint de culasse",
+maker:"ELRING",
+cars:"Logan / Sandero / Duster",
+image:"https://loremflickr.com/800/600/car,engine,gasket?lock=317"
+},
+
+{
+brand:"Dacia",
+part:"Moteur",
+ar:"صوفة عمود المرفق",
+fr:"Joint spi vilebrequin",
+maker:"CORTECO",
+cars:"Logan / Sandero / Duster",
+image:"https://loremflickr.com/800/600/car,engine,seal?lock=318"
+},
+
+{
+brand:"Dacia",
+part:"Suspension",
+ar:"مثلث التعليق",
+fr:"Triangle suspension",
 maker:"DELPHI",
-cars:"Logan • Sandero • Duster",
-image:"https://loremflickr.com/800/600/suspension,car?lock=112"
+cars:"Logan / Sandero / Duster",
+image:"https://loremflickr.com/800/600/car,suspension,arm?lock=319"
 },
 
 {
 brand:"Dacia",
-type:"Suspension",
-fr:"Silentbloc triangle",
-ar:"جلبة مثلث التعليق",
-maker:"FEBI",
-cars:"Logan • Sandero • Duster",
-image:"https://loremflickr.com/800/600/suspension,bushing?lock=113"
-},
-
-{
-brand:"Renault",
-type:"Moteur",
-fr:"Silentbloc moteur",
-ar:"قاعدة المحرك",
-maker:"FEBI",
-cars:"Clio • Symbol • Logan • Mégane",
-image:"https://loremflickr.com/800/600/engine,mount?lock=114"
-},
-
-{
-brand:"Peugeot",
-type:"Moteur",
-fr:"Silentbloc moteur",
-ar:"قاعدة المحرك",
-maker:"FEBI",
-cars:"206 • 207 • 208 • 301 • 307",
-image:"https://loremflickr.com/800/600/engine,mount?lock=115"
-},
-
-{
-brand:"Renault",
-type:"Électricité",
-fr:"Régulateur alternateur",
-ar:"منظم الدينامو",
-maker:"BOSCH",
-cars:"Clio • Symbol • Logan • Mégane",
-image:"https://loremflickr.com/800/600/alternator,car?lock=116"
-},
-
-{
-brand:"Peugeot",
-type:"Électricité",
-fr:"Régulateur alternateur",
-ar:"منظم الدينامو",
-maker:"BOSCH",
-cars:"206 • 207 • 208 • 301 • 307",
-image:"https://loremflickr.com/800/600/alternator,car?lock=117"
+part:"Suspension",
+ar:"رأس المقص",
+fr:"Rotule suspension",
+maker:"TRW",
+cars:"Logan / Sandero / Duster",
+image:"https://loremflickr.com/800/600/car,ball,joint?lock=320"
 },
 
 {
 brand:"Dacia",
-type:"Électricité",
-fr:"Régulateur alternateur",
-ar:"منظم الدينامو",
+part:"Suspension",
+ar:"رابط الميزان",
+fr:"Biellette barre stabilisatrice",
+maker:"LEMFÖRDER",
+cars:"Logan / Sandero / Duster",
+image:"https://loremflickr.com/800/600/car,suspension?lock=321"
+},
+
+{
+brand:"Dacia",
+part:"Suspension",
+ar:"مساعد أمامي",
+fr:"Amortisseur avant",
+maker:"MONROE",
+cars:"Logan / Sandero / Duster",
+image:"https://loremflickr.com/800/600/car,shock,absorber?lock=322"
+},
+
+{
+brand:"Dacia",
+part:"Suspension",
+ar:"مساعد خلفي",
+fr:"Amortisseur arrière",
+maker:"MONROE",
+cars:"Logan / Sandero / Duster",
+image:"https://loremflickr.com/800/600/car,shock,absorber?lock=323"
+},
+
+{
+brand:"Dacia",
+part:"Direction",
+ar:"طرف التوجيه",
+fr:"Rotule de direction",
+maker:"TRW",
+cars:"Logan / Sandero / Duster",
+image:"https://loremflickr.com/800/600/car,steering?lock=324"
+},
+
+{
+brand:"Dacia",
+part:"Direction",
+ar:"رأس المقود الداخلي",
+fr:"Rotule axiale",
+maker:"DELPHI",
+cars:"Logan / Sandero / Duster",
+image:"https://loremflickr.com/800/600/car,steering?lock=325"
+},
+
+{
+brand:"Dacia",
+part:"Roulement",
+ar:"رولمان العجلة الأمامية",
+fr:"Roulement roue avant",
+maker:"SKF",
+cars:"Logan / Sandero / Duster",
+image:"https://loremflickr.com/800/600/car,wheel,bearing?lock=326"
+},
+
+{
+brand:"Dacia",
+part:"Roulement",
+ar:"رولمان العجلة الخلفية",
+fr:"Roulement roue arrière",
+maker:"SKF",
+cars:"Logan / Sandero",
+image:"https://loremflickr.com/800/600/car,wheel,bearing?lock=327"
+},
+
+{
+brand:"Dacia",
+part:"Électricité",
+ar:"مولد الكهرباء",
+fr:"Alternateur",
 maker:"BOSCH",
-cars:"Logan • Sandero • Duster • Dokker",
-image:"https://loremflickr.com/800/600/alternator,car?lock=118"
+cars:"Logan / Sandero / Duster",
+image:"https://loremflickr.com/800/600/car,alternator?lock=328"
 },
 
 {
-brand:"Renault",
-type:"Filtration",
-fr:"Filtre séparateur diesel",
-ar:"فلتر فاصل الديزل",
-maker:"PURFLUX",
-cars:"Clio • Symbol • Kangoo • Mégane",
-image:"https://loremflickr.com/800/600/diesel,filter?lock=119"
+brand:"Dacia",
+part:"Électricité",
+ar:"موزع الكهرباء",
+fr:"Démarreur",
+maker:"BOSCH",
+cars:"Logan / Sandero / Duster",
+image:"https://loremflickr.com/800/600/car,starter,motor?lock=329"
 },
 
 {
-brand:"Peugeot",
-type:"Filtration",
-fr:"Filtre séparateur diesel",
-ar:"فلتر فاصل الديزل",
-maker:"PURFLUX",
-cars:"206 • 207 • 208 • 301 • Partner",
-image:"https://loremflickr.com/800/600/diesel,filter?lock=120"
+brand:"Dacia",
+part:"Électricité",
+ar:"حساس الأكسجين",
+fr:"Sonde lambda",
+maker:"BOSCH",
+cars:"Logan / Sandero / Duster",
+image:"https://loremflickr.com/800/600/car,oxygen,sensor?lock=330"
+},
+
+{
+brand:"Dacia",
+part:"Électricité",
+ar:"حساس الحرارة",
+fr:"Sonde température",
+maker:"FACET",
+cars:"Logan / Sandero / Duster",
+image:"https://loremflickr.com/800/600/car,temperature,sensor?lock=331"
+},
+
+{
+brand:"Dacia",
+part:"Refroidissement",
+ar:"رادياتور المحرك",
+fr:"Radiateur moteur",
+maker:"VALEO",
+cars:"Logan / Sandero / Duster",
+image:"https://loremflickr.com/800/600/car,radiator?lock=332"
+},
+
+{
+brand:"Dacia",
+part:"Refroidissement",
+ar:"ترموستات",
+fr:"Thermostat",
+maker:"GATES",
+cars:"Logan / Sandero / Duster",
+image:"https://loremflickr.com/800/600/car,thermostat?lock=333"
+},
+
+{
+brand:"Dacia",
+part:"Refroidissement",
+ar:"مروحة التبريد",
+fr:"Ventilateur refroidissement",
+maker:"VALEO",
+cars:"Logan / Sandero / Duster",
+image:"https://loremflickr.com/800/600/car,cooling,fan?lock=334"
+},
+
+{
+brand:"Dacia",
+part:"Transmission",
+ar:"رأس عمود نقل الحركة",
+fr:"Joint homocinétique",
+maker:"SKF",
+cars:"Logan / Sandero / Duster",
+image:"https://loremflickr.com/800/600/car,cv,joint?lock=335"
+},
+
+{
+brand:"Dacia",
+part:"Transmission",
+ar:"جلدة عمود نقل الحركة",
+fr:"Soufflet de cardan",
+maker:"SKF",
+cars:"Logan / Sandero / Duster",
+image:"https://loremflickr.com/800/600/car,cv,boot?lock=336"
+},
+
+{
+brand:"Dacia",
+part:"Frein",
+ar:"مضخة الفرامل",
+fr:"Maître-cylindre frein",
+maker:"ATE",
+cars:"Logan / Sandero / Duster",
+image:"https://loremflickr.com/800/600/car,brake,master,cylinder?lock=337"
+},
+
+{
+brand:"Dacia",
+part:"Frein",
+ar:"أسطوانة الفرامل",
+fr:"Cylindre de roue",
+maker:"TRW",
+cars:"Logan / Sandero",
+image:"https://loremflickr.com/800/600/car,brake,cylinder?lock=338"
+},
+
+{
+brand:"Dacia",
+part:"Climatisation",
+ar:"فلتر المكيف",
+fr:"Filtre climatisation",
+maker:"VALEO",
+cars:"Logan / Sandero / Duster",
+image:"https://loremflickr.com/800/600/car,air,conditioning?lock=339"
+},
+
+{
+brand:"Dacia",
+part:"Climatisation",
+ar:"كمبروسر المكيف",
+fr:"Compresseur climatisation",
+maker:"VALEO",
+cars:"Logan / Sandero / Duster",
+image:"https://loremflickr.com/800/600/car,air,conditioning,compressor?lock=340"
 }
 
 ];
 
 
-/* =========================
-   BUILD FILTERS
-========================= */
+/* =====================================================
+   عناصر الصفحة
+===================================================== */
 
+const productsBox = document.getElementById("products");
+const search = document.getElementById("search");
+const brandFilter = document.getElementById("brandFilter");
 const carFilter = document.getElementById("carFilter");
-const typeFilter = document.getElementById("typeFilter");
+const partFilter = document.getElementById("partFilter");
+const count = document.getElementById("count");
 
-const cars = new Set();
-const types = new Set();
 
-parts.forEach(part => {
+/* =====================================================
+   تجهيز السيارات والقطع في القوائم
+===================================================== */
 
-    part.cars.split("•").forEach(car=>{
-        cars.add(car.trim());
+function populateFilters(){
+
+    const cars = new Set();
+    const parts = new Set();
+
+    products.forEach(p => {
+
+        p.cars.split("/").forEach(car=>{
+            cars.add(car.trim());
+        });
+
+        parts.add(p.part);
+
     });
 
-    types.add(part.type);
+    [...cars]
+    .sort()
+    .forEach(car=>{
 
-});
+        const option=document.createElement("option");
 
+        option.value=car;
+        option.textContent=car;
 
-[...cars]
-.sort()
-.forEach(car=>{
+        carFilter.appendChild(option);
 
-    const option=document.createElement("option");
+    });
 
-    option.value=car;
-    option.textContent=car;
+    [...parts]
+    .sort()
+    .forEach(part=>{
 
-    carFilter.appendChild(option);
+        const option=document.createElement("option");
 
-});
+        option.value=part;
+        option.textContent=part;
 
+        partFilter.appendChild(option);
 
-[...types]
-.sort()
-.forEach(type=>{
-
-    const option=document.createElement("option");
-
-    option.value=type;
-    option.textContent=type;
-
-    typeFilter.appendChild(option);
-
-});
+    });
+}
 
 
-/* =========================
-   DISPLAY
-========================= */
+/* =====================================================
+   عرض المنتجات
+===================================================== */
 
-const catalog=document.getElementById("catalog");
-const empty=document.getElementById("empty");
-const count=document.getElementById("count");
+function renderProducts(){
 
-function displayParts(){
+    const text=search.value.toLowerCase().trim();
+    const brand=brandFilter.value;
+    const car=carFilter.value;
+    const part=partFilter.value;
 
-    const search=document
-        .getElementById("search")
-        .value
-        .toLowerCase()
-        .trim();
+    const filtered=products.filter(p=>{
 
-    const brand=document
-        .getElementById("brandFilter")
-        .value;
-
-    const car=document
-        .getElementById("carFilter")
-        .value;
-
-    const type=document
-        .getElementById("typeFilter")
-        .value;
-
-
-    const filtered=parts.filter(part=>{
-
-        const text=(
-            part.fr+" "+
-            part.ar+" "+
-            part.brand+" "+
-            part.maker+" "+
-            part.cars+" "+
-            part.type
+        const fullText=(
+            p.brand+" "+
+            p.part+" "+
+            p.ar+" "+
+            p.fr+" "+
+            p.maker+" "+
+            p.cars
         ).toLowerCase();
 
+        const matchText=!text || fullText.includes(text);
 
-        const searchOK=
-            !search ||
-            text.includes(search);
+        const matchBrand=!brand || p.brand===brand;
 
+        const matchCar=!car || p.cars.includes(car);
 
-        const brandOK=
-            !brand ||
-            part.brand===brand;
+        const matchPart=!part || p.part===part;
 
-
-        const carOK=
-            !car ||
-            part.cars
-                .split("•")
-                .map(x=>x.trim())
-                .includes(car);
-
-
-        const typeOK=
-            !type ||
-            part.type===type;
-
-
-        return searchOK &&
-               brandOK &&
-               carOK &&
-               typeOK;
+        return matchText && matchBrand && matchCar && matchPart;
 
     });
 
+    productsBox.innerHTML="";
 
-    catalog.innerHTML="";
+    count.textContent=
+        "عدد القطع: "+filtered.length+" / "+products.length;
 
+    if(filtered.length===0){
 
-    filtered.forEach((part,index)=>{
+        productsBox.innerHTML=`
+            <div class="no-results">
+                ❌ لم يتم العثور على قطعة مطابقة للبحث
+                <br><br>
+                جرّب اسم سيارة أو قطعة أخرى
+            </div>
+        `;
+
+        return;
+    }
+
+    filtered.forEach((p,index)=>{
 
         const card=document.createElement("article");
 
         card.className="card";
 
-
         card.innerHTML=`
 
-            <div class="image-box">
-
-                <span class="status">
-                    ● متوفر
-                </span>
+            <div class="image-wrap">
 
                 <img
-                    src="${part.image}"
-                    alt="${part.fr} - ${part.ar}"
+                    src="${p.image}"
+                    alt="${p.ar}"
                     loading="lazy"
-                    onerror="this.src='https://placehold.co/800x600/151515/ffffff?text=BK+AUTO'"
+                    onerror="this.src='https://placehold.co/800x600/181818/ffffff?text=BK+AUTO'"
                 >
+
+                <div class="status">
+                    ● متوفر
+                </div>
 
             </div>
 
+            <div class="card-body">
 
-            <div class="content">
-
-                <div class="part-type">
-                    ${part.type}
+                <div class="category">
+                    ${p.brand} • ${p.part}
                 </div>
 
-
-                <div class="part-name-fr">
-                    ${part.fr}
+                <div class="name-ar">
+                    ${p.ar}
                 </div>
 
-
-                <div class="part-name-ar">
-                    ${part.ar}
+                <div class="name-fr">
+                    ${p.fr}
                 </div>
 
-
-                <span class="brand">
-                    🏷️ ${part.maker}
-                </span>
-
+                <div class="brand">
+                    العلامة: <strong>${p.maker}</strong>
+                </div>
 
                 <div class="compatible">
-
-                    <div class="compatible-title">
-                        🚗 السيارات المتوافقة:
-                    </div>
-
-                    <div class="cars">
-                        ${part.cars}
-                    </div>
-
+                    <strong>السيارات المتوافقة:</strong><br>
+                    ${p.cars}
                 </div>
 
-
-                <a
-                    class="call-btn"
-                    href="tel:0556419934"
-                >
-                    📞 اتصل للاستفسار
-                </a>
-
             </div>
-
         `;
 
-
-        catalog.appendChild(card);
+        productsBox.appendChild(card);
 
     });
 
-
-    count.textContent=
-        filtered.length+" قطعة";
-
-
-    empty.style.display=
-        filtered.length===0
-        ?"block"
-        :"none";
-
 }
 
 
-/* =========================
-   RESET
-========================= */
+/* =====================================================
+   إعادة ضبط
+===================================================== */
 
 function resetFilters(){
 
-    document.getElementById("search").value="";
-    document.getElementById("brandFilter").value="";
-    document.getElementById("carFilter").value="";
-    document.getElementById("typeFilter").value="";
+    search.value="";
+    brandFilter.value="";
+    carFilter.value="";
+    partFilter.value="";
 
-    displayParts();
+    renderProducts();
 
 }
 
 
-/* =========================
-   EVENTS
-========================= */
+/* =====================================================
+   الأحداث
+===================================================== */
 
-document
-.getElementById("search")
-.addEventListener("input",displayParts);
+search.addEventListener("input",renderProducts);
 
-document
-.getElementById("brandFilter")
-.addEventListener("change",displayParts);
+brandFilter.addEventListener("change",renderProducts);
 
-document
-.getElementById("carFilter")
-.addEventListener("change",displayParts);
+carFilter.addEventListener("change",renderProducts);
 
-document
-.getElementById("typeFilter")
-.addEventListener("change",displayParts);
+partFilter.addEventListener("change",renderProducts);
 
 
-/* =========================
-   START
-========================= */
+/* =====================================================
+   تشغيل الموقع
+===================================================== */
 
-displayParts();
+populateFilters();
+renderProducts();
 
 </script>
 
