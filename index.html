@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,1483 +7,1996 @@
 <title>BK AUTO | كتالوج قطع غيار السيارات</title>
 
 <meta name="description"
-content="BK AUTO - كتالوج قطع غيار Renault Peugeot Citroën Dacia في الجزائر">
+content="BK AUTO - كتالوج قطع غيار السيارات Renault Peugeot Dacia في الجزائر">
 
 <style>
 
 *{
-box-sizing:border-box;
-margin:0;
-padding:0;
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
 }
 
 body{
-font-family:Arial,Tahoma,sans-serif;
-background:#101010;
-color:#fff;
-min-height:100vh;
+    font-family:Arial,Tahoma,sans-serif;
+    background:#111;
+    color:#fff;
+    min-height:100vh;
 }
 
+/* HEADER */
+
 header{
-background:linear-gradient(135deg,#111,#252525);
-padding:35px 20px;
-text-align:center;
-border-bottom:2px solid #e3262e;
+    background:
+    linear-gradient(135deg,#080808,#1b1b1b);
+    border-bottom:3px solid #e00000;
+    padding:28px 15px;
+    text-align:center;
 }
 
 .logo{
-font-size:38px;
-font-weight:900;
+    font-size:42px;
+    font-weight:900;
+    letter-spacing:1px;
 }
 
-.logo span{
-color:#e3262e;
+.logo .bk{
+    color:#fff;
 }
 
-h1{
-font-size:30px;
-margin-top:12px;
+.logo .auto{
+    color:#e00000;
 }
 
 .subtitle{
-color:#bbb;
-margin-top:8px;
-font-size:16px;
+    margin-top:8px;
+    font-size:22px;
+    font-weight:bold;
+}
+
+.brands{
+    margin-top:8px;
+    color:#bbb;
+    font-size:15px;
 }
 
 .phone{
-display:inline-block;
-margin-top:15px;
-padding:10px 18px;
-background:#e3262e;
-border-radius:8px;
-font-size:20px;
-font-weight:bold;
-direction:ltr;
+    display:inline-block;
+    margin-top:18px;
+    background:#e00000;
+    color:#fff;
+    padding:13px 28px;
+    border-radius:10px;
+    text-decoration:none;
+    font-weight:bold;
+    font-size:20px;
 }
+
+/* CONTROLS */
 
 .controls{
-max-width:1200px;
-margin:25px auto 10px;
-padding:15px;
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-gap:10px;
+    max-width:1200px;
+    margin:25px auto;
+    padding:0 15px;
 }
 
-input,
+.controls-box{
+    background:#1d1d1d;
+    border:1px solid #333;
+    border-radius:14px;
+    padding:18px;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:12px;
+}
+
 select,
-button{
-width:100%;
-padding:13px;
-border-radius:8px;
-border:1px solid #444;
-font-size:15px;
+input{
+    width:100%;
+    background:#101010;
+    color:#fff;
+    border:1px solid #555;
+    border-radius:9px;
+    padding:13px;
+    font-size:15px;
+    outline:none;
 }
 
-input,
-select{
-background:#222;
-color:#fff;
+select:focus,
+input:focus{
+    border-color:#e00000;
 }
 
-button{
-background:#e3262e;
-color:#fff;
-border:0;
-cursor:pointer;
-font-weight:bold;
+.reset{
+    background:#e00000;
+    color:white;
+    border:none;
+    border-radius:9px;
+    padding:13px;
+    cursor:pointer;
+    font-weight:bold;
 }
 
-button:hover{
-background:#c91d25;
+/* COUNT */
+
+.result{
+    max-width:1200px;
+    margin:0 auto 15px;
+    padding:0 15px;
+    color:#ddd;
 }
 
-.stats{
-max-width:1200px;
-margin:auto;
-padding:10px 15px;
-color:#ccc;
-font-size:16px;
+.result strong{
+    color:#e00000;
 }
 
-.grid{
-max-width:1200px;
-margin:auto;
-padding:15px;
-display:grid;
-grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
-gap:15px;
+/* PRODUCTS */
+
+.products{
+    max-width:1200px;
+    margin:auto;
+    padding:0 15px 40px;
+
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fill,minmax(220px,1fr));
+
+    gap:18px;
 }
 
 .card{
-background:#1c1c1c;
-border:1px solid #333;
-border-radius:12px;
-padding:18px;
-transition:.2s;
+    background:#1b1b1b;
+    border:1px solid #333;
+    border-radius:14px;
+    overflow:hidden;
+    transition:.25s;
+    position:relative;
 }
 
 .card:hover{
-transform:translateY(-3px);
-border-color:#e3262e;
+    transform:translateY(-4px);
+    border-color:#e00000;
+    box-shadow:0 8px 25px rgba(0,0,0,.45);
 }
 
-.badge{
-display:inline-block;
-background:#e3262e;
-padding:5px 10px;
-border-radius:6px;
-font-size:12px;
-margin-bottom:10px;
+.image-box{
+    width:100%;
+    height:190px;
+    background:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+}
+
+.image-box img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+}
+
+.card-body{
+    padding:15px;
+}
+
+.brand{
+    display:inline-block;
+    background:#e00000;
+    color:#fff;
+    padding:5px 9px;
+    border-radius:6px;
+    font-size:12px;
+    font-weight:bold;
 }
 
 .card h3{
-font-size:20px;
-margin-bottom:10px;
+    margin-top:10px;
+    font-size:18px;
 }
 
-.line{
-margin:7px 0;
-color:#ccc;
+.car{
+    color:#bbb;
+    margin-top:7px;
+    font-size:14px;
+    line-height:1.6;
 }
 
-.ref{
-direction:ltr;
-text-align:left;
-font-size:20px;
-font-weight:bold;
-color:#ff4b52;
-background:#101010;
-padding:10px;
-border-radius:7px;
-margin-top:12px;
+.engine{
+    color:#999;
+    font-size:13px;
+    margin-top:5px;
 }
 
-.contact{
-text-align:center;
-background:#181818;
-padding:35px 20px;
-margin-top:30px;
-border-top:1px solid #333;
+.contact-btn{
+    display:block;
+    margin-top:14px;
+    background:#e00000;
+    color:white;
+    text-align:center;
+    padding:10px;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:bold;
 }
 
-.contact h2{
-font-size:28px;
+/* NO RESULTS */
+
+.no-results{
+    text-align:center;
+    padding:60px 15px;
+    color:#aaa;
+    display:none;
 }
 
-.contact p{
-margin-top:10px;
-color:#ccc;
+.no-results h2{
+    color:#e00000;
+    margin-bottom:10px;
 }
 
-.contact .number{
-font-size:27px;
-font-weight:bold;
-color:#e3262e;
-direction:ltr;
+/* FOOTER */
+
+footer{
+    background:#080808;
+    border-top:2px solid #e00000;
+    text-align:center;
+    padding:28px 15px;
+    color:#aaa;
 }
 
-@media(max-width:600px){
-
-h1{
-font-size:23px;
+footer .footer-logo{
+    font-size:25px;
+    font-weight:bold;
+    margin-bottom:10px;
 }
 
-.logo{
-font-size:30px;
+footer .footer-logo span{
+    color:#e00000;
 }
 
-.grid{
-grid-template-columns:1fr;
+footer a{
+    color:#e00000;
+    text-decoration:none;
+    font-weight:bold;
 }
+
+/* MOBILE */
+
+@media(max-width:800px){
+
+    .controls-box{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .logo{
+        font-size:34px;
+    }
+
+    .subtitle{
+        font-size:18px;
+    }
+
+}
+
+@media(max-width:520px){
+
+    header{
+        padding:22px 10px;
+    }
+
+    .logo{
+        font-size:31px;
+    }
+
+    .subtitle{
+        font-size:17px;
+    }
+
+    .phone{
+        font-size:17px;
+        padding:11px 20px;
+    }
+
+    .controls-box{
+        grid-template-columns:1fr;
+    }
+
+    .products{
+        grid-template-columns:
+        repeat(2,minmax(0,1fr));
+        gap:10px;
+        padding-left:10px;
+        padding-right:10px;
+    }
+
+    .image-box{
+        height:145px;
+    }
+
+    .card-body{
+        padding:10px;
+    }
+
+    .card h3{
+        font-size:15px;
+    }
+
+    .car{
+        font-size:12px;
+    }
+
+    .engine{
+        font-size:11px;
+    }
+
+    .contact-btn{
+        font-size:12px;
+        padding:9px 4px;
+    }
+
+}
+
+/* VERY SMALL */
+
+@media(max-width:350px){
+
+    .products{
+        grid-template-columns:1fr;
+    }
 
 }
 
 </style>
 </head>
 
-
 <body>
 
+<!-- ================= HEADER ================= -->
 
 <header>
 
-<div class="logo">
-BK <span>AUTO</span>
-</div>
+    <div class="logo">
+        <span class="bk">BK</span>
+        <span class="auto">AUTO</span>
+    </div>
 
-<h1>
-كتالوج قطع غيار السيارات
-</h1>
+    <div class="subtitle">
+        كتالوج قطع غيار السيارات
+    </div>
 
-<div class="subtitle">
-Renault • Peugeot • Citroën • Dacia
-</div>
+    <div class="brands">
+        Renault • Peugeot • Dacia
+    </div>
 
-<div class="phone">
-0556419934
-</div>
+    <a class="phone" href="tel:0556419934">
+        📞 0556419934
+    </a>
 
 </header>
 
 
-<div class="controls">
+<!-- ================= SEARCH ================= -->
 
-<select id="brandSelect">
-<option value="">كل الماركات</option>
-</select>
+<section class="controls">
 
-<select id="modelSelect">
-<option value="">كل السيارات</option>
-</select>
+    <div class="controls-box">
 
-<select id="engineSelect">
-<option value="">كل المحركات</option>
-</select>
+        <input
+            type="text"
+            id="search"
+            placeholder="🔎 ابحث عن قطعة أو سيارة..."
+        >
 
-<input
-id="searchInput"
-type="text"
-placeholder="ابحث بالمرجع أو اسم القطعة أو السيارة..."
+        <select id="brandFilter">
+            <option value="">كل الماركات</option>
+            <option value="Renault">Renault</option>
+            <option value="Peugeot">Peugeot</option>
+            <option value="Dacia">Dacia</option>
+        </select>
+
+        <select id="carFilter">
+            <option value="">كل السيارات</option>
+        </select>
+
+        <select id="engineFilter">
+            <option value="">كل المحركات</option>
+        </select>
+
+        <button class="reset" onclick="resetFilters()">
+            إعادة ضبط
+        </button>
+
+    </div>
+
+</section>
 
 
-<button id="resetButton">
-إعادة ضبط
-</button>
+<!-- ================= RESULT ================= -->
+
+<div class="result">
+    عدد القطع:
+    <strong id="count">90</strong>
+</div>
+
+
+<!-- ================= PRODUCTS ================= -->
+
+<main class="products" id="products">
+
+
+<!-- =====================================================
+     RENAULT 50
+===================================================== -->
+
+
+<div class="card" data-brand="Renault" data-car="Clio" data-engine="1.2 16V">
+<div class="image-box">
+<img src="images/renault-clio-pompe-eau.jpg"
+alt="مضخة ماء Renault Clio">
+</div>
+<div class="card-body">
+<span class="brand">RENAULT</span>
+<h3>مضخة الماء</h3>
+<div class="car">Clio</div>
+<div class="engine">1.2 16V</div>
+<a class="contact-btn" href="tel:0556419934">اتصل للاستفسار</a>
+</div>
+</div>
+
+
+<div class="card" data-brand="Renault" data-car="Clio" data-engine="1.2 16V">
+<div class="image-box">
+<img src="images/renault-clio-filtre-huile.jpg"
+alt="فلتر زيت Renault Clio">
+</div>
+<div class="card-body">
+<span class="brand">RENAULT</span>
+<h3>فلتر الزيت</h3>
+<div class="car">Clio</div>
+<div class="engine">1.2 16V</div>
+<a class="contact-btn" href="tel:0556419934">اتصل للاستفسار</a>
+</div>
+</div>
+
+
+<div class="card" data-brand="Renault" data-car="Clio" data-engine="1.2 16V">
+<div class="image-box">
+<img src="images/renault-clio-kit-embrayage.jpg"
+alt="طقم القابض Renault Clio">
+</div>
+<div class="card-body">
+<span class="brand">RENAULT</span>
+<h3>طقم القابض</h3>
+<div class="car">Clio</div>
+<div class="engine">1.2 16V</div>
+<a class="contact-btn" href="tel:0556419934">اتصل للاستفسار</a>
+</div>
+</div>
+
+
+<div class="card" data-brand="Renault" data-car="Clio" data-engine="1.2 16V">
+<div class="image-box">
+<img src="images/renault-clio-joint-spi.jpg"
+alt="جوان زيت Renault Clio">
+</div>
+<div class="card-body">
+<span class="brand">RENAULT</span>
+<h3>جوان زيت</h3>
+<div class="car">Clio</div>
+<div class="engine">1.2 16V</div>
+<a class="contact-btn" href="tel:0556419934">اتصل للاستفسار</a>
+</div>
+</div>
+
+
+<div class="card" data-brand="Renault" data-car="Clio" data-engine="1.2 16V">
+<div class="image-box">
+<img src="images/renault-clio-courroie.jpg"
+alt="سير Renault Clio">
+</div>
+<div class="card-body">
+<span class="brand">RENAULT</span>
+<h3>سير الملحقات</h3>
+<div class="car">Clio</div>
+<div class="engine">1.2 16V</div>
+<a class="contact-btn" href="tel:0556419934">اتصل للاستفسار</a>
+</div>
+</div>
+
+
+<div class="card" data-brand="Renault" data-car="Clio" data-engine="1.2 16V">
+<div class="image-box">
+<img src="images/renault-clio-thermostat.jpg"
+alt="ترموستات Renault Clio">
+</div>
+<div class="card-body">
+<span class="brand">RENAULT</span>
+<h3>ترموستات</h3>
+<div class="car">Clio</div>
+<div class="engine">1.2 16V</div>
+<a class="contact-btn" href="tel:0556419934">اتصل للاستفسار</a>
+</div>
+</div>
+
+
+<div class="card" data-brand="Renault" data-car="Clio" data-engine="1.2 16V">
+<div class="image-box">
+<img src="images/renault-clio-plaquettes.jpg"
+alt="فحمات Renault Clio">
+</div>
+<div class="card-body">
+<span class="brand">RENAULT</span>
+<h3>فحمات الفرامل الأمامية</h3>
+<div class="car">Clio</div>
+<div class="engine">1.2 16V</div>
+<a class="contact-btn" href="tel:0556419934">اتصل للاستفسار</a>
+</div>
+</div>
+
+
+<div class="card" data-brand="Renault" data-car="Clio" data-engine="1.2 16V">
+<div class="image-box">
+<img src="images/renault-clio-filtre-air.jpg"
+alt="فلتر هواء Renault Clio">
+</div>
+<div class="card-body">
+<span class="brand">RENAULT</span>
+<h3>فلتر الهواء</h3>
+<div class="car">Clio</div>
+<div class="engine">1.2 16V</div>
+<a class="contact-btn" href="tel:0556419934">اتصل للاستفسار</a>
+</div>
+</div>
+
+
+<div class="card" data-brand="Renault" data-car="Clio" data-engine="1.2 16V">
+<div class="image-box">
+<img src="images/renault-clio-filtre-essence.jpg"
+alt="فلتر البنزين Renault Clio">
+</div>
+<div class="card-body">
+<span class="brand">RENAULT</span>
+<h3>فلتر الوقود</h3>
+<div class="car">Clio</div>
+<div class="engine">1.2 16V</div>
+<a class="contact-btn" href="tel:0556419934">اتصل للاستفسار</a>
+</div>
+</div>
+
+
+<div class="card" data-brand="Renault" data-car="Clio" data-engine="1.2 16V">
+<div class="image-box">
+<img src="images/renault-clio-bougies.jpg"
+alt="بواجي Renault Clio">
+</div>
+<div class="card-body">
+<span class="brand">RENAULT</span>
+<h3>شمعات الإشعال</h3>
+<div class="car">Clio</div>
+<div class="engine">1.2 16V</div>
+<a class="contact-btn" href="tel:0556419934">اتصل للاستفسار</a>
+</div>
+</div>
+
+
+<div class="card" data-brand="Renault" data-car="Symbol" data-engine="1.4 Essence">
+<div class="image-box">
+<img src="images/renault-symbol-pompe-eau.jpg"
+alt="مضخة ماء Renault Symbol">
+</div>
+<div class="card-body">
+<span class="brand">RENAULT</span>
+<h3>مضخة الماء</h3>
+<div class="car">Symbol</div>
+<div class="engine">1.4 Essence</div>
+<a class="contact-btn" href="tel:0556419934">اتصل للاستفسار</a>
+</div>
+</div>
+
+
+<div class="card" data-brand="Renault" data-car="Symbol" data-engine="1.4 Essence">
+<div class="image-box">
+<img src="images/renault-symbol-kit-embrayage.jpg"
+alt="طقم القابض Renault Symbol">
+</div>
+<div class="card-body">
+<span class="brand">RENAULT</span>
+<h3>طقم القابض</h3>
+<div class="car">Symbol</div>
+<div class="engine">1.4 Essence</div>
+<a class="contact-btn" href="tel:0556419934">اتصل للاستفسار</a>
+</div>
+</div>
+
+
+<div class="card" data-brand="Renault" data-car="Symbol" data-engine="1.4 Essence">
+<div class="image-box">
+<img src="images/renault-symbol-filtre-huile.jpg"
+alt="فلتر زيت Renault Symbol">
+</div>
+<div class="card-body">
+<span class="brand">RENAULT</span>
+<h3>فلتر الزيت</h3>
+<div class="car">Symbol</div>
+<div class="engine">1.4 Essence</div>
+<a class="contact-btn" href="tel:0556419934">اتصل للاستفسار</a>
+</div>
+</div>
+
+
+<div class="card" data-brand="Renault" data-car="Logan" data-engine="1.6 Essence">
+<div class="image-box">
+<img src="images/renault-logan-pompe-eau.jpg"
+alt="مضخة ماء Renault Logan">
+</div>
+<div class="card-body">
+<span class="brand">RENAULT</span>
+<h3>مضخة الماء</h3>
+<div class="car">Logan</div>
+<div class="engine">1.6 Essence</div>
+<a class="contact-btn" href="tel:0556419934">اتصل للاستفسار</a>
+</div>
+</div>
+
+
+<div class="card" data-brand="Renault" data-car="Logan" data-engine="1.6 Essence">
+<div class="image-box">
+<img src="images/renault-logan-kit-embrayage.jpg"
+alt="طقم القابض Renault Logan">
+</div>
+<div class="card-body">
+<span class="brand">RENAULT</span>
+<h3>طقم القابض</h3>
+<div class="car">Logan</div>
+<div class="engine">1.6 Essence</div>
+<a class="contact-btn" href="tel:0556419934">اتصل للاستفسار</a>
+</div>
+</div>
+
+
+<div class="card" data-brand="Renault" data-car="Logan" data-engine="1.6 Essence">
+<div class="image-box">
+<img src="images/renault-logan-filtre-huile.jpg"
+alt="فلتر زيت Renault Logan">
+</div>
+<div class="card-body">
+<span class="brand">RENAULT</span>
+<h3>فلتر الزيت</h3>
+<div class="car">Logan</div>
+<div class="engine">1.6 Essence</div>
+<a class="contact-btn" href="tel:0556419934">اتصل للاستفسار</a>
+</div>
+</div>
+
+
+<div class="card" data-brand="Renault" data-car="Logan" data-engine="1.5 dCi">
+<div class="image-box">
+<img src="images/renault-logan-filtre-gasoil.jpg"
+alt="فلتر وقود Renault Logan">
+</div>
+<div class="card-body">
+<span class="brand">RENAULT</span>
+<h3>فلتر الوقود</h3>
+<div class="car">Logan</div>
+<div class="engine">1.5 dCi</div>
+<a class="contact-btn" href="tel:0556419934">اتصل للاستفسار</a>
+</div>
+</div>
+
+
+<div class="card" data-brand="Renault" data-car="Logan" data-engine="1.5 dCi">
+<div class="image-box">
+<img src="images/renault-logan-plaquettes.jpg"
+alt="فحمات Renault Logan">
+</div>
+<div class="card-body">
+<span class="brand">RENAULT</span>
+<h3>فحمات الفرامل</h3>
+<div class="car">Logan</div>
+<div class="engine">1.5 dCi</div>
+<a class="contact-btn" href="tel:0556419934">اتصل للاستفسار</a>
+</div>
+</div>
+
+
+<div class="card" data-brand="Renault" data-car="Megane 2" data-engine="1.5 dCi">
+<div class="image-box">
+<img src="images/renault-megane2-roulement.jpg"
+alt="رولمان Renault Megane 2">
+</div>
+<div class="card-body">
+<span class="brand">RENAULT</span>
+<h3>رولمان العجلة الخلفية</h3>
+<div class="car">Megane 2</div>
+<div class="engine">1.5 dCi</div>
+<a class="contact-btn" href="tel:0556419934">اتصل للاستفسار</a>
+</div>
+</div>
+
+
+<div class="card" data-brand="Renault" data-car="Megane 2" data-engine="1.5 dCi">
+<div class="image-box">
+<img src="images/renault-megane2-kit-embrayage.jpg"
+alt="طقم القابض Renault Megane 2">
+</div>
+<div class="card-body">
+<span class="brand">RENAULT</span>
+<h3>طقم القابض</h3>
+<div class="car">Megane 2</div>
+<div class="engine">1.5 dCi</div>
+<a class="contact-btn" href="tel:0556419934">اتصل للاستفسار</a>
+</div>
+</div>
+
+
+<div class="card" data-brand="Renault" data-car="Kangoo" data-engine="1.9 Diesel">
+<div class="image-box">
+<img src="images/renault-kangoo-pompe-eau.jpg"
+alt="مضخة ماء Renault Kangoo">
+</div>
+<div class="card-body">
+<span class="brand">RENAULT</span>
+<h3>مضخة الماء</h3>
+<div class="car">Kangoo</div>
+<div class="engine">1.9 Diesel</div>
+<a class="contact-btn" href="tel:0556419934">اتصل للاستفسار</a>
+</div>
+</div>
+
+
+<div class="card" data-brand="Renault" data-car="Kangoo" data-engine="1.9 Diesel">
+<div class="image-box">
+<img src="images/renault-kangoo-joint-spi.jpg"
+alt="جوان زيت Renault Kangoo">
+</div>
+<div class="card-body">
+<span class="brand">RENAULT</span>
+<h3>جوان زيت</h3>
+<div class="car">Kangoo</div>
+<div class="engine">1.9 Diesel</div>
+<a class="contact-btn" href="tel:0556419934">اتصل للاستفسار</a>
+</div>
+</div>
+
+
+<div class="card" data-brand="Renault" data-car="Kangoo" data-engine="1.5 dCi">
+<div class="image-box">
+<img src="images/renault-kangoo-kit-embrayage.jpg"
+alt="طقم القابض Renault Kangoo">
+</div>
+<div class="card-body">
+<span class="brand">RENAULT</span>
+<h3>طقم القابض</h3>
+<div class="car">Kangoo</div>
+<div class="engine">1.5 dCi</div>
+<a class="contact-btn" href="tel:0556419934">اتصل للاستفسار</a>
+</div>
+</div>
+
+
+<div class="card" data-brand="Renault" data-car="Kangoo" data-engine="1.5 dCi">
+<div class="image-box">
+<img src="images/renault-kangoo-joint-culasse.jpg"
+alt="جوان رأس المحرك Renault Kangoo">
+</div>
+<div class="card-body">
+<span class="brand">RENAULT</span>
+<h3>جوان رأس المحرك</h3>
+<div class="car">Kangoo</div>
+<div class="engine">1.5 dCi</div>
+<a class="contact-btn" href="tel:0556419934">اتصل للاستفسار</a>
+</div>
+</div>
+
+
+<div class="card" data-brand="Renault" data-car="Master" data-engine="2.5 Diesel">
+<div class="image-box">
+<img src="images/renault-master-filtre-huile.jpg"
+alt="فلتر زيت Renault Master">
+</div>
+<div class="card-body">
+<span class="brand">RENAULT</span>
+<h3>فلتر الزيت</h3>
+<div class="car">Master</div>
+<div class="engine">2.5 Diesel</div>
+<a class="contact-btn" href="tel:0556419934">اتصل للاستفسار</a>
+</div>
+</div>
+
+
+<!-- =========================
+     Renault إضافية
+========================= -->
+
+<div class="card" data-brand="Renault" data-car="Clio 2" data-engine="1.9 Diesel">
+<div class="image-box">
+<img src="images/renault-clio2-kit-embrayage.jpg" alt="طقم القابض">
+</div>
+<div class="card-body">
+<span class="brand">RENAULT</span>
+<h3>طقم القابض</h3>
+<div class="car">Clio 2</div>
+<div class="engine">1.9 Diesel</div>
+<a class="contact-btn" href="tel:0556419934">اتصل للاستفسار</a>
+</div>
+</div>
+
+<div class="card" data-brand="Renault" data-car="Clio 3" data-engine="1.5 dCi">
+<div class="image-box">
+<img src="images/renault-clio3-filtre-air.jpg" alt="فلتر الهواء">
+</div>
+<div class="card-body">
+<span class="brand">RENAULT</span>
+<h3>فلتر الهواء</h3>
+<div class="car">Clio 3</div>
+<div class="engine">1.5 dCi</div>
+<a class="contact-btn" href="tel:0556419934">اتصل للاستفسار</a>
+</div>
+</div>
+
+<div class="card" data-brand="Renault" data-car="Clio 3" data-engine="1.5 dCi">
+<div class="image-box">
+<img src="images/renault-clio3-filtre-huile.jpg" alt="فلتر الزيت">
+</div>
+<div class="card-body">
+<span class="brand">RENAULT</span>
+<h3>فلتر الزيت</h3>
+<div class="car">Clio 3</div>
+<div class="engine">1.5 dCi</div>
+<a class="contact-btn" href="tel:0556419934">اتصل للاستفسار</a>
+</div>
+</div>
+
+<div class="card" data-brand="Renault" data-car="Clio 4" data-engine="0.9 TCe">
+<div class="image-box">
+<img src="images/renault-clio4-filtre-huile.jpg" alt="فلتر الزيت">
+</div>
+<div class="card-body">
+<span class="brand">RENAULT</span>
+<h3>فلتر الزيت</h3>
+<div class="car">Clio 4</div>
+<div class="engine">0.9 TCe</div>
+<a class="contact-btn" href="tel:0556419934">اتصل للاستفسار</a>
+</div>
+</div>
+
+<div class="card" data-brand="Renault" data-car="Clio 4" data-engine="1.5 dCi">
+<div class="image-box">
+<img src="images/renault-clio4-plaquettes.jpg" alt="فحمات الفرامل">
+</div>
+<div class="card-body">
+<span class="brand">RENAULT</span>
+<h3>فحمات الفرامل</h3>
+<div class="car">Clio 4</div>
+<div class="engine">1.5 dCi</div>
+<a class="contact-btn" href="tel:0556419934">اتصل للاستفسار</a>
+</div>
+</div>
+
+<div class="card" data-brand="Renault" data-car="Symbol" data-engine="1.6 Essence">
+<div class="image-box">
+<img src="images/renault-symbol-filtre-air.jpg" alt="فلتر الهواء">
+</div>
+<div class="card-body">
+<span class="brand">RENAULT</span>
+<h3>فلتر الهواء</h3>
+<div class="car">Symbol</div>
+<div class="engine">1.6 Essence</div>
+<a class="contact-btn" href="tel:0556419934">اتصل للاستفسار</a>
+</div>
+</div>
+
+<div class="card" data-brand="Renault" data-car="Symbol" data-engine="1.6 Essence">
+<div class="image-box">
+<img src="images/renault-symbol-courroie.jpg" alt="سير الملحقات">
+</div>
+<div class="card-body">
+<span class="brand">RENAULT</span>
+<h3>سير الملحقات</h3>
+<div class="car">Symbol</div>
+<div class="engine">1.6 Essence</div>
+<a class="contact-btn" href="tel:0556419934">اتصل للاستفسار</a>
+</div>
+</div>
+
+<div class="card" data-brand="Renault" data-car="Duster" data-engine="1.5 dCi">
+<div class="image-box">
+<img src="images/renault-duster-filtre-gasoil.jpg" alt="فلتر الوقود">
+</div>
+<div class="card-body">
+<span class="brand">RENAULT</span>
+<h3>فلتر الوقود</h3>
+<div class="car">Duster</div>
+<div class="engine">1.5 dCi</div>
+<a class="contact-btn" href="tel:0556419934">اتصل للاستفسار</a>
+</div>
+</div>
+
+<div class="card" data-brand="Renault" data-car="Duster" data-engine="1.5 dCi">
+<div class="image-box">
+<img src="images/renault-duster-plaquettes.jpg" alt="فحمات الفرامل">
+</div>
+<div class="card-body">
+<span class="brand">RENAULT</span>
+<h3>فحمات الفرامل</h3>
+<div class="car">Duster</div>
+<div class="engine">1.5 dCi</div>
+<a class="contact-btn" href="tel:0556419934">اتصل للاستفسار</a>
+</div>
+</div>
+
+<div class="card" data-brand="Renault" data-car="Megane 2" data-engine="1.6 Essence">
+<div class="image-box">
+<img src="images/renault-megane2-filtre-huile.jpg" alt="فلتر الزيت">
+</div>
+<div class="card-body">
+<span class="brand">RENAULT</span>
+<h3>فلتر الزيت</h3>
+<div class="car">Megane 2</div>
+<div class="engine">1.6 Essence</div>
+<a class="contact-btn" href="tel:0556419934">اتصل للاستفسار</a>
+</div>
+</div>
+
+<div class="card" data-brand="Renault" data-car="Megane 2" data-engine="1.6 Essence">
+<div class="image-box">
+<img src="images/renault-megane2-thermostat.jpg" alt="ترموستات">
+</div>
+<div class="card-body">
+<span class="brand">RENAULT</span>
+<h3>ترموستات</h3>
+<div class="car">Megane 2</div>
+<div class="engine">1.6 Essence</div>
+<a class="contact-btn" href="tel:0556419934">اتصل للاستفسار</a>
+</div>
+</div>
+
+<div class="card" data-brand="Renault" data-car="Megane 2" data-engine="1.9 dCi">
+<div class="image-box">
+<img src="images/renault-megane2-triangle.jpg" alt="مثلث التعليق">
+</div>
+<div class="card-body">
+<span class="brand">RENAULT</span>
+<h3>مثلث التعليق</h3>
+<div class="car">Megane 2</div>
+<div class="engine">1.9 dCi</div>
+<a class="contact-btn" href="tel:0556419934">اتصل للاستفسار</a>
+</div>
+</div>
+
+<div class="card" data-brand="Renault" data-car="Kangoo" data-engine="1.5 dCi">
+<div class="image-box">
+<img src="images/renault-kangoo-filtre-air.jpg" alt="فلتر الهواء">
+</div>
+<div class="card-body">
+<span class="brand">RENAULT</span>
+<h3>فلتر الهواء</h3>
+<div class="car">Kangoo</div>
+<div class="engine">1.5 dCi</div>
+<a class="contact-btn" href="tel:0556419934">اتصل للاستفسار</a>
+</div>
+</div>
+
+<div class="card" data-brand="Renault" data-car="Kangoo" data-engine="1.5 dCi">
+<div class="image-box">
+<img src="images/renault-kangoo-filtre-huile.jpg" alt="فلتر الزيت">
+</div>
+<div class="card-body">
+<span class="brand">RENAULT</span>
+<h3>فلتر الزيت</h3>
+<div class="car">Kangoo</div>
+<div class="engine">1.5 dCi</div>
+<a class="contact-btn" href="tel:0556419934">اتصل للاستفسار</a>
+</div>
+</div>
+
+<div class="card" data-brand="Renault" data-car="Master" data-engine="2.3 dCi">
+<div class="image-box">
+<img src="images/renault-master-filtre-air.jpg" alt="فلتر الهواء">
+</div>
+<div class="card-body">
+<span class="brand">RENAULT</span>
+<h3>فلتر الهواء</h3>
+<div class="car">Master</div>
+<div class="engine">2.3 dCi</div>
+<a class="contact-btn" href="tel:0556419934">اتصل للاستفسار</a>
+</div>
+</div>
+
+<div class="card" data-brand="Renault" data-car="Master" data-engine="2.3 dCi">
+<div class="image-box">
+<img src="images/renault-master-plaquettes.jpg" alt="فحمات الفرامل">
+</div>
+<div class="card-body">
+<span class="brand">RENAULT</span>
+<h3>فحمات الفرامل</h3>
+<div class="car">Master</div>
+<div class="engine">2.3 dCi</div>
+<a class="contact-btn" href="tel:0556419934">اتصل للاستفسار</a>
+</div>
+</div>
+
+<div class="card" data-brand="Renault" data-car="Fluence" data-engine="1.5 dCi">
+<div class="image-box">
+<img src="images/renault-fluence-filtre-huile.jpg" alt="فلتر الزيت">
+</div>
+<div class="card-body">
+<span class="brand">RENAULT</span>
+<h3>فلتر الزيت</h3>
+<div class="car">Fluence</div>
+<div class="engine">1.5 dCi</div>
+<a class="contact-btn" href="tel:0556419934">اتصل للاستفسار</a>
+</div>
+</div>
+
+<div class="card" data-brand="Renault" data-car="Fluence" data-engine="1.6 Essence">
+<div class="image-box">
+<img src="images/renault-fluence-filtre-air.jpg" alt="فلتر الهواء">
+</div>
+<div class="card-body">
+<span class="brand">RENAULT</span>
+<h3>فلتر الهواء</h3>
+<div class="car">Fluence</div>
+<div class="engine">1.6 Essence</div>
+<a class="contact-btn" href="tel:0556419934">اتصل للاستفسار</a>
+</div>
+</div>
+
+<div class="card" data-brand="Renault" data-car="Sandero" data-engine="1.6 Essence">
+<div class="image-box">
+<img src="images/renault-sandero-filtre-huile.jpg" alt="فلتر الزيت">
+</div>
+<div class="card-body">
+<span class="brand">RENAULT</span>
+<h3>فلتر الزيت</h3>
+<div class="car">Sandero</div>
+<div class="engine">1.6 Essence</div>
+<a class="contact-btn" href="tel:0556419934">اتصل للاستفسار</a>
+</div>
+</div>
+
+<div class="card" data-brand="Renault" data-car="Stepway" data-engine="1.6 Essence">
+<div class="image-box">
+<img src="images/renault-stepway-kit-embrayage.jpg" alt="طقم القابض">
+</div>
+<div class="card-body">
+<span class="brand">RENAULT</span>
+<h3>طقم القابض</h3>
+<div class="car">Stepway</div>
+<div class="engine">1.6 Essence</div>
+<a class="contact-btn" href="tel:0556419934">اتصل للاستفسار</a>
+</div>
+</div>
+
+<div class="card" data-brand="Renault" data-car="Scenic" data-engine="1.9 dCi">
+<div class="image-box">
+<img src="images/renault-scenic-plaquettes.jpg" alt="فحمات الفرامل">
+</div>
+<div class="card-body">
+<span class="brand">RENAULT</span>
+<h3>فحمات الفرامل</h3>
+<div class="car">Scenic</div>
+<div class="engine">1.9 dCi</div>
+<a class="contact-btn" href="tel:0556419934">اتصل للاستفسار</a>
+</div>
+</div>
+
+<div class="card" data-brand="Renault" data-car="Laguna" data-engine="1.9 dCi">
+<div class="image-box">
+<img src="images/renault-laguna-filtre-huile.jpg" alt="فلتر الزيت">
+</div>
+<div class="card-body">
+<span class="brand">RENAULT</span>
+<h3>فلتر الزيت</h3>
+<div class="car">Laguna</div>
+<div class="engine">1.9 dCi</div>
+<a class="contact-btn" href="tel:0556419934">اتصل للاستفسار</a>
+</div>
+</div>
+
+<div class="card" data-brand="Renault" data-car="Captur" data-engine="1.5 dCi">
+<div class="image-box">
+<img src="images/renault-captur-filtre-air.jpg" alt="فلتر الهواء">
+</div>
+<div class="card-body">
+<span class="brand">RENAULT</span>
+<h3>فلتر الهواء</h3>
+<div class="car">Captur</div>
+<div class="engine">1.5 dCi</div>
+<a class="contact-btn" href="tel:0556419934">اتصل للاستفسار</a>
+</div>
+</div>
+
+
+<!-- =====================================================
+     PEUGEOT 30
+===================================================== -->
+
+
+<div class="card" data-brand="Peugeot" data-car="206" data-engine="1.4 Essence">
+<div class="image-box">
+<img src="images/peugeot-206-filtre-huile.jpg" alt="فلتر الزيت Peugeot 206">
+</div>
+<div class="card-body">
+<span class="brand">PEUGEOT</span>
+<h3>فلتر الزيت</h3>
+<div class="car">206</div>
+<div class="engine">1.4 Essence</div>
+<a class="contact-btn" href="tel:0556419934">اتصل للاستفسار</a>
+</div>
+</div>
+
+<div class="card" data-brand="Peugeot" data-car="206" data-engine="1.4 Essence">
+<div class="image-box">
+<img src="images/peugeot-206-kit-embrayage.jpg" alt="طقم القابض">
+</div>
+<div class="card-body">
+<span class="brand">PEUGEOT</span>
+<h3>طقم القابض</h3>
+<div class="car">206</div>
+<div class="engine">1.4 Essence</div>
+<a class="contact-btn" href="tel:0556419934">اتصل للاستفسار</a>
+</div>
+</div>
+
+<div class="card" data-brand="Peugeot" data-car="207" data-engine="1.6 HDi">
+<div class="image-box">
+<img src="images/peugeot-207-kit-embrayage.jpg" alt="طقم القابض Peugeot 207">
+</div>
+<div class="card-body">
+<span class="brand">PEUGEOT</span>
+<h3>طقم القابض</h3>
+<div class="car">207</div>
+<div class="engine">1.6 HDi</div>
+<a class="contact-btn" href="tel:0556419934">اتصل للاستفسار</a>
+</div>
+</div>
+
+<div class="card" data-brand="Peugeot" data-car="207" data-engine="1.4 HDi">
+<div class="image-box">
+<img src="images/peugeot-207-filtre-huile.jpg" alt="فلتر الزيت">
+</div>
+<div class="card-body">
+<span class="brand">PEUGEOT</span>
+<h3>فلتر الزيت</h3>
+<div class="car">207</div>
+<div class="engine">1.4 HDi</div>
+<a class="contact-btn" href="tel:0556419934">اتصل للاستفسار</a>
+</div>
+</div>
+
+<div class="card" data-brand="Peugeot" data-car="208" data-engine="1.6 HDi">
+<div class="image-box">
+<img src="images/peugeot-208-kit-embrayage.jpg" alt="طقم القابض">
+</div>
+<div class="card-body">
+<span class="brand">PEUGEOT</span>
+<h3>طقم القابض</h3>
+<div class="car">208</div>
+<div class="engine">1.6 HDi</div>
+<a class="contact-btn" href="tel:0556419934">اتصل للاستفسار</a>
+</div>
+</div>
+
+<div class="card" data-brand="Peugeot" data-car="208" data-engine="1.2 VTi">
+<div class="image-box">
+<img src="images/peugeot-208-filtre-air.jpg" alt="فلتر الهواء">
+</div>
+<div class="card-body">
+<span class="brand">PEUGEOT</span>
+<h3>فلتر الهواء</h3>
+<div class="car">208</div>
+<div class="engine">1.2 VTi</div>
+<a class="contact-btn" href="tel:0556419934">اتصل للاستفسار</a>
+</div>
+</div>
+
+<div class="card" data-brand="Peugeot" data-car="301" data-engine="1.6 VTi">
+<div class="image-box">
+<img src="images/peugeot-301-filtre-huile.jpg" alt="فلتر الزيت">
+</div>
+<div class="card-body">
+<span class="brand">PEUGEOT</span>
+<h3>فلتر الزيت</h3>
+<div class="car">301</div>
+<div class="engine">1.6 VTi</div>
+<a class="contact-btn" href="tel:0556419934">اتصل للاستفسار</a>
+</div>
+</div>
+
+<div class="card" data-brand="Peugeot" data-car="301" data-engine="1.6 HDi">
+<div class="image-box">
+<img src="images/peugeot-301-kit-embrayage.jpg" alt="طقم القابض">
+</div>
+<div class="card-body">
+<span class="brand">PEUGEOT</span>
+<h3>طقم القابض</h3>
+<div class="car">301</div>
+<div class="engine">1.6 HDi</div>
+<a class="contact-btn" href="tel:0556419934">اتصل للاستفسار</a>
+</div>
+</div>
+
+<div class="card" data-brand="Peugeot" data-car="Partner" data-engine="1.6 HDi">
+<div class="image-box">
+<img src="images/peugeot-partner-kit-embrayage.jpg" alt="طقم القابض">
+</div>
+<div class="card-body">
+<span class="brand">PEUGEOT</span>
+<h3>طقم القابض</h3>
+<div class="car">Partner</div>
+<div class="engine">1.6 HDi</div>
+<a class="contact-btn" href="tel:0556419934">اتصل للاستفسار</a>
+</div>
+</div>
+
+<div class="card" data-brand="Peugeot" data-car="Partner" data-engine="1.6 HDi">
+<div class="image-box">
+<img src="images/peugeot-partner-filtre-gasoil.jpg" alt="فلتر الوقود">
+</div>
+<div class="card-body">
+<span class="brand">PEUGEOT</span>
+<h3>فلتر الوقود</h3>
+<div class="car">Partner</div>
+<div class="engine">1.6 HDi</div>
+<a class="contact-btn" href="tel:0556419934">اتصل للاستفسار</a>
+</div>
+</div>
+
+<div class="card" data-brand="Peugeot" data-car="Partner" data-engine="1.9 Diesel">
+<div class="image-box">
+<img src="images/peugeot-partner-filtre-air.jpg" alt="فلتر الهواء">
+</div>
+<div class="card-body">
+<span class="brand">PEUGEOT</span>
+<h3>فلتر الهواء</h3>
+<div class="car">Partner</div>
+<div class="engine">1.9 Diesel</div>
+<a class="contact-btn" href="tel:0556419934">اتصل للاستفسار</a>
+</div>
+</div>
+
+<div class="card" data-brand="Peugeot" data-car="307" data-engine="1.6 HDi">
+<div class="image-box">
+<img src="images/peugeot-307-filtre-huile.jpg" alt="فلتر الزيت">
+</div>
+<div class="card-body">
+<span class="brand">PEUGEOT</span>
+<h3>فلتر الزيت</h3>
+<div class="car">307</div>
+<div class="engine">1.6 HDi</div>
+<a class="contact-btn" href="tel:0556419934">اتصل للاستفسار</a>
+</div>
+</div>
+
+<div class="card" data-brand="Peugeot" data-car="307" data-engine="1.6 HDi">
+<div class="image-box">
+<img src="images/peugeot-307-plaquettes.jpg" alt="فحمات الفرامل">
+</div>
+<div class="card-body">
+<span class="brand">PEUGEOT</span>
+<h3>فحمات الفرامل</h3>
+<div class="car">307</div>
+<div class="engine">1.6 HDi</div>
+<a class="contact-btn" href="tel:0556419934">اتصل للاستفسار</a>
+</div>
+</div>
+
+<div class="card" data-brand="Peugeot" data-car="308" data-engine="1.6 HDi">
+<div class="image-box">
+<img src="images/peugeot-308-kit-embrayage.jpg" alt="طقم القابض">
+</div>
+<div class="card-body">
+<span class="brand">PEUGEOT</span>
+<h3>طقم القابض</h3>
+<div class="car">308</div>
+<div class="engine">1.6 HDi</div>
+<a class="contact-btn" href="tel:0556419934">اتصل للاستفسار</a>
+</div>
+</div>
+
+<div class="card" data-brand="Peugeot" data-car="308" data-engine="1.6 HDi">
+<div class="image-box">
+<img src="images/peugeot-308-filtre-air.jpg" alt="فلتر الهواء">
+</div>
+<div class="card-body">
+<span class="brand">PEUGEOT</span>
+<h3>فلتر الهواء</h3>
+<div class="car">308</div>
+<div class="engine">1.6 HDi</div>
+<a class="contact-btn" href="tel:0556419934">اتصل للاستفسار</a>
+</div>
+</div>
+
+<div class="card" data-brand="Peugeot" data-car="Boxer" data-engine="2.2 HDi">
+<div class="image-box">
+<img src="images/peugeot-boxer-filtre-huile.jpg" alt="فلتر الزيت">
+</div>
+<div class="card-body">
+<span class="brand">PEUGEOT</span>
+<h3>فلتر الزيت</h3>
+<div class="car">Boxer</div>
+<div class="engine">2.2 HDi</div>
+<a class="contact-btn" href="tel:0556419934">اتصل للاستفسار</a>
+</div>
+</div>
+
+<div class="card" data-brand="Peugeot" data-car="Bipper" data-engine="1.4 HDi">
+<div class="image-box">
+<img src="images/peugeot-bipper-chaine.jpg" alt="سلسلة التوزيع">
+</div>
+<div class="card-body">
+<span class="brand">PEUGEOT</span>
+<h3>سلسلة التوزيع</h3>
+<div class="car">Bipper</div>
+<div class="engine">1.4 HDi</div>
+<a class="contact-btn" href="tel:0556419934">اتصل للاستفسار</a>
+</div>
+</div>
+
+<div class="card" data-brand="Peugeot" data-car="Bipper" data-engine="1.4 HDi">
+<div class="image-box">
+<img src="images/peugeot-bipper-filtre-gasoil.jpg" alt="فلتر الوقود">
+</div>
+<div class="card-body">
+<span class="brand">PEUGEOT</span>
+<h3>فلتر الوقود</h3>
+<div class="car">Bipper</div>
+<div class="engine">1.4 HDi</div>
+<a class="contact-btn" href="tel:0556419934">اتصل للاستفسار</a>
+</div>
+</div>
+
+<div class="card" data-brand="Peugeot" data-car="Expert" data-engine="2.0 HDi">
+<div class="image-box">
+<img src="images/peugeot-expert-filtre-huile.jpg" alt="فلتر الزيت">
+</div>
+<div class="card-body">
+<span class="brand">PEUGEOT</span>
+<h3>فلتر الزيت</h3>
+<div class="car">Expert</div>
+<div class="engine">2.0 HDi</div>
+<a class="contact-btn" href="tel:0556419934">اتصل للاستفسار</a>
+</div>
+</div>
+
+<div class="card" data-brand="Peugeot" data-car="Partner" data-engine="1.4 Essence">
+<div class="image-box">
+<img src="images/peugeot-partner-pompe-eau.jpg" alt="مضخة الماء">
+</div>
+<div class="card-body">
+<span class="brand">PEUGEOT</span>
+<h3>مضخة الماء</h3>
+<div class="car">Partner</div>
+<div class="engine">1.4 Essence</div>
+<a class="contact-btn" href="tel:0556419934">اتصل للاستفسار</a>
+</div>
+</div>
+
+<div class="card" data-brand="Peugeot" data-car="208" data-engine="1.6 HDi">
+<div class="image-box">
+<img src="images/peugeot-208-plaquettes.jpg" alt="فحمات الفرامل">
+</div>
+<div class="card-body">
+<span class="brand">PEUGEOT</span>
+<h3>فحمات الفرامل</h3>
+<div class="car">208</div>
+<div class="engine">1.6 HDi</div>
+<a class="contact-btn" href="tel:0556419934">اتصل للاستفسار</a>
+</div>
+</div>
+
+<div class="card" data-brand="Peugeot" data-car="301" data-engine="1.6 VTi">
+<div class="image-box">
+<img src="images/peugeot-301-pompe-eau.jpg" alt="مضخة الماء">
+</div>
+<div class="card-body">
+<span class="brand">PEUGEOT</span>
+<h3>مضخة الماء</h3>
+<div class="car">301</div>
+<div class="engine">1.6 VTi</div>
+<a class="contact-btn" href="tel:0556419934">اتصل للاستفسار</a>
+</div>
+</div>
+
+<div class="card" data-brand="Peugeot" data-car="301" data-engine="1.6 HDi">
+<div class="image-box">
+<img src="images/peugeot-301-plaquettes.jpg" alt="فحمات الفرامل">
+</div>
+<div class="card-body">
+<span class="brand">PEUGEOT</span>
+<h3>فحمات الفرامل</h3>
+<div class="car">301</div>
+<div class="engine">1.6 HDi</div>
+<a class="contact-btn" href="tel:0556419934">اتصل للاستفسار</a>
+</div>
+</div>
+
+<div class="card" data-brand="Peugeot" data-car="206" data-engine="1.9 Diesel">
+<div class="image-box">
+<img src="images/peugeot-206-filtre-air.jpg" alt="فلتر الهواء">
+</div>
+<div class="card-body">
+<span class="brand">PEUGEOT</span>
+<h3>فلتر الهواء</h3>
+<div class="car">206</div>
+<div class="engine">1.9 Diesel</div>
+<a class="contact-btn" href="tel:0556419934">اتصل للاستفسار</a>
+</div>
+</div>
+
+<div class="card" data-brand="Peugeot" data-car="207" data-engine="1.4 Essence">
+<div class="image-box">
+<img src="images/peugeot-207-thermostat.jpg" alt="ترموستات">
+</div>
+<div class="card-body">
+<span class="brand">PEUGEOT</span>
+<h3>ترموستات</h3>
+<div class="car">207</div>
+<div class="engine">1.4 Essence</div>
+<a class="contact-btn" href="tel:0556419934">اتصل للاستفسار</a>
+</div>
+</div>
+
+<div class="card" data-brand="Peugeot" data-car="208" data-engine="1.2 VTi">
+<div class="image-box">
+<img src="images/peugeot-208-thermostat.jpg" alt="ترموستات">
+</div>
+<div class="card-body">
+<span class="brand">PEUGEOT</span>
+<h3>ترموستات</h3>
+<div class="car">208</div>
+<div class="engine">1.2 VTi</div>
+<a class="contact-btn" href="tel:0556419934">اتصل للاستفسار</a>
+</div>
+</div>
+
+<div class="card" data-brand="Peugeot" data-car="307" data-engine="1.6 HDi">
+<div class="image-box">
+<img src="images/peugeot-307-pompe-eau.jpg" alt="مضخة الماء">
+</div>
+<div class="card-body">
+<span class="brand">PEUGEOT</span>
+<h3>مضخة الماء</h3>
+<div class="car">307</div>
+<div class="engine">1.6 HDi</div>
+<a class="contact-btn" href="tel:0556419934">اتصل للاستفسار</a>
+</div>
+</div>
+
+<div class="card" data-brand="Peugeot" data-car="308" data-engine="1.6 HDi">
+<div class="image-box">
+<img src="images/peugeot-308-plaquettes.jpg" alt="فحمات الفرامل">
+</div>
+<div class="card-body">
+<span class="brand">PEUGEOT</span>
+<h3>فحمات الفرامل</h3>
+<div class="car">308</div>
+<div class="engine">1.6 HDi</div>
+<a class="contact-btn" href="tel:0556419934">اتصل للاستفسار</a>
+</div>
+</div>
+
+<div class="card" data-brand="Peugeot" data-car="Partner" data-engine="1.6 HDi">
+<div class="image-box">
+<img src="images/peugeot-partner-plaquettes.jpg" alt="فحمات الفرامل">
+</div>
+<div class="card-body">
+<span class="brand">PEUGEOT</span>
+<h3>فحمات الفرامل</h3>
+<div class="car">Partner</div>
+<div class="engine">1.6 HDi</div>
+<a class="contact-btn" href="tel:0556419934">اتصل للاستفسار</a>
+</div>
+</div>
+
+<div class="card" data-brand="Peugeot" data-car="Partner" data-engine="1.6 HDi">
+<div class="image-box">
+<img src="images/peugeot-partner-pompe-eau-2.jpg" alt="مضخة الماء">
+</div>
+<div class="card-body">
+<span class="brand">PEUGEOT</span>
+<h3>مضخة الماء</h3>
+<div class="car">Partner</div>
+<div class="engine">1.6 HDi</div>
+<a class="contact-btn" href="tel:0556419934">اتصل للاستفسار</a>
+</div>
+</div>
+
+
+<!-- =====================================================
+     DACIA 10
+===================================================== -->
+
+
+<div class="card" data-brand="Dacia" data-car="Logan" data-engine="1.4 Essence">
+<div class="image-box">
+<img src="images/dacia-logan-filtre-huile.jpg" alt="فلتر الزيت Dacia Logan">
+</div>
+<div class="card-body">
+<span class="brand">DACIA</span>
+<h3>فلتر الزيت</h3>
+<div class="car">Logan</div>
+<div class="engine">1.4 Essence</div>
+<a class="contact-btn" href="tel:0556419934">اتصل للاستفسار</a>
+</div>
+</div>
+
+<div class="card" data-brand="Dacia" data-car="Logan" data-engine="1.6 Essence">
+<div class="image-box">
+<img src="images/dacia-logan-kit-embrayage.jpg" alt="طقم القابض">
+</div>
+<div class="card-body">
+<span class="brand">DACIA</span>
+<h3>طقم القابض</h3>
+<div class="car">Logan</div>
+<div class="engine">1.6 Essence</div>
+<a class="contact-btn" href="tel:0556419934">اتصل للاستفسار</a>
+</div>
+</div>
+
+<div class="card" data-brand="Dacia" data-car="Logan" data-engine="1.5 dCi">
+<div class="image-box">
+<img src="images/dacia-logan-filtre-gasoil.jpg" alt="فلتر الوقود">
+</div>
+<div class="card-body">
+<span class="brand">DACIA</span>
+<h3>فلتر الوقود</h3>
+<div class="car">Logan</div>
+<div class="engine">1.5 dCi</div>
+<a class="contact-btn" href="tel:0556419934">اتصل للاستفسار</a>
+</div>
+</div>
+
+<div class="card" data-brand="Dacia" data-car="Sandero" data-engine="1.6 Essence">
+<div class="image-box">
+<img src="images/dacia-sandero-filtre-air.jpg" alt="فلتر الهواء">
+</div>
+<div class="card-body">
+<span class="brand">DACIA</span>
+<h3>فلتر الهواء</h3>
+<div class="car">Sandero</div>
+<div class="engine">1.6 Essence</div>
+<a class="contact-btn" href="tel:0556419934">اتصل للاستفسار</a>
+</div>
+</div>
+
+<div class="card" data-brand="Dacia" data-car="Sandero" data-engine="1.6 Essence">
+<div class="image-box">
+<img src="images/dacia-sandero-plaquettes.jpg" alt="فحمات الفرامل">
+</div>
+<div class="card-body">
+<span class="brand">DACIA</span>
+<h3>فحمات الفرامل</h3>
+<div class="car">Sandero</div>
+<div class="engine">1.6 Essence</div>
+<a class="contact-btn" href="tel:0556419934">اتصل للاستفسار</a>
+</div>
+</div>
+
+<div class="card" data-brand="Dacia" data-car="Stepway" data-engine="1.6 Essence">
+<div class="image-box">
+<img src="images/dacia-stepway-kit-embrayage.jpg" alt="طقم القابض">
+</div>
+<div class="card-body">
+<span class="brand">DACIA</span>
+<h3>طقم القابض</h3>
+<div class="car">Stepway</div>
+<div class="engine">1.6 Essence</div>
+<a class="contact-btn" href="tel:0556419934">اتصل للاستفسار</a>
+</div>
+</div>
+
+<div class="card" data-brand="Dacia" data-car="Duster" data-engine="1.5 dCi">
+<div class="image-box">
+<img src="images/dacia-duster-filtre-gasoil.jpg" alt="فلتر الوقود">
+</div>
+<div class="card-body">
+<span class="brand">DACIA</span>
+<h3>فلتر الوقود</h3>
+<div class="car">Duster</div>
+<div class="engine">1.5 dCi</div>
+<a class="contact-btn" href="tel:0556419934">اتصل للاستفسار</a>
+</div>
+</div>
+
+<div class="card" data-brand="Dacia" data-car="Duster" data-engine="1.5 dCi">
+<div class="image-box">
+<img src="images/dacia-duster-filtre-air.jpg" alt="فلتر الهواء">
+</div>
+<div class="card-body">
+<span class="brand">DACIA</span>
+<h3>فلتر الهواء</h3>
+<div class="car">Duster</div>
+<div class="engine">1.5 dCi</div>
+<a class="contact-btn" href="tel:0556419934">اتصل للاستفسار</a>
+</div>
+</div>
+
+<div class="card" data-brand="Dacia" data-car="Dokker" data-engine="1.5 dCi">
+<div class="image-box">
+<img src="images/dacia-dokker-filtre-huile.jpg" alt="فلتر الزيت">
+</div>
+<div class="card-body">
+<span class="brand">DACIA</span>
+<h3>فلتر الزيت</h3>
+<div class="car">Dokker</div>
+<div class="engine">1.5 dCi</div>
+<a class="contact-btn" href="tel:0556419934">اتصل للاستفسار</a>
+</div>
+</div>
+
+<div class="card" data-brand="Dacia" data-car="Lodgy" data-engine="1.5 dCi">
+<div class="image-box">
+<img src="images/dacia-lodgy-filtre-huile.jpg" alt="فلتر الزيت">
+</div>
+<div class="card-body">
+<span class="brand">DACIA</span>
+<h3>فلتر الزيت</h3>
+<div class="car">Lodgy</div>
+<div class="engine">1.5 dCi</div>
+<a class="contact-btn" href="tel:0556419934">اتصل للاستفسار</a>
+</div>
+</div>
+
+
+</main>
+
+
+<div class="no-results" id="noResults">
+
+    <h2>لم يتم العثور على القطعة</h2>
+
+    <p>
+        جرّب البحث باسم آخر أو اتصل بنا للاستفسار.
+    </p>
+
+    <br>
+
+    <a class="phone" href="tel:0556419934">
+        📞 0556419934
+    </a>
 
 </div>
 
 
-<div class="stats" id="countNumber">
-عدد القطع: 120
-</div>
+<!-- ================= FOOTER ================= -->
 
+<footer>
 
-<div class="grid" id="partsContainer"></div>
+    <div class="footer-logo">
+        <span>BK</span> AUTO
+    </div>
 
+    <p>
+        كتالوج قطع غيار السيارات
+    </p>
 
-<div class="contact">
+    <p style="margin-top:10px;">
+        Renault • Peugeot • Dacia
+    </p>
 
-<h2>
-BK AUTO
-</h2>
+    <p style="margin-top:15px;">
+        للاستفسار عن توفر القطعة والسعر:
+    </p>
 
-<p>
-للاستفسار عن توفر القطعة والسعر
-</p>
+    <p style="margin-top:8px;">
+        <a href="tel:0556419934">
+            0556419934
+        </a>
+    </p>
 
-<div class="number">
-0556419934
-</div>
+    <p style="margin-top:18px;font-size:12px;">
+        © BK AUTO - جميع الحقوق محفوظة
+    </p>
 
-</div>
+</footer>
 
 
 <script>
 
-
-const PHONE = "0556419934";
-
-
-const parts = [
-
-/* =========================================================
-RENAULT - 60 PIECES
-========================================================= */
-
-
-{
-brand:"Renault",
-model:"Clio 2",
-engine:"1.2 16V",
-name:"Pompe à eau",
-ref:"7701478018"
-},
-
-{
-brand:"Renault",
-model:"Clio 2",
-engine:"1.2 16V",
-name:"Kit embrayage",
-ref:"7701473354"
-},
-
-{
-brand:"Renault",
-model:"Clio 2",
-engine:"1.2 16V",
-name:"Filtre à huile",
-ref:"7700274177"
-},
-
-{
-brand:"Renault",
-model:"Clio 2",
-engine:"1.2 16V",
-name:"Filtre à air",
-ref:"7701045724"
-},
-
-{
-brand:"Renault",
-model:"Clio 2",
-engine:"1.2 16V",
-name:"Filtre carburant",
-ref:"7700411270"
-},
-
-{
-brand:"Renault",
-model:"Clio 2",
-engine:"1.2 16V",
-name:"Joint spi vilebrequin",
-ref:"7701472191"
-},
-
-{
-brand:"Renault",
-model:"Clio 2",
-engine:"1.2 16V",
-name:"Courroie distribution",
-ref:"7701477022"
-},
-
-{
-brand:"Renault",
-model:"Clio 2",
-engine:"1.2 16V",
-name:"Galet tendeur distribution",
-ref:"7700108117"
-},
-
-{
-brand:"Renault",
-model:"Clio 2",
-engine:"1.4 16V",
-name:"Pompe à eau",
-ref:"7701478018"
-},
-
-{
-brand:"Renault",
-model:"Clio 2",
-engine:"1.5 dCi",
-name:"Filtre à huile",
-ref:"8200768927"
-},
-
-{
-brand:"Renault",
-model:"Clio 2",
-engine:"1.5 dCi",
-name:"Filtre à air",
-ref:"7701045724"
-},
-
-{
-brand:"Renault",
-model:"Clio 2",
-engine:"1.5 dCi",
-name:"Kit distribution",
-ref:"7701477023"
-},
-
-
-{
-brand:"Renault",
-model:"Clio 3",
-engine:"1.2 16V",
-name:"Filtre à huile",
-ref:"8200768927"
-},
-
-{
-brand:"Renault",
-model:"Clio 3",
-engine:"1.2 16V",
-name:"Pompe à eau",
-ref:"7701478018"
-},
-
-{
-brand:"Renault",
-model:"Clio 3",
-engine:"1.5 dCi",
-name:"Filtre carburant",
-ref:"8200248821"
-},
-
-{
-brand:"Renault",
-model:"Clio 3",
-engine:"1.5 dCi",
-name:"Kit distribution",
-ref:"7701477023"
-},
-
-
-{
-brand:"Renault",
-model:"Clio 4",
-engine:"0.9 TCe",
-name:"Filtre à huile",
-ref:"152085758R"
-},
-
-{
-brand:"Renault",
-model:"Clio 4",
-engine:"1.5 dCi",
-name:"Filtre à huile",
-ref:"152095084R"
-},
-
-{
-brand:"Renault",
-model:"Clio 4",
-engine:"1.5 dCi",
-name:"Filtre carburant",
-ref:"164000797R"
-},
-
-{
-brand:"Renault",
-model:"Clio 4",
-engine:"1.5 dCi",
-name:"Filtre à air",
-ref:"165467674R"
-},
-
-
-{
-brand:"Renault",
-model:"Symbol",
-engine:"1.2 16V",
-name:"Pompe à eau",
-ref:"7701478018"
-},
-
-{
-brand:"Renault",
-model:"Symbol",
-engine:"1.2 16V",
-name:"Courroie distribution",
-ref:"7701477022"
-},
-
-{
-brand:"Renault",
-model:"Symbol",
-engine:"1.4",
-name:"Filtre à huile",
-ref:"7700274177"
-},
-
-{
-brand:"Renault",
-model:"Symbol",
-engine:"1.6",
-name:"Kit embrayage",
-ref:"302052617R"
-},
-
-
-{
-brand:"Renault",
-model:"Logan",
-engine:"1.4",
-name:"Filtre à huile",
-ref:"7700274177"
-},
-
-{
-brand:"Renault",
-model:"Logan",
-engine:"1.4",
-name:"Filtre à air",
-ref:"7701045724"
-},
-
-{
-brand:"Renault",
-model:"Logan",
-engine:"1.6",
-name:"Kit embrayage",
-ref:"302052617R"
-},
-
-{
-brand:"Renault",
-model:"Logan",
-engine:"1.6",
-name:"Pompe à eau",
-ref:"7701478018"
-},
-
-{
-brand:"Renault",
-model:"Logan",
-engine:"1.5 dCi",
-name:"Filtre à huile",
-ref:"8200768927"
-},
-
-{
-brand:"Renault",
-model:"Logan",
-engine:"1.5 dCi",
-name:"Filtre carburant",
-ref:"164000797R"
-},
-
-
-{
-brand:"Renault",
-model:"Kangoo",
-engine:"1.9 D",
-name:"Joint spi vilebrequin",
-ref:"80.105.8"
-},
-
-{
-brand:"Renault",
-model:"Kangoo",
-engine:"1.9 D",
-name:"Filtre à huile",
-ref:"7700274177"
-},
-
-{
-brand:"Renault",
-model:"Kangoo",
-engine:"1.5 dCi",
-name:"Filtre à huile",
-ref:"8200768927"
-},
-
-{
-brand:"Renault",
-model:"Kangoo",
-engine:"1.5 dCi",
-name:"Filtre carburant",
-ref:"164000797R"
-},
-
-{
-brand:"Renault",
-model:"Kangoo",
-engine:"1.5 dCi",
-name:"Kit embrayage",
-ref:"302052617R"
-},
-
-
-{
-brand:"Renault",
-model:"Mégane 2",
-engine:"1.5 dCi",
-name:"Filtre à huile",
-ref:"8200768927"
-},
-
-{
-brand:"Renault",
-model:"Mégane 2",
-engine:"1.5 dCi",
-name:"Filtre carburant",
-ref:"164000797R"
-},
-
-{
-brand:"Renault",
-model:"Mégane 2",
-engine:"1.6 16V",
-name:"Filtre à huile",
-ref:"152085758R"
-},
-
-{
-brand:"Renault",
-model:"Mégane 2",
-engine:"1.6 16V",
-name:"Pompe à eau",
-ref:"7701478018"
-},
-
-{
-brand:"Renault",
-model:"Mégane 2",
-engine:"1.9 dCi",
-name:"Filtre à huile",
-ref:"8200768927"
-},
-
-
-{
-brand:"Renault",
-model:"Mégane 3",
-engine:"1.5 dCi",
-name:"Filtre à huile",
-ref:"152095084R"
-},
-
-{
-brand:"Renault",
-model:"Mégane 3",
-engine:"1.5 dCi",
-name:"Filtre carburant",
-ref:"164000797R"
-},
-
-
-{
-brand:"Renault",
-model:"Duster",
-engine:"1.5 dCi",
-name:"Filtre à huile",
-ref:"8200768927"
-},
-
-{
-brand:"Renault",
-model:"Duster",
-engine:"1.5 dCi",
-name:"Filtre à air",
-ref:"165467674R"
-},
-
-{
-brand:"Renault",
-model:"Duster",
-engine:"1.5 dCi",
-name:"Filtre carburant",
-ref:"164000797R"
-},
-
-{
-brand:"Renault",
-model:"Duster",
-engine:"1.6 16V",
-name:"Filtre à huile",
-ref:"152085758R"
-},
-
-
-{
-brand:"Renault",
-model:"Sandero",
-engine:"1.4",
-name:"Filtre à huile",
-ref:"7700274177"
-},
-
-{
-brand:"Renault",
-model:"Sandero",
-engine:"1.6",
-name:"Kit embrayage",
-ref:"302052617R"
-},
-
-{
-brand:"Renault",
-model:"Sandero",
-engine:"1.6",
-name:"Pompe à eau",
-ref:"7701478018"
-},
-
-{
-brand:"Renault",
-model:"Sandero",
-engine:"1.5 dCi",
-name:"Filtre à huile",
-ref:"8200768927"
-},
-
-
-{
-brand:"Renault",
-model:"Master",
-engine:"2.5 dCi",
-name:"Filtre à huile",
-ref:"8200768927"
-},
-
-{
-brand:"Renault",
-model:"Master",
-engine:"2.5 dCi",
-name:"Filtre carburant",
-ref:"164000797R"
-},
-
-{
-brand:"Renault",
-model:"Master",
-engine:"2.3 dCi",
-name:"Filtre à air",
-ref:"165467674R"
-},
-
-
-{
-brand:"Renault",
-model:"Scénic 2",
-engine:"1.5 dCi",
-name:"Filtre à huile",
-ref:"8200768927"
-},
-
-{
-brand:"Renault",
-model:"Scénic 2",
-engine:"1.9 dCi",
-name:"Filtre à huile",
-ref:"8200768927"
-},
-
-{
-brand:"Renault",
-model:"Laguna 2",
-engine:"1.9 dCi",
-name:"Filtre à huile",
-ref:"8200768927"
-},
-
-{
-brand:"Renault",
-model:"Laguna 2",
-engine:"1.9 dCi",
-name:"Filtre carburant",
-ref:"164000797R"
-},
-
-{
-brand:"Renault",
-model:"Fluence",
-engine:"1.5 dCi",
-name:"Filtre à huile",
-ref:"152095084R"
-},
-
-{
-brand:"Renault",
-model:"Fluence",
-engine:"1.5 dCi",
-name:"Filtre carburant",
-ref:"164000797R"
-},
-
-
-/* =========================================================
-PEUGEOT - 40 PIECES
-========================================================= */
-
-
-{
-brand:"Peugeot",
-model:"206",
-engine:"1.4 Essence",
-name:"Pompe à eau",
-ref:"1201.A1"
-},
-
-{
-brand:"Peugeot",
-model:"206",
-engine:"1.4 Essence",
-name:"Filtre à huile",
-ref:"1109.AE"
-},
-
-{
-brand:"Peugeot",
-model:"206",
-engine:"1.4 Essence",
-name:"Filtre à air",
-ref:"1444.T0"
-},
-
-{
-brand:"Peugeot",
-model:"206",
-engine:"1.6 16V",
-name:"Kit embrayage",
-ref:"2050.K4"
-},
-
-{
-brand:"Peugeot",
-model:"206",
-engine:"1.4 HDi",
-name:"Filtre à huile",
-ref:"1109.CK"
-},
-
-{
-brand:"Peugeot",
-model:"207",
-engine:"1.4 Essence",
-name:"Filtre à huile",
-ref:"1109.AE"
-},
-
-{
-brand:"Peugeot",
-model:"207",
-engine:"1.6 HDi",
-name:"Kit embrayage",
-ref:"2052.N6"
-},
-
-{
-brand:"Peugeot",
-model:"207",
-engine:"1.6 HDi",
-name:"Filtre à huile",
-ref:"1109.CK"
-},
-
-{
-brand:"Peugeot",
-model:"207",
-engine:"1.6 HDi",
-name:"Filtre carburant",
-ref:"1906.61"
-},
-
-{
-brand:"Peugeot",
-model:"208",
-engine:"1.2 VTi",
-name:"Filtre à huile",
-ref:"1109.AL"
-},
-
-{
-brand:"Peugeot",
-model:"208",
-engine:"1.6 HDi",
-name:"Kit embrayage",
-ref:"2052.N6"
-},
-
-{
-brand:"Peugeot",
-model:"208",
-engine:"1.6 HDi",
-name:"Filtre à huile",
-ref:"1109.CK"
-},
-
-{
-brand:"Peugeot",
-model:"301",
-engine:"1.6 HDi",
-name:"Filtre à huile",
-ref:"1109.CK"
-},
-
-{
-brand:"Peugeot",
-model:"301",
-engine:"1.6 HDi",
-name:"Filtre carburant",
-ref:"1906.61"
-},
-
-{
-brand:"Peugeot",
-model:"301",
-engine:"1.6 VTi",
-name:"Filtre à huile",
-ref:"1109.AL"
-},
-
-{
-brand:"Peugeot",
-model:"307",
-engine:"1.6 HDi",
-name:"Filtre à huile",
-ref:"1109.CK"
-},
-
-{
-brand:"Peugeot",
-model:"307",
-engine:"1.6 HDi",
-name:"Filtre carburant",
-ref:"1906.61"
-},
-
-{
-brand:"Peugeot",
-model:"307",
-engine:"2.0 HDi",
-name:"Filtre à huile",
-ref:"1109.CK"
-},
-
-{
-brand:"Peugeot",
-model:"308",
-engine:"1.6 HDi",
-name:"Filtre à huile",
-ref:"1109.CK"
-},
-
-{
-brand:"Peugeot",
-model:"308",
-engine:"1.6 HDi",
-name:"Filtre carburant",
-ref:"1906.61"
-},
-
-{
-brand:"Peugeot",
-model:"Partner",
-engine:"1.6 HDi",
-name:"Filtre à huile",
-ref:"1109.CK"
-},
-
-{
-brand:"Peugeot",
-model:"Partner",
-engine:"1.6 HDi",
-name:"Filtre carburant",
-ref:"1906.61"
-},
-
-{
-brand:"Peugeot",
-model:"Partner",
-engine:"1.9 D",
-name:"Filtre à huile",
-ref:"1109.C6"
-},
-
-{
-brand:"Peugeot",
-model:"Partner",
-engine:"1.4 Essence",
-name:"Pompe à eau",
-ref:"1201.A1"
-},
-
-{
-brand:"Peugeot",
-model:"Bipper",
-engine:"1.4 HDi",
-name:"Joint guide soupape",
-ref:"1654507180"
-},
-
-{
-brand:"Peugeot",
-model:"Bipper",
-engine:"1.4 HDi",
-name:"Filtre à huile",
-ref:"1109.CK"
-},
-
-{
-brand:"Peugeot",
-model:"Bipper",
-engine:"1.4 HDi",
-name:"Filtre carburant",
-ref:"1906.61"
-},
-
-{
-brand:"Peugeot",
-model:"2008",
-engine:"1.6 HDi",
-name:"Filtre à huile",
-ref:"1109.CK"
-},
-
-{
-brand:"Peugeot",
-model:"2008",
-engine:"1.6 HDi",
-name:"Filtre carburant",
-ref:"1906.61"
-},
-
-{
-brand:"Peugeot",
-model:"3008",
-engine:"1.6 HDi",
-name:"Filtre à huile",
-ref:"1109.CK"
-},
-
-{
-brand:"Peugeot",
-model:"3008",
-engine:"1.6 HDi",
-name:"Filtre carburant",
-ref:"1906.61"
-},
-
-{
-brand:"Peugeot",
-model:"508",
-engine:"1.6 HDi",
-name:"Filtre à huile",
-ref:"1109.CK"
-},
-
-{
-brand:"Peugeot",
-model:"508",
-engine:"2.0 HDi",
-name:"Filtre à huile",
-ref:"1109.CK"
-},
-
-{
-brand:"Peugeot",
-model:"406",
-engine:"1.9 D",
-name:"Filtre à huile",
-ref:"1109.C6"
-},
-
-{
-brand:"Peugeot",
-model:"406",
-engine:"2.0 HDi",
-name:"Filtre à huile",
-ref:"1109.CK"
-},
-
-{
-brand:"Peugeot",
-model:"405",
-engine:"1.9 D",
-name:"Filtre à huile",
-ref:"1109.C6"
-},
-
-{
-brand:"Peugeot",
-model:"Boxer",
-engine:"2.2 HDi",
-name:"Filtre à huile",
-ref:"1109.AE"
-},
-
-{
-brand:"Peugeot",
-model:"Expert",
-engine:"2.0 HDi",
-name:"Filtre à huile",
-ref:"1109.CK"
-},
-
-{
-brand:"Peugeot",
-model:"Expert",
-engine:"1.6 HDi",
-name:"Filtre à huile",
-ref:"1109.CK"
-},
-
-{
-brand:"Peugeot",
-model:"Partner",
-engine:"1.6 HDi",
-name:"Kit embrayage",
-ref:"2052.N6"
-},
-
-
-/* =========================================================
-CITROËN - 10 PIECES
-========================================================= */
-
-
-{
-brand:"Citroën",
-model:"C3",
-engine:"1.4 HDi",
-name:"Filtre à huile",
-ref:"1109.CK"
-},
-
-{
-brand:"Citroën",
-model:"C3",
-engine:"1.4 HDi",
-name:"Filtre carburant",
-ref:"1906.61"
-},
-
-{
-brand:"Citroën",
-model:"C3",
-engine:"1.4 Essence",
-name:"Pompe à eau",
-ref:"1201.A1"
-},
-
-{
-brand:"Citroën",
-model:"C4",
-engine:"1.6 HDi",
-name:"Filtre à huile",
-ref:"1109.CK"
-},
-
-{
-brand:"Citroën",
-model:"C4",
-engine:"1.6 HDi",
-name:"Filtre carburant",
-ref:"1906.61"
-},
-
-{
-brand:"Citroën",
-model:"Berlingo",
-engine:"1.6 HDi",
-name:"Filtre à huile",
-ref:"1109.CK"
-},
-
-{
-brand:"Citroën",
-model:"Berlingo",
-engine:"1.6 HDi",
-name:"Filtre carburant",
-ref:"1906.61"
-},
-
-{
-brand:"Citroën",
-model:"Xsara",
-engine:"1.4 Essence",
-name:"Pompe à eau",
-ref:"1201.A1"
-},
-
-{
-brand:"Citroën",
-model:"Xsara Picasso",
-engine:"1.6 HDi",
-name:"Filtre à huile",
-ref:"1109.CK"
-},
-
-{
-brand:"Citroën",
-model:"Nemo",
-engine:"1.4 HDi",
-name:"Filtre à huile",
-ref:"1109.CK"
-},
-
-
-/* =========================================================
-DACIA - 10 PIECES
-========================================================= */
-
-
-{
-brand:"Dacia",
-model:"Logan",
-engine:"1.4",
-name:"Filtre à huile",
-ref:"7700274177"
-},
-
-{
-brand:"Dacia",
-model:"Logan",
-engine:"1.6",
-name:"Kit embrayage",
-ref:"302052617R"
-},
-
-{
-brand:"Dacia",
-model:"Logan",
-engine:"1.5 dCi",
-name:"Filtre à huile",
-ref:"8200768927"
-},
-
-{
-brand:"Dacia",
-model:"Sandero",
-engine:"1.4",
-name:"Filtre à huile",
-ref:"7700274177"
-},
-
-{
-brand:"Dacia",
-model:"Sandero",
-engine:"1.6",
-name:"Pompe à eau",
-ref:"7701478018"
-},
-
-{
-brand:"Dacia",
-model:"Duster",
-engine:"1.5 dCi",
-name:"Filtre à huile",
-ref:"8200768927"
-},
-
-{
-brand:"Dacia",
-model:"Duster",
-engine:"1.5 dCi",
-name:"Filtre carburant",
-ref:"164000797R"
-},
-
-{
-brand:"Dacia",
-model:"Dokker",
-engine:"1.5 dCi",
-name:"Filtre à huile",
-ref:"8200768927"
-},
-
-{
-brand:"Dacia",
-model:"Lodgy",
-engine:"1.5 dCi",
-name:"Filtre à huile",
-ref:"8200768927"
-},
-
-{
-brand:"Dacia",
-model:"Solenza",
-engine:"1.4",
-name:"Filtre à huile",
-ref:"7700274177"
-}
-
-];
-
-
-const brandSelect =
-document.getElementById("brandSelect");
-
-const modelSelect =
-document.getElementById("modelSelect");
-
-const engineSelect =
-document.getElementById("engineSelect");
+/* =========================
+   FILTER SYSTEM
+========================= */
 
 const searchInput =
-document.getElementById("searchInput");
+document.getElementById("search");
 
-const resetButton =
-document.getElementById("resetButton");
+const brandFilter =
+document.getElementById("brandFilter");
 
-const partsContainer =
-document.getElementById("partsContainer");
+const carFilter =
+document.getElementById("carFilter");
 
-const countNumber =
-document.getElementById("countNumber");
+const engineFilter =
+document.getElementById("engineFilter");
+
+const products =
+document.getElementById("products");
+
+const cards =
+Array.from(document.querySelectorAll(".card"));
+
+const count =
+document.getElementById("count");
+
+const noResults =
+document.getElementById("noResults");
 
 
-function uniqueValues(array){
+/* =========================
+   GET UNIQUE VALUES
+========================= */
 
-return [...new Set(array)];
+function updateFilters(){
+
+    const selectedBrand =
+    brandFilter.value;
+
+    const cars = new Set();
+
+    const engines = new Set();
+
+    cards.forEach(card => {
+
+        if(
+            !selectedBrand ||
+            card.dataset.brand === selectedBrand
+        ){
+
+            cars.add(card.dataset.car);
+
+            engines.add(card.dataset.engine);
+
+        }
+
+    });
+
+
+    carFilter.innerHTML =
+    '<option value="">كل السيارات</option>';
+
+    [...cars]
+    .sort()
+    .forEach(car => {
+
+        const option =
+        document.createElement("option");
+
+        option.value = car;
+
+        option.textContent = car;
+
+        carFilter.appendChild(option);
+
+    });
+
+
+    engineFilter.innerHTML =
+    '<option value="">كل المحركات</option>';
+
+    [...engines]
+    .sort()
+    .forEach(engine => {
+
+        const option =
+        document.createElement("option");
+
+        option.value = engine;
+
+        option.textContent = engine;
+
+        engineFilter.appendChild(option);
+
+    });
+
+}
+
+
+/* =========================
+   FILTER PRODUCTS
+========================= */
+
+function filterProducts(){
+
+    const search =
+    searchInput.value
+    .trim()
+    .toLowerCase();
+
+    const brand =
+    brandFilter.value;
+
+    const car =
+    carFilter.value;
+
+    const engine =
+    engineFilter.value;
+
+    let visible = 0;
+
+
+    cards.forEach(card => {
+
+        const text =
+        card.innerText.toLowerCase();
+
+        const matchSearch =
+        !search ||
+        text.includes(search);
+
+        const matchBrand =
+        !brand ||
+        card.dataset.brand === brand;
+
+        const matchCar =
+        !car ||
+        card.dataset.car === car;
+
+        const matchEngine =
+        !engine ||
+        card.dataset.engine === engine;
+
+
+        if(
+            matchSearch &&
+            matchBrand &&
+            matchCar &&
+            matchEngine
+        ){
+
+            card.style.display = "";
+
+            visible++;
+
+        }else{
+
+            card.style.display = "none";
+
+        }
+
+    });
+
+
+    count.textContent = visible;
+
+
+    if(visible === 0){
+
+        noResults.style.display = "block";
+
+        products.style.display = "none";
+
+    }else{
+
+        noResults.style.display = "none";
+
+        products.style.display = "grid";
+
+    }
 
 }
 
 
-function fillSelect(select,values,firstText){
-
-select.innerHTML =
-<option value="">${firstText}</option> +
-
-uniqueValues(values)
-.sort()
-.map(value =>
-<option value="${value}">${value}</option>
-)
-.join("");
-
-}
-
-
-function initFilters(){
-
-fillSelect(
-brandSelect,
-parts.map(p=>p.brand),
-"كل الماركات"
-);
-
-fillSelect(
-modelSelect,
-parts.map(p=>p.model),
-"كل السيارات"
-);
-
-fillSelect(
-engineSelect,
-parts.map(p=>p.engine),
-"كل المحركات"
-);
-
-}
-
-
-function renderParts(){
-
-const brand =
-brandSelect.value;
-
-const model =
-modelSelect.value;
-
-const engine =
-engineSelect.value;
-
-const search =
-searchInput.value
-.trim()
-.toLowerCase();
-
-
-const filtered =
-parts.filter(part => {
-
-const text = [
-
-part.brand,
-part.model,
-part.engine,
-part.name,
-part.ref
-
-].join(" ").toLowerCase();
-
-
-return (
-
-(!brand || part.brand === brand) &&
-
-(!model || part.model === model) &&
-
-(!engine || part.engine === engine) &&
-
-(!search || text.includes(search))
-
-);
-
-});
-
-
-countNumber.textContent =
-عدد النتائج: ${filtered.length} / ${parts.length} قطعة;
-
-
-partsContainer.innerHTML = "";
-
-
-filtered.forEach(part => {
-
-const card =
-document.createElement("article");
-
-card.className = "card";
-
-
-card.innerHTML = `
-
-<span class="badge">
-${part.brand}
-</span>
-
-<h3>
-${part.name}
-</h3>
-
-<div class="line">
-<b>السيارة:</b>
-${part.model}
-</div>
-
-<div class="line">
-<b>المحرك:</b>
-${part.engine}
-</div>
-
-<div class="ref">
-${part.ref || "غير محدد"}
-</div>
-
-`;
-
-
-partsContainer.appendChild(card);
-
-});
-
-}
-
+/* =========================
+   RESET
+========================= */
 
 function resetFilters(){
 
-brandSelect.value = "";
+    searchInput.value = "";
 
-modelSelect.value = "";
+    brandFilter.value = "";
 
-engineSelect.value = "";
+    carFilter.value = "";
 
-searchInput.value = "";
+    engineFilter.value = "";
 
-renderParts();
+    updateFilters();
+
+    filterProducts();
 
 }
 
 
-brandSelect.addEventListener(
-"change",
-renderParts
-);
-
-modelSelect.addEventListener(
-"change",
-renderParts
-);
-
-engineSelect.addEventListener(
-"change",
-renderParts
-);
+/* =========================
+   EVENTS
+========================= */
 
 searchInput.addEventListener(
-"input",
-renderParts
-);
-
-resetButton.addEventListener(
-"click",
-resetFilters
+    "input",
+    filterProducts
 );
 
 
-initFilters();
+brandFilter.addEventListener(
+    "change",
+    function(){
 
-renderParts();
+        carFilter.value = "";
 
+        engineFilter.value = "";
+
+        updateFilters();
+
+        filterProducts();
+
+    }
+);
+
+
+carFilter.addEventListener(
+    "change",
+    filterProducts
+);
+
+
+engineFilter.addEventListener(
+    "change",
+    filterProducts
+);
+
+
+/* =========================
+   IMAGE FALLBACK
+========================= */
+
+document
+.querySelectorAll(".image-box img")
+.forEach(img => {
+
+    img.addEventListener(
+        "error",
+        function(){
+
+            this.src =
+            "data:image/svg+xml;charset=UTF-8," +
+            encodeURIComponent(`
+            <svg xmlns="http://www.w3.org/2000/svg"
+                 width="600"
+                 height="400"
+                 viewBox="0 0 600 400">
+
+                <rect
+                    width="600"
+                    height="400"
+                    fill="#eeeeee"/>
+
+                <text
+                    x="300"
+                    y="185"
+                    text-anchor="middle"
+                    font-family="Arial"
+                    font-size="28"
+                    fill="#777">
+                    BK AUTO
+                </text>
+
+                <text
+                    x="300"
+                    y="225"
+                    text-anchor="middle"
+                    font-family="Arial"
+                    font-size="18"
+                    fill="#999">
+                    صورة القطعة
+                </text>
+
+            </svg>
+            `);
+
+        }
+    );
+
+});
+
+
+/* =========================
+   START
+========================= */
+
+updateFilters();
+
+filterProducts();
 
 </script>
 
