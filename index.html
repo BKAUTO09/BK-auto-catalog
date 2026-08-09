@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,26 +12,37 @@ content="BK AUTO - كتالوج قطع غيار السيارات Renault Peugeot
 
 <style>
 
+/* =========================
+   RESET
+========================= */
+
 *{
     box-sizing:border-box;
     margin:0;
     padding:0;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
 body{
     font-family:Arial,Tahoma,sans-serif;
     background:#090909;
     color:#fff;
+    min-height:100vh;
 }
 
-/* HEADER */
+/* =========================
+   HEADER
+========================= */
 
 header{
+    background:
+    radial-gradient(circle at top,#292929 0,#101010 45%,#070707 100%);
     text-align:center;
     padding:35px 15px 30px;
-    background:
-    linear-gradient(rgba(0,0,0,.88),rgba(0,0,0,.94));
-    border-bottom:2px solid #e60012;
+    border-bottom:2px solid #e50914;
 }
 
 .logo{
@@ -39,141 +51,191 @@ header{
     letter-spacing:-2px;
 }
 
-.logo span{
-    color:#e60012;
+.logo .bk{
+    color:#fff;
+}
+
+.logo .auto{
+    color:#e50914;
 }
 
 .subtitle{
     margin-top:8px;
-    font-size:18px;
-    color:#ddd;
+    font-size:20px;
+    font-weight:bold;
 }
 
 .brands{
-    margin-top:8px;
     color:#aaa;
-    font-size:14px;
+    margin-top:8px;
+    font-size:15px;
 }
 
 .phone{
-    display:inline-block;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
     margin-top:18px;
-    background:#e60012;
+    background:#e50914;
     color:white;
+    padding:13px 28px;
+    border-radius:9px;
     text-decoration:none;
-    padding:14px 28px;
-    border-radius:10px;
     font-size:19px;
     font-weight:bold;
-    box-shadow:0 5px 20px rgba(230,0,18,.3);
+    box-shadow:0 5px 20px rgba(229,9,20,.3);
+    transition:.2s;
 }
 
-/* SEARCH */
+.phone:hover{
+    background:#ff1c27;
+    transform:translateY(-2px);
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container{
+    width:min(1400px,94%);
+    margin:auto;
+}
+
+/* =========================
+   SEARCH AREA
+========================= */
 
 .search-area{
-    max-width:1200px;
     margin:25px auto;
-    padding:0 15px;
+    padding:22px;
+    background:#111;
+    border:1px solid #292929;
+    border-radius:14px;
 }
 
-.search{
+.search-title{
+    text-align:right;
+    color:#ddd;
+    margin-bottom:15px;
+    font-size:16px;
+}
+
+.search-box{
     width:100%;
-    padding:17px 20px;
-    border:1px solid #333;
-    border-radius:12px;
-    background:#151515;
-    color:white;
+    padding:16px 18px;
+    border-radius:10px;
+    border:1px solid #444;
+    background:#050505;
+    color:#fff;
     font-size:16px;
     outline:none;
+    transition:.2s;
 }
 
-.search:focus{
-    border-color:#e60012;
+.search-box:focus{
+    border-color:#e50914;
+    box-shadow:0 0 0 2px rgba(229,9,20,.12);
 }
-
-/* FILTERS */
 
 .filters{
-    max-width:1200px;
-    margin:15px auto 25px;
-    padding:0 15px;
     display:grid;
     grid-template-columns:repeat(3,1fr);
     gap:12px;
+    margin-top:15px;
 }
 
 select{
     width:100%;
-    padding:15px;
-    background:#151515;
-    color:white;
+    padding:14px;
+    background:#090909;
     border:1px solid #444;
-    border-radius:10px;
-    font-size:15px;
-}
-
-.reset{
-    width:100%;
-    padding:15px;
-    background:#e60012;
-    border:none;
-    border-radius:10px;
+    border-radius:9px;
     color:white;
-    font-weight:bold;
-    cursor:pointer;
+    font-size:15px;
+    outline:none;
 }
 
-/* INFO */
+select:focus{
+    border-color:#e50914;
+}
 
-.info{
-    max-width:1200px;
-    margin:0 auto 20px;
-    padding:0 15px;
+.reset-btn{
+    width:100%;
+    margin-top:15px;
+    border:0;
+    background:#e50914;
+    color:white;
+    padding:14px;
+    border-radius:9px;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:bold;
+    transition:.2s;
+}
+
+.reset-btn:hover{
+    background:#ff1b26;
+}
+
+/* =========================
+   RESULTS INFO
+========================= */
+
+.results-info{
     display:flex;
     justify-content:space-between;
-    color:#bbb;
+    align-items:center;
+    margin:25px 0 15px;
+    gap:10px;
 }
 
-.count{
-    color:#e60012;
+.results-count{
+    color:#e50914;
     font-weight:bold;
+    font-size:18px;
 }
 
-/* PRODUCTS */
+.available-info{
+    color:#aaa;
+    font-size:14px;
+}
+
+/* =========================
+   PRODUCTS GRID
+========================= */
 
 .products{
-    max-width:1200px;
-    margin:auto;
-    padding:0 15px 50px;
     display:grid;
     grid-template-columns:repeat(4,1fr);
     gap:18px;
+    padding-bottom:50px;
 }
 
-/* CARD */
+/* =========================
+   CARD
+========================= */
 
 .card{
     background:#151515;
     border:1px solid #292929;
     border-radius:14px;
     overflow:hidden;
-    transition:.25s;
     position:relative;
+    transition:.25s;
+    box-shadow:0 5px 20px rgba(0,0,0,.25);
 }
 
 .card:hover{
     transform:translateY(-5px);
-    border-color:#e60012;
-    box-shadow:0 10px 30px rgba(0,0,0,.5);
+    border-color:#e50914;
+    box-shadow:0 10px 30px rgba(229,9,20,.15);
 }
 
 .image-box{
-    width:100%;
     height:210px;
-    background:#f5f5f5;
-    display:flex;
-    align-items:center;
-    justify-content:center;
+    background:#eee;
+    position:relative;
     overflow:hidden;
 }
 
@@ -181,96 +243,168 @@ select{
     width:100%;
     height:100%;
     object-fit:cover;
+    display:block;
+    transition:.35s;
+}
+
+.card:hover .image-box img{
+    transform:scale(1.04);
 }
 
 .available{
     position:absolute;
-    top:10px;
-    right:10px;
-    background:#12b84a;
-    color:white;
-    padding:6px 12px;
+    top:12px;
+    right:12px;
+    background:#16c766;
+    color:#fff;
+    padding:7px 12px;
     border-radius:20px;
-    font-size:12px;
+    font-size:13px;
     font-weight:bold;
+    box-shadow:0 3px 10px rgba(0,0,0,.3);
 }
 
-.card-content{
+.card-body{
     padding:16px;
 }
 
-.fr{
-    color:#fff;
+.part-fr{
     font-size:19px;
-    font-weight:bold;
+    font-weight:800;
+    margin-bottom:5px;
 }
 
-.ar{
-    margin-top:5px;
-    color:#bbb;
+.part-ar{
     font-size:16px;
+    color:#bbb;
+    margin-bottom:14px;
+}
+
+.info-row{
+    margin:8px 0;
+    color:#ddd;
+    font-size:14px;
+    line-height:1.5;
+}
+
+.info-label{
+    color:#888;
 }
 
 .brand{
-    margin-top:12px;
-    color:#e60012;
+    display:inline-block;
+    background:#242424;
+    border:1px solid #444;
+    padding:5px 9px;
+    border-radius:6px;
+    color:#fff;
     font-weight:bold;
+    margin-top:3px;
 }
 
 .cars{
-    margin-top:10px;
-    color:#aaa;
-    line-height:1.7;
-    font-size:14px;
+    color:#eee;
 }
 
-.cars strong{
-    color:#ddd;
-}
-
-.call{
+.contact-btn{
     display:block;
     text-align:center;
-    margin-top:15px;
-    background:#e60012;
+    background:#e50914;
     color:white;
     text-decoration:none;
     padding:11px;
     border-radius:8px;
+    margin-top:15px;
     font-weight:bold;
+    transition:.2s;
 }
 
-.call:hover{
-    background:#ff1828;
+.contact-btn:hover{
+    background:#ff1c27;
 }
 
-/* EMPTY */
+/* =========================
+   EMPTY
+========================= */
 
 .empty{
-    display:none;
-    text-align:center;
-    padding:50px;
-    color:#aaa;
     grid-column:1/-1;
+    background:#151515;
+    border:1px dashed #444;
+    border-radius:12px;
+    text-align:center;
+    padding:50px 20px;
+    color:#aaa;
 }
 
-/* FOOTER */
+.empty-icon{
+    font-size:40px;
+    margin-bottom:12px;
+}
+
+/* =========================
+   FOOTER
+========================= */
 
 footer{
+    border-top:1px solid #292929;
     background:#050505;
-    border-top:1px solid #222;
+    padding:30px 15px;
     text-align:center;
-    padding:25px;
-    color:#777;
+    color:#999;
 }
 
-footer strong{
-    color:#e60012;
+.footer-logo{
+    font-size:25px;
+    font-weight:900;
+    margin-bottom:8px;
 }
 
-/* MOBILE */
+.footer-logo span{
+    color:#e50914;
+}
 
-@media(max-width:900px){
+.footer-phone{
+    color:#e50914;
+    font-weight:bold;
+    margin-top:8px;
+}
+
+/* =========================
+   FLOATING PHONE
+========================= */
+
+.floating-phone{
+    position:fixed;
+    bottom:20px;
+    left:20px;
+    width:58px;
+    height:58px;
+    border-radius:50%;
+    background:#16c766;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+    font-size:25px;
+    z-index:999;
+    box-shadow:0 5px 20px rgba(0,0,0,.5);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:1100px){
+
+    .products{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+}
+
+@media(max-width:800px){
 
     .products{
         grid-template-columns:repeat(2,1fr);
@@ -280,13 +414,13 @@ footer strong{
         grid-template-columns:1fr;
     }
 
-}
-
-@media(max-width:550px){
-
     .logo{
         font-size:34px;
     }
+
+}
+
+@media(max-width:520px){
 
     .products{
         grid-template-columns:1fr;
@@ -296,6 +430,38 @@ footer strong{
         height:230px;
     }
 
+    .results-info{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .subtitle{
+        font-size:17px;
+    }
+
+    .brands{
+        font-size:13px;
+    }
+
+}
+
+/* =========================
+   ANIMATION
+========================= */
+
+.card{
+    animation:fadeIn .35s ease both;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(10px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
 }
 
 </style>
@@ -303,10 +469,15 @@ footer strong{
 
 <body>
 
+<!-- =========================
+     HEADER
+========================= -->
+
 <header>
 
     <div class="logo">
-        BK <span>AUTO</span>
+        <span class="bk">BK</span>
+        <span class="auto">AUTO</span>
     </div>
 
     <div class="subtitle">
@@ -324,758 +495,719 @@ footer strong{
 </header>
 
 
+<main class="container">
+
+<!-- =========================
+     SEARCH
+========================= -->
+
 <section class="search-area">
 
+    <div class="search-title">
+        🔎 ابحث باسم القطعة أو السيارة أو العلامة التجارية
+    </div>
+
     <input
-        id="search"
-        class="search"
         type="text"
-        placeholder="🔎 ابحث باسم القطعة، السيارة أو العلامة..."
+        id="search"
+        class="search-box"
+        placeholder="مثال: Plaquettes, Clio 4, Bosch..."
+        autocomplete="off"
     >
 
-</section>
+    <div class="filters">
 
+        <select id="brandFilter">
+            <option value="">كل العلامات</option>
+        </select>
 
-<section class="filters">
+        <select id="carFilter">
+            <option value="">كل السيارات</option>
+        </select>
 
-    <select id="brandFilter">
+        <select id="partFilter">
+            <option value="">كل القطع</option>
+        </select>
 
-        <option value="">كل العلامات</option>
+    </div>
 
-        <option value="Renault">Renault</option>
-
-        <option value="Peugeot">Peugeot</option>
-
-        <option value="Dacia">Dacia</option>
-
-    </select>
-
-
-    <select id="categoryFilter">
-
-        <option value="">كل القطع</option>
-
-        <option value="Frein">Frein</option>
-
-        <option value="Moteur">Moteur</option>
-
-        <option value="Embrayage">Embrayage</option>
-
-        <option value="Filtration">Filtration</option>
-
-        <option value="Distribution">Distribution</option>
-
-        <option value="Suspension">Suspension</option>
-
-        <option value="Direction">Direction</option>
-
-        <option value="Electricité">Electricité</option>
-
-    </select>
-
-
-    <select id="carFilter">
-
-        <option value="">كل السيارات</option>
-
-        <option value="Clio">Clio</option>
-
-        <option value="Symbol">Symbol</option>
-
-        <option value="Logan">Logan</option>
-
-        <option value="Sandero">Sandero</option>
-
-        <option value="Megane">Megane</option>
-
-        <option value="Kangoo">Kangoo</option>
-
-        <option value="Duster">Duster</option>
-
-        <option value="Peugeot 206">Peugeot 206</option>
-
-        <option value="Peugeot 207">Peugeot 207</option>
-
-        <option value="Peugeot 208">Peugeot 208</option>
-
-        <option value="Peugeot 301">Peugeot 301</option>
-
-        <option value="Partner">Partner</option>
-
-    </select>
-
-</section>
-
-
-<div style="max-width:1200px;margin:auto;padding:0 15px 20px;">
-    <button class="reset" onclick="resetFilters()">
-        🔄 إعادة ضبط البحث
+    <button class="reset-btn" onclick="resetFilters()">
+        ↻ إعادة ضبط البحث
     </button>
-</div>
+
+</section>
 
 
-<div class="info">
+<!-- =========================
+     RESULTS
+========================= -->
 
-    <div>
-        القطع المتوفرة:
-        <span class="count" id="count">12</span>
+<div class="results-info">
+
+    <div class="results-count">
+        عدد القطع: <span id="count">0</span>
     </div>
 
-    <div>
-        🟢 متوفر
+    <div class="available-info">
+        🟢 جميع القطع المعروضة متوفرة
     </div>
 
 </div>
 
 
-<main class="products" id="products">
-
-
-<!-- 1 -->
-
-<article
-class="card"
-data-brand="Renault"
-data-category="Frein"
-data-car="Clio Symbol Logan Sandero Megane">
-
-<div class="available">● متوفر</div>
-
-<div class="image-box">
-<img
-src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=800&q=80"
-alt="Plaquettes de frein">
-</div>
-
-<div class="card-content">
-
-<div class="fr">
-Plaquettes de frein
-</div>
-
-<div class="ar">
-فحمات الفرامل
-</div>
-
-<div class="brand">
-Renault
-</div>
-
-<div class="cars">
-<strong>السيارات المتوافقة:</strong><br>
-Clio • Symbol • Logan • Sandero • Megane
-</div>
-
-<a class="call" href="tel:0556419934">
-📞 اتصل للاستفسار
-</a>
-
-</div>
-</article>
-
-
-<!-- 2 -->
-
-<article
-class="card"
-data-brand="Renault"
-data-category="Frein"
-data-car="Clio Logan Sandero Megane">
-
-<div class="available">● متوفر</div>
-
-<div class="image-box">
-<img
-src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=800&q=80"
-alt="Disque de frein">
-</div>
-
-<div class="card-content">
-
-<div class="fr">
-Disque de frein
-</div>
-
-<div class="ar">
-قرص الفرامل
-</div>
-
-<div class="brand">
-Renault
-</div>
-
-<div class="cars">
-<strong>السيارات المتوافقة:</strong><br>
-Clio • Logan • Sandero • Megane
-</div>
-
-<a class="call" href="tel:0556419934">
-📞 اتصل للاستفسار
-</a>
-
-</div>
-</article>
-
-
-<!-- 3 -->
-
-<article
-class="card"
-data-brand="Renault"
-data-category="Embrayage"
-data-car="Clio Logan Symbol Sandero">
-
-<div class="available">● متوفر</div>
-
-<div class="image-box">
-<img
-src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=800&q=80"
-alt="Kit embrayage">
-</div>
-
-<div class="card-content">
-
-<div class="fr">
-Kit embrayage
-</div>
-
-<div class="ar">
-طقم القابض
-</div>
-
-<div class="brand">
-Renault
-</div>
-
-<div class="cars">
-<strong>السيارات المتوافقة:</strong><br>
-Clio • Logan • Symbol • Sandero
-</div>
-
-<a class="call" href="tel:0556419934">
-📞 اتصل للاستفسار
-</a>
-
-</div>
-</article>
-
-
-<!-- 4 -->
-
-<article
-class="card"
-data-brand="Renault"
-data-category="Filtration"
-data-car="Clio Logan Symbol Sandero Megane">
-
-<div class="available">● متوفر</div>
-
-<div class="image-box">
-<img
-src="https://images.unsplash.com/photo-1632823471565-1ecdf5c7d2b1?auto=format&fit=crop&w=800&q=80"
-alt="Filtre à huile">
-</div>
-
-<div class="card-content">
-
-<div class="fr">
-Filtre à huile
-</div>
-
-<div class="ar">
-فلتر الزيت
-</div>
-
-<div class="brand">
-Renault
-</div>
-
-<div class="cars">
-<strong>السيارات المتوافقة:</strong><br>
-Clio • Logan • Symbol • Sandero • Megane
-</div>
-
-<a class="call" href="tel:0556419934">
-📞 اتصل للاستفسار
-</a>
-
-</div>
-</article>
-
-
-<!-- 5 -->
-
-<article
-class="card"
-data-brand="Renault"
-data-category="Filtration"
-data-car="Clio Logan Sandero Symbol">
-
-<div class="available">● متوفر</div>
-
-<div class="image-box">
-<img
-src="https://images.unsplash.com/photo-1625047509248-ec889cbff17f?auto=format&fit=crop&w=800&q=80"
-alt="Filtre à air">
-</div>
-
-<div class="card-content">
-
-<div class="fr">
-Filtre à air
-</div>
-
-<div class="ar">
-فلتر الهواء
-</div>
-
-<div class="brand">
-Renault
-</div>
-
-<div class="cars">
-<strong>السيارات المتوافقة:</strong><br>
-Clio • Logan • Sandero • Symbol
-</div>
-
-<a class="call" href="tel:0556419934">
-📞 اتصل للاستفسار
-</a>
-
-</div>
-</article>
-
-
-<!-- 6 -->
-
-<article
-class="card"
-data-brand="Renault"
-data-category="Distribution"
-data-car="Clio Logan Symbol Sandero">
-
-<div class="available">● متوفر</div>
-
-<div class="image-box">
-<img
-src="https://images.unsplash.com/photo-1635784063388-9c4c8e5f5f1a?auto=format&fit=crop&w=800&q=80"
-alt="Courroie distribution">
-</div>
-
-<div class="card-content">
-
-<div class="fr">
-Courroie de distribution
-</div>
-
-<div class="ar">
-سير التوزيع
-</div>
-
-<div class="brand">
-Renault
-</div>
-
-<div class="cars">
-<strong>السيارات المتوافقة:</strong><br>
-Clio • Logan • Symbol • Sandero
-</div>
-
-<a class="call" href="tel:0556419934">
-📞 اتصل للاستفسار
-</a>
-
-</div>
-</article>
-
-
-<!-- 7 -->
-
-<article
-class="card"
-data-brand="Renault"
-data-category="Moteur"
-data-car="Clio Logan Symbol Sandero Megane">
-
-<div class="available">● متوفر</div>
-
-<div class="image-box">
-<img
-src="https://images.unsplash.com/photo-1486754735734-325b5831c3ad?auto=format&fit=crop&w=800&q=80"
-alt="Pompe à eau">
-</div>
-
-<div class="card-content">
-
-<div class="fr">
-Pompe à eau
-</div>
-
-<div class="ar">
-مضخة الماء
-</div>
-
-<div class="brand">
-Renault
-</div>
-
-<div class="cars">
-<strong>السيارات المتوافقة:</strong><br>
-Clio • Logan • Symbol • Sandero • Megane
-</div>
-
-<a class="call" href="tel:0556419934">
-📞 اتصل للاستفسار
-</a>
-
-</div>
-</article>
-
-
-<!-- 8 -->
-
-<article
-class="card"
-data-brand="Renault"
-data-category="Suspension"
-data-car="Clio Logan Symbol Sandero Megane">
-
-<div class="available">● متوفر</div>
-
-<div class="image-box">
-<img
-src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80"
-alt="Amortisseur">
-</div>
-
-<div class="card-content">
-
-<div class="fr">
-Amortisseur
-</div>
-
-<div class="ar">
-ممتص الصدمات
-</div>
-
-<div class="brand">
-Renault
-</div>
-
-<div class="cars">
-<strong>السيارات المتوافقة:</strong><br>
-Clio • Logan • Symbol • Sandero • Megane
-</div>
-
-<a class="call" href="tel:0556419934">
-📞 اتصل للاستفسار
-</a>
-
-</div>
-</article>
-
-
-<!-- 9 -->
-
-<article
-class="card"
-data-brand="Renault"
-data-category="Suspension"
-data-car="Clio Logan Symbol Sandero">
-
-<div class="available">● متوفر</div>
-
-<div class="image-box">
-<img
-src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=800&q=80"
-alt="Triangle suspension">
-</div>
-
-<div class="card-content">
-
-<div class="fr">
-Triangle de suspension
-</div>
-
-<div class="ar">
-مثلث التعليق
-</div>
-
-<div class="brand">
-Renault
-</div>
-
-<div class="cars">
-<strong>السيارات المتوافقة:</strong><br>
-Clio • Logan • Symbol • Sandero
-</div>
-
-<a class="call" href="tel:0556419934">
-📞 اتصل للاستفسار
-</a>
-
-</div>
-</article>
-
-
-<!-- 10 -->
-
-<article
-class="card"
-data-brand="Peugeot"
-data-category="Direction"
-data-car="Peugeot 206 Peugeot 207 Peugeot 208 Peugeot 301 Partner">
-
-<div class="available">● متوفر</div>
-
-<div class="image-box">
-<img
-src="https://images.unsplash.com/photo-1493238792000-8113da705763?auto=format&fit=crop&w=800&q=80"
-alt="Rotule direction">
-</div>
-
-<div class="card-content">
-
-<div class="fr">
-Rotule de direction
-</div>
-
-<div class="ar">
-رأس المقود
-</div>
-
-<div class="brand">
-Peugeot
-</div>
-
-<div class="cars">
-<strong>السيارات المتوافقة:</strong><br>
-206 • 207 • 208 • 301 • Partner
-</div>
-
-<a class="call" href="tel:0556419934">
-📞 اتصل للاستفسار
-</a>
-
-</div>
-</article>
-
-
-<!-- 11 -->
-
-<article
-class="card"
-data-brand="Peugeot"
-data-category="Filtration"
-data-car="Peugeot 206 Peugeot 207 Peugeot 208 Peugeot 301 Partner">
-
-<div class="available">● متوفر</div>
-
-<div class="image-box">
-<img
-src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=800&q=80"
-alt="Filtre carburant">
-</div>
-
-<div class="card-content">
-
-<div class="fr">
-Filtre à carburant
-</div>
-
-<div class="ar">
-فلتر الوقود
-</div>
-
-<div class="brand">
-Peugeot
-</div>
-
-<div class="cars">
-<strong>السيارات المتوافقة:</strong><br>
-206 • 207 • 208 • 301 • Partner
-</div>
-
-<a class="call" href="tel:0556419934">
-📞 اتصل للاستفسار
-</a>
-
-</div>
-</article>
-
-
-<!-- 12 -->
-
-<article
-class="card"
-data-brand="Dacia"
-data-category="Moteur"
-data-car="Logan Sandero Duster">
-
-<div class="available">● متوفر</div>
-
-<div class="image-box">
-<img
-src="https://images.unsplash.com/photo-1494905998402-395d579af36f?auto=format&fit=crop&w=800&q=80"
-alt="Pièce moteur">
-</div>
-
-<div class="card-content">
-
-<div class="fr">
-Pièces moteur
-</div>
-
-<div class="ar">
-قطع غيار المحرك
-</div>
-
-<div class="brand">
-Dacia
-</div>
-
-<div class="cars">
-<strong>السيارات المتوافقة:</strong><br>
-Logan • Sandero • Duster
-</div>
-
-<a class="call" href="tel:0556419934">
-📞 اتصل للاستفسار
-</a>
-
-</div>
-</article>
-
-
-<div class="empty" id="empty">
-    ❌ لم يتم العثور على قطع مطابقة للبحث
-</div>
+<!-- =========================
+     PRODUCTS
+========================= -->
+
+<section id="products" class="products"></section>
 
 </main>
 
 
+<!-- =========================
+     FOOTER
+========================= -->
+
 <footer>
 
-    <strong>BK AUTO</strong>
+    <div class="footer-logo">
+        BK <span>AUTO</span>
+    </div>
 
-    <br><br>
+    <div>
+        كتالوج قطع غيار السيارات
+    </div>
 
-    كتالوج قطع غيار السيارات
+    <div class="footer-phone">
+        📞 0556419934
+    </div>
 
-    <br>
-
-    Renault • Peugeot • Dacia
-
-    <br><br>
-
-    📞 0556419934
+    <div style="margin-top:12px;font-size:13px;">
+        Renault • Peugeot • Dacia
+    </div>
 
 </footer>
 
 
+<!-- FLOATING CALL BUTTON -->
+
+<a
+    href="tel:0556419934"
+    class="floating-phone"
+    title="اتصل بـ BK AUTO">
+    ☎
+</a>
+
+
 <script>
 
-const search = document.getElementById("search");
-const brandFilter = document.getElementById("brandFilter");
-const categoryFilter = document.getElementById("categoryFilter");
-const carFilter = document.getElementById("carFilter");
+/* =========================================================
+   قاعدة بيانات القطع
+   لا توجد مراجع للقطع كما طلبت
+========================================================= */
 
-const cards = document.querySelectorAll(".card");
+const products = [
 
-const count = document.getElementById("count");
-const empty = document.getElementById("empty");
+    {
+        id:1,
+
+        fr:"Plaquettes de frein",
+
+        ar:"فحمات الفرامل",
+
+        brand:"BOSCH",
+
+        cars:[
+            "Renault Clio 4",
+            "Renault Symbol",
+            "Dacia Logan"
+        ],
+
+        type:"Frein",
+
+        image:
+        "https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&w=900&q=85"
+    },
+
+    {
+        id:2,
+
+        fr:"Filtre à huile",
+
+        ar:"فلتر الزيت",
+
+        brand:"PURFLUX",
+
+        cars:[
+            "Renault Clio",
+            "Renault Symbol",
+            "Dacia Logan",
+            "Peugeot 208"
+        ],
+
+        type:"Filtre",
+
+        image:
+        "https://images.unsplash.com/photo-1632823469850-1f77f0b9c1d7?auto=format&fit=crop&w=900&q=85"
+    },
+
+    {
+        id:3,
+
+        fr:"Filtre à air",
+
+        ar:"فلتر الهواء",
+
+        brand:"MANN-FILTER",
+
+        cars:[
+            "Renault Clio 4",
+            "Renault Megane",
+            "Dacia Sandero",
+            "Dacia Logan"
+        ],
+
+        type:"Filtre",
+
+        image:
+        "https://images.unsplash.com/photo-1486006920555-c77dcf18193c?auto=format&fit=crop&w=900&q=85"
+    },
+
+    {
+        id:4,
+
+        fr:"Filtre à carburant",
+
+        ar:"فلتر الوقود",
+
+        brand:"DELPHI",
+
+        cars:[
+            "Renault Clio",
+            "Renault Kangoo",
+            "Dacia Logan",
+            "Peugeot Partner"
+        ],
+
+        type:"Filtre",
+
+        image:
+        "https://images.unsplash.com/photo-1504222490345-c075b6008014?auto=format&fit=crop&w=900&q=85"
+    },
+
+    {
+        id:5,
+
+        fr:"Courroie d'accessoires",
+
+        ar:"سير الملحقات",
+
+        brand:"GATES",
+
+        cars:[
+            "Renault Clio",
+            "Renault Symbol",
+            "Dacia Logan",
+            "Peugeot 301"
+        ],
+
+        type:"Moteur",
+
+        image:
+        "https://images.unsplash.com/photo-1517524008697-84bbe3c3fd98?auto=format&fit=crop&w=900&q=85"
+    },
+
+    {
+        id:6,
+
+        fr:"Kit embrayage",
+
+        ar:"طقم القابض / الدبرياج",
+
+        brand:"VALEO",
+
+        cars:[
+            "Renault Clio",
+            "Renault Logan",
+            "Dacia Sandero",
+            "Peugeot 207"
+        ],
+
+        type:"Embrayage",
+
+        image:
+        "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=900&q=85"
+    },
+
+    {
+        id:7,
+
+        fr:"Pompe à eau",
+
+        ar:"مضخة الماء",
+
+        brand:"GRAF",
+
+        cars:[
+            "Renault Clio 1.2",
+            "Renault Symbol",
+            "Dacia Logan",
+            "Dacia Sandero"
+        ],
+
+        type:"Refroidissement",
+
+        image:
+        "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=900&q=85"
+    },
+
+    {
+        id:8,
+
+        fr:"Amortisseur avant",
+
+        ar:"ممتص الصدمات الأمامي",
+
+        brand:"MONROE",
+
+        cars:[
+            "Renault Clio",
+            "Renault Symbol",
+            "Dacia Logan",
+            "Peugeot 301"
+        ],
+
+        type:"Suspension",
+
+        image:
+        "https://images.unsplash.com/photo-1551830820-330a71b99659?auto=format&fit=crop&w=900&q=85"
+    },
+
+    {
+        id:9,
+
+        fr:"Rotule de direction",
+
+        ar:"رأس المقود",
+
+        brand:"TRW",
+
+        cars:[
+            "Renault Clio",
+            "Renault Megane",
+            "Dacia Logan",
+            "Peugeot 208"
+        ],
+
+        type:"Direction",
+
+        image:
+        "https://images.unsplash.com/photo-1518987048-93e29699e79a?auto=format&fit=crop&w=900&q=85"
+    },
+
+    {
+        id:10,
+
+        fr:"Disque de frein",
+
+        ar:"قرص الفرامل",
+
+        brand:"BREMBO",
+
+        cars:[
+            "Renault Clio 4",
+            "Renault Megane",
+            "Dacia Sandero",
+            "Peugeot 208"
+        ],
+
+        type:"Frein",
+
+        image:
+        "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=900&q=85"
+    },
+
+    {
+        id:11,
+
+        fr:"Bougies d'allumage",
+
+        ar:"شمعات الإشعال",
+
+        brand:"NGK",
+
+        cars:[
+            "Renault Clio 1.2",
+            "Renault Clio 1.4",
+            "Renault Symbol",
+            "Dacia Logan"
+        ],
+
+        type:"Allumage",
+
+        image:
+        "https://images.unsplash.com/photo-1542282088-fe8426682b8f?auto=format&fit=crop&w=900&q=85"
+    },
+
+    {
+        id:12,
+
+        fr:"Biellette de barre stabilisatrice",
+
+        ar:"وصلة عمود التوازن",
+
+        brand:"LEMFÖRDER",
+
+        cars:[
+            "Renault Clio",
+            "Renault Megane",
+            "Dacia Logan",
+            "Peugeot 301"
+        ],
+
+        type:"Suspension",
+
+        image:
+        "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=900&q=85"
+    }
+
+];
 
 
-function filterProducts(){
+/* =========================================================
+   عناصر الصفحة
+========================================================= */
 
-    const text = search.value.toLowerCase().trim();
+const productsContainer =
+    document.getElementById("products");
 
-    const brand = brandFilter.value;
-    const category = categoryFilter.value;
-    const car = carFilter.value;
+const searchInput =
+    document.getElementById("search");
 
-    let visible = 0;
+const brandFilter =
+    document.getElementById("brandFilter");
 
-    cards.forEach(card => {
+const carFilter =
+    document.getElementById("carFilter");
 
-        const content = card.innerText.toLowerCase();
+const partFilter =
+    document.getElementById("partFilter");
 
-        const cardBrand = card.dataset.brand;
-        const cardCategory = card.dataset.category;
-        const cardCars = card.dataset.car;
+const countElement =
+    document.getElementById("count");
 
-        const textMatch =
-            text === "" ||
-            content.includes(text);
 
-        const brandMatch =
-            brand === "" ||
-            cardBrand === brand;
+/* =========================================================
+   تجهيز الفلاتر تلقائيا
+========================================================= */
 
-        const categoryMatch =
-            category === "" ||
-            cardCategory === category;
+function setupFilters(){
 
-        const carMatch =
-            car === "" ||
-            cardCars.includes(car);
+    const brands = [
+        ...new Set(
+            products.map(product => product.brand)
+        )
+    ].sort();
 
-        if(
-            textMatch &&
-            brandMatch &&
-            categoryMatch &&
-            carMatch
-        ){
+    const cars = [
+        ...new Set(
+            products.flatMap(product => product.cars)
+        )
+    ].sort();
 
-            card.style.display = "";
+    const parts = [
+        ...new Set(
+            products.map(product => product.type)
+        )
+    ].sort();
 
-            visible++;
 
-        }else{
+    brands.forEach(brand => {
 
-            card.style.display = "none";
+        const option =
+            document.createElement("option");
 
-        }
+        option.value = brand;
+        option.textContent = brand;
+
+        brandFilter.appendChild(option);
 
     });
 
-    count.textContent = visible;
 
-    if(visible === 0){
+    cars.forEach(car => {
 
-        empty.style.display = "block";
+        const option =
+            document.createElement("option");
 
-    }else{
+        option.value = car;
+        option.textContent = car;
 
-        empty.style.display = "none";
+        carFilter.appendChild(option);
+
+    });
+
+
+    parts.forEach(part => {
+
+        const option =
+            document.createElement("option");
+
+        option.value = part;
+        option.textContent = part;
+
+        partFilter.appendChild(option);
+
+    });
+
+}
+
+
+/* =========================================================
+   عرض القطع
+========================================================= */
+
+function renderProducts(){
+
+    const search =
+        searchInput.value
+        .trim()
+        .toLowerCase();
+
+    const selectedBrand =
+        brandFilter.value;
+
+    const selectedCar =
+        carFilter.value;
+
+    const selectedPart =
+        partFilter.value;
+
+
+    const filtered =
+        products.filter(product => {
+
+            const searchableText = [
+
+                product.fr,
+
+                product.ar,
+
+                product.brand,
+
+                product.type,
+
+                ...product.cars
+
+            ]
+            .join(" ")
+            .toLowerCase();
+
+
+            const matchesSearch =
+                !search ||
+                searchableText.includes(search);
+
+
+            const matchesBrand =
+                !selectedBrand ||
+                product.brand === selectedBrand;
+
+
+            const matchesCar =
+                !selectedCar ||
+                product.cars.includes(selectedCar);
+
+
+            const matchesPart =
+                !selectedPart ||
+                product.type === selectedPart;
+
+
+            return (
+                matchesSearch &&
+                matchesBrand &&
+                matchesCar &&
+                matchesPart
+            );
+
+        });
+
+
+    countElement.textContent =
+        filtered.length;
+
+
+    if(filtered.length === 0){
+
+        productsContainer.innerHTML = `
+
+            <div class="empty">
+
+                <div class="empty-icon">
+                    🔎
+                </div>
+
+                <h3>
+                    لم يتم العثور على القطعة
+                </h3>
+
+                <p style="margin-top:10px;">
+                    جرّب البحث باسم آخر أو اختر "كل القطع".
+                </p>
+
+            </div>
+
+        `;
+
+        return;
 
     }
 
+
+    productsContainer.innerHTML =
+        filtered.map(product => createCard(product)).join("");
+
 }
 
 
-search.addEventListener("input",filterProducts);
+/* =========================================================
+   إنشاء بطاقة القطعة
+========================================================= */
 
-brandFilter.addEventListener("change",filterProducts);
+function createCard(product){
 
-categoryFilter.addEventListener("change",filterProducts);
+    const cars =
+        product.cars.join(" • ");
 
-carFilter.addEventListener("change",filterProducts);
 
+    return `
+
+        <article class="card">
+
+            <div class="image-box">
+
+                <img
+                    src="${product.image}"
+                    alt="${product.fr} - ${product.ar}"
+                    loading="lazy"
+                    onerror="this.src='https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&w=900&q=85'"
+                >
+
+                <span class="available">
+                    ● متوفر
+                </span>
+
+            </div>
+
+
+            <div class="card-body">
+
+                <div class="part-fr">
+                    ${product.fr}
+                </div>
+
+                <div class="part-ar">
+                    ${product.ar}
+                </div>
+
+
+                <div class="info-row">
+
+                    <span class="info-label">
+                        العلامة:
+                    </span>
+
+                    <br>
+
+                    <span class="brand">
+                        ${product.brand}
+                    </span>
+
+                </div>
+
+
+                <div class="info-row">
+
+                    <span class="info-label">
+                        السيارات المتوافقة:
+                    </span>
+
+                    <div class="cars">
+                        ${cars}
+                    </div>
+
+                </div>
+
+
+                <a
+                    class="contact-btn"
+                    href="tel:0556419934">
+
+                    📞 اتصل للاستفسار
+
+                </a>
+
+            </div>
+
+        </article>
+
+    `;
+
+}
+
+
+/* =========================================================
+   إعادة ضبط
+========================================================= */
 
 function resetFilters(){
 
-    search.value = "";
+    searchInput.value = "";
 
     brandFilter.value = "";
 
-    categoryFilter.value = "";
-
     carFilter.value = "";
 
-    filterProducts();
+    partFilter.value = "";
+
+    renderProducts();
 
 }
+
+
+/* =========================================================
+   الأحداث
+========================================================= */
+
+searchInput.addEventListener(
+    "input",
+    renderProducts
+);
+
+brandFilter.addEventListener(
+    "change",
+    renderProducts
+);
+
+carFilter.addEventListener(
+    "change",
+    renderProducts
+);
+
+partFilter.addEventListener(
+    "change",
+    renderProducts
+);
+
+
+/* =========================================================
+   تشغيل الموقع
+========================================================= */
+
+setupFilters();
+
+renderProducts();
 
 </script>
 
