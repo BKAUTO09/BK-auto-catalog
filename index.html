@@ -1,810 +1,355 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-
 <head>
-    <meta charset="UTF-8">
-
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
-
-    <meta name="description"
-        content="BK AUTO - كتالوج قطع غيار السيارات Renault Peugeot Dacia في الجزائر">
-
-    <meta name="theme-color" content="#111111">
-
-    <title>BK AUTO | كتالوج قطع غيار السيارات</title>
-
-    <style>
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: Arial, Tahoma, sans-serif;
-            background: #111111;
-            color: #ffffff;
-            line-height: 1.6;
-        }
-
-        button,
-        input,
-        select {
-            font-family: inherit;
-        }
-
-        /* =========================
-           HEADER
-        ========================= */
-
-        header {
-            background:
-                linear-gradient(
-                    135deg,
-                    #0b0b0b,
-                    #171717
-                );
-
-            padding: 35px 20px 25px;
-            text-align: center;
-
-            border-bottom: 2px solid #e30613;
-
-            position: relative;
-        }
-
-        .logo {
-            font-size: 44px;
-            font-weight: 900;
-            letter-spacing: 1px;
-            margin-bottom: 5px;
-        }
-
-        .logo .bk {
-            color: #ffffff;
-        }
-
-        .logo .auto {
-            color: #e30613;
-        }
-
-        .subtitle {
-            font-size: 20px;
-            font-weight: bold;
-            margin-bottom: 3px;
-        }
-
-        .brands {
-            color: #cccccc;
-            font-size: 14px;
-            margin-bottom: 20px;
-        }
-
-        .phone-button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-
-            background: #e30613;
-            color: white;
-
-            text-decoration: none;
-
-            padding: 12px 25px;
-
-            border-radius: 10px;
-
-            font-size: 18px;
-            font-weight: bold;
-
-            transition: 0.25s;
-        }
-
-        .phone-button:hover {
-            background: #ff1b28;
-            transform: translateY(-2px);
-        }
-
-
-        /* =========================
-           SEARCH AREA
-        ========================= */
-
-        .search-section {
-            max-width: 1200px;
-            margin: 25px auto;
-            padding: 0 20px;
-        }
-
-        .search-box {
-            width: 100%;
-
-            background: #191919;
-
-            border: 1px solid #333;
-
-            border-radius: 12px;
-
-            padding: 15px 18px;
-
-            color: white;
-
-            font-size: 17px;
-
-            outline: none;
-
-            transition: 0.2s;
-        }
-
-        .search-box:focus {
-            border-color: #e30613;
-            box-shadow:
-                0 0 0 2px rgba(227, 6, 19, 0.15);
-        }
-
-
-        /* =========================
-           FILTERS
-        ========================= */
-
-        .filters {
-            display: grid;
-
-            grid-template-columns:
-                repeat(3, 1fr);
-
-            gap: 12px;
-
-            margin-top: 15px;
-        }
-
-        .filter {
-            width: 100%;
-
-            background: #191919;
-
-            color: white;
-
-            border: 1px solid #333;
-
-            border-radius: 10px;
-
-            padding: 13px;
-
-            font-size: 15px;
-
-            outline: none;
-        }
-
-        .filter:focus {
-            border-color: #e30613;
-        }
-
-        .reset-button {
-            width: 100%;
-
-            margin-top: 12px;
-
-            background: transparent;
-
-            color: white;
-
-            border: 1px solid #e30613;
-
-            border-radius: 10px;
-
-            padding: 12px;
-
-            cursor: pointer;
-
-            font-size: 15px;
-
-            transition: 0.2s;
-        }
-
-        .reset-button:hover {
-            background: #e30613;
-        }
-
-
-        /* =========================
-           RESULT INFO
-        ========================= */
-
-        .result-info {
-            max-width: 1200px;
-
-            margin: 25px auto 10px;
-
-            padding: 0 20px;
-
-            display: flex;
-
-            justify-content: space-between;
-
-            align-items: center;
-
-            gap: 10px;
-
-            flex-wrap: wrap;
-        }
-
-        .result-count {
-            color: #e30613;
-
-            font-weight: bold;
-
-            font-size: 16px;
-        }
-
-        .availability-info {
-            color: #aaaaaa;
-
-            font-size: 14px;
-        }
-
-
-        /* =========================
-           PRODUCTS GRID
-        ========================= */
-
-        .products {
-
-            max-width: 1200px;
-
-            margin: 0 auto;
-
-            padding: 10px 20px 50px;
-
-            display: grid;
-
-            grid-template-columns:
-                repeat(4, 1fr);
-
-            gap: 18px;
-        }
-
-
-        /* =========================
-           PRODUCT CARD
-        ========================= */
-
-        .product-card {
-
-            background: #1b1b1b;
-
-            border: 1px solid #303030;
-
-            border-radius: 14px;
-
-            overflow: hidden;
-
-            position: relative;
-
-            transition:
-                transform 0.25s,
-                border-color 0.25s,
-                box-shadow 0.25s;
-        }
-
-        .product-card:hover {
-
-            transform: translateY(-5px);
-
-            border-color: #e30613;
-
-            box-shadow:
-                0 10px 30px rgba(0, 0, 0, 0.35);
-        }
-
-
-        /* =========================
-           IMAGE
-        ========================= */
-
-        .product-image {
-
-            width: 100%;
-
-            height: 210px;
-
-            background: white;
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            overflow: hidden;
-        }
-
-        .product-image img {
-
-            width: 100%;
-
-            height: 100%;
-
-            object-fit: contain;
-
-            transition: transform 0.3s;
-        }
-
-        .product-card:hover
-        .product-image img {
-
-            transform: scale(1.05);
-        }
-
-
-        /* =========================
-           STATUS
-        ========================= */
-
-        .status {
-
-            position: absolute;
-
-            top: 10px;
-
-            right: 10px;
-
-            padding: 5px 10px;
-
-            border-radius: 20px;
-
-            font-size: 12px;
-
-            font-weight: bold;
-
-            z-index: 2;
-        }
-
-        .available {
-
-            background: #159447;
-
-            color: white;
-        }
-
-        .unavailable {
-
-            background: #555555;
-
-            color: white;
-        }
-
-
-        /* =========================
-           CARD CONTENT
-        ========================= */
-
-        .product-content {
-
-            padding: 15px;
-        }
-
-        .product-name-fr {
-
-            font-size: 18px;
-
-            font-weight: bold;
-
-            color: #ffffff;
-
-            margin-bottom: 3px;
-        }
-
-        .product-name-ar {
-
-            font-size: 15px;
-
-            color: #bbbbbb;
-
-            margin-bottom: 10px;
-        }
-
-        .brand {
-
-            display: inline-block;
-
-            background: #292929;
-
-            border: 1px solid #444;
-
-            padding: 4px 9px;
-
-            border-radius: 6px;
-
-            font-size: 12px;
-
-            color: #ffffff;
-
-            margin-bottom: 10px;
-        }
-
-        .reference {
-
-            color: #e30613;
-
-            font-size: 13px;
-
-            font-weight: bold;
-
-            margin-bottom: 10px;
-        }
-
-
-        /* =========================
-           COMPATIBILITY
-        ========================= */
-
-        .compatibility {
-
-            background: #141414;
-
-            border-radius: 8px;
-
-            padding: 10px;
-
-            margin-bottom: 12px;
-        }
-
-        .compatibility-title {
-
-            font-size: 12px;
-
-            color: #999999;
-
-            margin-bottom: 5px;
-        }
-
-        .compatibility-text {
-
-            font-size: 13px;
-
-            color: #dddddd;
-
-        }
-
-
-        /* =========================
-           DETAILS BUTTON
-        ========================= */
-
-        .details-button {
-
-            width: 100%;
-
-            background: #e30613;
-
-            color: white;
-
-            border: none;
-
-            border-radius: 8px;
-
-            padding: 11px;
-
-            cursor: pointer;
-
-            font-size: 14px;
-
-            font-weight: bold;
-
-            transition: 0.2s;
-        }
-
-        .details-button:hover {
-
-            background: #ff1826;
-        }
-
-
-        /* =========================
-           NO RESULTS
-        ========================= */
-
-        .no-results {
-
-            grid-column: 1 / -1;
-
-            text-align: center;
-
-            padding: 60px 20px;
-
-            color: #999999;
-
-            font-size: 18px;
-        }
-
-
-        /* =========================
-           MODAL
-        ========================= */
-
-        .modal {
-
-            position: fixed;
-
-            inset: 0;
-
-            background:
-                rgba(0, 0, 0, 0.82);
-
-            display: none;
-
-            align-items: center;
-
-            justify-content: center;
-
-            padding: 20px;
-
-            z-index: 1000;
-        }
-
-        .modal.show {
-
-            display: flex;
-        }
-
-        .modal-content {
-
-            width: 100%;
-
-            max-width: 650px;
-
-            max-height: 90vh;
-
-            overflow-y: auto;
-
-            background: #1b1b1b;
-
-            border: 1px solid #444;
-
-            border-radius: 15px;
-
-            position: relative;
-
-            padding: 20px;
-        }
-
-        .close {
-
-            position: absolute;
-
-            top: 10px;
-
-            left: 15px;
-
-            width: 35px;
-
-            height: 35px;
-
-            border-radius: 50%;
-
-            border: none;
-
-            background: #e30613;
-
-            color: white;
-
-            font-size: 22px;
-
-            cursor: pointer;
-
-            z-index: 5;
-        }
-
-        .modal-image {
-
-            width: 100%;
-
-            height: 300px;
-
-            background: white;
-
-            border-radius: 10px;
-
-            overflow: hidden;
-
-            margin-bottom: 20px;
-        }
-
-        .modal-image img {
-
-            width: 100%;
-
-            height: 100%;
-
-            object-fit: contain;
-        }
-
-        .modal-title-fr {
-
-            font-size: 25px;
-
-            font-weight: bold;
-
-            margin-bottom: 3px;
-        }
-
-        .modal-title-ar {
-
-            color: #bbbbbb;
-
-            margin-bottom: 20px;
-        }
-
-        .detail-row {
-
-            display: flex;
-
-            justify-content: space-between;
-
-            gap: 15px;
-
-            padding: 12px 0;
-
-            border-bottom: 1px solid #333;
-
-        }
-
-        .detail-label {
-
-            color: #999999;
-
-            font-size: 14px;
-        }
-
-        .detail-value {
-
-            color: white;
-
-            font-weight: bold;
-
-            text-align: left;
-        }
-
-        .modal-phone {
-
-            display: block;
-
-            text-align: center;
-
-            margin-top: 20px;
-
-            background: #e30613;
-
-            color: white;
-
-            text-decoration: none;
-
-            padding: 13px;
-
-            border-radius: 9px;
-
-            font-weight: bold;
-
-            font-size: 17px;
-        }
-
-
-        /* =========================
-           FOOTER
-        ========================= */
-
-        footer {
-
-            border-top: 1px solid #333;
-
-            background: #0b0b0b;
-
-            text-align: center;
-
-            padding: 25px 15px;
-
-            color: #888888;
-
-            font-size: 13px;
-        }
-
-        footer strong {
-
-            color: #e30613;
-        }
-
-
-        /* =========================
-           RESPONSIVE
-        ========================= */
-
-        @media (max-width: 1000px) {
-
-            .products {
-
-                grid-template-columns:
-                    repeat(3, 1fr);
-            }
-        }
-
-        @media (max-width: 750px) {
-
-            .products {
-
-                grid-template-columns:
-                    repeat(2, 1fr);
-
-                gap: 12px;
-
-                padding-left: 12px;
-
-                padding-right: 12px;
-            }
-
-            .filters {
-
-                grid-template-columns: 1fr;
-            }
-
-            .product-image {
-
-                height: 170px;
-            }
-
-            .logo {
-
-                font-size: 36px;
-            }
-        }
-
-        @media (max-width: 480px) {
-
-            .products {
-
-                grid-template-columns: 1fr;
-            }
-
-            .product-image {
-
-                height: 230px;
-            }
-
-            .search-section {
-
-                padding: 0 12px;
-            }
-
-            .result-info {
-
-                padding: 0 12px;
-            }
-
-            .modal-content {
-
-                padding: 15px;
-            }
-        }
-
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>BK AUTO | كتالوج قطع غيار السيارات</title>
+
+<meta name="description"
+content="BK AUTO - كتالوج قطع غيار السيارات Renault Peugeot Dacia في الجزائر">
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Tahoma, sans-serif;
+    background: #0b0b0b;
+    color: #fff;
+    min-height: 100vh;
+}
+
+/* ================= HEADER ================= */
+
+header {
+    background: linear-gradient(180deg, #171717, #0b0b0b);
+    padding: 30px 20px 25px;
+    text-align: center;
+    border-bottom: 2px solid #e00020;
+}
+
+.logo {
+    font-size: 42px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: #e00020;
+}
+
+.subtitle {
+    font-size: 18px;
+    margin-top: 8px;
+    color: #ddd;
+}
+
+.brands {
+    color: #aaa;
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+.phone {
+    display: inline-block;
+    margin-top: 18px;
+    background: #e00020;
+    color: white;
+    text-decoration: none;
+    padding: 13px 28px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 18px;
+    box-shadow: 0 5px 20px rgba(224,0,32,.25);
+}
+
+.phone:hover {
+    background: #ff1738;
+}
+
+/* ================= CONTAINER ================= */
+
+.container {
+    width: 95%;
+    max-width: 1400px;
+    margin: auto;
+}
+
+/* ================= SEARCH ================= */
+
+.search-area {
+    padding: 25px 0 15px;
+}
+
+.search-box {
+    width: 100%;
+    padding: 17px 20px;
+    background: #151515;
+    border: 1px solid #444;
+    border-radius: 12px;
+    color: white;
+    font-size: 17px;
+    outline: none;
+}
+
+.search-box:focus {
+    border-color: #e00020;
+    box-shadow: 0 0 0 2px rgba(224,0,32,.15);
+}
+
+/* ================= FILTERS ================= */
+
+.filters {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+select {
+    width: 100%;
+    padding: 14px;
+    border-radius: 10px;
+    border: 1px solid #444;
+    background: #151515;
+    color: white;
+    font-size: 15px;
+    outline: none;
+}
+
+select:focus {
+    border-color: #e00020;
+}
+
+.reset-btn {
+    width: 100%;
+    padding: 14px;
+    border: 0;
+    border-radius: 10px;
+    background: #e00020;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.reset-btn:hover {
+    background: #ff1738;
+}
+
+/* ================= RESULT INFO ================= */
+
+.result-info {
+    padding: 15px 5px;
+    color: #aaa;
+}
+
+.result-info strong {
+    color: #e00020;
+    font-size: 20px;
+}
+
+/* ================= PRODUCTS ================= */
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    padding-bottom: 40px;
+}
+
+.card {
+    background: #151515;
+    border: 1px solid #303030;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: .25s;
+    position: relative;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: #e00020;
+    box-shadow: 0 10px 30px rgba(0,0,0,.45);
+}
+
+.image-container {
+    width: 100%;
+    height: 230px;
+    background: #f5f5f5;
+    position: relative;
+    overflow: hidden;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: .3s;
+}
+
+.card:hover img {
+    transform: scale(1.04);
+}
+
+.available {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: #10b95c;
+    color: white;
+    padding: 7px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.unavailable {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: #777;
+    color: white;
+    padding: 7px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.card-content {
+    padding: 16px;
+}
+
+.part-ar {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.part-fr {
+    color: #bbb;
+    font-size: 15px;
+    margin-bottom: 14px;
+}
+
+.info-row {
+    border-top: 1px solid #292929;
+    padding: 9px 0;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.label {
+    color: #e00020;
+    font-weight: bold;
+}
+
+.reference {
+    direction: ltr;
+    text-align: right;
+    font-family: monospace;
+    color: #fff;
+}
+
+.cars {
+    color: #ddd;
+}
+
+.call-btn {
+    display: block;
+    width: 100%;
+    margin-top: 12px;
+    padding: 12px;
+    text-align: center;
+    background: #e00020;
+    color: white;
+    text-decoration: none;
+    border-radius: 9px;
+    font-weight: bold;
+}
+
+.call-btn:hover {
+    background: #ff1738;
+}
+
+/* ================= NO RESULT ================= */
+
+.no-results {
+    display: none;
+    text-align: center;
+    padding: 60px 20px;
+    color: #aaa;
+    font-size: 18px;
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+    border-top: 1px solid #292929;
+    background: #111;
+    text-align: center;
+    padding: 25px 15px;
+    color: #aaa;
+}
+
+footer strong {
+    color: #e00020;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1100px) {
+    .products {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 800px) {
+    .products {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .filters {
+        grid-template-columns: 1fr;
+    }
+
+    .logo {
+        font-size: 34px;
+    }
+}
+
+@media (max-width: 520px) {
+    .products {
+        grid-template-columns: 1fr;
+    }
+
+    .image-container {
+        height: 250px;
+    }
+
+    .logo {
+        font-size: 30px;
+    }
+
+    .subtitle {
+        font-size: 16px;
+    }
+}
+</style>
 </head>
-
 
 <body>
 
-
-<!-- =========================
-     HEADER
-========================= -->
+<!-- ================= HEADER ================= -->
 
 <header>
 
     <div class="logo">
-        <span class="bk">BK</span>
-        <span class="auto">AUTO</span>
+        BK <span>AUTO</span>
     </div>
 
     <div class="subtitle">
@@ -815,797 +360,496 @@
         Renault • Peugeot • Dacia
     </div>
 
-    <a
-        class="phone-button"
-        href="tel:0556419934"
-    >
+    <a class="phone" href="tel:0556419934">
         📞 0556419934
     </a>
 
 </header>
 
 
-<!-- =========================
-     SEARCH + FILTERS
-========================= -->
+<!-- ================= MAIN ================= -->
 
-<section class="search-section">
+<main class="container">
 
-    <input
-        id="searchInput"
-        class="search-box"
-        type="search"
-        placeholder="🔎 ابحث عن اسم القطعة أو المرجع أو العلامة..."
-    >
+    <!-- SEARCH -->
+
+    <div class="search-area">
+
+        <input
+            type="text"
+            id="search"
+            class="search-box"
+            placeholder="🔎 ابحث باسم القطعة، المرجع، السيارة أو العلامة..."
+        >
+
+    </div>
+
+
+    <!-- FILTERS -->
 
     <div class="filters">
 
-        <select
-            id="brandFilter"
-            class="filter"
-        >
-            <option value="">
-                كل الماركات
+        <select id="brandFilter">
+
+            <option value="">كل العلامات</option>
+
+            <option value="RENAULT">
+                Renault
             </option>
+
+            <option value="PEUGEOT">
+                Peugeot
+            </option>
+
+            <option value="DACIA">
+                Dacia
+            </option>
+
         </select>
 
 
-        <select
-            id="carFilter"
-            class="filter"
-        >
-            <option value="">
-                كل السيارات
+        <select id="carFilter">
+
+            <option value="">كل السيارات</option>
+
+            <option value="CLIO">
+                Clio
             </option>
+
+            <option value="SYMBOL">
+                Symbol
+            </option>
+
+            <option value="LOGAN">
+                Logan
+            </option>
+
+            <option value="MEGANE">
+                Mégane
+            </option>
+
+            <option value="KANGOO">
+                Kangoo
+            </option>
+
+            <option value="PEUGEOT 207">
+                Peugeot 207
+            </option>
+
+            <option value="PEUGEOT 208">
+                Peugeot 208
+            </option>
+
+            <option value="PEUGEOT 301">
+                Peugeot 301
+            </option>
+
         </select>
 
 
-        <select
-            id="engineFilter"
-            class="filter"
-        >
+        <select id="availabilityFilter">
+
             <option value="">
-                كل المحركات
+                كل القطع
             </option>
+
+            <option value="yes">
+                المتوفر فقط
+            </option>
+
+            <option value="no">
+                غير متوفر
+            </option>
+
         </select>
 
     </div>
 
 
-    <button
-        id="resetButton"
-        class="reset-button"
-    >
+    <button class="reset-btn" onclick="resetFilters()">
         ↻ إعادة ضبط البحث
     </button>
 
-</section>
 
+    <!-- RESULT -->
 
-<!-- =========================
-     RESULT INFO
-========================= -->
-
-<div class="result-info">
-
-    <div
-        id="resultCount"
-        class="result-count"
-    >
-        عدد القطع: 0
+    <div class="result-info">
+        عدد القطع:
+        <strong id="count">0</strong>
     </div>
 
-    <div class="availability-info">
-        🟢 متوفر
-        &nbsp; | &nbsp;
-        ⚫ غير متوفر
+
+    <!-- PRODUCTS -->
+
+    <div id="products" class="products"></div>
+
+    <div id="noResults" class="no-results">
+        ❌ لم يتم العثور على قطعة مطابقة للبحث.
     </div>
 
-</div>
-
-
-<!-- =========================
-     PRODUCTS
-========================= -->
-
-<main
-    id="productsContainer"
-    class="products"
 </main>
 
 
-
-<!-- =========================
-     MODAL
-========================= -->
-
-<div
-    id="modal"
-    class="modal"
-
-
-    <div class="modal-content">
-
-        <button
-            id="closeModal"
-            class="close"
-        >
-            ×
-        </button>
-
-        <div class="modal-image">
-
-            <img
-                id="modalImage"
-                src=""
-                alt="صورة القطعة"
-            >
-
-        </div>
-
-
-        <h2
-            id="modalNameFr"
-            class="modal-title-fr"
-        >
-        </h2>
-
-        <div
-            id="modalNameAr"
-            class="modal-title-ar"
-        >
-        </div>
-
-
-        <div class="detail-row">
-
-            <span class="detail-label">
-                العلامة
-            </span>
-
-            <span
-                id="modalBrand"
-                class="detail-value"
-            >
-            </span>
-
-        </div>
-
-
-        <div class="detail-row">
-
-            <span class="detail-label">
-                المرجع
-            </span>
-
-            <span
-                id="modalReference"
-                class="detail-value"
-            >
-            </span>
-
-        </div>
-
-
-        <div class="detail-row">
-
-            <span class="detail-label">
-                السيارات
-            </span>
-
-            <span
-                id="modalCars"
-                class="detail-value"
-            >
-            </span>
-
-        </div>
-
-
-        <div class="detail-row">
-
-            <span class="detail-label">
-                المحرك
-            </span>
-
-            <span
-                id="modalEngine"
-                class="detail-value"
-            >
-            </span>
-
-        </div>
-
-
-        <div class="detail-row">
-
-            <span class="detail-label">
-                الحالة
-            </span>
-
-            <span
-                id="modalAvailability"
-                class="detail-value"
-            >
-            </span>
-
-        </div>
-
-
-        <a
-            class="modal-phone"
-            href="tel:0556419934"
-        >
-            📞 اتصل الآن - 0556419934
-        </a>
-
-    </div>
-
-</div>
-
-
-<!-- =========================
-     FOOTER
-========================= -->
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
-    <div>
-        <strong>BK AUTO</strong>
-    </div>
+    <strong>BK AUTO</strong>
 
-    <div>
-        قطع غيار السيارات - Renault • Peugeot • Dacia
-    </div>
+    <br><br>
 
-    <div>
-        الجزائر
-    </div>
+    قطع غيار السيارات
+
+    <br>
+
+    Renault • Peugeot • Dacia
+
+    <br><br>
+
+    📞 0556419934
 
 </footer>
 
 
 <script>
 
-/* =====================================================
-   بيانات القطع
-   =====================================================
+/* =========================================================
+   بيانات قطع الغيار
+   يمكنك إضافة قطع جديدة هنا
+========================================================= */
 
-   لإضافة قطعة جديدة:
-   انسخ قطعة كاملة داخل القائمة products
-   وغير المعلومات.
-
-   الصورة:
-   ضع رابط صورة القطعة في image
-
-   مثال:
-   image: "https://example.com/photo.jpg"
-
-===================================================== */
-
-
-const products = [
+const parts = [
 
     {
-        id: 1,
-
-        nameFr: "Filtre à huile",
-
-        nameAr: "فلتر الزيت",
-
-        brand: "PURFLUX",
-
-        reference: "LS867B",
-
-        cars: "Clio 2, Symbol, Logan",
-
-        engine: "1.2 16V",
-
+        ar: "مضخة ماء",
+        fr: "Pompe à eau",
+        brand: "RENAULT",
+        reference: "PA1234",
+        cars: "Clio 1.2 16V • Symbol 1.2 16V • Logan 1.4",
+        carSearch: "CLIO SYMBOL LOGAN",
         available: true,
-
-        image:
-        "https://images.unsplash.com/photo-1625047509248-ec889cbff17f?auto=format&fit=crop&w=900&q=80"
+        image: "https://placehold.co/700x500/f5f5f5/222?text=Pompe+%C3%A0+eau"
     },
 
-
     {
-        id: 2,
-
-        nameFr: "Filtre à air",
-
-        nameAr: "فلتر الهواء",
-
-        brand: "PURFLUX",
-
-        reference: "A1234",
-
-        cars: "Clio 2, Clio 3, Symbol",
-
-        engine: "1.2 16V",
-
-        available: true,
-
-        image:
-        "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=900&q=80"
-    },
-
-
-    {
-        id: 3,
-
-        nameFr: "Plaquettes de frein",
-
-        nameAr: "فحمات الفرامل",
-
-        brand: "TRW",
-
-        reference: "GDB1234",
-
-        cars: "Clio 3, Symbol",
-
-        engine: "1.4 Essence",
-
-        available: true,
-
-        image:
-        "https://images.unsplash.com/photo-1600706432502-77a0e2e3277e?auto=format&fit=crop&w=900&q=80"
-    },
-
-
-    {
-        id: 4,
-
-        nameFr: "Kit embrayage",
-
-        nameAr: "طقم القابض",
-
-        brand: "VALEO",
-
+        ar: "طقم قابض",
+        fr: "Kit embrayage",
+        brand: "RENAULT",
         reference: "302052617R",
-
-        cars: "Peugeot 207",
-
-        engine: "1.6 HDi",
-
+        cars: "Clio • Logan • Symbol",
+        carSearch: "CLIO LOGAN SYMBOL",
         available: true,
-
-        image:
-        "https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&w=900&q=80"
+        image: "https://placehold.co/700x500/f5f5f5/222?text=Kit+Embrayage"
     },
 
+    {
+        ar: "سير الدينامو",
+        fr: "Courroie alternateur",
+        brand: "RENAULT",
+        reference: "6PK1050",
+        cars: "Clio • Symbol • Logan",
+        carSearch: "CLIO SYMBOL LOGAN",
+        available: true,
+        image: "https://placehold.co/700x500/f5f5f5/222?text=Courroie"
+    },
 
     {
-        id: 5,
+        ar: "رولمان العجلة الخلفية",
+        fr: "Roulement arrière",
+        brand: "RENAULT",
+        reference: "SKF-R230",
+        cars: "Logan • Mégane",
+        carSearch: "LOGAN MEGANE",
+        available: true,
+        image: "https://placehold.co/700x500/f5f5f5/222?text=Roulement"
+    },
 
-        nameFr: "Pompe à eau",
+    {
+        ar: "جوان كارتير الزيت",
+        fr: "Joint carter d'huile",
+        brand: "RENAULT",
+        reference: "ELRING-001",
+        cars: "Clio 1.4 • Symbol 1.4",
+        carSearch: "CLIO SYMBOL",
+        available: true,
+        image: "https://placehold.co/700x500/f5f5f5/222?text=Joint+Carter"
+    },
 
-        nameAr: "مضخة الماء",
+    {
+        ar: "جوان صبابات",
+        fr: "Joint couvre-culasse",
+        brand: "PEUGEOT",
+        reference: "PSA-123456",
+        cars: "Peugeot 207 • Peugeot 208",
+        carSearch: "PEUGEOT 207 PEUGEOT 208",
+        available: true,
+        image: "https://placehold.co/700x500/f5f5f5/222?text=Joint"
+    },
 
-        brand: "GRAF",
-
+    {
+        ar: "طقم فرامل أمامي",
+        fr: "Plaquettes de frein avant",
+        brand: "PEUGEOT",
         reference: "PA803",
-
-        cars: "Clio 2, Symbol, Logan",
-
-        engine: "1.2 16V",
-
+        cars: "Peugeot 301 • Peugeot 208",
+        carSearch: "PEUGEOT 301 PEUGEOT 208",
         available: true,
-
-        image:
-        "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=900&q=80"
+        image: "https://placehold.co/700x500/f5f5f5/222?text=Plaquettes"
     },
 
-
     {
-        id: 6,
-
-        nameFr: "Courroie alternateur",
-
-        nameAr: "سير الدينامو",
-
-        brand: "GATES",
-
-        reference: "6PK1000",
-
-        cars: "Clio, Symbol",
-
-        engine: "1.5 dCi",
-
-        available: false,
-
-        image:
-        "https://images.unsplash.com/photo-1517524008697-84bbe3c3fd98?auto=format&fit=crop&w=900&q=80"
+        ar: "مضخة مساعدة التوجيه",
+        fr: "Pompe de direction assistée",
+        brand: "RENAULT",
+        reference: "R218",
+        cars: "Logan 1.6 • Symbol",
+        carSearch: "LOGAN SYMBOL",
+        available: true,
+        image: "https://placehold.co/700x500/f5f5f5/222?text=Pompe+Direction"
     },
 
+    {
+        ar: "فلتر زيت",
+        fr: "Filtre à huile",
+        brand: "DACIA",
+        reference: "DAC-001",
+        cars: "Logan • Sandero • Duster",
+        carSearch: "LOGAN",
+        available: true,
+        image: "https://placehold.co/700x500/f5f5f5/222?text=Filtre+Huile"
+    },
 
     {
-        id: 7,
+        ar: "فلتر هواء",
+        fr: "Filtre à air",
+        brand: "RENAULT",
+        reference: "AIR-001",
+        cars: "Clio • Kangoo • Symbol",
+        carSearch: "CLIO KANGOO SYMBOL",
+        available: true,
+        image: "https://placehold.co/700x500/f5f5f5/222?text=Filtre+Air"
+    },
 
-        nameFr: "Joint spi vilebrequin",
-
-        nameAr: "صوفة عمود المرفق",
-
-        brand: "ELRING",
-
+    {
+        ar: "جوان سباي عمود الكامات",
+        fr: "Joint spi arbre à cames",
+        brand: "RENAULT",
         reference: "80.105.8",
-
-        cars: "Kangoo",
-
-        engine: "1.9 D",
-
-        available: true,
-
-        image:
-        "https://images.unsplash.com/photo-1530046339160-ce3e530c7d2f?auto=format&fit=crop&w=900&q=80"
-    },
-
-
-    {
-        id: 8,
-
-        nameFr: "Roulement arrière",
-
-        nameAr: "رولمان العجلة الخلفية",
-
-        brand: "SKF",
-
-        reference: "VKBA20060",
-
-        cars: "Mégane 2, Logan",
-
-        engine: "1.5 dCi",
-
-        available: true,
-
-        image:
-        "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=900&q=80"
-    },
-
-
-    {
-        id: 9,
-
-        nameFr: "Bougie d'allumage",
-
-        nameAr: "شمعة الإشعال",
-
-        brand: "NGK",
-
-        reference: "BKR6E",
-
-        cars: "Clio, Symbol, Logan",
-
-        engine: "1.4 Essence",
-
-        available: true,
-
-        image:
-        "https://images.unsplash.com/photo-1615906655593-ad0386982a0f?auto=format&fit=crop&w=900&q=80"
-    },
-
-
-    {
-        id: 10,
-
-        nameFr: "Thermostat",
-
-        nameAr: "الثرموستات",
-
-        brand: "GATES",
-
-        reference: "TH123",
-
-        cars: "Clio 2, Symbol",
-
-        engine: "1.2 16V",
-
+        cars: "Kangoo 1.9D",
+        carSearch: "KANGOO",
         available: false,
+        image: "https://placehold.co/700x500/f5f5f5/222?text=Joint+SPI"
+    },
 
-        image:
-        "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=900&q=80"
+    {
+        ar: "جوان سباي عمود المرفق",
+        fr: "Joint spi vilebrequin",
+        brand: "RENAULT",
+        reference: "JS-1.2-16V",
+        cars: "Clio 1.2 16V • Symbol 1.2 16V",
+        carSearch: "CLIO SYMBOL",
+        available: false,
+        image: "https://placehold.co/700x500/f5f5f5/222?text=Joint+Vilebrequin"
     }
 
 ];
 
 
-/* =====================================================
-   العناصر
-===================================================== */
+/* =========================================================
+   عرض القطع
+========================================================= */
 
 const productsContainer =
-    document.getElementById(
-        "productsContainer"
-    );
+    document.getElementById("products");
 
-const searchInput =
-    document.getElementById(
-        "searchInput"
-    );
+const countElement =
+    document.getElementById("count");
 
-const brandFilter =
-    document.getElementById(
-        "brandFilter"
-    );
-
-const carFilter =
-    document.getElementById(
-        "carFilter"
-    );
-
-const engineFilter =
-    document.getElementById(
-        "engineFilter"
-    );
-
-const resetButton =
-    document.getElementById(
-        "resetButton"
-    );
-
-const resultCount =
-    document.getElementById(
-        "resultCount"
-    );
+const noResults =
+    document.getElementById("noResults");
 
 
-/* =====================================================
-   MODAL ELEMENTS
-===================================================== */
+function displayParts() {
 
-const modal =
-    document.getElementById(
-        "modal"
-    );
+    const search =
+        document
+        .getElementById("search")
+        .value
+        .toLowerCase()
+        .trim();
 
-const closeModal =
-    document.getElementById(
-        "closeModal"
-    );
+    const brand =
+        document
+        .getElementById("brandFilter")
+        .value;
 
-const modalImage =
-    document.getElementById(
-        "modalImage"
-    );
+    const car =
+        document
+        .getElementById("carFilter")
+        .value;
 
-const modalNameFr =
-    document.getElementById(
-        "modalNameFr"
-    );
-
-const modalNameAr =
-    document.getElementById(
-        "modalNameAr"
-    );
-
-const modalBrand =
-    document.getElementById(
-        "modalBrand"
-    );
-
-const modalReference =
-    document.getElementById(
-        "modalReference"
-    );
-
-const modalCars =
-    document.getElementById(
-        "modalCars"
-    );
-
-const modalEngine =
-    document.getElementById(
-        "modalEngine"
-    );
-
-const modalAvailability =
-    document.getElementById(
-        "modalAvailability"
-    );
+    const availability =
+        document
+        .getElementById("availabilityFilter")
+        .value;
 
 
-/* =====================================================
-   إنشاء الفلاتر تلقائياً
-===================================================== */
+    const filteredParts = parts.filter(part => {
 
-function createFilters() {
+        const text = (
 
-    const brands = [
-        ...new Set(
-            products.map(
-                product => product.brand
-            )
-        )
-    ];
+            part.ar + " " +
+            part.fr + " " +
+            part.brand + " " +
+            part.reference + " " +
+            part.cars + " " +
+            part.carSearch
 
-    const cars = [
-        ...new Set(
-            products.flatMap(
-                product =>
-                    product.cars
-                        .split(",")
-                        .map(car => car.trim())
-            )
-        )
-    ];
-
-    const engines = [
-        ...new Set(
-            products.map(
-                product => product.engine
-            )
-        )
-    ];
+        ).toLowerCase();
 
 
-    brands.sort();
-
-    cars.sort();
-
-    engines.sort();
+        const searchMatch =
+            !search || text.includes(search);
 
 
-    brands.forEach(brand => {
+        const brandMatch =
+            !brand || part.brand === brand;
 
-        const option =
-            document.createElement("option");
 
-        option.value = brand;
+        const carMatch =
+            !car ||
+            part.carSearch
+            .toUpperCase()
+            .includes(car);
 
-        option.textContent = brand;
 
-        brandFilter.appendChild(option);
+        const availabilityMatch =
+            !availability ||
+            (availability === "yes" && part.available) ||
+            (availability === "no" && !part.available);
+
+
+        return (
+            searchMatch &&
+            brandMatch &&
+            carMatch &&
+            availabilityMatch
+        );
 
     });
 
-
-    cars.forEach(car => {
-
-        const option =
-            document.createElement("option");
-
-        option.value = car;
-
-        option.textContent = car;
-
-        carFilter.appendChild(option);
-
-    });
-
-
-    engines.forEach(engine => {
-
-        const option =
-            document.createElement("option");
-
-        option.value = engine;
-
-        option.textContent = engine;
-
-        engineFilter.appendChild(option);
-
-    });
-
-}
-
-
-/* =====================================================
-   عرض المنتجات
-===================================================== */
-
-function displayProducts(list) {
 
     productsContainer.innerHTML = "";
 
 
-    resultCount.textContent =
-        "عدد القطع: " + list.length;
+    countElement.textContent =
+        filteredParts.length;
 
 
-    if (list.length === 0) {
+    if (filteredParts.length === 0) {
 
-        productsContainer.innerHTML = `
-
-            <div class="no-results">
-
-                🔍 لا توجد قطع مطابقة للبحث
-
-                <br><br>
-
-                جرّب تغيير السيارة أو المحرك
-                أو اسم القطعة.
-
-            </div>
-
-        `;
+        noResults.style.display = "block";
 
         return;
+
     }
 
 
-    list.forEach(product => {
+    noResults.style.display = "none";
+
+
+    filteredParts.forEach(part => {
 
         const card =
-            document.createElement("article");
+            document.createElement("div");
 
-        card.className =
-            "product-card";
+        card.className = "card";
 
 
         const statusClass =
-            product.available
-                ? "available"
-                : "unavailable";
+            part.available
+            ? "available"
+            : "unavailable";
 
 
         const statusText =
-            product.available
-                ? "🟢 متوفر"
-                : "⚫ غير متوفر";
+            part.available
+            ? "● متوفر"
+            : "غير متوفر";
 
 
         card.innerHTML = `
 
-            <div class="product-image">
+            <div class="image-container">
 
                 <img
-                    src="${product.image}"
-                    alt="${product.nameFr}"
+                    src="${part.image}"
+                    alt="${part.fr}"
                     loading="lazy"
-                    onerror="this.src='https://via.placeholder.com/800x500?text=BK+AUTO'"
+                    onerror="this.src='https://placehold.co/700x500/f5f5f5/222?text=BK+AUTO'"
                 >
+
+                <div class="${statusClass}">
+                    ${statusText}
+                </div>
 
             </div>
 
 
-            <div
-                class="status ${statusClass}"
-            >
-                ${statusText}
-            </div>
+            <div class="card-content">
 
-
-            <div class="product-content">
-
-                <div class="product-name-fr">
-                    ${product.nameFr}
+                <div class="part-ar">
+                    ${part.ar}
                 </div>
 
-                <div class="product-name-ar">
-                    ${product.nameAr}
+                <div class="part-fr">
+                    ${part.fr}
                 </div>
 
 
-                <div class="brand">
-                    🏷️ ${product.brand}
+                <div class="info-row">
+
+                    <span class="label">
+                        العلامة:
+                    </span>
+
+                    ${part.brand}
+
                 </div>
 
 
-                <div class="reference">
-                    Réf: ${product.reference}
+                <div class="info-row">
+
+                    <span class="label">
+                        المرجع:
+                    </span>
+
+                    <span class="reference">
+                        ${part.reference}
+                    </span>
+
                 </div>
 
 
-                <div class="compatibility">
+                <div class="info-row">
 
-                    <div class="compatibility-title">
-                        🚗 السيارات والمحرك
+                    <span class="label">
+                        السيارات المتوافقة:
+                    </span>
+
+                    <div class="cars">
+                        ${part.cars}
                     </div>
 
-                    <div class="compatibility-text">
-                        ${product.cars}
-                        <br>
-                        ⚙️ ${product.engine}
-                    </div>
-
                 </div>
 
 
-                <button
-                    class="details-button"
-                    onclick="openProduct(${product.id})"
+                <a
+                    class="call-btn"
+                    href="tel:0556419934"
                 >
-                    عرض تفاصيل القطعة
-                </button>
+                    📞 اتصل للطلب
+                </a>
 
             </div>
 
@@ -1619,271 +863,54 @@ function displayProducts(list) {
 }
 
 
-/* =====================================================
-   فتح تفاصيل القطعة
-===================================================== */
+/* =========================================================
+   إعادة ضبط البحث
+========================================================= */
 
-function openProduct(id) {
+function resetFilters() {
 
-    const product =
-        products.find(
-            item => item.id === id
-        );
+    document.getElementById("search").value = "";
 
+    document.getElementById("brandFilter").value = "";
 
-    if (!product) {
-        return;
-    }
+    document.getElementById("carFilter").value = "";
 
+    document.getElementById("availabilityFilter").value = "";
 
-    modalImage.src =
-        product.image;
-
-    modalImage.alt =
-        product.nameFr;
-
-
-    modalNameFr.textContent =
-        product.nameFr;
-
-
-    modalNameAr.textContent =
-        product.nameAr;
-
-
-    modalBrand.textContent =
-        product.brand;
-
-
-    modalReference.textContent =
-        product.reference;
-
-
-    modalCars.textContent =
-        product.cars;
-
-
-    modalEngine.textContent =
-        product.engine;
-
-
-    modalAvailability.textContent =
-        product.available
-            ? "🟢 متوفر"
-            : "⚫ غير متوفر";
-
-
-    modal.classList.add(
-        "show"
-    );
-
-
-    document.body.style.overflow =
-        "hidden";
-}
-
-
-/* =====================================================
-   إغلاق النافذة
-===================================================== */
-
-function closeProductModal() {
-
-    modal.classList.remove(
-        "show"
-    );
-
-    document.body.style.overflow =
-        "";
-}
-
-
-closeModal.addEventListener(
-    "click",
-    closeProductModal
-);
-
-
-modal.addEventListener(
-    "click",
-    function(event) {
-
-        if (
-            event.target === modal
-        ) {
-
-            closeProductModal();
-
-        }
-
-    }
-);
-
-
-/* =====================================================
-   البحث والفلاتر
-===================================================== */
-
-function filterProducts() {
-
-    const search =
-        searchInput.value
-            .trim()
-            .toLowerCase();
-
-
-    const brand =
-        brandFilter.value
-            .toLowerCase();
-
-
-    const car =
-        carFilter.value
-            .toLowerCase();
-
-
-    const engine =
-        engineFilter.value
-            .toLowerCase();
-
-
-    const filtered =
-        products.filter(product => {
-
-            const searchText = (
-
-                product.nameFr +
-                " " +
-                product.nameAr +
-                " " +
-                product.brand +
-                " " +
-                product.reference +
-                " " +
-                product.cars +
-                " " +
-                product.engine
-
-            ).toLowerCase();
-
-
-            const searchMatch =
-                search === "" ||
-                searchText.includes(search);
-
-
-            const brandMatch =
-                brand === "" ||
-                product.brand.toLowerCase()
-                    === brand;
-
-
-            const carMatch =
-                car === "" ||
-                product.cars
-                    .toLowerCase()
-                    .includes(car);
-
-
-            const engineMatch =
-                engine === "" ||
-                product.engine
-                    .toLowerCase()
-                    .includes(engine);
-
-
-            return (
-                searchMatch &&
-                brandMatch &&
-                carMatch &&
-                engineMatch
-            );
-
-        });
-
-
-    displayProducts(filtered);
+    displayParts();
 
 }
 
 
-/* =====================================================
-   أحداث البحث
-===================================================== */
+/* =========================================================
+   البحث المباشر
+========================================================= */
 
-searchInput.addEventListener(
-    "input",
-    filterProducts
-);
-
-
-brandFilter.addEventListener(
-    "change",
-    filterProducts
-);
+document
+.getElementById("search")
+.addEventListener("input", displayParts);
 
 
-carFilter.addEventListener(
-    "change",
-    filterProducts
-);
+document
+.getElementById("brandFilter")
+.addEventListener("change", displayParts);
 
 
-engineFilter.addEventListener(
-    "change",
-    filterProducts
-);
+document
+.getElementById("carFilter")
+.addEventListener("change", displayParts);
 
 
-/* =====================================================
-   إعادة ضبط
-===================================================== */
-
-resetButton.addEventListener(
-    "click",
-    function() {
-
-        searchInput.value = "";
-
-        brandFilter.value = "";
-
-        carFilter.value = "";
-
-        engineFilter.value = "";
-
-        displayProducts(products);
-
-    }
-);
+document
+.getElementById("availabilityFilter")
+.addEventListener("change", displayParts);
 
 
-/* =====================================================
-   ESC لإغلاق النافذة
-===================================================== */
+/* =========================================================
+   تشغيل الكتالوج
+========================================================= */
 
-document.addEventListener(
-    "keydown",
-    function(event) {
-
-        if (
-            event.key === "Escape"
-        ) {
-
-            closeProductModal();
-
-        }
-
-    }
-);
-
-
-/* =====================================================
-   تشغيل الموقع
-===================================================== */
-
-createFilters();
-
-displayProducts(products);
+displayParts();
 
 </script>
 
