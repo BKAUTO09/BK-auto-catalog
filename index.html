@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,3931 +8,1483 @@
 <title>BK AUTO | كتالوج قطع غيار السيارات</title>
 
 <meta name="description"
-content="BK AUTO - كتالوج قطع غيار السيارات Renault Peugeot Dacia Volkswagen في الجزائر">
+content="BK AUTO - كتالوج قطع غيار Renault Peugeot Citroën Dacia في الجزائر">
 
 <style>
-*{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
-}
 
-:root{
-    --red:#e6002d;
-    --red-dark:#b80024;
-    --green:#12c95a;
-    --dark:#090b10;
-    --dark2:#11151d;
-    --card:#151a23;
-    --text:#ffffff;
-    --muted:#aeb5c0;
-    --border:rgba(255,255,255,.08);
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
 }
 
 body{
-    font-family:Arial, "Tahoma", sans-serif;
-    background:
-        radial-gradient(circle at top right, rgba(230,0,45,.12), transparent 35%),
-        radial-gradient(circle at bottom left, rgba(255,255,255,.04), transparent 30%),
-        var(--dark);
-    color:var(--text);
-    min-height:100vh;
+font-family:Arial,Tahoma,sans-serif;
+background:#101010;
+color:#fff;
+min-height:100vh;
 }
 
-/* ================= HEADER ================= */
-
 header{
-    width:100%;
-    padding:22px 6%;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    border-bottom:1px solid var(--border);
-    background:rgba(9,11,16,.92);
-    position:sticky;
-    top:0;
-    z-index:1000;
-    backdrop-filter:blur(10px);
+background:linear-gradient(135deg,#111,#252525);
+padding:35px 20px;
+text-align:center;
+border-bottom:2px solid #e3262e;
 }
 
 .logo{
-    font-size:30px;
-    font-weight:900;
-    letter-spacing:-1px;
+font-size:38px;
+font-weight:900;
 }
 
-.logo span:first-child{
-    color:white;
+.logo span{
+color:#e3262e;
 }
 
-.logo span:last-child{
-    color:var(--red);
+h1{
+font-size:30px;
+margin-top:12px;
 }
 
-nav{
-    display:flex;
-    gap:30px;
+.subtitle{
+color:#bbb;
+margin-top:8px;
+font-size:16px;
 }
 
-nav a{
-    color:white;
-    text-decoration:none;
-    font-weight:bold;
-    font-size:15px;
-    transition:.2s;
+.phone{
+display:inline-block;
+margin-top:15px;
+padding:10px 18px;
+background:#e3262e;
+border-radius:8px;
+font-size:20px;
+font-weight:bold;
+direction:ltr;
 }
 
-nav a:hover{
-    color:var(--red);
+.controls{
+max-width:1200px;
+margin:25px auto 10px;
+padding:15px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:10px;
 }
 
-/* ================= HERO ================= */
-
-.hero{
-    text-align:center;
-    padding:70px 20px 45px;
+input,
+select,
+button{
+width:100%;
+padding:13px;
+border-radius:8px;
+border:1px solid #444;
+font-size:15px;
 }
 
-.hero h1{
-    font-size:clamp(32px,5vw,58px);
-    font-weight:900;
-    margin-bottom:15px;
+input,
+select{
+background:#222;
+color:#fff;
 }
 
-.hero h1 span{
-    color:var(--red);
+button{
+background:#e3262e;
+color:#fff;
+border:0;
+cursor:pointer;
+font-weight:bold;
 }
 
-.hero p{
-    color:#d5d8dd;
-    font-size:19px;
-    margin-bottom:10px;
+button:hover{
+background:#c91d25;
 }
 
-.hero .brands{
-    color:var(--muted);
-    font-size:15px;
+.stats{
+max-width:1200px;
+margin:auto;
+padding:10px 15px;
+color:#ccc;
+font-size:16px;
 }
 
-.hero .sub{
-    margin-top:18px;
-    font-size:14px;
-    color:#999;
-}
-
-/* ================= SEARCH ================= */
-
-.search-box{
-    width:min(1200px,92%);
-    margin:15px auto 30px;
-    background:#f4f4f5;
-    padding:10px;
-    border-radius:18px;
-    display:grid;
-    grid-template-columns:1fr 1fr 1fr 2fr auto auto;
-    gap:8px;
-    box-shadow:0 20px 60px rgba(0,0,0,.3);
-}
-
-.search-box select,
-.search-box input{
-    width:100%;
-    border:0;
-    outline:none;
-    padding:15px 14px;
-    border-radius:12px;
-    background:white;
-    color:#222;
-    font-size:14px;
-    font-family:inherit;
-}
-
-.search-box button{
-    border:0;
-    border-radius:12px;
-    padding:0 20px;
-    font-weight:bold;
-    cursor:pointer;
-    font-size:14px;
-    transition:.2s;
-}
-
-.btn-search{
-    background:var(--red);
-    color:white;
-}
-
-.btn-search:hover{
-    background:var(--red-dark);
-    transform:translateY(-1px);
-}
-
-.btn-reset{
-    background:#1d222b;
-    color:white;
-}
-
-.btn-reset:hover{
-    background:#303743;
-}
-
-/* ================= COUNT ================= */
-
-.count{
-    width:min(1200px,92%);
-    margin:0 auto 20px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-}
-
-.count-badge{
-    background:var(--red);
-    padding:8px 16px;
-    border-radius:30px;
-    font-weight:bold;
-    font-size:14px;
-}
-
-.section-title{
-    width:min(1200px,92%);
-    margin:25px auto 20px;
-    font-size:24px;
-    font-weight:900;
-}
-
-.section-title span{
-    color:var(--red);
-}
-
-/* ================= CARDS ================= */
-
-#partsContainer{
-    width:min(1200px,92%);
-    margin:0 auto 60px;
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:20px;
+.grid{
+max-width:1200px;
+margin:auto;
+padding:15px;
+display:grid;
+grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+gap:15px;
 }
 
 .card{
-    background:
-        linear-gradient(145deg,rgba(255,255,255,.035),rgba(255,255,255,.01)),
-        var(--card);
-    border:1px solid var(--border);
-    border-radius:20px;
-    overflow:hidden;
-    position:relative;
-    transition:.25s;
-    box-shadow:0 12px 35px rgba(0,0,0,.22);
+background:#1c1c1c;
+border:1px solid #333;
+border-radius:12px;
+padding:18px;
+transition:.2s;
 }
 
 .card:hover{
-    transform:translateY(-5px);
-    border-color:rgba(230,0,45,.35);
-    box-shadow:0 18px 45px rgba(0,0,0,.35);
+transform:translateY(-3px);
+border-color:#e3262e;
 }
 
-.card-top{
-    padding:22px 20px 12px;
+.badge{
+display:inline-block;
+background:#e3262e;
+padding:5px 10px;
+border-radius:6px;
+font-size:12px;
+margin-bottom:10px;
 }
 
-.brand{
-    color:var(--red);
-    text-transform:uppercase;
-    font-weight:900;
-    font-size:13px;
-    margin-bottom:7px;
+.card h3{
+font-size:20px;
+margin-bottom:10px;
 }
 
-.model{
-    font-size:24px;
-    font-weight:900;
-    margin-bottom:7px;
-}
-
-.engine{
-    color:#c6cbd3;
-    font-size:14px;
-    margin-bottom:18px;
-}
-
-.engine::before{
-    content:"⚙ ";
-}
-
-.part-name{
-    font-size:18px;
-    font-weight:800;
-    line-height:1.5;
-    min-height:54px;
+.line{
+margin:7px 0;
+color:#ccc;
 }
 
 .ref{
-    margin:15px 20px;
-    padding:12px;
-    background:#0c1016;
-    border-radius:10px;
-    color:#cbd0d8;
-    font-size:13px;
-    direction:ltr;
-    text-align:center;
-    border:1px solid rgba(255,255,255,.05);
+direction:ltr;
+text-align:left;
+font-size:20px;
+font-weight:bold;
+color:#ff4b52;
+background:#101010;
+padding:10px;
+border-radius:7px;
+margin-top:12px;
 }
-
-.ref strong{
-    color:white;
-}
-
-.actions{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:8px;
-    padding:0 15px 15px;
-}
-
-.actions a{
-    text-decoration:none;
-    text-align:center;
-    padding:12px 8px;
-    border-radius:10px;
-    color:white;
-    font-size:13px;
-    font-weight:bold;
-    transition:.2s;
-}
-
-.whatsapp{
-    background:var(--green);
-}
-
-.call{
-    background:#252b35;
-}
-
-.actions a:hover{
-    transform:translateY(-2px);
-    filter:brightness(1.08);
-}
-
-/* ================= EMPTY ================= */
-
-.empty{
-    grid-column:1/-1;
-    text-align:center;
-    padding:70px 20px;
-    border:1px dashed #343b47;
-    border-radius:20px;
-    color:#aeb5c0;
-}
-
-.empty-icon{
-    font-size:50px;
-    margin-bottom:15px;
-}
-
-/* ================= CONTACT ================= */
 
 .contact{
-    width:min(1000px,92%);
-    margin:0 auto 70px;
-    padding:35px 25px;
-    background:linear-gradient(145deg,#151a23,#0d1118);
-    border:1px solid var(--border);
-    border-radius:25px;
-    text-align:center;
+text-align:center;
+background:#181818;
+padding:35px 20px;
+margin-top:30px;
+border-top:1px solid #333;
 }
 
 .contact h2{
-    margin-bottom:10px;
-    font-size:28px;
+font-size:28px;
 }
 
 .contact p{
-    color:var(--muted);
-    margin-bottom:22px;
+margin-top:10px;
+color:#ccc;
 }
 
-.contact-buttons{
-    display:flex;
-    justify-content:center;
-    gap:12px;
-    flex-wrap:wrap;
+.contact .number{
+font-size:27px;
+font-weight:bold;
+color:#e3262e;
+direction:ltr;
 }
 
-.contact-buttons a{
-    padding:14px 25px;
-    border-radius:12px;
-    color:white;
-    text-decoration:none;
-    font-weight:bold;
+@media(max-width:600px){
+
+h1{
+font-size:23px;
 }
 
-.contact-wa{
-    background:var(--green);
+.logo{
+font-size:30px;
 }
 
-.contact-call{
-    background:var(--red);
+.grid{
+grid-template-columns:1fr;
 }
 
-/* ================= FOOTER ================= */
-
-footer{
-    border-top:1px solid var(--border);
-    padding:30px 20px;
-    text-align:center;
-    color:#8e96a2;
-    font-size:13px;
 }
 
-footer strong{
-    color:white;
-}
-
-footer span{
-    color:var(--red);
-}
-
-/* ================= RESPONSIVE ================= */
-
-@media(max-width:1050px){
-
-    .search-box{
-        grid-template-columns:1fr 1fr 1fr;
-    }
-
-    .search-box input{
-        grid-column:1/-1;
-    }
-
-    #partsContainer{
-        grid-template-columns:repeat(2,1fr);
-    }
-}
-
-@media(max-width:700px){
-
-    header{
-        padding:17px 5%;
-    }
-
-    .logo{
-        font-size:24px;
-    }
-
-    nav{
-        gap:14px;
-    }
-
-    nav a{
-        font-size:12px;
-    }
-
-    .hero{
-        padding:45px 15px 30px;
-    }
-
-    .hero h1{
-        font-size:34px;
-    }
-
-    .hero p{
-        font-size:16px;
-    }
-
-    .search-box{
-        grid-template-columns:1fr;
-        padding:10px;
-    }
-
-    .search-box input{
-        grid-column:auto;
-    }
-
-    .search-box button{
-        min-height:48px;
-    }
-
-    #partsContainer{
-        grid-template-columns:1fr;
-    }
-
-    .count{
-        margin-top:15px;
-    }
-
-    .section-title{
-        font-size:21px;
-    }
-}
-
-@media(max-width:430px){
-
-    nav a:nth-child(2){
-        display:none;
-    }
-
-    .hero h1{
-        font-size:29px;
-    }
-
-    .card{
-        border-radius:17px;
-    }
-}
 </style>
 </head>
 
+
 <body>
 
-<!-- ================= HEADER ================= -->
 
 <header>
 
-    <div class="logo">
-        <span>BK</span> <span>AUTO</span>
-    </div>
+<div class="logo">
+BK <span>AUTO</span>
+</div>
 
-    <nav>
-        <a href="#home">الرئيسية</a>
-        <a href="#catalog">الكتالوج</a>
-        <a href="#contact">اتصل بنا</a>
-    </nav>
+<h1>
+كتالوج قطع غيار السيارات
+</h1>
+
+<div class="subtitle">
+Renault • Peugeot • Citroën • Dacia
+</div>
+
+<div class="phone">
+0556419934
+</div>
 
 </header>
 
 
-<!-- ================= HERO ================= -->
+<div class="controls">
 
-<section class="hero" id="home">
+<select id="brandSelect">
+<option value="">كل الماركات</option>
+</select>
 
-    <h1>
-        كتالوج <span>قطع غيار السيارات</span>
-    </h1>
+<select id="modelSelect">
+<option value="">كل السيارات</option>
+</select>
 
-    <p>
-        BK AUTO
-    </p>
+<select id="engineSelect">
+<option value="">كل المحركات</option>
+</select>
 
-    <div class="brands">
-        Renault • Peugeot • Dacia • Volkswagen
-    </div>
-
-    <div class="sub">
-        ابحث باسم القطعة أو السيارة أو المحرك أو رقم المرجع
-    </div>
-
-</section>
+<input
+id="searchInput"
+type="text"
+placeholder="ابحث بالمرجع أو اسم القطعة أو السيارة..."
 
 
-<!-- ================= SEARCH ================= -->
-
-<section class="search-box">
-
-    <select id="brandSelect">
-        <option value="">كل الماركات</option>
-    </select>
-
-    <select id="modelSelect">
-        <option value="">كل السيارات</option>
-    </select>
-
-    <select id="engineSelect">
-        <option value="">كل المحركات</option>
-    </select>
-
-    <input
-        type="text"
-        id="searchInput"
-        placeholder="اسم القطعة أو رقم المرجع..."
-    >
-
-    <button class="btn-search" id="searchButton">
-        🔍 بحث
-    </button>
-
-    <button class="btn-reset" id="resetButton">
-        إعادة ضبط
-    </button>
-
-</section>
-
-
-<!-- ================= COUNT ================= -->
-
-<div class="count">
-
-    <div>
-        كتالوج قطع الغيار
-    </div>
-
-    <div class="count-badge">
-        <span id="countNumber">0</span> قطعة
-    </div>
+<button id="resetButton">
+إعادة ضبط
+</button>
 
 </div>
 
 
-<!-- ================= CATALOG ================= -->
-
-<div class="section-title" id="catalog">
-    كتالوج <span>قطع الغيار</span>
+<div class="stats" id="countNumber">
+عدد القطع: 120
 </div>
 
-<div id="partsContainer"></div>
+
+<div class="grid" id="partsContainer"></div>
 
 
-<!-- ================= CONTACT ================= -->
+<div class="contact">
 
-<section class="contact" id="contact">
+<h2>
+BK AUTO
+</h2>
 
-    <h2>هل تبحث عن قطعة غيار؟</h2>
+<p>
+للاستفسار عن توفر القطعة والسعر
+</p>
 
-    <p>
-        تواصل معنا للاستفسار عن توفر القطعة أو رقم المرجع
-    </p>
+<div class="number">
+0556419934
+</div>
 
-    <div class="contact-buttons">
-
-        <a
-            class="contact-wa"
-            id="mainWhatsapp"
-            href="#"
-            target="_blank"
-        >
-            💬 WhatsApp
-        </a>
-
-        <a
-            class="contact-call"
-            id="mainCall"
-            href="#"
-        >
-            📞 اتصل بنا
-        </a>
-
-    </div>
-
-</section>
-
-
-<!-- ================= FOOTER ================= -->
-
-<footer>
-
-    <div>
-        © <span id="year"></span>
-        <strong>BK AUTO</strong>
-        — جميع الحقوق محفوظة
-    </div>
-
-    <div style="margin-top:8px;">
-        كتالوج قطع غيار السيارات
-    </div>
-
-</footer>
+</div>
 
 
 <script>
 
-/* =========================================================
-   BK AUTO
-   ضع رقم الهاتف هنا مرة واحدة فقط
-   ========================================================= */
 
-const PHONE = "213556419934";
+const PHONE = "0556419934";
 
-
-/* =========================================================
-   DATABASE
-   أضف قطع جديدة هنا بنفس الطريقة
-   ========================================================= */
 
 const parts = [
 
-    {
-        brand:"Peugeot",
-        model:"206",
-        engine:"Essence 1.4",
-        name:"Pompe à eau",
-        ref:"1201.A1"
-    },
+/* =========================================================
+RENAULT - 60 PIECES
+========================================================= */
 
-    {
-        brand:"Peugeot",
-        model:"Bipper",
-        engine:"HDI 1.4",
-        name:"Joint guide soupape",
-        ref:"1654507180"
-    },
 
-    {
-        brand:"Dacia",
-        model:"Stepway",
-        engine:"1.6 Essence",
-        name:"Kit embrayage",
-        ref:""
-    },
-
-    {
-        brand:"Renault",
-        model:"Symbol",
-        engine:"1.2 16V",
-        name:"Joint spi vilebrequin",
-        ref:"-"
-    },
-
-    {
-        brand:"Renault",
-        model:"Logan",
-        engine:"1.6 Essence",
-        name:"Kit embrayage",
-        ref:"302052617R"
-    },
-
-    {
-        brand:"Renault",
-        model:"Clio",
-        engine:"1.2 16V",
-        name:"Pompe à eau",
-        ref:"-"
-    },
-
-    {
-        brand:"Renault",
-        model:"Kangoo",
-        engine:"1.9 D",
-        name:"Joint spi vilebrequin",
-        ref:"80.105.8"
-    },
-
-    {
-        brand:"Renault",
-        model:"Kangoo",
-        engine:"1.5 dCi",
-        name:"Kit embrayage",
-        ref:"-"
-    },
-
-    {
-        brand:"Peugeot",
-        model:"208",
-        engine:"1.6 HDI",
-        name:"Kit embrayage",
-        ref:"-"
-    },
-
-    {
-        brand:"Peugeot",
-        model:"301",
-        engine:"1.6 HDI",
-        name:"Jauge huile",
-        ref:"-"
-    },
-
-    {
-        brand:"Peugeot",
-        model:"301",
-        engine:"1.6 VTi",
-        name:"Jauge huile",
-        ref:"-"
-    },
-
-    {
-        brand:"Renault",
-        model:"Clio 4",
-        engine:"1.5 dCi",
-        name:"Plaquettes de frein",
-        ref:"-"
-    },
-
-    {
-        brand:"Renault",
-        model:"Megane 2",
-        engine:"1.5 dCi",
-        name:"Roulement arrière",
-        ref:"-"
-    },
-
-    {
-        brand:"Volkswagen",
-        model:"Golf 7",
-        engine:"2.0 TDI",
-        name:"Courroie alternateur",
-        ref:"-"
-    },
-
-    {
-    brand:"Renault",
-    model:"Clio 2",
-    engine:"1.2 16V",
-    name:"Kit embrayage",
-    ref:"7701478125"
+{
+brand:"Renault",
+model:"Clio 2",
+engine:"1.2 16V",
+name:"Pompe à eau",
+ref:"7701478018"
 },
 
 {
-    brand:"Renault",
-    model:"Clio 2",
-    engine:"1.2 16V",
-    name:"Kit distribution",
-    ref:"7701476745"
+brand:"Renault",
+model:"Clio 2",
+engine:"1.2 16V",
+name:"Kit embrayage",
+ref:"7701473354"
 },
 
 {
-    brand:"Renault",
-    model:"Clio 2",
-    engine:"1.2 16V",
-    name:"Pompe à eau",
-    ref:"7701478018"
+brand:"Renault",
+model:"Clio 2",
+engine:"1.2 16V",
+name:"Filtre à huile",
+ref:"7700274177"
 },
 
 {
-    brand:"Renault",
-    model:"Clio 2",
-    engine:"1.2 16V",
-    name:"Courroie distribution",
-    ref:"7701476745"
+brand:"Renault",
+model:"Clio 2",
+engine:"1.2 16V",
+name:"Filtre à air",
+ref:"7701045724"
 },
 
 {
-    brand:"Renault",
-    model:"Clio 2",
-    engine:"1.2 16V",
-    name:"Galet tendeur distribution",
-    ref:"-"
+brand:"Renault",
+model:"Clio 2",
+engine:"1.2 16V",
+name:"Filtre carburant",
+ref:"7700411270"
 },
 
 {
-    brand:"Renault",
-    model:"Clio 2",
-    engine:"1.2 16V",
-    name:"Joint spi vilebrequin",
-    ref:"-"
+brand:"Renault",
+model:"Clio 2",
+engine:"1.2 16V",
+name:"Joint spi vilebrequin",
+ref:"7701472191"
 },
 
 {
-    brand:"Renault",
-    model:"Clio 2",
-    engine:"1.2 16V",
-    name:"Filtre à huile",
-    ref:"-"
+brand:"Renault",
+model:"Clio 2",
+engine:"1.2 16V",
+name:"Courroie distribution",
+ref:"7701477022"
 },
 
 {
-    brand:"Renault",
-    model:"Clio 2",
-    engine:"1.2 16V",
-    name:"Filtre à air",
-    ref:"-"
+brand:"Renault",
+model:"Clio 2",
+engine:"1.2 16V",
+name:"Galet tendeur distribution",
+ref:"7700108117"
 },
 
 {
-    brand:"Renault",
-    model:"Clio 2",
-    engine:"1.2 16V",
-    name:"Filtre à carburant",
-    ref:"-"
+brand:"Renault",
+model:"Clio 2",
+engine:"1.4 16V",
+name:"Pompe à eau",
+ref:"7701478018"
 },
 
 {
-    brand:"Renault",
-    model:"Clio 2",
-    engine:"1.2 16V",
-    name:"Bougies d'allumage",
-    ref:"-"
+brand:"Renault",
+model:"Clio 2",
+engine:"1.5 dCi",
+name:"Filtre à huile",
+ref:"8200768927"
 },
 
 {
-    brand:"Renault",
-    model:"Clio 2",
-    engine:"1.4 16V",
-    name:"Kit embrayage",
-    ref:"7701477017"
+brand:"Renault",
+model:"Clio 2",
+engine:"1.5 dCi",
+name:"Filtre à air",
+ref:"7701045724"
 },
 
 {
-    brand:"Renault",
-    model:"Clio 2",
-    engine:"1.4 16V",
-    name:"Kit distribution",
-    ref:"-"
+brand:"Renault",
+model:"Clio 2",
+engine:"1.5 dCi",
+name:"Kit distribution",
+ref:"7701477023"
+},
+
+
+{
+brand:"Renault",
+model:"Clio 3",
+engine:"1.2 16V",
+name:"Filtre à huile",
+ref:"8200768927"
 },
 
 {
-    brand:"Renault",
-    model:"Clio 2",
-    engine:"1.4 16V",
-    name:"Pompe à eau",
-    ref:"-"
+brand:"Renault",
+model:"Clio 3",
+engine:"1.2 16V",
+name:"Pompe à eau",
+ref:"7701478018"
 },
 
 {
-    brand:"Renault",
-    model:"Clio 2",
-    engine:"1.4 16V",
-    name:"Courroie alternateur",
-    ref:"-"
+brand:"Renault",
+model:"Clio 3",
+engine:"1.5 dCi",
+name:"Filtre carburant",
+ref:"8200248821"
 },
 
 {
-    brand:"Renault",
-    model:"Clio 2",
-    engine:"1.4 16V",
-    name:"Filtre à huile",
-    ref:"-"
+brand:"Renault",
+model:"Clio 3",
+engine:"1.5 dCi",
+name:"Kit distribution",
+ref:"7701477023"
+},
+
+
+{
+brand:"Renault",
+model:"Clio 4",
+engine:"0.9 TCe",
+name:"Filtre à huile",
+ref:"152085758R"
 },
 
 {
-    brand:"Renault",
-    model:"Clio 2",
-    engine:"1.5 dCi",
-    name:"Kit distribution",
-    ref:"-"
+brand:"Renault",
+model:"Clio 4",
+engine:"1.5 dCi",
+name:"Filtre à huile",
+ref:"152095084R"
 },
 
 {
-    brand:"Renault",
-    model:"Clio 2",
-    engine:"1.5 dCi",
-    name:"Pompe à eau",
-    ref:"-"
+brand:"Renault",
+model:"Clio 4",
+engine:"1.5 dCi",
+name:"Filtre carburant",
+ref:"164000797R"
 },
 
 {
-    brand:"Renault",
-    model:"Clio 2",
-    engine:"1.5 dCi",
-    name:"Kit embrayage",
-    ref:"-"
+brand:"Renault",
+model:"Clio 4",
+engine:"1.5 dCi",
+name:"Filtre à air",
+ref:"165467674R"
+},
+
+
+{
+brand:"Renault",
+model:"Symbol",
+engine:"1.2 16V",
+name:"Pompe à eau",
+ref:"7701478018"
 },
 
 {
-    brand:"Renault",
-    model:"Clio 2",
-    engine:"1.5 dCi",
-    name:"Filtre à gasoil",
-    ref:"-"
+brand:"Renault",
+model:"Symbol",
+engine:"1.2 16V",
+name:"Courroie distribution",
+ref:"7701477022"
 },
 
 {
-    brand:"Renault",
-    model:"Clio 2",
-    engine:"1.5 dCi",
-    name:"Filtre à huile",
-    ref:"-"
+brand:"Renault",
+model:"Symbol",
+engine:"1.4",
+name:"Filtre à huile",
+ref:"7700274177"
 },
-},
+
 {
-    brand:"Renault",
-    car:"Clio 2",
-    engine:"1.2 16V",
-    name:"Pompe à eau",
-    ref:""
+brand:"Renault",
+model:"Symbol",
+engine:"1.6",
+name:"Kit embrayage",
+ref:"302052617R"
+},
+
+
+{
+brand:"Renault",
+model:"Logan",
+engine:"1.4",
+name:"Filtre à huile",
+ref:"7700274177"
+},
+
+{
+brand:"Renault",
+model:"Logan",
+engine:"1.4",
+name:"Filtre à air",
+ref:"7701045724"
+},
+
+{
+brand:"Renault",
+model:"Logan",
+engine:"1.6",
+name:"Kit embrayage",
+ref:"302052617R"
+},
+
+{
+brand:"Renault",
+model:"Logan",
+engine:"1.6",
+name:"Pompe à eau",
+ref:"7701478018"
+},
+
+{
+brand:"Renault",
+model:"Logan",
+engine:"1.5 dCi",
+name:"Filtre à huile",
+ref:"8200768927"
+},
+
+{
+brand:"Renault",
+model:"Logan",
+engine:"1.5 dCi",
+name:"Filtre carburant",
+ref:"164000797R"
+},
+
+
+{
+brand:"Renault",
+model:"Kangoo",
+engine:"1.9 D",
+name:"Joint spi vilebrequin",
+ref:"80.105.8"
+},
+
+{
+brand:"Renault",
+model:"Kangoo",
+engine:"1.9 D",
+name:"Filtre à huile",
+ref:"7700274177"
+},
+
+{
+brand:"Renault",
+model:"Kangoo",
+engine:"1.5 dCi",
+name:"Filtre à huile",
+ref:"8200768927"
+},
+
+{
+brand:"Renault",
+model:"Kangoo",
+engine:"1.5 dCi",
+name:"Filtre carburant",
+ref:"164000797R"
+},
+
+{
+brand:"Renault",
+model:"Kangoo",
+engine:"1.5 dCi",
+name:"Kit embrayage",
+ref:"302052617R"
+},
+
+
+{
+brand:"Renault",
+model:"Mégane 2",
+engine:"1.5 dCi",
+name:"Filtre à huile",
+ref:"8200768927"
+},
+
+{
+brand:"Renault",
+model:"Mégane 2",
+engine:"1.5 dCi",
+name:"Filtre carburant",
+ref:"164000797R"
+},
+
+{
+brand:"Renault",
+model:"Mégane 2",
+engine:"1.6 16V",
+name:"Filtre à huile",
+ref:"152085758R"
+},
+
+{
+brand:"Renault",
+model:"Mégane 2",
+engine:"1.6 16V",
+name:"Pompe à eau",
+ref:"7701478018"
+},
+
+{
+brand:"Renault",
+model:"Mégane 2",
+engine:"1.9 dCi",
+name:"Filtre à huile",
+ref:"8200768927"
+},
+
+
+{
+brand:"Renault",
+model:"Mégane 3",
+engine:"1.5 dCi",
+name:"Filtre à huile",
+ref:"152095084R"
+},
+
+{
+brand:"Renault",
+model:"Mégane 3",
+engine:"1.5 dCi",
+name:"Filtre carburant",
+ref:"164000797R"
+},
+
+
+{
+brand:"Renault",
+model:"Duster",
+engine:"1.5 dCi",
+name:"Filtre à huile",
+ref:"8200768927"
+},
+
+{
+brand:"Renault",
+model:"Duster",
+engine:"1.5 dCi",
+name:"Filtre à air",
+ref:"165467674R"
+},
+
+{
+brand:"Renault",
+model:"Duster",
+engine:"1.5 dCi",
+name:"Filtre carburant",
+ref:"164000797R"
+},
+
+{
+brand:"Renault",
+model:"Duster",
+engine:"1.6 16V",
+name:"Filtre à huile",
+ref:"152085758R"
+},
+
+
+{
+brand:"Renault",
+model:"Sandero",
+engine:"1.4",
+name:"Filtre à huile",
+ref:"7700274177"
+},
+
+{
+brand:"Renault",
+model:"Sandero",
+engine:"1.6",
+name:"Kit embrayage",
+ref:"302052617R"
+},
+
+{
+brand:"Renault",
+model:"Sandero",
+engine:"1.6",
+name:"Pompe à eau",
+ref:"7701478018"
+},
+
+{
+brand:"Renault",
+model:"Sandero",
+engine:"1.5 dCi",
+name:"Filtre à huile",
+ref:"8200768927"
+},
+
+
+{
+brand:"Renault",
+model:"Master",
+engine:"2.5 dCi",
+name:"Filtre à huile",
+ref:"8200768927"
+},
+
+{
+brand:"Renault",
+model:"Master",
+engine:"2.5 dCi",
+name:"Filtre carburant",
+ref:"164000797R"
+},
+
+{
+brand:"Renault",
+model:"Master",
+engine:"2.3 dCi",
+name:"Filtre à air",
+ref:"165467674R"
+},
+
+
+{
+brand:"Renault",
+model:"Scénic 2",
+engine:"1.5 dCi",
+name:"Filtre à huile",
+ref:"8200768927"
+},
+
+{
+brand:"Renault",
+model:"Scénic 2",
+engine:"1.9 dCi",
+name:"Filtre à huile",
+ref:"8200768927"
+},
+
+{
+brand:"Renault",
+model:"Laguna 2",
+engine:"1.9 dCi",
+name:"Filtre à huile",
+ref:"8200768927"
+},
+
+{
+brand:"Renault",
+model:"Laguna 2",
+engine:"1.9 dCi",
+name:"Filtre carburant",
+ref:"164000797R"
+},
+
+{
+brand:"Renault",
+model:"Fluence",
+engine:"1.5 dCi",
+name:"Filtre à huile",
+ref:"152095084R"
+},
+
+{
+brand:"Renault",
+model:"Fluence",
+engine:"1.5 dCi",
+name:"Filtre carburant",
+ref:"164000797R"
+},
+
+
+/* =========================================================
+PEUGEOT - 40 PIECES
+========================================================= */
+
+
+{
+brand:"Peugeot",
+model:"206",
+engine:"1.4 Essence",
+name:"Pompe à eau",
+ref:"1201.A1"
+},
+
+{
+brand:"Peugeot",
+model:"206",
+engine:"1.4 Essence",
+name:"Filtre à huile",
+ref:"1109.AE"
+},
+
+{
+brand:"Peugeot",
+model:"206",
+engine:"1.4 Essence",
+name:"Filtre à air",
+ref:"1444.T0"
+},
+
+{
+brand:"Peugeot",
+model:"206",
+engine:"1.6 16V",
+name:"Kit embrayage",
+ref:"2050.K4"
+},
+
+{
+brand:"Peugeot",
+model:"206",
+engine:"1.4 HDi",
+name:"Filtre à huile",
+ref:"1109.CK"
+},
+
+{
+brand:"Peugeot",
+model:"207",
+engine:"1.4 Essence",
+name:"Filtre à huile",
+ref:"1109.AE"
+},
+
+{
+brand:"Peugeot",
+model:"207",
+engine:"1.6 HDi",
+name:"Kit embrayage",
+ref:"2052.N6"
+},
+
+{
+brand:"Peugeot",
+model:"207",
+engine:"1.6 HDi",
+name:"Filtre à huile",
+ref:"1109.CK"
+},
+
+{
+brand:"Peugeot",
+model:"207",
+engine:"1.6 HDi",
+name:"Filtre carburant",
+ref:"1906.61"
+},
+
+{
+brand:"Peugeot",
+model:"208",
+engine:"1.2 VTi",
+name:"Filtre à huile",
+ref:"1109.AL"
+},
+
+{
+brand:"Peugeot",
+model:"208",
+engine:"1.6 HDi",
+name:"Kit embrayage",
+ref:"2052.N6"
+},
+
+{
+brand:"Peugeot",
+model:"208",
+engine:"1.6 HDi",
+name:"Filtre à huile",
+ref:"1109.CK"
+},
+
+{
+brand:"Peugeot",
+model:"301",
+engine:"1.6 HDi",
+name:"Filtre à huile",
+ref:"1109.CK"
+},
+
+{
+brand:"Peugeot",
+model:"301",
+engine:"1.6 HDi",
+name:"Filtre carburant",
+ref:"1906.61"
+},
+
+{
+brand:"Peugeot",
+model:"301",
+engine:"1.6 VTi",
+name:"Filtre à huile",
+ref:"1109.AL"
+},
+
+{
+brand:"Peugeot",
+model:"307",
+engine:"1.6 HDi",
+name:"Filtre à huile",
+ref:"1109.CK"
+},
+
+{
+brand:"Peugeot",
+model:"307",
+engine:"1.6 HDi",
+name:"Filtre carburant",
+ref:"1906.61"
+},
+
+{
+brand:"Peugeot",
+model:"307",
+engine:"2.0 HDi",
+name:"Filtre à huile",
+ref:"1109.CK"
+},
+
+{
+brand:"Peugeot",
+model:"308",
+engine:"1.6 HDi",
+name:"Filtre à huile",
+ref:"1109.CK"
+},
+
+{
+brand:"Peugeot",
+model:"308",
+engine:"1.6 HDi",
+name:"Filtre carburant",
+ref:"1906.61"
+},
+
+{
+brand:"Peugeot",
+model:"Partner",
+engine:"1.6 HDi",
+name:"Filtre à huile",
+ref:"1109.CK"
+},
+
+{
+brand:"Peugeot",
+model:"Partner",
+engine:"1.6 HDi",
+name:"Filtre carburant",
+ref:"1906.61"
+},
+
+{
+brand:"Peugeot",
+model:"Partner",
+engine:"1.9 D",
+name:"Filtre à huile",
+ref:"1109.C6"
+},
+
+{
+brand:"Peugeot",
+model:"Partner",
+engine:"1.4 Essence",
+name:"Pompe à eau",
+ref:"1201.A1"
+},
+
+{
+brand:"Peugeot",
+model:"Bipper",
+engine:"1.4 HDi",
+name:"Joint guide soupape",
+ref:"1654507180"
+},
+
+{
+brand:"Peugeot",
+model:"Bipper",
+engine:"1.4 HDi",
+name:"Filtre à huile",
+ref:"1109.CK"
+},
+
+{
+brand:"Peugeot",
+model:"Bipper",
+engine:"1.4 HDi",
+name:"Filtre carburant",
+ref:"1906.61"
+},
+
+{
+brand:"Peugeot",
+model:"2008",
+engine:"1.6 HDi",
+name:"Filtre à huile",
+ref:"1109.CK"
+},
+
+{
+brand:"Peugeot",
+model:"2008",
+engine:"1.6 HDi",
+name:"Filtre carburant",
+ref:"1906.61"
+},
+
+{
+brand:"Peugeot",
+model:"3008",
+engine:"1.6 HDi",
+name:"Filtre à huile",
+ref:"1109.CK"
+},
+
+{
+brand:"Peugeot",
+model:"3008",
+engine:"1.6 HDi",
+name:"Filtre carburant",
+ref:"1906.61"
+},
+
+{
+brand:"Peugeot",
+model:"508",
+engine:"1.6 HDi",
+name:"Filtre à huile",
+ref:"1109.CK"
+},
+
+{
+brand:"Peugeot",
+model:"508",
+engine:"2.0 HDi",
+name:"Filtre à huile",
+ref:"1109.CK"
+},
+
+{
+brand:"Peugeot",
+model:"406",
+engine:"1.9 D",
+name:"Filtre à huile",
+ref:"1109.C6"
+},
+
+{
+brand:"Peugeot",
+model:"406",
+engine:"2.0 HDi",
+name:"Filtre à huile",
+ref:"1109.CK"
+},
+
+{
+brand:"Peugeot",
+model:"405",
+engine:"1.9 D",
+name:"Filtre à huile",
+ref:"1109.C6"
+},
+
+{
+brand:"Peugeot",
+model:"Boxer",
+engine:"2.2 HDi",
+name:"Filtre à huile",
+ref:"1109.AE"
+},
+
+{
+brand:"Peugeot",
+model:"Expert",
+engine:"2.0 HDi",
+name:"Filtre à huile",
+ref:"1109.CK"
+},
+
+{
+brand:"Peugeot",
+model:"Expert",
+engine:"1.6 HDi",
+name:"Filtre à huile",
+ref:"1109.CK"
+},
+
+{
+brand:"Peugeot",
+model:"Partner",
+engine:"1.6 HDi",
+name:"Kit embrayage",
+ref:"2052.N6"
+},
+
+
+/* =========================================================
+CITROËN - 10 PIECES
+========================================================= */
+
+
+{
+brand:"Citroën",
+model:"C3",
+engine:"1.4 HDi",
+name:"Filtre à huile",
+ref:"1109.CK"
+},
+
+{
+brand:"Citroën",
+model:"C3",
+engine:"1.4 HDi",
+name:"Filtre carburant",
+ref:"1906.61"
+},
+
+{
+brand:"Citroën",
+model:"C3",
+engine:"1.4 Essence",
+name:"Pompe à eau",
+ref:"1201.A1"
+},
+
+{
+brand:"Citroën",
+model:"C4",
+engine:"1.6 HDi",
+name:"Filtre à huile",
+ref:"1109.CK"
+},
+
+{
+brand:"Citroën",
+model:"C4",
+engine:"1.6 HDi",
+name:"Filtre carburant",
+ref:"1906.61"
+},
+
+{
+brand:"Citroën",
+model:"Berlingo",
+engine:"1.6 HDi",
+name:"Filtre à huile",
+ref:"1109.CK"
+},
+
+{
+brand:"Citroën",
+model:"Berlingo",
+engine:"1.6 HDi",
+name:"Filtre carburant",
+ref:"1906.61"
+},
+
+{
+brand:"Citroën",
+model:"Xsara",
+engine:"1.4 Essence",
+name:"Pompe à eau",
+ref:"1201.A1"
+},
+
+{
+brand:"Citroën",
+model:"Xsara Picasso",
+engine:"1.6 HDi",
+name:"Filtre à huile",
+ref:"1109.CK"
+},
+
+{
+brand:"Citroën",
+model:"Nemo",
+engine:"1.4 HDi",
+name:"Filtre à huile",
+ref:"1109.CK"
+},
+
+
+/* =========================================================
+DACIA - 10 PIECES
+========================================================= */
+
+
+{
+brand:"Dacia",
+model:"Logan",
+engine:"1.4",
+name:"Filtre à huile",
+ref:"7700274177"
+},
+
+{
+brand:"Dacia",
+model:"Logan",
+engine:"1.6",
+name:"Kit embrayage",
+ref:"302052617R"
+},
+
+{
+brand:"Dacia",
+model:"Logan",
+engine:"1.5 dCi",
+name:"Filtre à huile",
+ref:"8200768927"
+},
+
+{
+brand:"Dacia",
+model:"Sandero",
+engine:"1.4",
+name:"Filtre à huile",
+ref:"7700274177"
+},
+
+{
+brand:"Dacia",
+model:"Sandero",
+engine:"1.6",
+name:"Pompe à eau",
+ref:"7701478018"
+},
+
+{
+brand:"Dacia",
+model:"Duster",
+engine:"1.5 dCi",
+name:"Filtre à huile",
+ref:"8200768927"
+},
+
+{
+brand:"Dacia",
+model:"Duster",
+engine:"1.5 dCi",
+name:"Filtre carburant",
+ref:"164000797R"
+},
+
+{
+brand:"Dacia",
+model:"Dokker",
+engine:"1.5 dCi",
+name:"Filtre à huile",
+ref:"8200768927"
+},
+
+{
+brand:"Dacia",
+model:"Lodgy",
+engine:"1.5 dCi",
+name:"Filtre à huile",
+ref:"8200768927"
+},
+
+{
+brand:"Dacia",
+model:"Solenza",
+engine:"1.4",
+name:"Filtre à huile",
+ref:"7700274177"
 }
-];
-09:53
-{
-    brand:"Renault",
-    model:"Clio 2",
-    engine:"1.2 16V",
-    name:"Kit embrayage",
-    ref:"7701478125"
-},
-
-{
-    brand:"Renault",
-    model:"Clio 2",
-    engine:"1.2 16V",
-    name:"Kit distribution",
-    ref:"7701476745"
-},
-
-{
-    brand:"Renault",
-    model:"Clio 2",
-    engine:"1.2 16V",
-    name:"Pompe à eau",
-    ref:"7701478018"
-},
-
-{
-    brand:"Renault",
-    model:"Clio 2",
-    engine:"1.2 16V",
-    name:"Courroie distribution",
-    ref:"7701476745"
-},
-
-{
-    brand:"Renault",
-    model:"Clio 2",
-    engine:"1.2 16V",
-    name:"Galet tendeur distribution",
-    ref:"-"
-},
-
-{
-    brand:"Renault",
-    model:"Clio 2",
-    engine:"1.2 16V",
-    name:"Joint spi vilebrequin",
-    ref:"-"
-},
-
-{
-    brand:"Renault",
-    model:"Clio 2",
-    engine:"1.2 16V",
-    name:"Filtre à huile",
-    ref:"-"
-},
-
-{
-    brand:"Renault",
-    model:"Clio 2",
-    engine:"1.2 16V",
-    name:"Filtre à air",
-    ref:"-"
-},
-
-{
-    brand:"Renault",
-    model:"Clio 2",
-    engine:"1.2 16V",
-    name:"Filtre à carburant",
-    ref:"-"
-},
-
-{
-    brand:"Renault",
-    model:"Clio 2",
-    engine:"1.2 16V",
-    name:"Bougies d'allumage",
-    ref:"-"
-},
-
-{
-    brand:"Renault",
-    model:"Clio 2",
-    engine:"1.4 16V",
-    name:"Kit embrayage",
-    ref:"7701477017"
-},
-
-{
-    brand:"Renault",
-    model:"Clio 2",
-    engine:"1.4 16V",
-    name:"Kit distribution",
-    ref:"-"
-},
-
-{
-    brand:"Renault",
-    model:"Clio 2",
-    engine:"1.4 16V",
-    name:"Pompe à eau",
-    ref:"-"
-},
-
-{
-    brand:"Renault",
-    model:"Clio 2",
-    engine:"1.4 16V",
-    name:"Courroie alternateur",
-    ref:"-"
-},
-
-{
-    brand:"Renault",
-    model:"Clio 2",
-    engine:"1.4 16V",
-    name:"Filtre à huile",
-    ref:"-"
-},
-
-{
-    brand:"Renault",
-    model:"Clio 2",
-    engine:"1.5 dCi",
-    name:"Kit distribution",
-    ref:"-"
-},
-
-{
-    brand:"Renault",
-    model:"Clio 2",
-    engine:"1.5 dCi",
-    name:"Pompe à eau",
-    ref:"-"
-},
-
-{
-    brand:"Renault",
-    model:"Clio 2",
-    engine:"1.5 dCi",
-    name:"Kit embrayage",
-    ref:"-"
-},
-
-{
-    brand:"Renault",
-    model:"Clio 2",
-    engine:"1.5 dCi",
-    name:"Filtre à gasoil",
-    ref:"-"
-},
-
-{
-    brand:"Renault",
-    model:"Clio 2",
-    engine:"1.5 dCi",
-    name:"Filtre à huile",
-    ref:"-"
-},
-
-{
-    brand:"Renault",
-    model:"Clio 2",
-    engine:"1.2 16V",
-    name:"Kit embrayage",
-    ref:"7701478125"
-},
-{
-    brand:"Renault",
-    model:"Clio 2",
-    engine:"1.2 16V",
-    name:"Pompe à eau",
-    ref:"7701478018"
-},
-{
-    brand:"Renault",
-    model:"Clio 2",
-    engine:"1.2 16V",
-    name:"Courroie distribution",
-    ref:"-"
-},
-{
-    brand:"Renault",
-    model:"Clio 2",
-    engine:"1.2 16V",
-    name:"Filtre à huile",
-    ref:"-"
-},
-{
-    brand:"Renault",
-    model:"Clio 2",
-    engine:"1.2 16V",
-    name:"Filtre à air",
-    ref:"-"
-},
-{
-    brand:"Renault",
-    model:"Clio 2",
-    engine:"1.2 16V",
-    name:"Filtre à essence",
-    ref:"-"
-},
-{
-    brand:"Renault",
-    model:"Clio 2",
-    engine:"1.4 16V",
-    name:"Kit embrayage",
-    ref:"-"
-},
-{
-    brand:"Renault",
-    model:"Clio 2",
-    engine:"1.4 16V",
-    name:"Pompe à eau",
-    ref:"-"
-},
-{
-    brand:"Renault",
-    model:"Clio 2",
-    engine:"1.5 dCi",
-    name:"Kit embrayage",
-    ref:"-"
-},
-{
-    brand:"Renault",
-    model:"Clio 2",
-    engine:"1.5 dCi",
-    name:"Filtre à huile",
-    ref:"-"
-},
-{
-    brand:"Renault",
-    model:"Clio 2",
-    engine:"1.5 dCi",
-    name:"Filtre à gasoil",
-    ref:"-"
-},
-{
-    brand:"Renault",
-    model:"Clio 2",
-    engine:"1.5 dCi",
-    name:"Filtre à air",
-    ref:"-"
-},
-{
-    brand:"Renault",
-    model:"Clio 3",
-    engine:"1.2 16V",
-    name:"Kit embrayage",
-    ref:"-"
-},
-{
-    brand:"Renault",
-    model:"Clio 3",
-    engine:"1.2 16V",
-    name:"Pompe à eau",
-    ref:"-"
-},
-{
-    brand:"Renault",
-    model:"Clio 3",
-    engine:"1.5 dCi",
-    name:"Kit embrayage",
-    ref:"-"
-},
-{
-    brand:"Renault",
-    model:"Clio 3",
-    engine:"1.5 dCi",
-    name:"Filtre à huile",
-    ref:"-"
-},
-{
-    brand:"Renault",
-    model:"Clio 3",
-    engine:"1.5 dCi",
-    name:"Filtre à gasoil",
-    ref:"-"
-},
-{
-    brand:"Renault",
-    model:"Clio 3",
-    engine:"1.5 dCi",
-    name:"Courroie distribution",
-    ref:"-"
-},
-{
-    brand:"Renault",
-    model:"Clio 4",
-    engine:"1.2 16V",
-    name:"Filtre à huile",
-    ref:"-"
-},
-{
-    brand:"Renault",
-    model:"Clio 4",
-    engine:"1.5 dCi",
-    name:"Kit embrayage",
-    ref:"-"
-},
-{
-    brand:"Renault",
-    model:"Clio 4",
-    engine:"1.5 dCi",
-    name:"Filtre à huile",
-    ref:"-"
-},
-{
-    brand:"Renault",
-    model:"Clio 4",
-    engine:"1.5 dCi",
-    name:"Filtre à gasoil",
-    ref:"-"
-},
-{
-    brand:"Renault",
-    model:"Symbol",
-    engine:"1.2 16V",
-    name:"Kit embrayage",
-    ref:"-"
-},
-{
-    brand:"Renault",
-    model:"Symbol",
-    engine:"1.2 16V",
-    name:"Pompe à eau",
-    ref:"-"
-},
-{
-    brand:"Renault",
-    model:"Symbol",
-    engine:"1.4",
-    name:"Kit embrayage",
-    ref:"-"
-},
-{
-    brand:"Renault",
-    model:"Symbol",
-    engine:"1.5 dCi",
-    name:"Kit embrayage",
-    ref:"-"
-},
-{
-    brand:"Renault",
-    model:"Symbol",
-    engine:"1.5 dCi",
-    name:"Filtre à gasoil",
-    ref:"-"
-},
-{
-    brand:"Renault",
-    model:"Logan",
-    engine:"1.4 Essence",
-    name:"Kit embrayage",
-    ref:"-"
-},
-{
-    brand:"Renault",
-    model:"Logan",
-    engine:"1.4 Essence",
-    name:"Pompe à eau",
-    ref:"-"
-},
-{
-    brand:"Renault",
-    model:"Logan",
-    engine:"1.6 Essence",
-    name:"Kit embrayage",
-    ref:"-"
-},
-{
-    brand:"Renault",
-    model:"Logan",
-    engine:"1.6 Essence",
-    name:"Pompe à eau",
-    ref:"-"
-},
-{
-    brand:"Renault",
-    model:"Logan",
-    engine:"1.5 dCi",
-    name:"Kit embrayage",
-    ref:"-"
-},
-{
-    brand:"Renault",
-    model:"Logan",
-    engine:"1.5 dCi",
-    name:"Filtre à huile",
-    ref:"-"
-},
-{
-    brand:"Renault",
-    model:"Logan",
-    engine:"1.5 dCi",
-    name:"Filtre à gasoil",
-    ref:"-"
-},
-{
-    brand:"Dacia",
-    model:"Sandero",
-    engine:"1.6 Essence",
-    name:"Kit embrayage",
-    ref:"-"
-},
-{
-    brand:"Dacia",
-    model:"Sandero",
-    engine:"1.6 Essence",
-    name:"Pompe à eau",
-    ref:"-"
-},
-{
-    brand:"Dacia",
-    model:"Sandero",
-    engine:"1.5 dCi",
-    name:"Kit embrayage",
-    ref:"-"
-},
-{
-    brand:"Dacia",
-    model:"Sandero",
-    engine:"1.5 dCi",
-    name:"Filtre à gasoil",
-    ref:"-"
-},
-{
-    brand:"Dacia",
-    model:"Stepway",
-    engine:"1.6 Essence",
-    name:"Kit embrayage",
-    ref:"-"
-},
-{
-    brand:"Dacia",
-    model:"Stepway",
-    engine:"1.6 Essence",
-    name:"Pompe à eau",
-    ref:"-"
-},
-{
-    brand:"Dacia",
-    model:"Stepway",
-    engine:"1.5 dCi",
-    name:"Kit embrayage",
-    ref:"-"
-},
-{
-    brand:"Dacia",
-    model:"Stepway",
-    engine:"1.5 dCi",
-    name:"Filtre à gasoil",
-    ref:"-"
-},
-{
-    brand:"Renault",
-    model:"Megane 2",
-    engine:"1.5 dCi",
-    name:"Roulement arrière",
-    ref:"-"
-},
-{
-    brand:"Renault",
-    model:"Megane 2",
-    engine:"1.5 dCi",
-    name:"Kit embrayage",
-    ref:"-"
-},
-{
-    brand:"Renault",
-    model:"Megane 2",
-    engine:"1.5 dCi",
-    name:"Filtre à huile",
-    ref:"-"
-},
-{
-    brand:"Renault",
-    model:"Megane 2",
-    engine:"1.5 dCi",
-    name:"Filtre à gasoil",
-    ref:"-"
-},
-{
-    brand:"Renault",
-    model:"Kangoo",
-    engine:"1.5 dCi",
-    name:"Kit embrayage",
-    ref:"-"
-},
-{
-    brand:"Renault",
-    model:"Kangoo",
-    engine:"1.5 dCi",
-    name:"Filtre à huile",
-    ref:"-"
-},
-{
-    brand:"Renault",
-    model:"Kangoo",
-    engine:"1.5 dCi",
-    name:"Filtre à gasoil",
-    ref:"-"
-},
-{
-    brand:"Renault",
-    model:"Kangoo",
-    engine:"1.9 D",
-    name:"Joint spi vilebrequin",
-    ref:"80.105.8"
-},
-{
-    brand:"Peugeot",
-    model:"206",
-    engine:"1.4 Essence",
-    name:"Pompe à eau",
-    ref:"1201.A1"
-},
-{
-    brand:"Peugeot",
-    model:"206",
-    engine:"1.4 Essence",
-    name:"Kit embrayage",
-    ref:"-"
-},
-{
-    brand:"Peugeot",
-    model:"206",
-    engine:"1.4 HDi",
-    name:"Kit embrayage",
-    ref:"-"
-},
-{
-    brand:"Peugeot",
-    model:"206",
-    engine:"1.4 HDi",
-    name:"Filtre à gasoil",
-    ref:"-"
-},
-{
-    brand:"Peugeot",
-    model:"207",
-    engine:"1.4 Essence",
-    name:"Kit embrayage",
-    ref:"-"
-},
-{
-    brand:"Peugeot",
-    model:"207",
-    engine:"1.6 HDi",
-    name:"Kit embrayage",
-    ref:"302052617R"
-},
-{
-    brand:"Peugeot",
-    model:"208",
-    engine:"1.6 HDi",
-    name:"Kit embrayage",
-    ref:"-"
-},
-{
-    brand:"Peugeot",
-    model:"301",
-    engine:"1.6 HDi",
-    name:"Jauge huile",
-    ref:"-"
-},
-{
-    brand:"Peugeot",
-    model:"301",
-    engine:"1.6 VTi",
-    name:"Jauge huile",
-    ref:"-"
-},
-{
-    brand:"Peugeot",
-    model:"Bipper",
-    engine:"1.4 HDi",
-    name:"Joint guide soupape",
-    ref:"1654507180"
-},
-{
-    brand:"Peugeot",
-    model:"Bipper",
-    engine:"1.4 HDi",
-    name:"Chaîne distribution",
-    ref:"-"
-},
-{
-    brand:"Volkswagen",
-    model:"Golf 7",
-    engine:"2.0 TDI",
-    name:"Courroie alternateur",
-    ref:"-"
-},
-{
-    brand:"Volkswagen",
-    model:"Golf 7",
-    engine:"1.6 TDI",
-    name:"Filtre à huile",
-    ref:"-"
-},
-{
-    brand:"Volkswagen",
-    model:"Polo",
-    engine:"1.6 TDI",
-    name:"Filtre à huile",
-    ref:"-"
-},
-{
-    brand:"Skoda",
-    model:"Octavia",
-    engine:"1.9 TDI",
-    name:"Pièce moteur",
-    ref:"-"
-},
-
-    {
-        brand:"Renault",
-        model:"Clio 2",
-        engine:"1.2 16V",
-        name:"Pompe à eau",
-        ref:"7701478018"
-    },
-    {
-        brand:"Renault",
-        model:"Clio 2",
-        engine:"1.2 16V",
-        name:"Kit embrayage",
-        ref:"7701478125"
-    },
-    {
-        brand:"Renault",
-        model:"Clio 2",
-        engine:"1.2 16V",
-        name:"Filtre à huile",
-        ref:"-"
-    },
-    {
-        brand:"Renault",
-        model:"Clio 2",
-        engine:"1.2 16V",
-        name:"Filtre à air",
-        ref:"-"
-    },
-    {
-        brand:"Renault",
-        model:"Clio 2",
-        engine:"1.2 16V",
-        name:"Filtre à essence",
-        ref:"-"
-    },
-    {
-        brand:"Renault",
-        model:"Clio 2",
-        engine:"1.2 16V",
-        name:"Courroie distribution",
-        ref:"-"
-    },
-    {
-        brand:"Renault",
-        model:"Clio 2",
-        engine:"1.2 16V",
-        name:"Galet tendeur distribution",
-        ref:"-"
-    },
-    {
-        brand:"Renault",
-        model:"Clio 2",
-        engine:"1.2 16V",
-        name:"Courroie alternateur",
-        ref:"-"
-    },
-    {
-        brand:"Renault",
-        model:"Clio 2",
-        engine:"1.2 16V",
-        name:"Joint spi vilebrequin",
-        ref:"-"
-    },
-    {
-        brand:"Renault",
-        model:"Clio 2",
-        engine:"1.2 16V",
-        name:"Joint spi arbre à cames",
-        ref:"-"
-    },
-
-    {
-        brand:"Renault",
-        model:"Clio 2",
-        engine:"1.5 dCi",
-        name:"Kit embrayage",
-        ref:"-"
-    },
-    {
-        brand:"Renault",
-        model:"Clio 2",
-        engine:"1.5 dCi",
-        name:"Pompe à eau",
-        ref:"-"
-    },
-    {
-        brand:"Renault",
-        model:"Clio 2",
-        engine:"1.5 dCi",
-        name:"Filtre à huile",
-        ref:"-"
-    },
-    {
-        brand:"Renault",
-        model:"Clio 2",
-        engine:"1.5 dCi",
-        name:"Filtre à gasoil",
-        ref:"-"
-    },
-    {
-        brand:"Renault",
-        model:"Clio 2",
-        engine:"1.5 dCi",
-        name:"Filtre à air",
-        ref:"-"
-    },
-    {
-        brand:"Renault",
-        model:"Clio 2",
-        engine:"1.5 dCi",
-        name:"Courroie distribution",
-        ref:"-"
-    },
-    {
-        brand:"Renault",
-        model:"Clio 2",
-        engine:"1.5 dCi",
-        name:"Galet tendeur distribution",
-        ref:"-"
-    },
-    {
-        brand:"Renault",
-        model:"Clio 2",
-        engine:"1.5 dCi",
-        name:"Courroie alternateur",
-        ref:"-"
-    },
-    {
-        brand:"Renault",
-        model:"Clio 2",
-        engine:"1.5 dCi",
-        name:"Plaquettes avant",
-        ref:"-"
-    },
-    {
-        brand:"Renault",
-        model:"Clio 2",
-        engine:"1.5 dCi",
-        name:"Disques avant",
-        ref:"-"
-    },
-
-    {
-        brand:"Renault",
-        model:"Clio 3",
-        engine:"1.2 16V",
-        name:"Pompe à eau",
-        ref:"-"
-    },
-    {
-        brand:"Renault",
-        model:"Clio 3",
-        engine:"1.2 16V",
-        name:"Kit embrayage",
-        ref:"-"
-    },
-    {
-        brand:"Renault",
-        model:"Clio 3",
-        engine:"1.2 16V",
-        name:"Filtre à huile",
-        ref:"-"
-    },
-    {
-        brand:"Renault",
-        model:"Clio 3",
-        engine:"1.2 16V",
-        name:"Filtre à air",
-        ref:"-"
-    },
-    {
-        brand:"Renault",
-        model:"Clio 3",
-        engine:"1.2 16V",
-        name:"Bougies",
-        ref:"-"
-    },
-    {
-        brand:"Renault",
-        model:"Clio 3",
-        engine:"1.2 16V",
-        name:"Courroie distribution",
-        ref:"-"
-    },
-    {
-        brand:"Renault",
-        model:"Clio 3",
-        engine:"1.5 dCi",
-        name:"Kit embrayage",
-        ref:"-"
-    },
-    {
-        brand:"Renault",
-        model:"Clio 3",
-        engine:"1.5 dCi",
-        name:"Filtre à gasoil",
-        ref:"-"
-    },
-    {
-        brand:"Renault",
-        model:"Clio 3",
-        engine:"1.5 dCi",
-        name:"Filtre à huile",
-        ref:"-"
-    },
-    {
-        brand:"Renault",
-        model:"Clio 3",
-        engine:"1.5 dCi",
-        name:"Plaquettes avant",
-        ref:"-"
-    },
-
-    {
-        brand:"Renault",
-        model:"Symbol",
-        engine:"1.4 Essence",
-        name:"Kit embrayage",
-        ref:"-"
-    },
-    {
-        brand:"Renault",
-        model:"Symbol",
-        engine:"1.4 Essence",
-        name:"Pompe à eau",
-        ref:"-"
-    },
-    {
-        brand:"Renault",
-        model:"Symbol",
-        engine:"1.4 Essence",
-        name:"Filtre à huile",
-        ref:"-"
-    },
-    {
-        brand:"Renault",
-        model:"Symbol",
-        engine:"1.4 Essence",
-        name:"Filtre à air",
-        ref:"-"
-    },
-    {
-        brand:"Renault",
-        model:"Symbol",
-        engine:"1.4 Essence",
-        name:"Bougies",
-        ref:"-"
-    },
-    {
-        brand:"Renault",
-        model:"Symbol",
-        engine:"1.4 Essence",
-        name:"Plaquettes avant",
-        ref:"-"
-    },
-    {
-        brand:"Renault",
-        model:"Symbol",
-        engine:"1.5 dCi",
-        name:"Kit embrayage",
-        ref:"-"
-    },
-    {
-        brand:"Renault",
-        model:"Symbol",
-        engine:"1.5 dCi",
-        name:"Filtre à gasoil",
-        ref:"-"
-    },
-    {
-        brand:"Renault",
-        model:"Symbol",
-        engine:"1.5 dCi",
-        name:"Filtre à huile",
-        ref:"-"
-    },
-    {
-        brand:"Renault",
-        model:"Symbol",
-        engine:"1.5 dCi",
-        name:"Filtre à air",
-        ref:"-"
-    },
-
-    {
-        brand:"Renault",
-        model:"Logan",
-        engine:"1.4 Essence",
-        name:"Kit embrayage",
-        ref:"-"
-    },
-    {
-        brand:"Renault",
-        model:"Logan",
-        engine:"1.4 Essence",
-        name:"Pompe à eau",
-        ref:"-"
-    },
-    {
-        brand:"Renault",
-        model:"Logan",
-        engine:"1.4 Essence",
-        name:"Filtre à huile",
-        ref:"-"
-    },
-    {
-        brand:"Renault",
-        model:"Logan",
-        engine:"1.4 Essence",
-        name:"Filtre à air",
-        ref:"-"
-    },
-    {
-        brand:"Renault",
-        model:"Logan",
-        engine:"1.6 Essence",
-        name:"Kit embrayage",
-        ref:"-"
-    },
-    {
-        brand:"Renault",
-        model:"Logan",
-        engine:"1.6 Essence",
-        name:"Pompe à eau",
-        ref:"-"
-    },
-    {
-        brand:"Renault",
-        model:"Logan",
-        engine:"1.6 Essence",
-        name:"Filtre à huile",
-        ref:"-"
-    },
-    {
-        brand:"Renault",
-        model:"Logan",
-        engine:"1.5 dCi",
-        name:"Kit embrayage",
-        ref:"-"
-    },
-    {
-        brand:"Renault",
-        model:"Logan",
-        engine:"1.5 dCi",
-        name:"Filtre à gasoil",
-        ref:"-"
-    },
-    {
-        brand:"Renault",
-        model:"Logan",
-        engine:"1.5 dCi",
-        name:"Filtre à huile",
-        ref:"-"
-    },
-
-    {
-        brand:"Renault",
-        model:"Megane 2",
-        engine:"1.5 dCi",
-        name:"Kit embrayage",
-        ref:"-"
-    },
-    {
-        brand:"Renault",
-        model:"Megane 2",
-        engine:"1.5 dCi",
-        name:"Roulement arrière",
-        ref:"-"
-    },
-    {
-        brand:"Renault",
-        model:"Megane 2",
-        engine:"1.5 dCi",
-        name:"Filtre à gasoil",
-        ref:"-"
-    },
-    {
-        brand:"Renault",
-        model:"Megane 2",
-        engine:"1.5 dCi",
-        name:"Filtre à huile",
-        ref:"-"
-    },
-    {
-        brand:"Renault",
-        model:"Megane 2",
-        engine:"1.5 dCi",
-        name:"Filtre à air",
-        ref:"-"
-    },
-    {
-        brand:"Renault",
-        model:"Megane 2",
-        engine:"1.5 dCi",
-        name:"Plaquettes avant",
-        ref:"-"
-    },
-    {
-        brand:"Renault",
-        model:"Megane 2",
-        engine:"1.9 dCi",
-        name:"Kit embrayage",
-        ref:"-"
-    },
-    {
-        brand:"Renault",
-        model:"Megane 2",
-        engine:"1.9 dCi",
-        name:"Filtre à huile",
-        ref:"-"
-    },
-
-    {
-        brand:"Renault",
-        model:"Kangoo",
-        engine:"1.5 dCi",
-        name:"Kit embrayage",
-        ref:"-"
-    },
-    {
-        brand:"Renault",
-        model:"Kangoo",
-        engine:"1.5 dCi",
-        name:"Filtre à gasoil",
-        ref:"-"
-    },
-    {
-        brand:"Renault",
-        model:"Kangoo",
-        engine:"1.5 dCi",
-        name:"Filtre à huile",
-        ref:"-"
-    },
-    {
-        brand:"Renault",
-        model:"Kangoo",
-        engine:"1.5 dCi",
-        name:"Filtre à air",
-        ref:"-"
-    },
-    {
-        brand:"Renault",
-        model:"Kangoo",
-        engine:"1.9 D",
-        name:"Kit embrayage",
-        ref:"-"
-    },
-    {
-        brand:"Renault",
-        model:"Kangoo",
-        engine:"1.9 D",
-        name:"Joint spi vilebrequin",
-        ref:"-"
-    },
-
-    {
-        brand:"Dacia",
-        model:"Sandero",
-        engine:"1.6 Essence",
-        name:"Kit embrayage",
-        ref:"-"
-    },
-    {
-        brand:"Dacia",
-        model:"Sandero",
-        engine:"1.6 Essence",
-        name:"Pompe à eau",
-        ref:"-"
-    },
-    {
-        brand:"Dacia",
-        model:"Sandero",
-        engine:"1.6 Essence",
-        name:"Filtre à huile",
-        ref:"-"
-    },
-    {
-        brand:"Dacia",
-        model:"Sandero",
-        engine:"1.5 dCi",
-        name:"Kit embrayage",
-        ref:"-"
-    },
-    {
-        brand:"Dacia",
-        model:"Sandero",
-        engine:"1.5 dCi",
-        name:"Filtre à gasoil",
-        ref:"-"
-    },
-    {
-        brand:"Dacia",
-        model:"Sandero",
-        engine:"1.5 dCi",
-        name:"Filtre à huile",
-        ref:"-"
-    },
-
-    {
-        brand:"Peugeot",
-        model:"206",
-        engine:"1.4 Essence",
-        name:"Pompe à eau",
-        ref:"-"
-    },
-    {
-        brand:"Peugeot",
-        model:"206",
-        engine:"1.4 Essence",
-        name:"Kit embrayage",
-        ref:"-"
-    },
-    {
-        brand:"Peugeot",
-        model:"206",
-        engine:"1.4 Essence",
-        name:"Filtre à huile",
-        ref:"-"
-    },
-    {
-        brand:"Peugeot",
-        model:"206",
-        engine:"1.4 Essence",
-        name:"Filtre à air",
-        ref:"-"
-    },
-    {
-        brand:"Peugeot",
-        model:"206",
-        engine:"1.6 Essence",
-        name:"Kit embrayage",
-        ref:"-"
-    },
-    {
-        brand:"Peugeot",
-        model:"206",
-        engine:"1.6 Essence",
-        name:"Pompe à eau",
-        ref:"-"
-    },
-    {
-        brand:"Peugeot",
-        model:"206",
-        engine:"1.4 HDi",
-        name:"Kit embrayage",
-        ref:"-"
-    },
-    {
-        brand:"Peugeot",
-        model:"206",
-        engine:"1.4 HDi",
-        name:"Filtre à gasoil",
-        ref:"-"
-    },
-    {
-        brand:"Peugeot",
-        model:"206",
-        engine:"1.4 HDi",
-        name:"Filtre à huile",
-        ref:"-"
-    },
-    {
-        brand:"Peugeot",
-        model:"206",
-        engine:"1.4 HDi",
-        name:"Filtre à air",
-        ref:"-"
-    },
-
-    {
-        brand:"Peugeot",
-        model:"207",
-        engine:"1.4 Essence",
-        name:"Kit embrayage",
-        ref:"-"
-    },
-    {
-        brand:"Peugeot",
-        model:"207",
-        engine:"1.4 Essence",
-        name:"Pompe à eau",
-        ref:"-"
-    },
-    {
-        brand:"Peugeot",
-        model:"207",
-        engine:"1.4 Essence",
-        name:"Filtre à huile",
-        ref:"-"
-    },
-    {
-        brand:"Peugeot",
-        model:"207",
-        engine:"1.4 HDi",
-        name:"Kit embrayage",
-        ref:"-"
-    },
-    {
-        brand:"Peugeot",
-        model:"207",
-        engine:"1.4 HDi",
-        name:"Filtre à gasoil",
-        ref:"-"
-    },
-    {
-        brand:"Peugeot",
-        model:"207",
-        engine:"1.6 HDi",
-        name:"Kit embrayage",
-        ref:"302052617R"
-    },
-    {
-        brand:"Peugeot",
-        model:"207",
-        engine:"1.6 HDi",
-        name:"Filtre à gasoil",
-        ref:"-"
-    },
-    {
-        brand:"Peugeot",
-        model:"207",
-        engine:"1.6 HDi",
-        name:"Filtre à huile",
-        ref:"-"
-    },
-
-    {
-        brand:"Peugeot",
-        model:"208",
-        engine:"1.2 Essence",
-        name:"Kit embrayage",
-        ref:"-"
-    },
-    {
-        brand:"Peugeot",
-        model:"208",
-        engine:"1.2 Essence",
-        name:"Filtre à huile",
-        ref:"-"
-    },
-    {
-        brand:"Peugeot",
-        model:"208",
-        engine:"1.4 HDi",
-        name:"Kit embrayage",
-        ref:"-"
-    },
-    {
-        brand:"Peugeot",
-        model:"208",
-        engine:"1.4 HDi",
-        name:"Filtre à gasoil",
-        ref:"-"
-    },
-    {
-        brand:"Peugeot",
-        model:"208",
-        engine:"1.6 HDi",
-        name:"Kit embrayage",
-        ref:"-"
-    },
-    {
-        brand:"Peugeot",
-        model:"208",
-        engine:"1.6 HDi",
-        name:"Filtre à huile",
-        ref:"-"
-    },
-
-    {
-        brand:"Peugeot",
-        model:"301",
-        engine:"1.6 Essence",
-        name:"Kit embrayage",
-        ref:"-"
-    },
-    {
-        brand:"Peugeot",
-        model:"301",
-        engine:"1.6 Essence",
-        name:"Jauge huile",
-        ref:"-"
-    },
-    {
-        brand:"Peugeot",
-        model:"301",
-        engine:"1.6 HDi",
-        name:"Kit embrayage",
-        ref:"-"
-    },
-    {
-        brand:"Peugeot",
-        model:"301",
-        engine:"1.6 HDi",
-        name:"Filtre à gasoil",
-        ref:"-"
-    },
-    {
-        brand:"Peugeot",
-        model:"301",
-        engine:"1.6 HDi",
-        name:"Filtre à huile",
-        ref:"-"
-    },
-
-    {
-        brand:"Peugeot",
-        model:"Partner",
-        engine:"1.6 HDi",
-        name:"Kit embrayage",
-        ref:"-"
-    },
-    {
-        brand:"Peugeot",
-        model:"Partner",
-        engine:"1.6 HDi",
-        name:"Filtre à gasoil",
-        ref:"-"
-    },
-    {
-        brand:"Peugeot",
-        model:"Partner",
-        engine:"1.6 HDi",
-        name:"Filtre à huile",
-        ref:"-"
-    },
-    {
-        brand:"Peugeot",
-        model:"Partner",
-        engine:"1.9 D",
-        name:"Kit embrayage",
-        ref:"-"
-    },
-
-    {
-        brand:"Volkswagen",
-        model:"Golf 7",
-        engine:"2.0 TDI",
-        name:"Courroie alternateur",
-        ref:"-"
-    },
-    {
-        brand:"Volkswagen",
-        model:"Golf 7",
-        engine:"2.0 TDI",
-        name:"Filtre à huile",
-        ref:"-"
-    },
-    {
-        brand:"Volkswagen",
-        model:"Golf 7",
-        engine:"2.0 TDI",
-        name:"Filtre à air",
-        ref:"-"
-    },
-    {
-        brand:"Volkswagen",
-        model:"Polo",
-        engine:"1.6 TDI",
-        name:"Filtre à huile",
-        ref:"-"
-    },
-    {
-        brand:"Volkswagen",
-        model:"Polo",
-        engine:"1.6 TDI",
-        name:"Filtre à gasoil",
-        ref:"-"
-    },
-    {
-        brand:"Skoda",
-        model:"Octavia",
-        engine:"1.9 TDI",
-        name:"Filtre à huile",
-        ref:"-"
-    },
-    {
-        brand:"Skoda",
-        model:"Octavia",
-        engine:"1.9 TDI",
-        name:"Filtre à air",
-        ref:"-"
-    },
-    {
-  brand:"Renault",
-  model:"Clio 2",
-  engine:"1.2 16V",
-  name:"Kit distribution",
-  ref:"130701564R"
-},
-
-{
-  brand:"Renault",
-  model:"Clio 2",
-  engine:"1.2 16V",
-  name:"Kit distribution",
-  ref:"7701473001"
-},
-
-{
-  brand:"Renault",
-  model:"Clio 2",
-  engine:"1.2 16V",
-  name:"Kit distribution",
-  ref:"8200035827"
-},
-
-{
-  brand:"Renault",
-  model:"Clio 3",
-  engine:"1.2 16V",
-  name:"Kit distribution",
-  ref:"130705295R"
-},
-
-{
-  brand:"Renault",
-  model:"Symbol",
-  engine:"1.2 16V",
-  name:"Kit distribution",
-  ref:"130C16776R"
-},
-
-{
-  brand:"Renault",
-  model:"Kangoo",
-  engine:"1.2 16V",
-  name:"Kit distribution",
-  ref:"7701476745"
-},
-
-{
-  brand:"Renault",
-  model:"Twingo",
-  engine:"1.2 16V",
-  name:"Kit distribution",
-  ref:"8200106085"
-},
-    
-{
-    brand:"Renault",
-    model:"Clio 2",
-    engine:"1.2 16V",
-    name:"Pompe à eau",
-    ref:"7701478018"
-},
-
-{
-    brand:"Renault",
-    model:"Clio 2",
-    engine:"1.2 16V",
-    name:"Kit embrayage",
-    ref:"7701476501"
-},
-
-{
-    brand:"Renault",
-    model:"Clio 2",
-    engine:"1.4 16V",
-    name:"Kit distribution",
-    ref:"130C12345R"
-},
-
-{
-    brand:"Renault",
-    model:"Symbol",
-    engine:"1.4 Essence",
-    name:"Kit embrayage",
-    ref:"770147XXXX"
-},
-
-{
-    brand: "Renault",
-    model: "Clio 2",
-    engine: "1.2 16V",
-    name: "Kit distribution",
-    ref: "130701564R"
- },
-
- {
-    brand: "Renault",
-    model: "Clio 2",
-    engine: "1.2 16V",
-    name: "Pompe à eau",
-    ref: "7701478010"
- },
-
-  {
-    brand: "Renault",
-    model: "Clio 2",
-    engine: "1.2 16V",
-    name: "Courroie distribution",
-    ref: "7700108636"
-  },
-
-  {
-    brand: "Renault",
-    model: "Clio 2",
-    engine: "1.2 16V",
-    name: "Galet tendeur distribution",
-    ref: "7700108117"
-  },
-
-  {
-    brand: "Renault",
-    model: "Clio 2",
-    engine: "1.2 16V",
-    name: "Filtre à huile",
-    ref: "7700274177"
-  },
-
-  {
-    brand: "Renault",
-    model: "Clio 2",
-    engine: "1.2 16V",
-    name: "Filtre à air",
-    ref: "7701045724"
-  },
-
-  {
-    brand: "Renault",
-    model: "Clio 2",
-    engine: "1.2 16V",
-    name: "Filtre à carburant",
-    ref: "7700414685"
-  },
-
-  {
-    brand: "Renault",
-    model: "Clio 2",
-    engine: "1.2 16V",
-    name: "Bougies allumage",
-    ref: "7700500155"
-  },
-
-  {
-    brand: "Renault",
-    model: "Clio 2",
-    engine: "1.2 16V",
-    name: "Kit embrayage",
-    ref: "7701477694"
-  },
-
-  {
-    brand: "Renault",
-    model: "Clio 2",
-    engine: "1.2 16V",
-    name: "Joint spi vilebrequin",
-    ref: "7701471220"
-  },
-
-  {
-    brand: "Renault",
-    model: "Clio 2",
-    engine: "1.2 16V",
-    name: "Joint couvre culasse",
-    ref: "7701471719"
-  },
-
-  {
-    brand: "Renault",
-    model: "Clio 2",
-    engine: "1.2 16V",
-    name: "Thermostat",
-    ref: "7700872554"
-  },
-
-  {
-    brand: "Renault",
-    model: "Clio 2",
-    engine: "1.2 16V",
-    name: "Bobine allumage",
-    ref: "7700113355"
-  },
-
-  {
-    brand: "Renault",
-    model: "Clio 2",
-    engine: "1.2 16V",
-    name: "Capteur PMH",
-    ref: "7700101970"
-  },
-
-  {
-    brand: "Renault",
-    model: "Clio 2",
-    engine: "1.2 16V",
-    name: "Capteur température",
-    ref: "7700101969"
-  },
-
-  {
-    brand: "Renault",
-    model: "Clio 2",
-    engine: "1.2 16V",
-    name: "Plaquettes frein avant",
-    ref: "7701208265"
-  },
-
-  {
-    brand: "Renault",
-    model: "Clio 2",
-    engine: "1.2 16V",
-    name: "Disques frein avant",
-    ref: "7701208252"
-  },
-
-  {
-    brand: "Renault",
-    model: "Clio 2",
-    engine: "1.2 16V",
-    name: "Triangle suspension",
-    ref: "7701476547"
-  },
-
-  {
-    brand: "Renault",
-    model: "Clio 2",
-    engine: "1.2 16V",
-    name: "Rotule direction",
-    ref: "7701470362"
-  },
-
-  {
-    brand: "Renault",
-    model: "Clio 2",
-    engine: "1.2 16V",
-    name: "Biellette barre stabilisatrice",
-    ref: "7701470359"
-  },
-
-  {
-    brand: "Renault",
-    model: "Clio 2",
-    engine: "1.5 dCi",
-    name: "Kit distribution",
-    ref: "7701477028"
-  },
-
-  {
-    brand: "Renault",
-    model: "Clio 2",
-    engine: "1.5 dCi",
-    name: "Pompe à eau",
-    ref: "7701478018"
-  },
-
-  {
-    brand: "Renault",
-    model: "Clio 2",
-    engine: "1.5 dCi",
-    name: "Filtre à huile",
-    ref: "7701478533"
-  },
-
-  {
-    brand: "Renault",
-    model: "Clio 2",
-    engine: "1.5 dCi",
-    name: "Filtre à air",
-    ref: "7701045724"
-  },
-
-  {
-    brand: "Renault",
-    model: "Clio 2",
-    engine: "1.5 dCi",
-    name: "Filtre à gasoil",
-    ref: "7701478547"
-  },
-
-  {
-    brand: "Renault",
-    model: "Clio 2",
-    engine: "1.5 dCi",
-    name: "Kit embrayage",
-    ref: "7701476917"
-  },
-
-  {
-    brand: "Renault",
-    model: "Clio 2",
-    engine: "1.5 dCi",
-    name: "Bougies préchauffage",
-    ref: "7700111323"
-  },
-
-  {
-    brand: "Renault",
-    model: "Clio 2",
-    engine: "1.5 dCi",
-    name: "Capteur PMH",
-    ref: "8200643171"
-  },
-
-  {
-    brand: "Renault",
-    model: "Clio 2",
-    engine: "1.5 dCi",
-    name: "Plaquettes frein avant",
-    ref: "7701208257"
-  },
-
-  {
-    brand: "Renault",
-    model: "Symbol",
-    engine: "1.4 Essence",
-    name: "Kit distribution",
-    ref: "130C10980R"
-  },
-
-  {
-    brand: "Renault",
-    model: "Symbol",
-    engine: "1.4 Essence",
-    name: "Pompe à eau",
-    ref: "7701478010"
-  },
-
-  {
-    brand: "Renault",
-    model: "Symbol",
-    engine: "1.4 Essence",
-    name: "Filtre à huile",
-    ref: "7700274177"
-  },
-
-  {
-    brand: "Renault",
-    model: "Symbol",
-    engine: "1.4 Essence",
-    name: "Filtre à air",
-    ref: "7701045724"
-  },
-
-  {
-    brand: "Renault",
-    model: "Symbol",
-    engine: "1.4 Essence",
-    name: "Kit embrayage",
-    ref: "7701477694"
-  },
-
-  {
-    brand: "Renault",
-    model: "Symbol",
-    engine: "1.4 Essence",
-    name: "Bougies allumage",
-    ref: "7700500155"
-  },
-
-  {
-    brand: "Renault",
-    model: "Symbol",
-    engine: "1.4 Essence",
-    name: "Bobine allumage",
-    ref: "7700113355"
-  },
-
-  {
-    brand: "Renault",
-    model: "Symbol",
-    engine: "1.4 Essence",
-    name: "Thermostat",
-    ref: "7700872554"
-  },
-
-  {
-    brand: "Renault",
-    model: "Symbol",
-    engine: "1.5 dCi",
-    name: "Kit distribution",
-    ref: "7701477028"
-  },
-
-  {
-    brand: "Renault",
-    model: "Symbol",
-    engine: "1.5 dCi",
-    name: "Pompe à eau",
-    ref: "7701478018"
-  },
-
-  {
-    brand: "Renault",
-    model: "Symbol",
-    engine: "1.5 dCi",
-    name: "Filtre à huile",
-    ref: "7701478533"
-  },
-
-  {
-    brand: "Renault",
-    model: "Symbol",
-    engine: "1.5 dCi",
-    name: "Filtre à gasoil",
-    ref: "7701478547"
-  },
-
-  {
-    brand: "Renault",
-    model: "Symbol",
-    engine: "1.5 dCi",
-    name: "Kit embrayage",
-    ref: "7701476917"
-  },
-
-  {
-    brand: "Renault",
-    model: "Logan",
-    engine: "1.6 Essence",
-    name: "Kit embrayage",
-    ref: "7701477529"
-  },
-
-  {
-    brand: "Renault",
-    model: "Logan",
-    engine: "1.6 Essence",
-    name: "Kit distribution",
-    ref: "130C13191R"
-  },
-
-  {
-    brand: "Renault",
-    model: "Logan",
-    engine: "1.6 Essence",
-    name: "Pompe à eau",
-    ref: "7701478010"
-  },
-
-  {
-    brand: "Renault",
-    model: "Logan",
-    engine: "1.6 Essence",
-    name: "Filtre à huile",
-    ref: "7700274177"
-  },
-
-  {
-    brand: "Renault",
-    model: "Logan",
-    engine: "1.6 Essence",
-    name: "Filtre à air",
-    ref: "7701045724"
-  },
-
-  {
-    brand: "Renault",
-    model: "Logan",
-    engine: "1.5 dCi",
-    name: "Kit distribution",
-    ref: "7701477028"
-  },
-
-  {
-    brand: "Renault",
-    model: "Logan",
-    engine: "1.5 dCi",
-    name: "Kit embrayage",
-    ref: "7701476917"
-  },
-
-  {
-    brand: "Renault",
-    model: "Kangoo",
-    engine: "1.5 dCi",
-    name: "Kit embrayage",
-    ref: "7701476917"
-  },
-
-  {
-    brand: "Renault",
-    model: "Kangoo",
-    engine: "1.5 dCi",
-    name: "Kit distribution",
-    ref: "7701477028"
-  },
-    
-  // =========================================================
-  // RENAULT - 100 PIECES
-  // =========================================================
-
-  // ---------------- CLIO 2 ----------------
-
-  {
-    brand: "Renault",
-    model: "Clio 2",
-    engine: "1.2 16V",
-    name: "Pompe à eau",
-    ref: "7701478018"
-  },
-  {
-    brand: "Renault",
-    model: "Clio 2",
-    engine: "1.2 16V",
-    name: "Kit distribution",
-    ref: "130701564R"
-  },
-  {
-    brand: "Renault",
-    model: "Clio 2",
-    engine: "1.2 16V",
-    name: "Filtre à huile",
-    ref: "7700274177"
-  },
-  {
-    brand: "Renault",
-    model: "Clio 2",
-    engine: "1.2 16V",
-    name: "Filtre à air",
-    ref: "7701045724"
-  },
-  {
-    brand: "Renault",
-    model: "Clio 2",
-    engine: "1.2 16V",
-    name: "Bougie allumage",
-    ref: "7700500155"
-  },
-  {
-    brand: "Renault",
-    model: "Clio 2",
-    engine: "1.5 dCi",
-    name: "Filtre à huile",
-    ref: "8200768927"
-  },
-  {
-    brand: "Renault",
-    model: "Clio 2",
-    engine: "1.5 dCi",
-    name: "Filtre à gasoil",
-    ref: "7701061574"
-  },
-  {
-    brand: "Renault",
-    model: "Clio 2",
-    engine: "1.5 dCi",
-    name: "Kit distribution",
-    ref: "7701477028"
-  },
-  {
-    brand: "Renault",
-    model: "Clio 2",
-    engine: "1.5 dCi",
-    name: "Pompe à eau",
-    ref: "8200537033"
-  },
-  {
-    brand: "Renault",
-    model: "Clio 2",
-    engine: "1.5 dCi",
-    name: "Courroie accessoires",
-    ref: "7700101261"
-  },
-
-  // ---------------- CLIO 3 ----------------
-
-  {
-    brand: "Renault",
-    model: "Clio 3",
-    engine: "1.2 16V",
-    name: "Filtre à huile",
-    ref: "7700274177"
-  },
-  {
-    brand: "Renault",
-    model: "Clio 3",
-    engine: "1.2 16V",
-    name: "Filtre à air",
-    ref: "8200431051"
-  },
-  {
-    brand: "Renault",
-    model: "Clio 3",
-    engine: "1.2 16V",
-    name: "Bougie allumage",
-    ref: "7700500168"
-  },
-  {
-    brand: "Renault",
-    model: "Clio 3",
-    engine: "1.2 16V",
-    name: "Bobine allumage",
-    ref: "8200765882"
-  },
-  {
-    brand: "Renault",
-    model: "Clio 3",
-    engine: "1.2 16V",
-    name: "Pompe à eau",
-    ref: "7701478018"
-  },
-  {
-    brand: "Renault",
-    model: "Clio 3",
-    engine: "1.5 dCi",
-    name: "Filtre à huile",
-    ref: "8200768927"
-  },
-  {
-    brand: "Renault",
-    model: "Clio 3",
-    engine: "1.5 dCi",
-    name: "Filtre à air",
-    ref: "8200431051"
-  },
-  {
-    brand: "Renault",
-    model: "Clio 3",
-    engine: "1.5 dCi",
-    name: "Filtre à gasoil",
-    ref: "8200805600"
-  },
-  {
-    brand: "Renault",
-    model: "Clio 3",
-    engine: "1.5 dCi",
-    name: "Kit distribution",
-    ref: "7701477028"
-  },
-  {
-    brand: "Renault",
-    model: "Clio 3",
-    engine: "1.5 dCi",
-    name: "Pompe à eau",
-    ref: "8200537033"
-  },
-
-  // ---------------- CLIO 4 ----------------
-
-  {
-    brand: "Renault",
-    model: "Clio 4",
-    engine: "0.9 TCe",
-    name: "Filtre à huile",
-    ref: "152095084R"
-  },
-  {
-    brand: "Renault",
-    model: "Clio 4",
-    engine: "0.9 TCe",
-    name: "Filtre à air",
-    ref: "165467674R"
-  },
-  {
-    brand: "Renault",
-    model: "Clio 4",
-    engine: "0.9 TCe",
-    name: "Bougie allumage",
-    ref: "224010275R"
-  },
-  {
-    brand: "Renault",
-    model: "Clio 4",
-    engine: "1.2 16V",
-    name: "Filtre à huile",
-    ref: "152095084R"
-  },
-  {
-    brand: "Renault",
-    model: "Clio 4",
-    engine: "1.5 dCi",
-    name: "Filtre à huile",
-    ref: "152095084R"
-  },
-  {
-    brand: "Renault",
-    model: "Clio 4",
-    engine: "1.5 dCi",
-    name: "Filtre à air",
-    ref: "165467674R"
-  },
-  {
-    brand: "Renault",
-    model: "Clio 4",
-    engine: "1.5 dCi",
-    name: "Filtre à gasoil",
-    ref: "164001210R"
-  },
-  {
-    brand: "Renault",
-    model: "Clio 4",
-    engine: "1.5 dCi",
-    name: "Kit distribution",
-    ref: "130C17529R"
-  },
-  {
-    brand: "Renault",
-    model: "Clio 4",
-    engine: "1.5 dCi",
-    name: "Pompe à eau",
-    ref: "2101000Q0J"
-  },
-  {
-    brand: "Renault",
-    model: "Clio 4",
-    engine: "1.5 dCi",
-    name: "Courroie accessoires",
-    ref: "117203874R"
-  },
-
-  // ---------------- SYMBOL ----------------
-
-  {
-    brand: "Renault",
-    model: "Symbol",
-    engine: "1.4 Essence",
-    name: "Filtre à huile",
-    ref: "7700274177"
-  },
-  {
-    brand: "Renault",
-    model: "Symbol",
-    engine: "1.4 Essence",
-    name: "Filtre à air",
-    ref: "7701045724"
-  },
-  {
-    brand: "Renault",
-    model: "Symbol",
-    engine: "1.4 Essence",
-    name: "Bougie allumage",
-    ref: "7700500155"
-  },
-  {
-    brand: "Renault",
-    model: "Symbol",
-    engine: "1.4 Essence",
-    name: "Pompe à eau",
-    ref: "7701478018"
-  },
-  {
-    brand: "Renault",
-    model: "Symbol",
-    engine: "1.4 Essence",
-    name: "Kit distribution",
-    ref: "130701564R"
-  },
-  {
-    brand: "Renault",
-    model: "Symbol",
-    engine: "1.5 dCi",
-    name: "Filtre à huile",
-    ref: "8200768927"
-  },
-  {
-    brand: "Renault",
-    model: "Symbol",
-    engine: "1.5 dCi",
-    name: "Filtre à gasoil",
-    ref: "7701061574"
-  },
-  {
-    brand: "Renault",
-    model: "Symbol",
-    engine: "1.5 dCi",
-    name: "Kit distribution",
-    ref: "7701477028"
-  },
-  {
-    brand: "Renault",
-    model: "Symbol",
-    engine: "1.5 dCi",
-    name: "Pompe à eau",
-    ref: "8200537033"
-  },
-  {
-    brand: "Renault",
-    model: "Symbol",
-    engine: "1.5 dCi",
-    name: "Courroie accessoires",
-    ref: "7700101261"
-  },
-
-  // ---------------- LOGAN ----------------
-
-  {
-    brand: "Renault",
-    model: "Logan",
-    engine: "1.4 Essence",
-    name: "Filtre à huile",
-    ref: "7700274177"
-  },
-  {
-    brand: "Renault",
-    model: "Logan",
-    engine: "1.4 Essence",
-    name: "Filtre à air",
-    ref: "7701045724"
-  },
-  {
-    brand: "Renault",
-    model: "Logan",
-    engine: "1.4 Essence",
-    name: "Bougie allumage",
-    ref: "7700500155"
-  },
-  {
-    brand: "Renault",
-    model: "Logan",
-    engine: "1.4 Essence",
-    name: "Kit distribution",
-    ref: "130C17529R"
-  },
-  {
-    brand: "Renault",
-    model: "Logan",
-    engine: "1.4 Essence",
-    name: "Pompe à eau",
-    ref: "7701478018"
-  },
-  {
-    brand: "Renault",
-    model: "Logan",
-    engine: "1.6 Essence",
-    name: "Filtre à huile",
-    ref: "7700274177"
-  },
-  {
-    brand: "Renault",
-    model: "Logan",
-    engine: "1.6 Essence",
-    name: "Filtre à air",
-    ref: "7701045724"
-  },
-  {
-    brand: "Renault",
-    model: "Logan",
-    engine: "1.6 Essence",
-    name: "Kit distribution",
-    ref: "130C17529R"
-  },
-  {
-    brand: "Renault",
-    model: "Logan",
-    engine: "1.6 Essence",
-    name: "Pompe à eau",
-    ref: "7701478018"
-  },
-  {
-    brand: "Renault",
-    model: "Logan",
-    engine: "1.5 dCi",
-    name: "Kit distribution",
-    ref: "7701477028"
-  },
-
-  // ---------------- SANDERO / STEPWAY ----------------
-
-  {
-    brand: "Renault",
-    model: "Sandero",
-    engine: "1.4 Essence",
-    name: "Filtre à huile",
-    ref: "7700274177"
-  },
-  {
-    brand: "Renault",
-    model: "Sandero",
-    engine: "1.4 Essence",
-    name: "Filtre à air",
-    ref: "7701045724"
-  },
-  {
-    brand: "Renault",
-    model: "Sandero",
-    engine: "1.4 Essence",
-    name: "Bougie allumage",
-    ref: "7700500155"
-  },
-  {
-    brand: "Renault",
-    model: "Sandero",
-    engine: "1.6 Essence",
-    name: "Filtre à huile",
-    ref: "7700274177"
-  },
-  {
-    brand: "Renault",
-    model: "Sandero",
-    engine: "1.6 Essence",
-    name: "Filtre à air",
-    ref: "7701045724"
-  },
-  {
-    brand: "Renault",
-    model: "Sandero",
-    engine: "1.6 Essence",
-    name: "Kit distribution",
-    ref: "130C17529R"
-  },
-  {
-    brand: "Renault",
-    model: "Stepway",
-    engine: "1.6 Essence",
-    name: "Filtre à huile",
-    ref: "7700274177"
-  },
-  {
-    brand: "Renault",
-    model: "Stepway",
-    engine: "1.6 Essence",
-    name: "Filtre à air",
-    ref: "7701045724"
-  },
-  {
-    brand: "Renault",
-    model: "Stepway",
-    engine: "1.6 Essence",
-    name: "Kit embrayage",
-    ref: "302052617R"
-  },
-  {
-    brand: "Renault",
-    model: "Stepway",
-    engine: "1.5 dCi",
-    name: "Kit distribution",
-    ref: "7701477028"
-  },
-
-  // ---------------- KANGOO ----------------
-
-  {
-    brand: "Renault",
-    model: "Kangoo",
-    engine: "1.5 dCi",
-    name: "Filtre à huile",
-    ref: "8200768927"
-  },
-  {
-    brand: "Renault",
-    model: "Kangoo",
-    engine: "1.5 dCi",
-    name: "Filtre à air",
-    ref: "8200431051"
-  },
-  {
-    brand: "Renault",
-    model: "Kangoo",
-    engine: "1.5 dCi",
-    name: "Filtre à gasoil",
-    ref: "7701061574"
-  },
-  {
-    brand: "Renault",
-    model: "Kangoo",
-    engine: "1.5 dCi",
-    name: "Kit distribution",
-    ref: "7701477028"
-  },
-  {
-    brand: "Renault",
-    model: "Kangoo",
-    engine: "1.5 dCi",
-    name: "Pompe à eau",
-    ref: "8200537033"
-  },
-  {
-    brand: "Renault",
-    model: "Kangoo",
-    engine: "1.5 dCi",
-    name: "Kit embrayage",
-    ref: "302058324R"
-  },
-  {
-    brand: "Renault",
-    model: "Kangoo",
-    engine: "1.5 dCi",
-    name: "Courroie accessoires",
-    ref: "117205191R"
-  },
-  {
-    brand: "Renault",
-    model: "Kangoo",
-    engine: "1.9 D",
-    name: "Joint spi vilebrequin",
-    ref: "80.105.8"
-  },
-  {
-    brand: "Renault",
-    model: "Kangoo",
-    engine: "1.9 D",
-    name: "Filtre à huile",
-    ref: "7700274177"
-  },
-  {
-    brand: "Renault",
-    model: "Kangoo",
-    engine: "1.9 D",
-    name: "Filtre à air",
-    ref: "7701045724"
-  },
-
-  // ---------------- MEGANE ----------------
-
-  {
-    brand: "Renault",
-    model: "Megane 2",
-    engine: "1.5 dCi",
-    name: "Filtre à huile",
-    ref: "8200768927"
-  },
-  {
-    brand: "Renault",
-    model: "Megane 2",
-    engine: "1.5 dCi",
-    name: "Filtre à air",
-    ref: "8200431051"
-  },
-  {
-    brand: "Renault",
-    model: "Megane 2",
-    engine: "1.5 dCi",
-    name: "Filtre à gasoil",
-    ref: "7701061574"
-  },
-  {
-    brand: "Renault",
-    model: "Megane 2",
-    engine: "1.5 dCi",
-    name: "Kit distribution",
-    ref: "7701477028"
-  },
-  {
-    brand: "Renault",
-    model: "Megane 2",
-    engine: "1.5 dCi",
-    name: "Pompe à eau",
-    ref: "8200537033"
-  },
-  {
-    brand: "Renault",
-    model: "Megane 2",
-    engine: "1.9 dCi",
-    name: "Filtre à huile",
-    ref: "8200768927"
-  },
-  {
-    brand: "Renault",
-    model: "Megane 2",
-    engine: "1.9 dCi",
-    name: "Filtre à air",
-    ref: "8200431051"
-  },
-  {
-    brand: "Renault",
-    model: "Megane 2",
-    engine: "1.9 dCi",
-    name: "Kit distribution",
-    ref: "7701477028"
-  },
-  {
-    brand: "Renault",
-    model: "Megane 2",
-    engine: "1.6 Essence",
-    name: "Filtre à huile",
-    ref: "7700274177"
-  },
-  {
-    brand: "Renault",
-    model: "Megane 2",
-    engine: "1.6 Essence",
-    name: "Bougie allumage",
-    ref: "7700500155"
-  }
 
 ];
 
-      
 
-    
+const brandSelect =
+document.getElementById("brandSelect");
 
+const modelSelect =
+document.getElementById("modelSelect");
 
+const engineSelect =
+document.getElementById("engineSelect");
 
-/* =========================================================
-   ELEMENTS
-   ========================================================= */
+const searchInput =
+document.getElementById("searchInput");
 
-const brandSelect = document.getElementById("brandSelect");
-const modelSelect = document.getElementById("modelSelect");
-const engineSelect = document.getElementById("engineSelect");
-const searchInput = document.getElementById("searchInput");
-const searchButton = document.getElementById("searchButton");
-const resetButton = document.getElementById("resetButton");
-const partsContainer = document.getElementById("partsContainer");
-const countNumber = document.getElementById("countNumber");
+const resetButton =
+document.getElementById("resetButton");
 
+const partsContainer =
+document.getElementById("partsContainer");
 
-/* =========================================================
-   PHONE / WHATSAPP
-   ========================================================= */
+const countNumber =
+document.getElementById("countNumber");
 
-function setupContact(){
-
-    if(
-        PHONE &&
-        !PHONE.includes("X")
-    ){
-
-        const whatsappURL =
-            "https://wa.me/" +
-            PHONE +
-            "?text=" +
-            encodeURIComponent(
-                "السلام عليكم، أريد الاستفسار عن قطعة غيار من كتالوج BK AUTO."
-            );
-
-        document.getElementById("mainWhatsapp").href =
-            whatsappURL;
-
-        document.getElementById("mainCall").href =
-            "tel:+" + PHONE;
-
-    }else{
-
-        document.getElementById("mainWhatsapp").href =
-            "#";
-
-        document.getElementById("mainCall").href =
-            "#";
-
-    }
-}
-
-
-/* =========================================================
-   UNIQUE VALUES
-   ========================================================= */
 
 function uniqueValues(array){
 
-    return [...new Set(array)]
-        .filter(Boolean)
-        .sort((a,b) =>
-            a.localeCompare(b,"fr")
-        );
+return [...new Set(array)];
 
 }
 
 
-/* =========================================================
-   UPDATE BRAND
-   ========================================================= */
+function fillSelect(select,values,firstText){
 
-function updateBrandSelect(){
+select.innerHTML =
+<option value="">${firstText}</option> +
 
-    const current = brandSelect.value;
-
-    const brands =
-        uniqueValues(
-            parts.map(part => part.brand)
-        );
-
-    brandSelect.innerHTML =
-        '<option value="">كل الماركات</option>';
-
-    brands.forEach(brand => {
-
-        const option =
-            document.createElement("option");
-
-        option.value = brand;
-        option.textContent = brand;
-
-        brandSelect.appendChild(option);
-
-    });
-
-    if(brands.includes(current)){
-        brandSelect.value = current;
-    }
+uniqueValues(values)
+.sort()
+.map(value =>
+<option value="${value}">${value}</option>
+)
+.join("");
 
 }
 
 
-/* =========================================================
-   UPDATE MODEL
-   ========================================================= */
+function initFilters(){
 
-function updateModelSelect(){
+fillSelect(
+brandSelect,
+parts.map(p=>p.brand),
+"كل الماركات"
+);
 
-    const selectedBrand =
-        brandSelect.value;
+fillSelect(
+modelSelect,
+parts.map(p=>p.model),
+"كل السيارات"
+);
 
-    let filtered = parts;
-
-    if(selectedBrand){
-
-        filtered =
-            parts.filter(
-                part =>
-                part.brand === selectedBrand
-            );
-
-    }
-
-    const models =
-        uniqueValues(
-            filtered.map(part => part.model)
-        );
-
-    const current =
-        modelSelect.value;
-
-    modelSelect.innerHTML =
-        '<option value="">كل السيارات</option>';
-
-    models.forEach(model => {
-
-        const option =
-            document.createElement("option");
-
-        option.value = model;
-        option.textContent = model;
-
-        modelSelect.appendChild(option);
-
-    });
-
-    if(models.includes(current)){
-        modelSelect.value = current;
-    }
+fillSelect(
+engineSelect,
+parts.map(p=>p.engine),
+"كل المحركات"
+);
 
 }
 
-
-/* =========================================================
-   UPDATE ENGINE
-   ========================================================= */
-
-function updateEngineSelect(){
-
-    const selectedBrand =
-        brandSelect.value;
-
-    const selectedModel =
-        modelSelect.value;
-
-    let filtered = parts;
-
-    if(selectedBrand){
-
-        filtered =
-            filtered.filter(
-                part =>
-                part.brand === selectedBrand
-            );
-
-    }
-
-    if(selectedModel){
-
-        filtered =
-            filtered.filter(
-                part =>
-                part.model === selectedModel
-            );
-
-    }
-
-    const engines =
-        uniqueValues(
-            filtered.map(part => part.engine)
-        );
-
-    const current =
-        engineSelect.value;
-
-    engineSelect.innerHTML =
-        '<option value="">كل المحركات</option>';
-
-    engines.forEach(engine => {
-
-        const option =
-            document.createElement("option");
-
-        option.value = engine;
-        option.textContent = engine;
-
-        engineSelect.appendChild(option);
-
-    });
-
-    if(engines.includes(current)){
-        engineSelect.value = current;
-    }
-
-}
-
-
-/* =========================================================
-   SEARCH
-   ========================================================= */
-
-function getFilteredParts(){
-
-    const brand =
-        brandSelect.value.trim().toLowerCase();
-
-    const model =
-        modelSelect.value.trim().toLowerCase();
-
-    const engine =
-        engineSelect.value.trim().toLowerCase();
-
-    const query =
-        searchInput.value.trim().toLowerCase();
-
-    return parts.filter(part => {
-
-        const matchBrand =
-            !brand ||
-            part.brand.toLowerCase() === brand;
-
-        const matchModel =
-            !model ||
-            part.model.toLowerCase() === model;
-
-        const matchEngine =
-            !engine ||
-            part.engine.toLowerCase() === engine;
-
-        const searchableText =
-            (
-                part.brand + " " +
-                part.model + " " +
-                part.engine + " " +
-                part.name + " " +
-                part.ref
-            ).toLowerCase();
-
-        const matchQuery =
-            !query ||
-            searchableText.includes(query);
-
-        return (
-            matchBrand &&
-            matchModel &&
-            matchEngine &&
-            matchQuery
-        );
-
-    });
-
-}
-
-
-/* =========================================================
-   CREATE WHATSAPP LINK
-   ========================================================= */
-
-function createWhatsappLink(part){
-
-    if(
-        !PHONE ||
-        PHONE.includes("X")
-    ){
-        return "#";
-    }
-
-    const message =
-        "السلام عليكم، أريد الاستفسار عن هذه القطعة من BK AUTO:%0A%0A" +
-        "الماركة: " + part.brand + "%0A" +
-        "السيارة: " + part.model + "%0A" +
-        "المحرك: " + part.engine + "%0A" +
-        "القطعة: " + part.name + "%0A" +
-        "المرجع: " + part.ref;
-
-    return "https://wa.me/" + PHONE + "?text=" + message;
-
-}
-
-
-/* =========================================================
-   RENDER PARTS
-   ========================================================= */
 
 function renderParts(){
 
-    const filtered =
-        getFilteredParts();
+const brand =
+brandSelect.value;
 
-    countNumber.textContent =
-        filtered.length;
+const model =
+modelSelect.value;
 
-    partsContainer.innerHTML = "";
+const engine =
+engineSelect.value;
 
-    if(filtered.length === 0){
-
-        partsContainer.innerHTML = `
-            <div class="empty">
-                <div class="empty-icon">🔎</div>
-                <h2>لم يتم العثور على قطعة</h2>
-                <p style="margin-top:10px;">
-                    جرّب تغيير البحث أو الفلاتر
-                </p>
-            </div>
-        `;
-
-        return;
-    }
+const search =
+searchInput.value
+.trim()
+.toLowerCase();
 
 
-    filtered.forEach(part => {
+const filtered =
+parts.filter(part => {
 
-        const card =
-            document.createElement("article");
+const text = [
 
-        card.className = "card";
+part.brand,
+part.model,
+part.engine,
+part.name,
+part.ref
 
-        const whatsapp =
-            createWhatsappLink(part);
+].join(" ").toLowerCase();
 
-        const callLink =
-            PHONE.includes("X")
-            ? "#"
-            : "tel:+" + PHONE;
 
-        card.innerHTML = `
+return (
 
-            <div class="card-top">
+(!brand || part.brand === brand) &&
 
-                <div class="brand">
-                    ${escapeHTML(part.brand)}
-                </div>
+(!model || part.model === model) &&
 
-                <div class="model">
-                    ${escapeHTML(part.model)}
-                </div>
+(!engine || part.engine === engine) &&
 
-                <div class="engine">
-                    ${escapeHTML(part.engine)}
-                </div>
+(!search || text.includes(search))
 
-                <div class="part-name">
-                    ${escapeHTML(part.name)}
-                </div>
+);
 
-            </div>
+});
 
-            <div class="ref">
-                <strong>REF:</strong>
-                ${escapeHTML(part.ref)}
-            </div>
 
-            <div class="actions">
+countNumber.textContent =
+عدد النتائج: ${filtered.length} / ${parts.length} قطعة;
 
-                <a
-                    class="whatsapp"
-                    href="${whatsapp}"
-                    target="_blank"
-                >
-                    WhatsApp 💬
-                </a>
 
-                <a
-                    class="call"
-                    href="${callLink}"
-                >
-                    اتصال 📞
-                </a>
+partsContainer.innerHTML = "";
 
-            </div>
 
-        `;
+filtered.forEach(part => {
 
-        partsContainer.appendChild(card);
+const card =
+document.createElement("article");
 
-    });
+card.className = "card";
+
+
+card.innerHTML = `
+
+<span class="badge">
+${part.brand}
+</span>
+
+<h3>
+${part.name}
+</h3>
+
+<div class="line">
+<b>السيارة:</b>
+${part.model}
+</div>
+
+<div class="line">
+<b>المحرك:</b>
+${part.engine}
+</div>
+
+<div class="ref">
+${part.ref || "غير محدد"}
+</div>
+
+`;
+
+
+partsContainer.appendChild(card);
+
+});
 
 }
 
 
-/* =========================================================
-   SECURITY
-   ========================================================= */
+function resetFilters(){
 
-function escapeHTML(value){
+brandSelect.value = "";
 
-    return String(value)
-        .replace(/&/g,"&amp;")
-        .replace(/</g,"&lt;")
-        .replace(/>/g,"&gt;")
-        .replace(/"/g,"&quot;")
-        .replace(/'/g,"&#039;");
+modelSelect.value = "";
 
-}
+engineSelect.value = "";
 
-
-/* =========================================================
-   EVENTS
-   ========================================================= */
-
-brandSelect.addEventListener(
-    "change",
-    () => {
-
-        updateModelSelect();
-        updateEngineSelect();
-        renderParts();
-
-    }
-);
-
-
-modelSelect.addEventListener(
-    "change",
-    () => {
-
-        updateEngineSelect();
-        renderParts();
-
-    }
-);
-
-
-engineSelect.addEventListener(
-    "change",
-    renderParts
-);
-
-
-searchButton.addEventListener(
-    "click",
-    renderParts
-);
-
-
-searchInput.addEventListener(
-    "input",
-    renderParts
-);
-
-
-searchInput.addEventListener(
-    "keydown",
-    event => {
-
-        if(event.key === "Enter"){
-            renderParts();
-        }
-
-    }
-);
-
-
-resetButton.addEventListener(
-    "click",
-    () => {
-
-        brandSelect.value = "";
-
-        updateModelSelect();
-
-        modelSelect.value = "";
-
-        updateEngineSelect();
-
-        engineSelect.value = "";
-
-        searchInput.value = "";
-
-        renderParts();
-
-    }
-);
-
-
-/* =========================================================
-   START APPLICATION
-   ========================================================= */
-
-document.getElementById("year").textContent =
-    new Date().getFullYear();
-
-setupContact();
-
-updateBrandSelect();
-
-updateModelSelect();
-
-updateEngineSelect();
+searchInput.value = "";
 
 renderParts();
+
+}
+
+
+brandSelect.addEventListener(
+"change",
+renderParts
+);
+
+modelSelect.addEventListener(
+"change",
+renderParts
+);
+
+engineSelect.addEventListener(
+"change",
+renderParts
+);
+
+searchInput.addEventListener(
+"input",
+renderParts
+);
+
+resetButton.addEventListener(
+"click",
+resetFilters
+);
+
+
+initFilters();
+
+renderParts();
+
 
 </script>
 
